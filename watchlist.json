@@ -1,0 +1,7 @@
+{
+  "core_tickers": ["AAPL", "MSFT", "GOOGL", "META", "AMZN", "NVDA", "TSLA", "AMD", "AVGO", "ESLT"],
+  "sectors": ["AI/Semis", "Cloud", "Pharma/GLP-1", "Energy", "Banks"],
+  "indices": ["SPX", "NDX", "RUT"],
+  "tase_focus": ["TA-35", "TA-125"],
+  "macro_signals": ["DXY", "TNX", "VIX", "Brent", "Gold"]
+}
