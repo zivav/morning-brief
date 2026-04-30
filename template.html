@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Markets Brief — <!-- SLOT: header_date --></title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* =========================================================
+     MORNING MARKETS BRIEF — MASTER TEMPLATE
+     Layouts available (each <section class="page" data-layout="X">):
+       1. cover           - cover/index page
+       2. fullbleed       - full-bleed image with overlay text
+       3. split           - text left, visual/stats right
+       4. threepanel      - headline + two comparison panels
+       5. bignumber       - one giant number callout
+       6. chart           - text + chart visualization
+       7. honor           - earnings beats grid (4-8 cards)
+       8. movers          - gainers/losers two-column tabular
+       9. trackrecord     - prior issue ticker performance audit
+     The routine picks layouts per chapter, duplicates as needed, and
+     fills <!-- SLOT: name --> markers with content.
+     ========================================================= */
+  :root {
+    --bg: #000000;
+    --panel: #0a0a0a;
+    --card: #141414;
+    --card-2: #1a1a1a;
+    --border: #232323;
+    --border-2: #2e2e2e;
+    --muted: #737373;
+    --muted-2: #525252;
+    --text: #ffffff;
+    --text-soft: rgba(255,255,255,0.85);
+    --green: #22c55e;
+    --green-soft: rgba(34,197,94,0.08);
+    --green-border: rgba(34,197,94,0.4);
+    --red: #ef4444;
+    --red-soft: rgba(239,68,68,0.08);
+    --red-border: rgba(239,68,68,0.4);
+    --blue: #3b82f6;
+    --blue-soft: rgba(59,130,246,0.08);
+    --blue-border: rgba(59,130,246,0.4);
+    --yellow: #eab308;
+    --yellow-soft: rgba(234,179,8,0.08);
+    --yellow-border: rgba(234,179,8,0.4);
+    --header-red: #dc2626;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --serif: 'Playfair Display', 'Times New Roman', serif;
+    --mono: 'JetBrains Mono', 'Courier New', monospace;
+  }
+
+- { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+background: var(–bg);
+color: var(–text);
+font-family: var(–sans);
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+scroll-snap-type: y mandatory;
+overflow-y: scroll;
+height: 100vh;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(–bg); }
+::-webkit-scrollbar-thumb { background: var(–border); }
+
+/* –– PAGE SHELL –– */
+.page {
+scroll-snap-align: start;
+min-height: 100vh;
+display: grid;
+grid-template-rows: auto auto 1fr auto auto;
+position: relative;
+overflow: hidden;
+}
+
+.live-strip {
+background: var(–header-red);
+color: white;
+padding: 8px 28px;
+font-family: var(–mono);
+font-size: 12px;
+font-weight: 500;
+letter-spacing: 0.08em;
+display: flex;
+justify-content: space-between;
+text-transform: uppercase;
+}
+.live-strip .left::before { content: “● “; }
+
+.meta-strip {
+padding: 12px 28px;
+font-family: var(–mono);
+font-size: 11px;
+letter-spacing: 0.08em;
+color: var(–muted);
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid var(–border);
+}
+.meta-strip .vol-no { display: flex; gap: 16px; align-items: center; }
+.meta-strip .vol-no svg { width: 14px; height: 14px; opacity: 0.6; }
+
+.chip {
+display: inline-block;
+padding: 4px 10px;
+border: 1px solid var(–border);
+background: rgba(34,197,94,0.05);
+color: var(–green);
+border-color: var(–green-border);
+}
+.chip.macro { color: var(–blue); border-color: var(–blue-border); background: rgba(59,130,246,0.05); }
+.chip.geo { color: var(–yellow); border-color: var(–yellow-border); background: rgba(234,179,8,0.05); }
+.chip.earnings { color: var(–green); border-color: var(–green-border); background: rgba(34,197,94,0.05); }
+
+.ticker-tape {
+border-top: 1px solid var(–border);
+padding: 14px 28px;
+font-family: var(–mono);
+font-size: 11px;
+color: var(–muted);
+letter-spacing: 0.06em;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+text-transform: uppercase;
+}
+.ticker-tape .sep { margin: 0 18px; color: var(–border-2); }
+
+.page-foot {
+padding: 14px 28px;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+gap: 10px;
+font-family: var(–mono);
+font-size: 11px;
+color: var(–muted);
+}
+.page-foot .arrow {
+width: 22px; height: 22px;
+border: 1px solid var(–border-2);
+display: inline-flex; align-items: center; justify-content: center;
+font-size: 9px;
+color: var(–muted);
+}
+
+/* –– TYPOGRAPHY –– */
+.headline-mega {
+font-family: var(–sans);
+font-weight: 900;
+font-size: clamp(44px, 6.5vw, 88px);
+line-height: 0.95;
+letter-spacing: -0.035em;
+text-transform: uppercase;
+}
+.headline-mega em {
+font-family: var(–serif);
+font-style: italic;
+font-weight: 400;
+text-transform: none;
+letter-spacing: -0.01em;
+}
+.headline-large {
+font-family: var(–sans);
+font-weight: 900;
+font-size: clamp(36px, 4.8vw, 64px);
+line-height: 1;
+letter-spacing: -0.025em;
+text-transform: uppercase;
+}
+.headline-large em {
+font-family: var(–serif);
+font-style: italic;
+font-weight: 400;
+text-transform: none;
+letter-spacing: -0.01em;
+}
+
+.kicker {
+font-family: var(–mono);
+font-size: 11px;
+color: var(–muted);
+letter-spacing: 0.12em;
+text-transform: uppercase;
+margin-bottom: 16px;
+}
+.kicker.macro { color: var(–blue); }
+.kicker.geo { color: var(–yellow); }
+.kicker.earnings { color: var(–green); }
+.kicker.ai { color: var(–green); }
+
+.body-text {
+font-size: 15px;
+line-height: 1.55;
+color: var(–text-soft);
+max-width: 580px;
+}
+
+/* –– BADGES & CHIPS –– */
+.badge-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.badge {
+display: inline-block;
+font-family: var(–mono);
+font-size: 11px;
+font-weight: 600;
+padding: 6px 11px;
+letter-spacing: 0.06em;
+text-transform: uppercase;
+border: 1px solid;
+}
+.badge.pos { color: var(–green); border-color: var(–green-border); background: var(–green-soft); }
+.badge.neg { color: var(–red); border-color: var(–red-border); background: var(–red-soft); }
+.badge.neu { color: var(–blue); border-color: var(–blue-border); background: var(–blue-soft); }
+.badge.warn { color: var(–yellow); border-color: var(–yellow-border); background: var(–yellow-soft); }
+
+/* –– METRIC GRID –– */
+.metric-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 1px;
+background: var(–border);
+border: 1px solid var(–border);
+}
+.metric-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.metric-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.metric-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+.metric-cell {
+background: var(–card);
+padding: 16px 20px;
+}
+.metric-label {
+font-family: var(–mono);
+font-size: 10px;
+letter-spacing: 0.12em;
+color: var(–muted);
+text-transform: uppercase;
+margin-bottom: 8px;
+}
+.metric-value {
+font-family: var(–mono);
+font-size: 16px;
+font-weight: 600;
+}
+.metric-value.pos { color: var(–green); }
+.metric-value.neg { color: var(–red); }
+.metric-value.neu { color: var(–blue); }
+.metric-value.warn { color: var(–yellow); }
+
+/* –– TOP STORIES RAIL –– */
+.top-stories { display: flex; flex-direction: column; gap: 14px; }
+.story-card {
+background: var(–card);
+border-left: 3px solid var(–green);
+padding: 16px 20px;
+}
+.story-card.macro { border-left-color: var(–blue); }
+.story-card.geo { border-left-color: var(–yellow); }
+.story-card.ai { border-left-color: var(–green); }
+.story-card .label {
+font-family: var(–mono);
+font-size: 10px;
+color: var(–green);
+letter-spacing: 0.12em;
+text-transform: uppercase;
+}
+.story-card.macro .label { color: var(–blue); }
+.story-card.geo .label { color: var(–yellow); }
+.story-card .title {
+font-weight: 800;
+font-size: 22px;
+margin: 6px 0 10px;
+letter-spacing: -0.012em;
+text-transform: uppercase;
+}
+.story-card .summary {
+font-size: 13px;
+color: var(–text-soft);
+line-height: 1.5;
+}
+
+/* –– LAYOUT: COVER –– */
+.layout-cover .body { padding: 36px 48px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; }
+.cover-stat-strip { padding: 0 48px 24px; }
+
+/* –– LAYOUT: FULL-BLEED –– */
+.layout-fullbleed .body { padding: 36px 48px; position: relative; }
+.layout-fullbleed .full-bg {
+position: absolute; inset: 0;
+background-size: cover; background-position: center;
+filter: brightness(0.35) saturate(0.85);
+z-index: 0;
+}
+.layout-fullbleed .body > * { position: relative; z-index: 1; }
+.layout-fullbleed .corner-chip {
+position: absolute; top: 36px; right: 48px;
+background: var(–card-2); border: 1px solid var(–yellow-border);
+padding: 14px 18px; min-width: 140px; z-index: 2;
+}
+.corner-chip .chip-label { font-family: var(–mono); font-size: 9px; color: var(–yellow); letter-spacing: 0.15em; text-transform: uppercase; }
+.corner-chip .chip-value { font-weight: 900; font-size: 22px; line-height: 1.1; margin-top: 6px; text-transform: uppercase; }
+.corner-chip .chip-attr { font-family: var(–mono); font-size: 10px; color: var(–muted); margin-top: 6px; }
+
+.quote-block {
+border-left: 2px solid var(–yellow);
+padding: 6px 0 6px 16px;
+font-family: var(–serif);
+font-style: italic;
+color: var(–text-soft);
+font-size: 16px;
+margin-top: 24px;
+max-width: 640px;
+}
+.quote-block .attr {
+font-family: var(–sans);
+font-style: normal;
+color: var(–muted);
+font-size: 12px;
+display: block;
+margin-top: 4px;
+}
+
+/* –– LAYOUT: SPLIT –– */
+.layout-split .body { padding: 36px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.layout-split .split-visual {
+aspect-ratio: 1.1 / 1;
+background: var(–card);
+border: 1px solid var(–border);
+display: flex;
+align-items: center;
+justify-content: center;
+background-size: cover;
+background-position: center;
+}
+.visual-glyph {
+font-family: var(–sans);
+font-weight: 900;
+font-size: clamp(60px, 9vw, 140px);
+color: var(–green);
+letter-spacing: -0.04em;
+}
+.visual-glyph.neu { color: var(–blue); }
+
+/* –– LAYOUT: THREE PANEL –– */
+.layout-threepanel .body { padding: 36px 48px; display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 24px; }
+.panel-card {
+background: var(–card);
+border-top: 2px solid var(–green);
+padding: 24px;
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+.panel-card.warn { border-top-color: var(–yellow); }
+.panel-card.neu { border-top-color: var(–blue); }
+.panel-card.neg { border-top-color: var(–red); }
+.panel-card .panel-label {
+font-family: var(–mono); font-size: 10px; letter-spacing: 0.12em;
+text-transform: uppercase; color: var(–green);
+}
+.panel-card.warn .panel-label { color: var(–yellow); }
+.panel-card.neu .panel-label { color: var(–blue); }
+.panel-card.neg .panel-label { color: var(–red); }
+.panel-card .panel-headline { font-weight: 900; font-size: 36px; line-height: 1; letter-spacing: -0.02em; }
+.panel-card .panel-sub { font-family: var(–mono); font-size: 11px; color: var(–muted); text-transform: uppercase; letter-spacing: 0.08em; }
+.panel-card .panel-body { font-size: 13px; color: var(–text-soft); line-height: 1.5; }
+
+/* –– LAYOUT: BIG NUMBER –– */
+.layout-bignumber .body { padding: 36px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.big-number {
+font-family: var(–sans);
+font-weight: 900;
+font-size: clamp(96px, 12vw, 180px);
+line-height: 0.9;
+letter-spacing: -0.05em;
+color: var(–green);
+}
+.big-number.neg { color: var(–red); }
+.big-number.neu { color: var(–blue); }
+.big-number-caption {
+font-family: var(–mono);
+font-size: 12px;
+color: var(–muted);
+letter-spacing: 0.08em;
+text-transform: uppercase;
+margin-top: 16px;
+}
+.big-number-pill {
+display: inline-block;
+margin-top: 16px;
+padding: 8px 16px;
+background: var(–green-soft);
+border: 1px solid var(–green-border);
+color: var(–green);
+font-family: var(–mono);
+font-size: 12px;
+font-weight: 600;
+letter-spacing: 0.06em;
+text-transform: uppercase;
+}
+.big-number-tag {
+margin-top: 28px;
+padding: 12px 16px;
+border: 1px solid var(–green-border);
+background: var(–green-soft);
+}
+.big-number-tag .tag-label { font-family: var(–mono); font-size: 10px; color: var(–green); letter-spacing: 0.12em; text-transform: uppercase; }
+.big-number-tag .tag-text { font-family: var(–mono); font-size: 12px; color: var(–text); margin-top: 4px; letter-spacing: 0.04em; text-transform: uppercase; }
+
+/* –– LAYOUT: CHART –– */
+.layout-chart .body { padding: 36px 48px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: center; }
+.chart-svg-wrap {
+width: 100%;
+aspect-ratio: 1.6 / 1;
+background: var(–card);
+border: 1px solid var(–border);
+padding: 24px;
+}
+
+/* –– LAYOUT: HONOR ROLL –– */
+.layout-honor .body { padding: 36px 48px; }
+.honor-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 14px;
+margin-top: 28px;
+}
+.honor-card {
+background: var(–card);
+border-top: 2px solid var(–green);
+padding: 18px 20px;
+}
+.honor-card .ticker-row {
+display: flex; justify-content: space-between; align-items: baseline;
+}
+.honor-card .ticker { font-weight: 900; font-size: 22px; letter-spacing: -0.01em; }
+.honor-card .change { color: var(–green); font-family: var(–mono); font-weight: 700; font-size: 16px; }
+.honor-card .detail {
+margin-top: 10px;
+font-size: 11.5px;
+color: var(–text-soft);
+line-height: 1.5;
+font-family: var(–sans);
+}
+
+/* –– LAYOUT: GAINERS / LOSERS –– */
+.layout-movers .body { padding: 36px 48px; display: grid; grid-template-columns: 1.7fr 1fr; gap: 48px; }
+.mover-list h2 {
+font-family: var(–sans);
+font-weight: 900;
+font-size: 32px;
+text-transform: uppercase;
+letter-spacing: -0.015em;
+padding-bottom: 8px;
+margin-bottom: 4px;
+}
+.mover-list h2.gainers { color: var(–green); border-bottom: 1px solid var(–green); }
+.mover-list h2.losers { color: var(–red); border-bottom: 1px solid var(–red); }
+.mover-list .count-tag {
+font-family: var(–mono); font-size: 11px; color: var(–muted);
+letter-spacing: 0.08em; text-transform: uppercase; margin-left: 12px;
+}
+.mover-row {
+display: grid;
+grid-template-columns: 60px 70px 1fr;
+gap: 14px;
+padding: 8px 0;
+align-items: baseline;
+font-size: 13px;
+}
+.mover-row .ticker { font-weight: 800; }
+.mover-row .change { font-family: var(–mono); font-weight: 700; }
+.mover-row .change.pos { color: var(–green); }
+.mover-row .change.neg { color: var(–red); }
+.mover-row .reason { color: var(–text-soft); font-size: 12.5px; }
+
+/* –– LAYOUT: TRACK RECORD (NEW) –– */
+.layout-trackrecord .body { padding: 36px 48px; }
+.track-table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 24px;
+}
+.track-table th, .track-table td {
+padding: 12px 14px;
+text-align: left;
+border-bottom: 1px solid var(–border);
+font-size: 13px;
+}
+.track-table th {
+font-family: var(–mono);
+font-size: 10px;
+color: var(–muted);
+text-transform: uppercase;
+letter-spacing: 0.12em;
+font-weight: 500;
+}
+.track-table .ticker-cell { font-weight: 800; font-size: 15px; }
+.track-table .return-cell { font-family: var(–mono); font-weight: 700; }
+.track-table .return-cell.pos { color: var(–green); }
+.track-table .return-cell.neg { color: var(–red); }
+.track-table .verdict { font-family: var(–mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+.track-table .verdict.win { color: var(–green); }
+.track-table .verdict.loss { color: var(–red); }
+.track-table .verdict.flat { color: var(–muted); }
+.track-summary {
+display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+background: var(–border); border: 1px solid var(–border);
+margin-top: 28px;
+}
+.track-summary > div { background: var(–card); padding: 16px 20px; }
+
+/* –– PRINT –– */
+@media print {
+body { scroll-snap-type: none; height: auto; }
+.page { min-height: 100vh; page-break-after: always; }
+}
+
+/* –– MOBILE FALLBACK –– */
+@media (max-width: 900px) {
+.layout-cover .body,
+.layout-split .body,
+.layout-bignumber .body,
+.layout-chart .body,
+.layout-movers .body { grid-template-columns: 1fr; gap: 32px; }
+.layout-threepanel .body { grid-template-columns: 1fr; }
+.honor-grid { grid-template-columns: repeat(2, 1fr); }
+.live-strip, .meta-strip, .page-foot, .ticker-tape { padding-left: 16px; padding-right: 16px; }
+.layout-cover .body, .layout-split .body, .layout-fullbleed .body,
+.layout-threepanel .body, .layout-bignumber .body, .layout-chart .body,
+.layout-honor .body, .layout-movers .body, .layout-trackrecord .body { padding: 24px 16px; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- ========================================================================
+     PAGE 01 — COVER / INDEX
+     ======================================================================== -->
+
+<section class="page layout-cover" data-layout="cover" id="page-01">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span><!-- SLOT: header_date --> · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span><!-- SLOT: vol_no_full --></span>
+      <span>MORNING MARKETS BRIEF · <!-- SLOT: stories_count --> STORIES · <!-- SLOT: chapters_count --> CHAPTERS</span>
+    </div>
+    <span><!-- SLOT: page_number_top --></span>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="kicker">MORNING MARKETS · <!-- SLOT: header_date --></div>
+      <h1 class="headline-mega"><!-- SLOT: cover_headline --></h1>
+      <p class="body-text" style="margin-top: 28px;"><!-- SLOT: cover_subhead --></p>
+      <div class="badge-row" style="margin-top: 36px;">
+        <!-- SLOT: cover_badges -->
+        <!-- Example items the routine should emit:
+             <span class="badge pos">GOOGL +6.9% AH</span>
+             <span class="badge pos">AWS $150B ANNUALIZED</span>
+             <span class="badge warn">FED HOLDS · 4/8 SPLIT</span>
+             <span class="badge warn">HORMUZ THREAT</span>
+        -->
+      </div>
+    </div>
+
+```
+<div>
+  <div class="kicker">TODAY'S TOP STORIES</div>
+  <div class="top-stories">
+    <!-- SLOT: top_stories_rail -->
+    <!-- Each card pattern (3 total):
+         <div class="story-card geo">
+           <div class="label">IV · GEOPOLITICS</div>
+           <div class="title">THE STRAIT</div>
+           <div class="summary">...</div>
+         </div>
+    -->
+  </div>
+</div>
+```
+
+  </div>
+
+  <div class="metric-grid cols-4 cover-stat-strip">
+    <!-- SLOT: cover_stat_strip -->
+    <!-- Pattern (4 cells):
+         <div class="metric-cell">
+           <div class="metric-label">MAG7 Q1 REPORTS</div>
+           <div class="metric-value pos">4 BEATS</div>
+         </div>
+    -->
+  </div>
+
+  <div class="ticker-tape"><!-- SLOT: ticker_tape --></div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span><!-- SLOT: page_number_bottom --></span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+<!-- ========================================================================
+     PAGE TYPE: FULL-BLEED IMAGE STORY
+     Use for: geopolitics, oil/macro events with strong imagery, person portraits
+     ======================================================================== -->
+
+<section class="page layout-fullbleed" data-layout="fullbleed" id="page-fullbleed">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span><!-- SLOT: header_date --> · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span><!-- SLOT: vol_no_short --></span>
+      <span class="chip geo"><!-- SLOT: chapter_label --></span>
+    </div>
+    <span><!-- SLOT: page_number_top --></span>
+  </div>
+
+  <div class="body">
+    <div class="full-bg" style="background-image: linear-gradient(135deg, #0f1d2e 0%, #1a1a1a 100%);">
+      <!-- SLOT: fullbleed_bg_style
+           Routine sets either:
+             a) background-image: linear-gradient(...)  (recommended for self-contained delivery)
+             b) background-image: url('data:image/...')   (small base64 only)
+           CSS-only gradient backgrounds work without external assets. -->
+    </div>
+
+```
+<div class="corner-chip">
+  <div class="chip-label"><!-- SLOT: corner_chip_label --></div>
+  <div class="chip-value"><!-- SLOT: corner_chip_value --></div>
+  <div class="chip-attr"><!-- SLOT: corner_chip_attr --></div>
+</div>
+
+<div class="kicker geo"><!-- SLOT: story_kicker --></div>
+<h1 class="headline-mega"><!-- SLOT: story_headline --></h1>
+<p class="body-text" style="margin-top: 24px;"><!-- SLOT: story_body --></p>
+
+<div class="quote-block" style="margin-top: 32px;">
+  "<!-- SLOT: story_quote -->"
+  <span class="attr">— <!-- SLOT: story_quote_attr --></span>
+</div>
+
+<div class="metric-grid cols-5" style="margin-top: 36px; max-width: 900px;">
+  <!-- SLOT: story_metric_strip -->
+</div>
+```
+
+  </div>
+
+  <div class="ticker-tape"><!-- SLOT: ticker_tape --></div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span><!-- SLOT: page_number_bottom --></span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+<!-- ========================================================================
+     PAGE TYPE: SPLIT (text left, visual/stats right)
+     Use for: sector deep dives, single-stock earnings stories, AI trade pages
+     ======================================================================== -->
+
+<section class="page layout-split" data-layout="split" id="page-split">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span><!-- SLOT: header_date --> · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span><!-- SLOT: vol_no_short --></span>
+      <span class="chip ai"><!-- SLOT: chapter_label --></span>
+    </div>
+    <span><!-- SLOT: page_number_top --></span>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="kicker ai"><!-- SLOT: story_kicker --></div>
+      <h1 class="headline-large"><!-- SLOT: story_headline --></h1>
+      <p class="body-text" style="margin-top: 24px;"><!-- SLOT: story_body --></p>
+
+```
+  <div class="metric-grid" style="margin-top: 32px;">
+    <!-- SLOT: story_metric_grid -->
+  </div>
+</div>
+
+<div class="split-visual">
+  <span class="visual-glyph"><!-- SLOT: split_visual_glyph --></span>
+  <!-- For visual: either a single dramatic glyph (ticker symbol, $ amount),
+       a CSS-drawn icon, or a small inline SVG. No external images. -->
+</div>
+```
+
+  </div>
+
+  <div class="ticker-tape"><!-- SLOT: ticker_tape --></div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span><!-- SLOT: page_number_bottom --></span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+<!-- ========================================================================
+     PAGE TYPE: THREE PANEL (headline + comparison panels)
+     Use for: "the beat vs the bet" framing, divided-Wall-Street stories
+     ======================================================================== -->
+
+<section class="page layout-threepanel" data-layout="threepanel" id="page-threepanel">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span><!-- SLOT: header_date --> · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span><!-- SLOT: vol_no_short --></span>
+      <span class="chip"><!-- SLOT: chapter_label --></span>
+    </div>
+    <span><!-- SLOT: page_number_top --></span>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="kicker"><!-- SLOT: story_kicker --></div>
+      <h1 class="headline-large"><!-- SLOT: story_headline --></h1>
+    </div>
+
+```
+<div class="panel-card">
+  <div class="panel-label"><!-- SLOT: panel_a_label --></div>
+  <div class="panel-headline"><!-- SLOT: panel_a_value --></div>
+  <div class="panel-sub"><!-- SLOT: panel_a_caption --></div>
+  <div class="panel-body"><!-- SLOT: panel_a_body --></div>
+</div>
+
+<div class="panel-card neu">
+  <div class="panel-label"><!-- SLOT: panel_b_label --></div>
+  <div class="panel-headline"><!-- SLOT: panel_b_value --></div>
+  <div class="panel-sub"><!-- SLOT: panel_b_caption --></div>
+  <div class="panel-body"><!-- SLOT: panel_b_body --></div>
+</div>
+
+<div class="panel-card warn">
+  <div class="panel-label"><!-- SLOT: panel_c_label --></div>
+  <div class="panel-headline"><!-- SLOT: panel_c_value --></div>
+  <div class="panel-sub"><!-- SLOT: panel_c_caption --></div>
+  <div class="panel-body"><!-- SLOT: panel_c_body --></div>
+</div>
+```
+
+  </div>
+
+  <div class="ticker-tape"><!-- SLOT: ticker_tape --></div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span><!-- SLOT: page_number_bottom --></span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+<!-- ========================================================================
+     PAGE TYPE: BIG NUMBER
+     Use for: spectacular EPS beats, single-stat headline moments
+     ======================================================================== -->
+
+<section class="page layout-bignumber" data-layout="bignumber" id="page-bignumber">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span><!-- SLOT: header_date --> · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span><!-- SLOT: vol_no_short --></span>
+      <span class="chip earnings"><!-- SLOT: chapter_label --></span>
+    </div>
+    <span><!-- SLOT: page_number_top --></span>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="kicker earnings"><!-- SLOT: story_kicker --></div>
+      <h1 class="headline-mega"><!-- SLOT: story_headline --></h1>
+      <p class="body-text" style="margin-top: 24px;"><!-- SLOT: story_body --></p>
+
+```
+  <div class="metric-grid" style="margin-top: 32px; max-width: 460px;">
+    <!-- SLOT: bignumber_metric_grid -->
+  </div>
+</div>
+
+<div style="text-align: center;">
+  <div class="big-number"><!-- SLOT: big_number_value --></div>
+  <div class="big-number-caption"><!-- SLOT: big_number_caption --></div>
+  <span class="big-number-pill"><!-- SLOT: big_number_pill --></span>
+
+  <div class="big-number-tag">
+    <div class="tag-label"><!-- SLOT: big_number_tag_label --></div>
+    <div class="tag-text"><!-- SLOT: big_number_tag_text --></div>
+  </div>
+</div>
+```
+
+  </div>
+
+  <div class="ticker-tape"><!-- SLOT: ticker_tape --></div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span><!-- SLOT: page_number_bottom --></span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+<!-- ========================================================================
+     PAGE TYPE: CHART
+     Use for: trend visuals, valuation trajectories, multi-period comparisons
+     The chart is an inline SVG. The routine generates the SVG path data.
+     ======================================================================== -->
+
+<section class="page layout-chart" data-layout="chart" id="page-chart">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span><!-- SLOT: header_date --> · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span><!-- SLOT: vol_no_short --></span>
+      <span class="chip"><!-- SLOT: chapter_label --></span>
+    </div>
+    <span><!-- SLOT: page_number_top --></span>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="kicker"><!-- SLOT: story_kicker --></div>
+      <h1 class="headline-large"><!-- SLOT: story_headline --></h1>
+      <p class="body-text" style="margin-top: 24px;"><!-- SLOT: story_body --></p>
+
+```
+  <div class="metric-grid cols-4" style="margin-top: 32px;">
+    <!-- SLOT: chart_metric_grid -->
+  </div>
+</div>
+
+<div class="chart-svg-wrap">
+  <!-- SLOT: chart_svg
+       Routine emits an inline SVG (e.g., area chart, line chart, bar chart).
+       Use viewBox="0 0 600 360", stroke=#3b82f6, fill=rgba(59,130,246,0.15) etc.
+       Include axis labels, data points with values, and a chart title. -->
+</div>
+```
+
+  </div>
+
+  <div class="ticker-tape"><!-- SLOT: ticker_tape --></div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span><!-- SLOT: page_number_bottom --></span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+<!-- ========================================================================
+     PAGE TYPE: HONOR ROLL (4-8 earnings beats grid)
+     ======================================================================== -->
+
+<section class="page layout-honor" data-layout="honor" id="page-honor">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span><!-- SLOT: header_date --> · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span><!-- SLOT: vol_no_short --></span>
+      <span class="chip earnings">III · EARNINGS</span>
+    </div>
+    <span><!-- SLOT: page_number_top --></span>
+  </div>
+
+  <div class="body">
+    <h1 class="headline-large">THE <em>HONOR</em> ROLL. <span style="color: var(--blue); font-weight: 500; font-size: 0.5em; vertical-align: middle;"><!-- SLOT: honor_subhead --></span></h1>
+
+```
+<div class="honor-grid">
+  <!-- SLOT: honor_cards
+       4-8 cards of pattern:
+       <div class="honor-card">
+         <div class="ticker-row">
+           <span class="ticker">GOOGL</span>
+           <span class="change">+7.9%</span>
+         </div>
+         <div class="detail">Cloud +63% → $20B · Backlog $460B · Search +19%</div>
+       </div>
+  -->
+</div>
+```
+
+  </div>
+
+  <div class="ticker-tape"><!-- SLOT: ticker_tape --></div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span><!-- SLOT: page_number_bottom --></span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+<!-- ========================================================================
+     PAGE TYPE: GAINERS / LOSERS
+     ======================================================================== -->
+
+<section class="page layout-movers" data-layout="movers" id="page-movers">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span><!-- SLOT: header_date --> · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span><!-- SLOT: vol_no_short --></span>
+      <span class="chip earnings">III · EARNINGS</span>
+    </div>
+    <span><!-- SLOT: page_number_top --></span>
+  </div>
+
+  <div class="body">
+    <div class="mover-list">
+      <h2 class="gainers">GAINERS <span class="count-tag"><!-- SLOT: gainers_count --> MOVERS · <!-- SLOT: header_date --></span></h2>
+      <!-- SLOT: gainers_rows
+           Pattern:
+           <div class="mover-row">
+             <span class="ticker">VISN</span>
+             <span class="change pos">+21%</span>
+             <span class="reason">Earnings beat, strong momentum</span>
+           </div>
+      -->
+    </div>
+
+```
+<div class="mover-list">
+  <h2 class="losers">LOSERS <span class="count-tag"><!-- SLOT: losers_count --> MOVERS</span></h2>
+  <!-- SLOT: losers_rows -->
+</div>
+```
+
+  </div>
+
+  <div class="ticker-tape"><!-- SLOT: ticker_tape --></div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span><!-- SLOT: page_number_bottom --></span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+<!-- ========================================================================
+     PAGE TYPE: TRACK RECORD (NEW — upgrade #2)
+     Use this layout for the periodic audit of prior flagged setups.
+     Reads sidecar JSONs from archive/ that are 3-7 trading days old.
+     For each flagged ticker, fetch current price and compute return.
+     ======================================================================== -->
+
+<section class="page layout-trackrecord" data-layout="trackrecord" id="page-trackrecord">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span><!-- SLOT: header_date --> · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span><!-- SLOT: vol_no_short --></span>
+      <span class="chip">V · TRACK RECORD</span>
+    </div>
+    <span><!-- SLOT: page_number_top --></span>
+  </div>
+
+  <div class="body">
+    <div class="kicker">CHAPTER V · TRACK RECORD · <!-- SLOT: track_window --></div>
+    <h1 class="headline-large">DID THE <em>TRADE</em> WORK?</h1>
+    <p class="body-text" style="margin-top: 18px; max-width: 760px;"><!-- SLOT: track_intro --></p>
+
+```
+<table class="track-table">
+  <thead>
+    <tr>
+      <th style="width: 70px;">Ticker</th>
+      <th>Setup / Thesis</th>
+      <th style="width: 90px;">Flagged</th>
+      <th style="width: 90px;">At Flag</th>
+      <th style="width: 90px;">Now</th>
+      <th style="width: 80px;">Return</th>
+      <th style="width: 80px;">Verdict</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- SLOT: track_table_rows
+         Pattern:
+         <tr>
+           <td class="ticker-cell">GOOGL</td>
+           <td>Cloud +63%, backlog $460B — momentum continuation</td>
+           <td>30 APR</td>
+           <td>178.45</td>
+           <td>185.20</td>
+           <td class="return-cell pos">+3.78%</td>
+           <td class="verdict win">WIN</td>
+         </tr>
+    -->
+  </tbody>
+</table>
+
+<div class="track-summary">
+  <div>
+    <div class="metric-label">SETUPS REVIEWED</div>
+    <div class="metric-value"><!-- SLOT: track_total --></div>
+  </div>
+  <div>
+    <div class="metric-label">WINS</div>
+    <div class="metric-value pos"><!-- SLOT: track_wins --></div>
+  </div>
+  <div>
+    <div class="metric-label">LOSSES</div>
+    <div class="metric-value neg"><!-- SLOT: track_losses --></div>
+  </div>
+  <div>
+    <div class="metric-label">AVG RETURN</div>
+    <div class="metric-value"><!-- SLOT: track_avg_return --></div>
+  </div>
+</div>
+```
+
+  </div>
+
+  <div class="ticker-tape"><!-- SLOT: ticker_tape --></div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span><!-- SLOT: page_number_bottom --></span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+</body>
+</html>
