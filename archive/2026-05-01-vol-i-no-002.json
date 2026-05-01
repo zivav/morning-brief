@@ -1,0 +1,122 @@
+{
+  "issue_id": "vol-i-no-002",
+  "date": "2026-05-01",
+  "vol_no": "VOL I · NO 002",
+  "edition_type": "daily_premarket",
+  "issue_time": "08:00 Asia/Jerusalem (~01:00 ET)",
+  "top_headline": "AAPL $111.18B Q2 record + Iran peace bid pulls Brent to $108; Warsh inherits stagflation-bound Fed May 15",
+  "chapters": [
+    "I · MACRO — ISM Prices 84.6% / Warsh Transition",
+    "II · AI TRADE — NVDA -4.6% AH / AMD & PLTR Pre-Earnings Setup",
+    "III · EARNINGS — AAPL $111B Record / Honor Roll / Movers (RBLX -24%)",
+    "IV · GEOPOLITICS — Iran Peace Bid Without Nukes / Brent $108 / Hormuz Shut"
+  ],
+  "flagged_setups": [
+    {
+      "ticker": "AAPL",
+      "direction": "long",
+      "thesis": "Post-earnings momentum: Q2 EPS $2.01 beat ($1.95 est), Rev $111.18B record, iPhone $57B +22%, Services $30.98B record. CEO transition (Ternus) narrative to play out. AI-lite model confirmed as winning capex discipline trade.",
+      "flag_date": "2026-05-01",
+      "price_at_flag": 279.49,
+      "price_note": "~$279 AH (+3% from $271.35 close Apr 30) · Apple IR Apr 30 / Yahoo Finance",
+      "horizon_trading_days": 7
+    },
+    {
+      "ticker": "PLTR",
+      "direction": "long",
+      "thesis": "Pre-earnings setup: EPS est $0.28 (+115% YoY), Rev est $1.54B (+74% YoY). AIG contract pipeline and commercial AIP adoption rate are key data points. Q4 2025 beat. FY26 guide $7.18-7.20B implies 61% growth.",
+      "flag_date": "2026-05-01",
+      "price_at_flag": 137.32,
+      "price_note": "~$137.32 close Apr 29 · Yahoo Finance / StockAnalysis",
+      "horizon_trading_days": 4
+    },
+    {
+      "ticker": "AMD",
+      "direction": "long",
+      "thesis": "Pre-earnings setup: Rev guide $9.8B (+32% YoY), non-GAAP gross margin ~55%. Instinct MI350 GPU record Q4 demand expected to continue. EPYC Genoa server share gains. CEO Su: 'year 2 of 10-year AI buildout.'",
+      "flag_date": "2026-05-01",
+      "price_at_flag": 335.00,
+      "price_note": "$335.00 close Apr 30 · Yahoo Finance / AMD IR",
+      "horizon_trading_days": 5
+    }
+  ],
+  "watchlist_hits": [
+    {
+      "ticker": "AAPL",
+      "event": "Q2 FY2026 earnings beat — Rev $111.18B record, EPS $2.01, iPhone +22%, Services record",
+      "move": "+3-4.5% AH",
+      "priority": "core"
+    },
+    {
+      "ticker": "NVDA",
+      "event": "AH decline on hyperscaler in-house chip acceleration (Amazon/Google)",
+      "move": "-4.6% AH ~$199",
+      "priority": "core"
+    },
+    {
+      "ticker": "AMD",
+      "event": "Reports May 5 AH; Rev guide $9.8B, Instinct MI350 momentum",
+      "move": "watch",
+      "priority": "core"
+    },
+    {
+      "ticker": "AVGO",
+      "event": "AI semis sector pressure alongside NVDA AH decline",
+      "move": "watch",
+      "priority": "core"
+    }
+  ],
+  "tase_events": [],
+  "narrative_threads": [
+    "AI capex discipline wins: AAPL (+4.5% AH) and GOOGL (+10% wk) rewarded; META (-9%) and MSFT (-4%) punished — thesis from prior issue confirmed",
+    "Stagflation signal escalating: ISM Prices Paid 84.6% (+6.3pp) follows PCE +4.5% — no policy cover for easing",
+    "Warsh Fed transition: takes over May 15; four FOMC dissenters; market fully prices out 2026 cuts",
+    "Iran war de-escalation in progress but stalled: Brent $126→$108 on peace signal; Trump rejects deal without nuclear provisions; Hormuz closed",
+    "AI infrastructure fragmentation: OpenAI market share 80%→64.5%; NVDA TAM compression from hyperscaler in-house chips (AWS Trainium, Google TPUs); AMD/PLTR as the plays"
+  ],
+  "macro_snapshot": {
+    "ES_futures": "+0.13% ~7253",
+    "NQ_futures": "-0.17% ~27549",
+    "YM_futures": "+0.26% ~49965",
+    "SPX_close_Apr30": "7230.12 ATH",
+    "NDX_close_Apr30": "25114.44 ATH",
+    "TNX_10y": "~4.42%",
+    "VIX": "16.82",
+    "brent": "$108.10 -2.1%",
+    "WTI": "~$104",
+    "ISM_mfg_PMI": "52.7%",
+    "ISM_prices_paid": "84.6%"
+  },
+  "today_calendar": [
+    {"time": "10:00am ET", "event": "ISM Manufacturing PMI April (actual: 52.7, est: 53.1, prices paid: 84.6%)"}
+  ],
+  "next_week_calendar": [
+    {"date": "2026-05-04", "event": "PLTR Q1 earnings AH (EPS est $0.28, Rev est $1.54B +74%); ISM Services PMI"},
+    {"date": "2026-05-05", "event": "AMD Q1 earnings AH (Rev guide $9.8B +32%); SHOP Q1 BMO; JOLTS"},
+    {"date": "2026-05-06", "event": "UBER Q1 BMO (Rev est $13.33B); DIS Q2 AH (EPS est $1.49); ARM Q4 AH; APP Q1 AH; ADP payrolls"},
+    {"date": "2026-05-07", "event": "Initial Jobless Claims; Q1 Productivity & Unit Labor Costs preliminary"},
+    {"date": "2026-05-08", "event": "NFP April jobs report 8:30am ET (March: +178K); Michigan Consumer Sentiment prelim"}
+  ],
+  "ticker_tape": "AAPL +3% AH · REV $111.18B Q2 RECORD · RBLX -24% GUIDE SLASHED · EL +12% AH · BRENT $108 -14% OFF PEAK · ISM MFG 52.7 PRICES 84.6% · WARSH MAY 15 · ES +0.13% · PLTR EARNS MON · AMD EARNS TUE · NFP FRI MAY 8",
+  "file": "archive/2026-05-01-vol-i-no-002.html",
+  "sources": [
+    "Apple IR · Q2 FY2026 Earnings Press Release · Apr 30 2026",
+    "CNBC · Apple AAPL Q2 2026 earnings report · Apr 30 2026",
+    "9to5Mac · John Ternus joins Apple Q2 2026 earnings call · Apr 30 2026",
+    "GuruFocus · Estee Lauder EL Q3 2026 earnings · May 1 2026",
+    "Benzinga · Roblox RBLX stock tanks Q1 2026 earnings · May 1 2026",
+    "Sherwood News · Roblox Q1 2026 earnings report guidance cut · May 1 2026",
+    "ISM · Manufacturing PMI April 2026 52.7% · May 1 2026",
+    "CNBC · Powell confirms steps down May 15 Warsh transition · Apr 29 2026",
+    "Al Jazeera · Senate Banking advances Warsh nomination · Apr 29 2026",
+    "CNBC · Oil prices Iran peace proposal Hormuz · May 1 2026",
+    "CNN · Iran delivers new proposal nuclear sticking point · May 1 2026",
+    "Yahoo Finance · NVDA stock price AH May 1 2026",
+    "AMD IR · Q1 2026 earnings date May 5 · AMD press release",
+    "TipRanks · PLTR Q1 2026 earnings May 4 · May 1 2026",
+    "Investing.com · S&P 500 Nasdaq futures May 1 2026",
+    "TheStreet · Stock market today May 1 2026 records",
+    "CNBC · S&P 500 closes record to usher in May · Apr 30 2026",
+    "BLS · Schedule of releases April 2026 NFP May 8"
+  ]
+}
