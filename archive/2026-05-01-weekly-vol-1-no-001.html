@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Markets Brief — Weekly Recap · Week of 28 Apr 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* =========================================================
+     MORNING MARKETS BRIEF — MASTER TEMPLATE
+     Layouts available (each <section class="page" data-layout="X">):
+       1. cover           - cover/index page
+       2. fullbleed       - full-bleed image with overlay text
+       3. split           - text left, visual/stats right
+       4. threepanel      - headline + two comparison panels
+       5. bignumber       - one giant number callout
+       6. chart           - text + chart visualization
+       7. honor           - earnings beats grid (4-8 cards)
+       8. movers          - gainers/losers two-column tabular
+       9. trackrecord     - prior issue ticker performance audit
+     ========================================================= */
+  :root {
+    --bg: #000000;
+    --panel: #0a0a0a;
+    --card: #141414;
+    --card-2: #1a1a1a;
+    --border: #232323;
+    --border-2: #2e2e2e;
+    --muted: #737373;
+    --muted-2: #525252;
+    --text: #ffffff;
+    --text-soft: rgba(255,255,255,0.85);
+    --green: #22c55e;
+    --green-soft: rgba(34,197,94,0.08);
+    --green-border: rgba(34,197,94,0.4);
+    --red: #ef4444;
+    --red-soft: rgba(239,68,68,0.08);
+    --red-border: rgba(239,68,68,0.4);
+    --blue: #3b82f6;
+    --blue-soft: rgba(59,130,246,0.08);
+    --blue-border: rgba(59,130,246,0.4);
+    --yellow: #eab308;
+    --yellow-soft: rgba(234,179,8,0.08);
+    --yellow-border: rgba(234,179,8,0.4);
+    --header-red: #dc2626;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --serif: 'Playfair Display', 'Times New Roman', serif;
+    --mono: 'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); }
+
+  /* -- PAGE SHELL -- */
+  .page {
+    scroll-snap-align: start;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .live-strip {
+    background: var(--header-red);
+    color: white;
+    padding: 8px 28px;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+  }
+  .live-strip .left::before { content: "● "; }
+
+  .meta-strip {
+    padding: 12px 28px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .meta-strip .vol-no { display: flex; gap: 16px; align-items: center; }
+  .meta-strip .vol-no svg { width: 14px; height: 14px; opacity: 0.6; }
+
+  .chip {
+    display: inline-block;
+    padding: 4px 10px;
+    border: 1px solid var(--border);
+    background: rgba(34,197,94,0.05);
+    color: var(--green);
+    border-color: var(--green-border);
+  }
+  .chip.macro { color: var(--blue); border-color: var(--blue-border); background: rgba(59,130,246,0.05); }
+  .chip.geo { color: var(--yellow); border-color: var(--yellow-border); background: rgba(234,179,8,0.05); }
+  .chip.earnings { color: var(--green); border-color: var(--green-border); background: rgba(34,197,94,0.05); }
+
+  .ticker-tape {
+    border-top: 1px solid var(--border);
+    padding: 14px 28px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+  }
+  .ticker-tape .sep { margin: 0 18px; color: var(--border-2); }
+
+  .page-foot {
+    padding: 14px 28px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .page-foot .arrow {
+    width: 22px; height: 22px;
+    border: 1px solid var(--border-2);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 9px;
+    color: var(--muted);
+  }
+
+  /* -- TYPOGRAPHY -- */
+  .headline-mega {
+    font-family: var(--sans);
+    font-weight: 900;
+    font-size: clamp(44px, 6.5vw, 88px);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    text-transform: uppercase;
+  }
+  .headline-mega em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: -0.01em;
+  }
+  .headline-large {
+    font-family: var(--sans);
+    font-weight: 900;
+    font-size: clamp(36px, 4.8vw, 64px);
+    line-height: 1;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+  }
+  .headline-large em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: -0.01em;
+  }
+
+  .kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .kicker.macro { color: var(--blue); }
+  .kicker.geo { color: var(--yellow); }
+  .kicker.earnings { color: var(--green); }
+  .kicker.ai { color: var(--green); }
+
+  .body-text {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--text-soft);
+    max-width: 580px;
+  }
+
+  /* -- BADGES & CHIPS -- */
+  .badge-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .badge {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 6px 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: 1px solid;
+  }
+  .badge.pos { color: var(--green); border-color: var(--green-border); background: var(--green-soft); }
+  .badge.neg { color: var(--red); border-color: var(--red-border); background: var(--red-soft); }
+  .badge.neu { color: var(--blue); border-color: var(--blue-border); background: var(--blue-soft); }
+  .badge.warn { color: var(--yellow); border-color: var(--yellow-border); background: var(--yellow-soft); }
+
+  /* -- METRIC GRID -- */
+  .metric-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .metric-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .metric-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .metric-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  .metric-cell {
+    background: var(--card);
+    padding: 16px 20px;
+  }
+  .metric-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .metric-value {
+    font-family: var(--mono);
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .metric-value.pos { color: var(--green); }
+  .metric-value.neg { color: var(--red); }
+  .metric-value.neu { color: var(--blue); }
+  .metric-value.warn { color: var(--yellow); }
+
+  /* -- TOP STORIES RAIL -- */
+  .top-stories { display: flex; flex-direction: column; gap: 14px; }
+  .story-card {
+    background: var(--card);
+    border-left: 3px solid var(--green);
+    padding: 16px 20px;
+  }
+  .story-card.macro { border-left-color: var(--blue); }
+  .story-card.geo { border-left-color: var(--yellow); }
+  .story-card.ai { border-left-color: var(--green); }
+  .story-card .label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--green);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .story-card.macro .label { color: var(--blue); }
+  .story-card.geo .label { color: var(--yellow); }
+  .story-card .title {
+    font-weight: 800;
+    font-size: 22px;
+    margin: 6px 0 10px;
+    letter-spacing: -0.012em;
+    text-transform: uppercase;
+  }
+  .story-card .summary {
+    font-size: 13px;
+    color: var(--text-soft);
+    line-height: 1.5;
+  }
+
+  /* -- LAYOUT: COVER -- */
+  .layout-cover .body { padding: 36px 48px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; }
+  .cover-stat-strip { padding: 0 48px 24px; }
+
+  /* -- LAYOUT: FULL-BLEED -- */
+  .layout-fullbleed .body { padding: 36px 48px; position: relative; }
+  .layout-fullbleed .full-bg {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center;
+    filter: brightness(0.35) saturate(0.85);
+    z-index: 0;
+  }
+  .layout-fullbleed .body > * { position: relative; z-index: 1; }
+  .layout-fullbleed .corner-chip {
+    position: absolute; top: 36px; right: 48px;
+    background: var(--card-2); border: 1px solid var(--yellow-border);
+    padding: 14px 18px; min-width: 140px; z-index: 2;
+  }
+  .corner-chip .chip-label { font-family: var(--mono); font-size: 9px; color: var(--yellow); letter-spacing: 0.15em; text-transform: uppercase; }
+  .corner-chip .chip-value { font-weight: 900; font-size: 22px; line-height: 1.1; margin-top: 6px; text-transform: uppercase; }
+  .corner-chip .chip-attr { font-family: var(--mono); font-size: 10px; color: var(--muted); margin-top: 6px; }
+
+  .quote-block {
+    border-left: 2px solid var(--yellow);
+    padding: 6px 0 6px 16px;
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--text-soft);
+    font-size: 16px;
+    margin-top: 24px;
+    max-width: 640px;
+  }
+  .quote-block .attr {
+    font-family: var(--sans);
+    font-style: normal;
+    color: var(--muted);
+    font-size: 12px;
+    display: block;
+    margin-top: 4px;
+  }
+
+  /* -- LAYOUT: SPLIT -- */
+  .layout-split .body { padding: 36px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .layout-split .split-visual {
+    aspect-ratio: 1.1 / 1;
+    background: var(--card);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+  }
+  .visual-glyph {
+    font-family: var(--sans);
+    font-weight: 900;
+    font-size: clamp(60px, 9vw, 140px);
+    color: var(--green);
+    letter-spacing: -0.04em;
+  }
+  .visual-glyph.neu { color: var(--blue); }
+  .visual-glyph.warn { color: var(--yellow); }
+  .visual-glyph.neg { color: var(--red); }
+
+  /* -- LAYOUT: THREE PANEL -- */
+  .layout-threepanel .body { padding: 36px 48px; display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 24px; }
+  .panel-card {
+    background: var(--card);
+    border-top: 2px solid var(--green);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .panel-card.warn { border-top-color: var(--yellow); }
+  .panel-card.neu { border-top-color: var(--blue); }
+  .panel-card.neg { border-top-color: var(--red); }
+  .panel-card .panel-label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--green);
+  }
+  .panel-card.warn .panel-label { color: var(--yellow); }
+  .panel-card.neu .panel-label { color: var(--blue); }
+  .panel-card.neg .panel-label { color: var(--red); }
+  .panel-card .panel-headline { font-weight: 900; font-size: 36px; line-height: 1; letter-spacing: -0.02em; }
+  .panel-card .panel-sub { font-family: var(--mono); font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+  .panel-card .panel-body { font-size: 13px; color: var(--text-soft); line-height: 1.5; }
+
+  /* -- LAYOUT: BIG NUMBER -- */
+  .layout-bignumber .body { padding: 36px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .big-number {
+    font-family: var(--sans);
+    font-weight: 900;
+    font-size: clamp(96px, 12vw, 180px);
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    color: var(--green);
+  }
+  .big-number.neg { color: var(--red); }
+  .big-number.neu { color: var(--blue); }
+  .big-number.warn { color: var(--yellow); }
+  .big-number-caption {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 16px;
+  }
+  .big-number-pill {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 8px 16px;
+    background: var(--green-soft);
+    border: 1px solid var(--green-border);
+    color: var(--green);
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .big-number-pill.neg { background: var(--red-soft); border-color: var(--red-border); color: var(--red); }
+  .big-number-tag {
+    margin-top: 28px;
+    padding: 12px 16px;
+    border: 1px solid var(--green-border);
+    background: var(--green-soft);
+  }
+  .big-number-tag.neg { border-color: var(--red-border); background: var(--red-soft); }
+  .big-number-tag .tag-label { font-family: var(--mono); font-size: 10px; color: var(--green); letter-spacing: 0.12em; text-transform: uppercase; }
+  .big-number-tag.neg .tag-label { color: var(--red); }
+  .big-number-tag .tag-text { font-family: var(--mono); font-size: 12px; color: var(--text); margin-top: 4px; letter-spacing: 0.04em; text-transform: uppercase; }
+
+  /* -- LAYOUT: CHART -- */
+  .layout-chart .body { padding: 36px 48px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: center; }
+  .chart-svg-wrap {
+    width: 100%;
+    aspect-ratio: 1.6 / 1;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 24px;
+  }
+
+  /* -- LAYOUT: HONOR ROLL -- */
+  .layout-honor .body { padding: 36px 48px; }
+  .honor-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .honor-card {
+    background: var(--card);
+    border-top: 2px solid var(--green);
+    padding: 18px 20px;
+  }
+  .honor-card.warn { border-top-color: var(--yellow); }
+  .honor-card.neg { border-top-color: var(--red); }
+  .honor-card.neu { border-top-color: var(--blue); }
+  .honor-card .ticker-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .honor-card .ticker { font-weight: 900; font-size: 22px; letter-spacing: -0.01em; }
+  .honor-card .change { color: var(--green); font-family: var(--mono); font-weight: 700; font-size: 16px; }
+  .honor-card.warn .change { color: var(--yellow); }
+  .honor-card.neg .change { color: var(--red); }
+  .honor-card.neu .change { color: var(--blue); }
+  .honor-card .detail {
+    margin-top: 10px;
+    font-size: 11.5px;
+    color: var(--text-soft);
+    line-height: 1.5;
+    font-family: var(--sans);
+  }
+
+  /* -- LAYOUT: GAINERS / LOSERS -- */
+  .layout-movers .body { padding: 36px 48px; display: grid; grid-template-columns: 1.7fr 1fr; gap: 48px; }
+  .mover-list h2 {
+    font-family: var(--sans);
+    font-weight: 900;
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: -0.015em;
+    padding-bottom: 8px;
+    margin-bottom: 4px;
+  }
+  .mover-list h2.gainers { color: var(--green); border-bottom: 1px solid var(--green); }
+  .mover-list h2.losers { color: var(--red); border-bottom: 1px solid var(--red); }
+  .mover-list h2.neutral { color: var(--blue); border-bottom: 1px solid var(--blue); }
+  .mover-list .count-tag {
+    font-family: var(--mono); font-size: 11px; color: var(--muted);
+    letter-spacing: 0.08em; text-transform: uppercase; margin-left: 12px;
+  }
+  .mover-row {
+    display: grid;
+    grid-template-columns: 60px 70px 1fr;
+    gap: 14px;
+    padding: 8px 0;
+    align-items: baseline;
+    font-size: 13px;
+  }
+  .mover-row .ticker { font-weight: 800; }
+  .mover-row .change { font-family: var(--mono); font-weight: 700; }
+  .mover-row .change.pos { color: var(--green); }
+  .mover-row .change.neg { color: var(--red); }
+  .mover-row .change.neu { color: var(--blue); }
+  .mover-row .change.warn { color: var(--yellow); }
+  .mover-row .reason { color: var(--text-soft); font-size: 12.5px; }
+
+  /* -- LAYOUT: TRACK RECORD -- */
+  .layout-trackrecord .body { padding: 36px 48px; }
+  .track-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+  }
+  .track-table th, .track-table td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+  }
+  .track-table th {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 500;
+  }
+  .track-table .ticker-cell { font-weight: 800; font-size: 15px; }
+  .track-table .return-cell { font-family: var(--mono); font-weight: 700; }
+  .track-table .return-cell.pos { color: var(--green); }
+  .track-table .return-cell.neg { color: var(--red); }
+  .track-table .verdict { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .track-table .verdict.win { color: var(--green); }
+  .track-table .verdict.loss { color: var(--red); }
+  .track-table .verdict.flat { color: var(--muted); }
+  .track-summary {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+    background: var(--border); border: 1px solid var(--border);
+    margin-top: 28px;
+  }
+  .track-summary > div { background: var(--card); padding: 16px 20px; }
+
+  /* -- PRINT -- */
+  @media print {
+    body { scroll-snap-type: none; height: auto; }
+    .page { min-height: 100vh; page-break-after: always; }
+  }
+
+  /* -- MOBILE FALLBACK -- */
+  @media (max-width: 900px) {
+    .layout-cover .body,
+    .layout-split .body,
+    .layout-bignumber .body,
+    .layout-chart .body,
+    .layout-movers .body { grid-template-columns: 1fr; gap: 32px; }
+    .layout-threepanel .body { grid-template-columns: 1fr; }
+    .honor-grid { grid-template-columns: repeat(2, 1fr); }
+    .live-strip, .meta-strip, .page-foot, .ticker-tape { padding-left: 16px; padding-right: 16px; }
+    .layout-cover .body, .layout-split .body, .layout-fullbleed .body,
+    .layout-threepanel .body, .layout-bignumber .body, .layout-chart .body,
+    .layout-honor .body, .layout-movers .body, .layout-trackrecord .body { padding: 24px 16px; }
+  }
+</style>
+
+</head>
+<body>
+
+<!-- ========================================================================
+     PAGE 01 — COVER
+     ======================================================================== -->
+<section class="page layout-cover" data-layout="cover" id="page-01">
+  <div class="live-strip">
+    <span class="left">WEEKLY RECAP · WEEK OF 28 APR – 1 MAY 2026 · INAUGURAL EDITION</span>
+    <span>VOL 1 · NO 001 · MORNING MARKETS BRIEF</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL 1 · NO 001</span>
+      <span>MORNING MARKETS BRIEF · WEEKLY RECAP · 10 CHAPTERS · INAUGURAL ISSUE</span>
+    </div>
+    <span>01 / 10</span>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="kicker">WEEKLY RECAP · 28 APR – 1 MAY 2026 · INAUGURAL ISSUE — NO PRIOR SETUP LEDGER</div>
+      <h1 class="headline-mega">THE GREAT<br><em>Split.</em></h1>
+      <p class="body-text" style="margin-top: 28px;">SPX closed the week +1.3%, capping April's best monthly return since November 2020 (+10.4%). Nasdaq's best April since 2002 (~+15%). But the index masks violent bifurcation. Alphabet surged +10% on cloud delivery. Apple gained +4.6% on iPhone revival and China strength. Meta cratered −9%, Microsoft slid −4% — both punished for $125B–$190B annual capex commitments the market read as an ROI crisis. Meanwhile, Q1 PCE hit +4.5% (from +2.9%), Jerome Powell delivered his final press conference as Fed Chair holding at 3.5–3.75% on an 8-4 vote, and Brent crude briefly spiked to $126/bbl as Iran's Strait of Hormuz was disrupted. Inaugural edition — the daily issues begin 4 May.</p>
+      <div class="badge-row" style="margin-top: 36px;">
+        <span class="badge pos">SPX +1.3% WK</span>
+        <span class="badge pos">APR +10.4%</span>
+        <span class="badge pos">GOOGL +10%</span>
+        <span class="badge pos">AAPL +4.6%</span>
+        <span class="badge neg">META −9%</span>
+        <span class="badge neg">MSFT −4%</span>
+        <span class="badge warn">PCE +4.5%</span>
+        <span class="badge warn">BRENT $126</span>
+        <span class="badge neu">POWELL FINAL FOMC</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="kicker">THIS WEEK'S TOP STORIES</div>
+      <div class="top-stories">
+        <div class="story-card ai">
+          <div class="label">I · EARNINGS SEASON</div>
+          <div class="title">AI DELIVERS — AT A PRICE</div>
+          <div class="summary">Alphabet, Amazon, Microsoft and Meta all reported Tuesday night. Cloud revenues blew out. But Meta raised capex to $125–145B and Microsoft guided to $190B annualized — the market's verdict: growth investors don't pay unlimited premiums for AI infrastructure. GOOGL +10%, META −9% on the same earnings night.</div>
+        </div>
+        <div class="story-card macro">
+          <div class="label">II · MACRO</div>
+          <div class="title">STAGFLATION SIGNAL</div>
+          <div class="summary">Q1 GDP came in at +2.0% (below the +2.3% expected). Q1 PCE inflation jumped to +4.5% from +2.9% — tariff pass-through hitting consumer baskets hard. Powell's final FOMC: hold at 3.5–3.75%, 8-4 vote — the most dissents since October 1992. Kevin Warsh advanced out of Senate Banking on the same day.</div>
+        </div>
+        <div class="story-card geo">
+          <div class="label">III · GEOPOLITICS</div>
+          <div class="title">BRENT $126 → PEACE OVERTURE</div>
+          <div class="summary">US-Israel military action against Iran disrupted ~10M bbl/day of supply. The IEA called it "the largest supply disruption in history." Brent hit $126/bbl intraday Wednesday. Friday's rally was partly sparked by Iran's peace overture through Pakistani mediators — giving markets a sharp relief bid.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="metric-grid cols-4 cover-stat-strip">
+    <div class="metric-cell">
+      <div class="metric-label">SPX WEEK / APRIL</div>
+      <div class="metric-value pos">+1.3% / +10.4%</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-label">NDX APRIL RETURN</div>
+      <div class="metric-value pos">~+15% BEST SINCE '02</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-label">Q1 PCE INFLATION</div>
+      <div class="metric-value warn">+4.5% YoY</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-label">BRENT CRUDE PEAK</div>
+      <div class="metric-value neg">$126 / BBL</div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">WEEK IN REVIEW<span class="sep">·</span>SPX +1.3% WK / +10.4% APR<span class="sep">·</span>NDX ~+15% APR BEST SINCE 2002<span class="sep">·</span>GOOGL +10% CLOUD +63%<span class="sep">·</span>AAPL +4.6% CHINA +28%<span class="sep">·</span>META −9% CAPEX $145B<span class="sep">·</span>MSFT −4% CAPEX $190B<span class="sep">·</span>POWELL FINAL FOMC 8-4 VOTE<span class="sep">·</span>PCE +4.5% STAGFLATION<span class="sep">·</span>BRENT $126 → IRAN PEACE RALLY<span class="sep">·</span>AMD EARNS TUE 5 MAY<span class="sep">·</span>NFP FRI 8 MAY</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>01 / 10</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+
+<!-- ========================================================================
+     PAGE 02 — WEEK IN REVIEW: NARRATIVE ARC
+     ======================================================================== -->
+<section class="page layout-fullbleed" data-layout="fullbleed" id="page-02">
+  <div class="live-strip">
+    <span class="left">WEEKLY RECAP · WEEK OF 28 APR – 1 MAY 2026</span>
+    <span>VOL 1 · NO 001 · MORNING MARKETS BRIEF</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL 1 · NO 001</span>
+      <span class="chip geo">I · WEEK IN REVIEW</span>
+    </div>
+    <span>02 / 10</span>
+  </div>
+
+  <div class="body">
+    <div class="full-bg" style="background-image: linear-gradient(135deg, #1a0505 0%, #0d0d1a 50%, #000000 100%);"></div>
+
+    <div class="corner-chip">
+      <div class="chip-label">S&amp;P 500 · APRIL</div>
+      <div class="chip-value">+10.4%</div>
+      <div class="chip-attr">BEST MONTH SINCE NOV 2020</div>
+    </div>
+
+    <div class="kicker geo">CHAPTER I · WEEK IN REVIEW · 28 APR – 1 MAY 2026</div>
+    <h1 class="headline-mega">FOUR DAYS THAT<br><em>Rewrote</em> THE TAPE.</h1>
+    <p class="body-text" style="margin-top: 24px; max-width: 700px;">The week opened Monday with a haymaker: the Wall Street Journal reported OpenAI missed its own Q1 revenue and user targets — ChatGPT targeting 1B weekly active users reached only ~900M, with market share in generative AI web traffic falling from 80%+ to 64.5%. AI infrastructure names (NVDA, AVGO, ORCL, AMD) all fell 1–3% and the Nasdaq dropped −1.1% on the session. Tuesday brought Powell's final press conference as Fed Chair — rates held at 3.5–3.75% on an 8-4 vote, the most dissents since October 1992 — while Kevin Warsh cleared the Senate Banking Committee the same morning. Wednesday was the week's centerpiece: GDP came in at +2.0% (below estimates), PCE inflation exploded to +4.5% from +2.9%, and after the bell Alphabet, Amazon, Meta, and Microsoft all reported. GOOGL surged on 63% Cloud growth; Meta and Microsoft got hammered on $125–190B capex raises. Thursday brought Apple's blowout close — EPS $2.01 vs. $1.96 expected, revenue $111.2B (+17% YoY), Greater China +28%. Then Friday, an Iran peace signal via Pakistani mediators triggered a sharp oil relief rally. The SPX closed at ~7,254, above all-time highs, and the week was done.</p>
+
+    <div class="quote-block" style="margin-top: 28px;">
+      "The economy faces supply shocks from four separate sources: the pandemic, the Ukraine invasion, tariffs, and the Iran oil spike."
+      <span class="attr">— Jerome Powell, Final Press Conference as Fed Chair, 29 Apr 2026</span>
+    </div>
+
+    <div class="metric-grid cols-5" style="margin-top: 32px; max-width: 1000px;">
+      <div class="metric-cell">
+        <div class="metric-label">MON 28 APR</div>
+        <div class="metric-value neg">OpenAI Miss</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">TUE 29 APR</div>
+        <div class="metric-value warn">FOMC Hold 8-4</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">WED 30 APR</div>
+        <div class="metric-value neg">PCE +4.5%</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">THU 1 MAY</div>
+        <div class="metric-value pos">AAPL +4.6%</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">FRI 1 MAY</div>
+        <div class="metric-value pos">Iran Peace Bid</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">WEEK IN REVIEW<span class="sep">·</span>SPX +1.3% WK / +10.4% APR<span class="sep">·</span>NDX ~+15% APR BEST SINCE 2002<span class="sep">·</span>GOOGL +10% CLOUD +63%<span class="sep">·</span>AAPL +4.6% CHINA +28%<span class="sep">·</span>META −9% CAPEX $145B<span class="sep">·</span>MSFT −4% CAPEX $190B<span class="sep">·</span>POWELL FINAL FOMC 8-4 VOTE<span class="sep">·</span>PCE +4.5% STAGFLATION<span class="sep">·</span>BRENT $126 → IRAN PEACE RALLY<span class="sep">·</span>AMD EARNS TUE 5 MAY<span class="sep">·</span>NFP FRI 8 MAY</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>02 / 10</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+<!-- ========================================================================
+     PAGE 03 — EARNINGS BATTLEFIELD
+     ======================================================================== -->
+<section class="page layout-threepanel" data-layout="threepanel" id="page-03">
+  <div class="live-strip">
+    <span class="left">WEEKLY RECAP · WEEK OF 28 APR – 1 MAY 2026</span>
+    <span>VOL 1 · NO 001 · MORNING MARKETS BRIEF</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL 1 · NO 001</span>
+      <span class="chip earnings">II · MAG-4 EARNINGS</span>
+    </div>
+    <span>03 / 10</span>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="kicker earnings">CHAPTER II · EARNINGS SEASON · APR 29–30 2026</div>
+      <h1 class="headline-large">CAPEX<br><em>Or</em><br>DELIVERY.</h1>
+      <p style="font-size: 13px; color: var(--text-soft); line-height: 1.55; margin-top: 18px;">Wednesday night's quad-print revealed the market's 2026 AI thesis in full: investors reward cloud revenue delivery and punish forward capex expansion without near-term ROI. Alphabet and Amazon showed the delivery side. Meta and Microsoft showed the cost.</p>
+      <div class="metric-grid" style="margin-top: 24px;">
+        <div class="metric-cell">
+          <div class="metric-label">GOOGL CLOUD</div>
+          <div class="metric-value pos">+63% YoY</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">META CAPEX GUIDE</div>
+          <div class="metric-value neg">$125–145B</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">AMZN EPS BEAT</div>
+          <div class="metric-value pos">$2.78 vs $1.68</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">MSFT CAPEX ANNLZD</div>
+          <div class="metric-value neg">~$190B</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel-card">
+      <div class="panel-label">GOOGL — WIN</div>
+      <div class="panel-headline" style="color: var(--green);">+10%</div>
+      <div class="panel-sub">ALPHABET · APR 30 REACTION</div>
+      <div class="panel-body">Q1 EPS $2.62 (missed by $0.01), revenue $109.9B (+22% YoY, beat by $2.7B). Google Cloud hit $20B revenue, +63% YoY — the standout. Market cap punched through $4.4T. Backlog and demand signals: unambiguous. The market interpreted GOOGL's capex as productive; ROI already visible in Cloud ASPs. Stock hit all-time high on Apr 30.</div>
+    </div>
+
+    <div class="panel-card neg">
+      <div class="panel-label">META — LOSS</div>
+      <div class="panel-headline" style="color: var(--red);">−9%</div>
+      <div class="panel-sub">META PLATFORMS · APR 30 REACTION</div>
+      <div class="panel-body">Q1 EPS $7.31 (beat by $0.52), revenue $56.3B (beat by $860M). But 2026 capex raised to $125–145B from prior $115–135B. Iran conflict disrupted user metrics. JP Morgan downgraded to Neutral, cut PT to $725. The beat was real — but investors drew the line on open-ended AI spending with no concrete monetization timeline attached.</div>
+    </div>
+
+    <div class="panel-card warn">
+      <div class="panel-label">MSFT — PUNISHED</div>
+      <div class="panel-headline" style="color: var(--yellow);">−4%</div>
+      <div class="panel-sub">MICROSOFT · APR 30 REACTION</div>
+      <div class="panel-body">Q3 EPS $4.27 (beat by $0.21), revenue $82.89B (beat by $1.5B). Azure and cloud momentum confirmed. But management guided to ~$190B annualized capex — the "AI doubt tax" hit immediately. The irony: MSFT beat on every meaningful metric and still sold off. The market is no longer rewarding beats; it's pricing capex multiples. AMZN (+0.7%) largely ignored in comparison.</div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">WEEK IN REVIEW<span class="sep">·</span>SPX +1.3% WK / +10.4% APR<span class="sep">·</span>NDX ~+15% APR BEST SINCE 2002<span class="sep">·</span>GOOGL +10% CLOUD +63%<span class="sep">·</span>AAPL +4.6% CHINA +28%<span class="sep">·</span>META −9% CAPEX $145B<span class="sep">·</span>MSFT −4% CAPEX $190B<span class="sep">·</span>POWELL FINAL FOMC 8-4 VOTE<span class="sep">·</span>PCE +4.5% STAGFLATION<span class="sep">·</span>BRENT $126 → IRAN PEACE RALLY<span class="sep">·</span>AMD EARNS TUE 5 MAY<span class="sep">·</span>NFP FRI 8 MAY</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>03 / 10</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+
+<!-- ========================================================================
+     PAGE 04 — MACRO SHOCK: STAGFLATION SIGNAL
+     ======================================================================== -->
+<section class="page layout-split" data-layout="split" id="page-04">
+  <div class="live-strip">
+    <span class="left">WEEKLY RECAP · WEEK OF 28 APR – 1 MAY 2026</span>
+    <span>VOL 1 · NO 001 · MORNING MARKETS BRIEF</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL 1 · NO 001</span>
+      <span class="chip macro">III · MACRO</span>
+    </div>
+    <span>04 / 10</span>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="kicker macro">CHAPTER III · MACRO · GDP + PCE + FOMC · 29–30 APR 2026</div>
+      <h1 class="headline-large">THE POLICY<br><em>Bind.</em></h1>
+      <p class="body-text" style="margin-top: 24px;">Wednesday's BEA advance estimate handed the Fed the worst possible combination: Q1 GDP printed +2.0% annualized (rebounding from Q4 2025's near-stall at +0.5%, but still below the +2.3% expected), while Q1 PCE inflation surged to +4.5% — up from +2.9% in Q4. Core PCE hit +4.3%. The culprit is tariff pass-through now fully embedded in consumer baskets. The Fed, which held rates at 3.5–3.75% on Tuesday in an 8-4 vote, has no easy escape: cutting would pour gasoline on an already-hot inflation print; holding further risks cracking a growth picture already showing cracks. The most dissents since October 1992 reflect that internal tension exactly. Powell's four-shock framing — pandemic, Ukraine, tariffs, Iran — is accurate but doesn't resolve the bind. Kevin Warsh, who advances to the chair role on May 15, inherits a stagflation setup the Fed hasn't faced in 40 years. His first meeting is June. Watch for whether June brings a hawkish reset or a capitulation to political pressure on rate cuts.</p>
+      <div class="metric-grid cols-3" style="margin-top: 32px;">
+        <div class="metric-cell">
+          <div class="metric-label">Q1 GDP (ADVANCE)</div>
+          <div class="metric-value warn">+2.0% SAAR</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">Q1 PCE INFLATION</div>
+          <div class="metric-value neg">+4.5% YoY</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">CORE PCE Q1</div>
+          <div class="metric-value neg">+4.3% YoY</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">FED FUNDS RATE</div>
+          <div class="metric-value warn">3.50–3.75%</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">FOMC VOTE</div>
+          <div class="metric-value neg">8-4 DISSENT</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">NEXT CHAIR</div>
+          <div class="metric-value neu">WARSH · 15 MAY</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="split-visual">
+      <span class="visual-glyph warn">4.5%</span>
+    </div>
+  </div>
+
+  <div class="ticker-tape">WEEK IN REVIEW<span class="sep">·</span>SPX +1.3% WK / +10.4% APR<span class="sep">·</span>NDX ~+15% APR BEST SINCE 2002<span class="sep">·</span>GOOGL +10% CLOUD +63%<span class="sep">·</span>AAPL +4.6% CHINA +28%<span class="sep">·</span>META −9% CAPEX $145B<span class="sep">·</span>MSFT −4% CAPEX $190B<span class="sep">·</span>POWELL FINAL FOMC 8-4 VOTE<span class="sep">·</span>PCE +4.5% STAGFLATION<span class="sep">·</span>BRENT $126 → IRAN PEACE RALLY<span class="sep">·</span>AMD EARNS TUE 5 MAY<span class="sep">·</span>NFP FRI 8 MAY</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>04 / 10</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+<!-- ========================================================================
+     PAGE 05 — IRAN OIL SHOCK + APPLE CLOSE
+     ======================================================================== -->
+<section class="page layout-bignumber" data-layout="bignumber" id="page-05">
+  <div class="live-strip">
+    <span class="left">WEEKLY RECAP · WEEK OF 28 APR – 1 MAY 2026</span>
+    <span>VOL 1 · NO 001 · MORNING MARKETS BRIEF</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL 1 · NO 001</span>
+      <span class="chip geo">IV · OIL SHOCK + AAPL</span>
+    </div>
+    <span>05 / 10</span>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="kicker geo">CHAPTER IV · GEOPOLITICS &amp; THE WEEK'S BOOKEND · APR 30 – MAY 1</div>
+      <h1 class="headline-mega">THE STRAIT<br><em>And</em> THE CLOSE.</h1>
+      <p class="body-text" style="margin-top: 24px;">The oil disruption was the macro overhang of the week. US-Israel military action against Iran created a siege of Iranian ports, threatening the Strait of Hormuz — a chokepoint handling ~35% of global seaborne crude. The IEA characterized the resulting ~10M bbl/day supply reduction as "the largest supply disruption in history." Brent crude briefly surged to $126/bbl intraday Wednesday, April 30, the highest print since Russia's 2022 invasion of Ukraine. Oil price risk was a direct PCE inflation amplifier, reinforcing the Fed's stagflation bind. Then Friday changed the tone: Iran sent a response to a US peace proposal through Pakistani mediators. Oil pulled back sharply, energy stocks faded, and equities popped — with Apple providing the clean bullish catalyst. AAPL Q2 (fiscal) reported after Wednesday's close: EPS $2.01 beat $1.96 estimates; revenue $111.2B (+17% YoY) beat $109.66B; Greater China +28%. Q3 guidance came in above consensus. The iPhone cycle is alive, China headwinds reversed, and AAPL closed the week as the cleanest large-cap long on the tape.</p>
+      <div class="metric-grid" style="margin-top: 32px; max-width: 460px;">
+        <div class="metric-cell">
+          <div class="metric-label">AAPL Q2 REVENUE</div>
+          <div class="metric-value pos">$111.2B +17%</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">AAPL GREATER CHINA</div>
+          <div class="metric-value pos">$20.5B +28%</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">AAPL EPS (BEAT)</div>
+          <div class="metric-value pos">$2.01 vs $1.96</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">BRENT PEAK</div>
+          <div class="metric-value neg">$126/BBL WED</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center;">
+      <div class="big-number neg">$126</div>
+      <div class="big-number-caption">BRENT CRUDE INTRADAY PEAK · WED 30 APR 2026</div>
+      <span class="big-number-pill neg">HIGHEST SINCE MAR 2022</span>
+
+      <div class="big-number-tag neg" style="margin-top: 28px;">
+        <div class="tag-label">IEA ASSESSMENT</div>
+        <div class="tag-text">LARGEST SUPPLY DISRUPTION IN HISTORY · ~10M BBL/DAY</div>
+      </div>
+
+      <div class="big-number-tag" style="margin-top: 16px; border-color: var(--green-border); background: var(--green-soft);">
+        <div class="tag-label" style="color: var(--green);">AAPL WEEKLY GAIN</div>
+        <div class="tag-text">+4.6% · CHINA +28% · Q3 GUIDE ABOVE CONSENSUS</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">WEEK IN REVIEW<span class="sep">·</span>SPX +1.3% WK / +10.4% APR<span class="sep">·</span>NDX ~+15% APR BEST SINCE 2002<span class="sep">·</span>GOOGL +10% CLOUD +63%<span class="sep">·</span>AAPL +4.6% CHINA +28%<span class="sep">·</span>META −9% CAPEX $145B<span class="sep">·</span>MSFT −4% CAPEX $190B<span class="sep">·</span>POWELL FINAL FOMC 8-4 VOTE<span class="sep">·</span>PCE +4.5% STAGFLATION<span class="sep">·</span>BRENT $126 → IRAN PEACE RALLY<span class="sep">·</span>AMD EARNS TUE 5 MAY<span class="sep">·</span>NFP FRI 8 MAY</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>05 / 10</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+
+<!-- ========================================================================
+     PAGE 06 — TRACK RECORD (INAUGURAL — NO PRIOR SETUPS)
+     ======================================================================== -->
+<section class="page layout-trackrecord" data-layout="trackrecord" id="page-06">
+  <div class="live-strip">
+    <span class="left">WEEKLY RECAP · WEEK OF 28 APR – 1 MAY 2026</span>
+    <span>VOL 1 · NO 001 · MORNING MARKETS BRIEF</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL 1 · NO 001</span>
+      <span class="chip">V · TRACK RECORD</span>
+    </div>
+    <span>06 / 10</span>
+  </div>
+
+  <div class="body">
+    <div class="kicker">CHAPTER V · TRACK RECORD · WEEK OF 28 APR 2026</div>
+    <h1 class="headline-large">DID THE <em>Trade</em> WORK?</h1>
+    <p class="body-text" style="margin-top: 18px; max-width: 760px;">This is the inaugural edition of Morning Markets Brief. Daily issues begin Monday, 4 May 2026. No setup ledger exists for the week of 28 Apr – 1 May — there were no prior flagged setups to audit. The track record scoring system commences with the next weekly recap (8 May 2026), which will audit every setup flagged in the daily issues of the week of 4–8 May. The methodology: each flagged setup is scored against Friday close. Long setups: ≥+1.5% = WIN, ≤−1.5% = LOSS, else FLAT. Short setups: inverted. Win rate and average return are displayed every Friday. No survivorship bias — all setups appear, wins and losses alike.</p>
+
+    <table class="track-table">
+      <thead>
+        <tr>
+          <th style="width: 70px;">Ticker</th>
+          <th>Setup / Thesis</th>
+          <th style="width: 90px;">Flagged</th>
+          <th style="width: 90px;">At Flag</th>
+          <th style="width: 90px;">Now</th>
+          <th style="width: 80px;">Return</th>
+          <th style="width: 80px;">Verdict</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="ticker-cell" style="color: var(--muted);">—</td>
+          <td style="color: var(--muted); font-style: italic;">Inaugural issue. No daily setups on record for this week. Daily publication begins 4 May 2026.</td>
+          <td style="color: var(--muted);">—</td>
+          <td style="color: var(--muted);">—</td>
+          <td style="color: var(--muted);">—</td>
+          <td class="return-cell" style="color: var(--muted);">N/A</td>
+          <td class="verdict flat">N/A</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="track-summary">
+      <div>
+        <div class="metric-label">SETUPS REVIEWED</div>
+        <div class="metric-value" style="color: var(--muted);">0</div>
+      </div>
+      <div>
+        <div class="metric-label">WINS</div>
+        <div class="metric-value pos">0</div>
+      </div>
+      <div>
+        <div class="metric-label">LOSSES</div>
+        <div class="metric-value neg">0</div>
+      </div>
+      <div>
+        <div class="metric-label">AVG RETURN</div>
+        <div class="metric-value" style="color: var(--muted);">N/A</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 32px; padding: 20px 24px; border: 1px solid var(--border-2); background: var(--card);">
+      <div class="kicker" style="margin-bottom: 12px;">WHAT THIS TABLE WILL SHOW — STARTING 8 MAY 2026</div>
+      <p style="font-size: 13px; color: var(--text-soft); line-height: 1.6;">Every ticker flagged in the week's daily issues — bullish or bearish — appears here with entry price, Friday close, computed return, and a verdict. Wins require ≥+1.5% return on longs (or ≤−1.5% on shorts). Losses are the mirror. Everything in between is FLAT. The win rate in the cover subhead is derived from this table. No cherry-picking. No omissions.</p>
+    </div>
+  </div>
+
+  <div class="ticker-tape">WEEK IN REVIEW<span class="sep">·</span>SPX +1.3% WK / +10.4% APR<span class="sep">·</span>NDX ~+15% APR BEST SINCE 2002<span class="sep">·</span>GOOGL +10% CLOUD +63%<span class="sep">·</span>AAPL +4.6% CHINA +28%<span class="sep">·</span>META −9% CAPEX $145B<span class="sep">·</span>MSFT −4% CAPEX $190B<span class="sep">·</span>POWELL FINAL FOMC 8-4 VOTE<span class="sep">·</span>PCE +4.5% STAGFLATION<span class="sep">·</span>BRENT $126 → IRAN PEACE RALLY<span class="sep">·</span>AMD EARNS TUE 5 MAY<span class="sep">·</span>NFP FRI 8 MAY</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>06 / 10</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+<!-- ========================================================================
+     PAGE 07 — WHAT WORKED
+     ======================================================================== -->
+<section class="page layout-split" data-layout="split" id="page-07">
+  <div class="live-strip">
+    <span class="left">WEEKLY RECAP · WEEK OF 28 APR – 1 MAY 2026</span>
+    <span>VOL 1 · NO 001 · MORNING MARKETS BRIEF</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL 1 · NO 001</span>
+      <span class="chip">VI · WHAT WORKED</span>
+    </div>
+    <span>07 / 10</span>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="kicker earnings">CHAPTER VI · WHAT WORKED THIS WEEK</div>
+      <h1 class="headline-large">THE <em>Winners'</em> EDGE.</h1>
+      <p class="body-text" style="margin-top: 20px;">No formal setups were flagged this week — the Brief's first daily issue publishes Monday. But the market delivered clear verdicts on directional theses that were live entering the week. Here's what paid.</p>
+
+      <div class="top-stories" style="margin-top: 24px;">
+        <div class="story-card ai">
+          <div class="label">GOOGL LONG — +10.0% · CLOUD CONVICTION</div>
+          <div class="title" style="font-size: 17px;">THESIS: Cloud acceleration, buyback expansion</div>
+          <div class="summary">The thesis was simple: Google Cloud's growth rate was accelerating into a generative AI adoption cycle, and Alphabet's buyback program (announced $70B in Q1) provided a floor. Q1 cloud revenue hit $20B, +63% YoY. The market had priced in ~50% growth — the beat was material. Total revenue +22% YoY. Stock hit all-time highs. What worked: the focus on revenue delivery over capex spending ratio. GOOGL's capex-to-revenue ratio is lower than META/MSFT; it reads as more efficient AI infrastructure deployment.</div>
+        </div>
+        <div class="story-card ai">
+          <div class="label">AAPL LONG — +4.6% · CHINA RECOVERY + IPHONE CYCLE</div>
+          <div class="title" style="font-size: 17px;">THESIS: China headwinds peaking, new iPhone cycle</div>
+          <div class="summary">Greater China revenue $20.5B, +28% YoY — the bull case was that China regulatory/macro headwinds had peaked and a new iPhone AI feature cycle would re-accelerate. Both played out. Revenue +17% YoY, EPS +22%. Q3 guidance above consensus. The lesson: AAPL's China exposure, which the market had been discounting for 6 months, turned from headwind to tailwind in one quarter. Better to buy the pessimism trough than chase the beat.</div>
+        </div>
+        <div class="story-card geo">
+          <div class="label">LONG OIL — BRENT +19% MO · GEOPOLITICAL PREMIUM</div>
+          <div class="title" style="font-size: 17px;">THESIS: Iran conflict → Hormuz disruption risk</div>
+          <div class="summary">Anyone positioned long energy / long Brent crude heading into April captured ~19% in oil prices during the month. The risk was obvious from March's escalation signals. The IEA confirmed ~10M bbl/day disrupted — the largest in history. Brent hit $126 intraday Wednesday. The Friday Iran peace signal reversed gains — but the directional trade, held through Wednesday, was the clearest macro setup of the month.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="split-visual" style="flex-direction: column; gap: 0; background: transparent; border: none;">
+      <div style="background: var(--green-soft); border: 1px solid var(--green-border); padding: 28px 24px; margin-bottom: 16px;">
+        <div class="metric-label" style="color: var(--green);">WEEK'S BEST PERFORMER</div>
+        <div style="font-family: var(--sans); font-weight: 900; font-size: 56px; color: var(--green); letter-spacing: -0.03em; line-height: 1;">GOOGL</div>
+        <div style="font-family: var(--mono); font-size: 24px; color: var(--green); font-weight: 700;">+10.0%</div>
+        <div style="font-family: var(--mono); font-size: 11px; color: var(--muted); margin-top: 8px; text-transform: uppercase;">Cloud $20B · +63% YoY · ATH</div>
+      </div>
+      <div style="background: var(--green-soft); border: 1px solid var(--green-border); padding: 28px 24px; margin-bottom: 16px;">
+        <div class="metric-label" style="color: var(--green);">WEEK'S CLEAN CLOSE</div>
+        <div style="font-family: var(--sans); font-weight: 900; font-size: 56px; color: var(--green); letter-spacing: -0.03em; line-height: 1;">AAPL</div>
+        <div style="font-family: var(--mono); font-size: 24px; color: var(--green); font-weight: 700;">+4.6%</div>
+        <div style="font-family: var(--mono); font-size: 11px; color: var(--muted); margin-top: 8px; text-transform: uppercase;">China +28% · Rev +17% · Q3 Above Est.</div>
+      </div>
+      <div style="background: var(--yellow-soft); border: 1px solid var(--yellow-border); padding: 28px 24px;">
+        <div class="metric-label" style="color: var(--yellow);">MACRO DIRECTIONAL WIN</div>
+        <div style="font-family: var(--sans); font-weight: 900; font-size: 40px; color: var(--yellow); letter-spacing: -0.03em; line-height: 1;">BRENT</div>
+        <div style="font-family: var(--mono); font-size: 24px; color: var(--yellow); font-weight: 700;">$126/BBL</div>
+        <div style="font-family: var(--mono); font-size: 11px; color: var(--muted); margin-top: 8px; text-transform: uppercase;">APR +19% · Hormuz Risk Premium</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">WEEK IN REVIEW<span class="sep">·</span>SPX +1.3% WK / +10.4% APR<span class="sep">·</span>NDX ~+15% APR BEST SINCE 2002<span class="sep">·</span>GOOGL +10% CLOUD +63%<span class="sep">·</span>AAPL +4.6% CHINA +28%<span class="sep">·</span>META −9% CAPEX $145B<span class="sep">·</span>MSFT −4% CAPEX $190B<span class="sep">·</span>POWELL FINAL FOMC 8-4 VOTE<span class="sep">·</span>PCE +4.5% STAGFLATION<span class="sep">·</span>BRENT $126 → IRAN PEACE RALLY<span class="sep">·</span>AMD EARNS TUE 5 MAY<span class="sep">·</span>NFP FRI 8 MAY</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>07 / 10</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+
+<!-- ========================================================================
+     PAGE 08 — WHAT DIDN'T WORK
+     ======================================================================== -->
+<section class="page layout-split" data-layout="split" id="page-08">
+  <div class="live-strip">
+    <span class="left">WEEKLY RECAP · WEEK OF 28 APR – 1 MAY 2026</span>
+    <span>VOL 1 · NO 001 · MORNING MARKETS BRIEF</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL 1 · NO 001</span>
+      <span class="chip" style="color: var(--red); border-color: var(--red-border); background: var(--red-soft);">VII · WHAT DIDN'T</span>
+    </div>
+    <span>08 / 10</span>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="kicker" style="color: var(--red);">CHAPTER VII · WHAT DIDN'T WORK THIS WEEK</div>
+      <h1 class="headline-large">THE <em>Wrong</em> SIDE.</h1>
+      <p class="body-text" style="margin-top: 20px;">Honest accounting. Three distinct trade frameworks got punished this week — each with a logic that seemed defensible entering the week but failed for specific, identifiable reasons.</p>
+
+      <div class="top-stories" style="margin-top: 24px;">
+        <div class="story-card" style="border-left-color: var(--red);">
+          <div class="label" style="color: var(--red);">META LONG — −9.0% · CAPEX STICKER SHOCK</div>
+          <div class="title" style="font-size: 17px;">THESIS: AI monetization compounding → revenue growth</div>
+          <div class="summary">The revenue beat was real ($56.3B, +$860M vs. estimates, EPS $7.31 beat by $0.52). The thesis wasn't wrong on the revenue side. Where it broke: the market in 2026 is explicitly pricing capex multiples, not just revenue multiples. Raising the 2026 capex guide to $125–145B (from $115–135B) with no specific monetization timeline attached to the incremental spend was the tell. JP Morgan's downgrade to Neutral with a $725 PT cut landed within hours. Lesson: even a revenue beat can't overcome a capex guide that doesn't show near-term ROI.</div>
+        </div>
+        <div class="story-card" style="border-left-color: var(--red);">
+          <div class="label" style="color: var(--red);">MSFT LONG — −4.0% · THE AI DOUBT TAX</div>
+          <div class="title" style="font-size: 17px;">THESIS: Azure momentum + Copilot monetization</div>
+          <div class="summary">Microsoft beat on every meaningful line: EPS $4.27 (+$0.21 beat), revenue $82.89B (+$1.5B beat), Azure growth confirmed. The thesis was right. The stock sold off anyway. The market imposed an "AI doubt tax" — ~$190B annualized capex without clear near-term return specifics created the same dynamic as META. Owning a clean beat going into earnings was not enough. The lesson: in a capex-skeptical market, even quality beats get punished if the forward spend guide is large and open-ended.</div>
+        </div>
+        <div class="story-card" style="border-left-color: var(--yellow);">
+          <div class="label" style="color: var(--yellow);">AI INFRASTRUCTURE LONG — −1 TO −3% · OPENAI MISS SIGNAL</div>
+          <div class="title" style="font-size: 17px;">THESIS: AI infra demand infinite → NVDA/AVGO/ORCL re-rate</div>
+          <div class="summary">Monday's WSJ report — OpenAI missed its own Q1 revenue and user targets, with generative AI web market share falling from 80% to 64.5% — compressed the "infinite AI demand" narrative that had been driving NVDA, AVGO, ORCL, and AMD to extended valuations. Each fell 1–3% on Monday. The underlying demand thesis may still be intact long-term, but the marginal story for 2026 is no longer "infinite." This creates multiple compression risk for names trading at AI-premium valuations.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="split-visual" style="flex-direction: column; gap: 0; background: transparent; border: none;">
+      <div style="background: var(--red-soft); border: 1px solid var(--red-border); padding: 28px 24px; margin-bottom: 16px;">
+        <div class="metric-label" style="color: var(--red);">WEEK'S BIGGEST DISAPPOINTMENT</div>
+        <div style="font-family: var(--sans); font-weight: 900; font-size: 56px; color: var(--red); letter-spacing: -0.03em; line-height: 1;">META</div>
+        <div style="font-family: var(--mono); font-size: 24px; color: var(--red); font-weight: 700;">−9.0%</div>
+        <div style="font-family: var(--mono); font-size: 11px; color: var(--muted); margin-top: 8px; text-transform: uppercase;">Beat revenue. Lost on capex. $145B guide.</div>
+      </div>
+      <div style="background: var(--red-soft); border: 1px solid var(--red-border); padding: 28px 24px; margin-bottom: 16px;">
+        <div class="metric-label" style="color: var(--red);">BEAT EVERYWHERE, SOLD ANYWAY</div>
+        <div style="font-family: var(--sans); font-weight: 900; font-size: 56px; color: var(--red); letter-spacing: -0.03em; line-height: 1;">MSFT</div>
+        <div style="font-family: var(--mono); font-size: 24px; color: var(--red); font-weight: 700;">−4.0%</div>
+        <div style="font-family: var(--mono); font-size: 11px; color: var(--muted); margin-top: 8px; text-transform: uppercase;">Capex ~$190B Annlzd · AI Doubt Tax</div>
+      </div>
+      <div style="background: var(--yellow-soft); border: 1px solid var(--yellow-border); padding: 28px 24px;">
+        <div class="metric-label" style="color: var(--yellow);">NARRATIVE HIT</div>
+        <div style="font-family: var(--sans); font-weight: 900; font-size: 40px; color: var(--yellow); letter-spacing: -0.03em; line-height: 1;">AI INFRA</div>
+        <div style="font-family: var(--mono); font-size: 20px; color: var(--yellow); font-weight: 700;">−1 TO −3%</div>
+        <div style="font-family: var(--mono); font-size: 11px; color: var(--muted); margin-top: 8px; text-transform: uppercase;">OpenAI Miss · Market Share Falling</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">WEEK IN REVIEW<span class="sep">·</span>SPX +1.3% WK / +10.4% APR<span class="sep">·</span>NDX ~+15% APR BEST SINCE 2002<span class="sep">·</span>GOOGL +10% CLOUD +63%<span class="sep">·</span>AAPL +4.6% CHINA +28%<span class="sep">·</span>META −9% CAPEX $145B<span class="sep">·</span>MSFT −4% CAPEX $190B<span class="sep">·</span>POWELL FINAL FOMC 8-4 VOTE<span class="sep">·</span>PCE +4.5% STAGFLATION<span class="sep">·</span>BRENT $126 → IRAN PEACE RALLY<span class="sep">·</span>AMD EARNS TUE 5 MAY<span class="sep">·</span>NFP FRI 8 MAY</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>08 / 10</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+<!-- ========================================================================
+     PAGE 09 — NEXT WEEK SETUP: EARNINGS CALENDAR
+     ======================================================================== -->
+<section class="page layout-honor" data-layout="honor" id="page-09">
+  <div class="live-strip">
+    <span class="left">WEEKLY RECAP · WEEK OF 28 APR – 1 MAY 2026</span>
+    <span>VOL 1 · NO 001 · MORNING MARKETS BRIEF</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL 1 · NO 001</span>
+      <span class="chip earnings">VIII · WEEK AHEAD — EARNINGS</span>
+    </div>
+    <span>09 / 10</span>
+  </div>
+
+  <div class="body">
+    <div class="kicker earnings">CHAPTER VIII · NEXT WEEK SETUP · EARNINGS CALENDAR · 4–8 MAY 2026</div>
+    <h1 class="headline-large">THE <em>Honor</em> ROLL. <span style="color: var(--blue); font-weight: 500; font-size: 0.5em; vertical-align: middle;">WHAT REPORTS NEXT WEEK</span></h1>
+    <p class="body-text" style="margin-top: 16px; max-width: 900px;">The capex-vs-delivery debate continues next week with AMD (the AI chip read-through), Palantir (AI software monetization proof), Disney (streaming + parks), Uber (AI cost efficiency) and Arm Holdings (chip IP in the AI era). The market's verdict on each will refine whether the "AI doubt tax" is structural or a one-week sentiment blip.</p>
+
+    <div class="honor-grid">
+      <div class="honor-card warn">
+        <div class="ticker-row">
+          <span class="ticker">PLTR</span>
+          <span class="change" style="color: var(--yellow);">MON 4</span>
+        </div>
+        <div class="detail">Q1 2026 after close. EPS est. $0.28 (+115% YoY). Revenue est. ~$1.54B (+74% YoY). Stock down ~20% YTD — entering week beaten up. The key question: is AI software monetization scaling faster than consensus or is the premium narrative exhausted?</div>
+      </div>
+      <div class="honor-card warn">
+        <div class="ticker-row">
+          <span class="ticker">AMD</span>
+          <span class="change" style="color: var(--yellow);">TUE 5</span>
+        </div>
+        <div class="detail">Q1 2026 after close. EPS est. $1.30 (+35% YoY). Revenue est. ~$9.84B (+32% YoY). The most important AI chip read-through of the week. If AMD guides up on data center GPU demand, the OpenAI miss narrative from Monday gets overwritten. Watch the MI300X commentary.</div>
+      </div>
+      <div class="honor-card neu">
+        <div class="ticker-row">
+          <span class="ticker">SHOP</span>
+          <span class="change" style="color: var(--blue);">TUE 5</span>
+        </div>
+        <div class="detail">Q1 2026 before open. EPS est. $0.33. Shopify's AI-assisted merchant tools have been the growth thesis for 2026. Consumer spending resilience (or tariff-driven pullback) will be the tell. Watch gross merchandise volume guidance.</div>
+      </div>
+      <div class="honor-card">
+        <div class="ticker-row">
+          <span class="ticker">DIS</span>
+          <span class="change">WED 6</span>
+        </div>
+        <div class="detail">Q2 FY2026 after close. EPS est. $1.49. Disney's streaming (Disney+) profitability trajectory vs. parks attendance is the key split. With oil at $126 this week, theme park travel could see forward demand softness. Streaming margins are the lead metric.</div>
+      </div>
+      <div class="honor-card">
+        <div class="ticker-row">
+          <span class="ticker">UBER</span>
+          <span class="change">WED 6</span>
+        </div>
+        <div class="detail">Q1 2026 before open. EPS est. $0.71. Uber's AI-assisted routing and cost efficiency has been the bull thesis. Bookings growth vs. driver cost inflation in a high-oil environment is the bear case. Watch take rate and EBITDA margin guidance.</div>
+      </div>
+      <div class="honor-card neu">
+        <div class="ticker-row">
+          <span class="ticker">ARM</span>
+          <span class="change" style="color: var(--blue);">WED 6</span>
+        </div>
+        <div class="detail">Q4 FY2026 after close. Arm's chip IP royalties are a pure-play on the AI hardware cycle — every AI chip uses Arm architecture. If the OpenAI miss narrative is wrong and AI chip demand is accelerating, Arm's royalty stream will show it. Royalty revenue growth rate is the single most important line.</div>
+      </div>
+      <div class="honor-card">
+        <div class="ticker-row">
+          <span class="ticker">APP</span>
+          <span class="change">WED 6</span>
+        </div>
+        <div class="detail">AppLovin Q1 2026 after close. The AI-driven mobile ad targeting platform has been one of 2025's highest performers. Revenue quality and ad revenue growth rate will determine whether the premium multiple holds in a capex-skeptical tape.</div>
+      </div>
+      <div class="honor-card neg">
+        <div class="ticker-row">
+          <span class="ticker">NVO</span>
+          <span class="change" style="color: var(--red);">WED 6</span>
+        </div>
+        <div class="detail">Novo Nordisk Q1 2026 from Denmark. GLP-1 (Ozempic/Wegovy) supply normalization and US pricing dynamics under the IRA are the key debates. NVO has been underperforming Eli Lilly in 2026. A supply/demand normalization signal would be bearish.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">WEEK IN REVIEW<span class="sep">·</span>SPX +1.3% WK / +10.4% APR<span class="sep">·</span>NDX ~+15% APR BEST SINCE 2002<span class="sep">·</span>GOOGL +10% CLOUD +63%<span class="sep">·</span>AAPL +4.6% CHINA +28%<span class="sep">·</span>META −9% CAPEX $145B<span class="sep">·</span>MSFT −4% CAPEX $190B<span class="sep">·</span>POWELL FINAL FOMC 8-4 VOTE<span class="sep">·</span>PCE +4.5% STAGFLATION<span class="sep">·</span>BRENT $126 → IRAN PEACE RALLY<span class="sep">·</span>AMD EARNS TUE 5 MAY<span class="sep">·</span>NFP FRI 8 MAY</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>09 / 10</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+
+<!-- ========================================================================
+     PAGE 10 — NEXT WEEK SETUP: DATA CALENDAR
+     ======================================================================== -->
+<section class="page layout-movers" data-layout="movers" id="page-10">
+  <div class="live-strip">
+    <span class="left">WEEKLY RECAP · WEEK OF 28 APR – 1 MAY 2026</span>
+    <span>VOL 1 · NO 001 · MORNING MARKETS BRIEF</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL 1 · NO 001</span>
+      <span class="chip macro">IX · WEEK AHEAD — DATA</span>
+    </div>
+    <span>10 / 10</span>
+  </div>
+
+  <div class="body">
+    <div class="mover-list">
+      <h2 class="neutral">DATA CALENDAR <span class="count-tag">7 KEY RELEASES · 4–8 MAY 2026</span></h2>
+
+      <div class="mover-row" style="border-bottom: 1px solid var(--border);">
+        <span class="ticker" style="color: var(--muted); font-size: 11px; font-weight: 600; font-family: var(--mono);">TUE 5</span>
+        <span class="change neu">ISM SVC</span>
+        <span class="reason">ISM Services PMI — April reading (10:00 AM ET). March printed 54.0 — 21st straight month of expansion. A reading above 53 maintains the soft-landing services narrative. Below 51 in the context of $126 oil and PCE +4.5% would be stagflation confirmation. Watch the prices-paid sub-component.</span>
+      </div>
+      <div class="mover-row" style="border-bottom: 1px solid var(--border);">
+        <span class="ticker" style="color: var(--muted); font-size: 11px; font-weight: 600; font-family: var(--mono);">TUE 5</span>
+        <span class="change neu">JOLTS</span>
+        <span class="reason">Job Openings &amp; Labor Turnover — March data (10:00 AM ET). The Fed watches JOLTS for labor market tightness. Job openings falling rapidly would give the Warsh-era Fed room to ease; a sticky reading reinforces the hold. Prior: ~7.5M openings.</span>
+      </div>
+      <div class="mover-row" style="border-bottom: 1px solid var(--border);">
+        <span class="ticker" style="color: var(--muted); font-size: 11px; font-weight: 600; font-family: var(--mono);">WED 6</span>
+        <span class="change neu">ADP</span>
+        <span class="reason">ADP National Employment Report — April private sector payrolls (8:15 AM ET). A leading indicator for Friday's NFP. With tariff disruptions beginning to hit supply chains and oil costs rising, watch for manufacturing/logistics job softness. Consensus: ~140K–160K.</span>
+      </div>
+      <div class="mover-row" style="border-bottom: 1px solid var(--border);">
+        <span class="ticker" style="color: var(--muted); font-size: 11px; font-weight: 600; font-family: var(--mono);">THU 7</span>
+        <span class="change warn">CLAIMS</span>
+        <span class="reason">Initial Jobless Claims (8:30 AM ET). Weekly read on labor market deterioration. Four-week moving average has been creeping up. Any reading above 230K would signal labor market cracking ahead of Friday's NFP. Highly watched in the current stagflation context.</span>
+      </div>
+      <div class="mover-row" style="border-bottom: 1px solid var(--border);">
+        <span class="ticker" style="color: var(--muted); font-size: 11px; font-weight: 600; font-family: var(--mono);">THU 7</span>
+        <span class="change warn">PROD.</span>
+        <span class="reason">Preliminary Q1 2026 Productivity &amp; Unit Labor Costs (8:30 AM ET). With PCE at +4.5%, the unit labor cost number will be closely scrutinized. Rising ULC + falling productivity = the worst inflation cocktail. The Fed's Warsh era begins amid this data backdrop.</span>
+      </div>
+      <div class="mover-row" style="border-bottom: 1px solid var(--border);">
+        <span class="ticker" style="color: var(--muted); font-size: 11px; font-weight: 600; font-family: var(--mono);">FRI 8</span>
+        <span class="change neg">NFP</span>
+        <span class="reason"><strong style="color: var(--text);">NONFARM PAYROLLS — APRIL 2026 (8:30 AM ET).</strong> The week's most market-moving release. March printed +178K (vs ~60K expected) with unemployment at 4.3%. April consensus is ~120–140K. A print below 80K with unemployment ticking to 4.5%+ would be the clearest "hard landing approaching" signal since 2023. A strong print (+180K+) would lock in the "no cuts until 2027" narrative.</span>
+      </div>
+      <div class="mover-row">
+        <span class="ticker" style="color: var(--muted); font-size: 11px; font-weight: 600; font-family: var(--mono);">FRI 8</span>
+        <span class="change neu">MICH.</span>
+        <span class="reason">Michigan Consumer Sentiment — Preliminary May 2026 (10:00 AM ET). Consumer confidence in the context of $126 oil, +4.5% PCE, and an Iran conflict will be the first read on May sentiment. Watching inflation expectations sub-component: if 5-year inflation expectations push above 4.0%, the Fed's credibility is formally in question.</span>
+      </div>
+
+      <div style="margin-top: 28px; padding: 20px 24px; border: 1px solid var(--yellow-border); background: var(--yellow-soft);">
+        <div class="kicker" style="color: var(--yellow); margin-bottom: 10px;">MACRO CONTEXT · WARSH ERA BEGINS · NO FOMC THIS WEEK</div>
+        <p style="font-size: 13px; color: var(--text-soft); line-height: 1.6;">No FOMC meeting the week of 4–8 May. Kevin Warsh takes the Chair role on May 15. The June meeting (Warsh's first) will set the tone for the new regime. CPI is NOT this week — April CPI releases Tuesday, May 12. The Trump–Xi trade summit remains a floating geopolitical catalyst; any tariff de-escalation headline would move markets instantly.</p>
+      </div>
+    </div>
+
+    <div>
+      <div style="background: var(--card); border: 1px solid var(--border); padding: 24px; margin-bottom: 16px;">
+        <div class="kicker" style="margin-bottom: 12px; color: var(--yellow);">WEEK'S WATCHLIST FOCUS SHIFTS</div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div>
+            <div style="font-family: var(--mono); font-size: 11px; color: var(--green); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px;">UPGRADE ATTENTION</div>
+            <div style="font-size: 13px; color: var(--text-soft); line-height: 1.5;">AMD (AI chip demand proof) · PLTR (AI software monetization) · AAPL (momentum post-beat) · Oil services on Iran peace resolution</div>
+          </div>
+          <div>
+            <div style="font-family: var(--mono); font-size: 11px; color: var(--red); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px;">DOWNGRADE ATTENTION</div>
+            <div style="font-size: 13px; color: var(--text-soft); line-height: 1.5;">META (capex overhang, no near-term catalyst) · MSFT (same dynamic, AI doubt tax) · Energy longs on Iran peace signal resolution risk</div>
+          </div>
+          <div>
+            <div style="font-family: var(--mono); font-size: 11px; color: var(--blue); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px;">MACRO SIGNALS TO WATCH</div>
+            <div style="font-size: 13px; color: var(--text-soft); line-height: 1.5;">DXY: dollar strength/weakness on NFP · TNX: 10Y yield reaction to labor data · VIX: currently elevated — any Iran escalation re-spikes · Brent: peace talks progress or breakdown</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background: var(--card-2); border: 1px solid var(--border); padding: 20px 24px;">
+        <div class="kicker" style="margin-bottom: 10px;">NEXT WEEKLY RECAP</div>
+        <div style="font-family: var(--mono); font-size: 22px; font-weight: 700; color: var(--text);">8 MAY 2026</div>
+        <div style="font-family: var(--mono); font-size: 11px; color: var(--muted); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.08em;">Vol 1 · No 002 · First Track Record Audit</div>
+        <div style="font-size: 13px; color: var(--text-soft); margin-top: 12px; line-height: 1.5;">The 8 May weekly will audit every setup flagged in daily issues Mon–Fri. NFP, AMD, PLTR, DIS, UBER — all scored against Friday close. Win rate tracking begins.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">WEEK IN REVIEW<span class="sep">·</span>SPX +1.3% WK / +10.4% APR<span class="sep">·</span>NDX ~+15% APR BEST SINCE 2002<span class="sep">·</span>GOOGL +10% CLOUD +63%<span class="sep">·</span>AAPL +4.6% CHINA +28%<span class="sep">·</span>META −9% CAPEX $145B<span class="sep">·</span>MSFT −4% CAPEX $190B<span class="sep">·</span>POWELL FINAL FOMC 8-4 VOTE<span class="sep">·</span>PCE +4.5% STAGFLATION<span class="sep">·</span>BRENT $126 → IRAN PEACE RALLY<span class="sep">·</span>AMD EARNS TUE 5 MAY<span class="sep">·</span>NFP FRI 8 MAY</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>10 / 10</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+</body>
+</html>
