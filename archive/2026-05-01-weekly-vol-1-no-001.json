@@ -1,0 +1,83 @@
+{
+  "issue_id": "weekly-vol-1-no-001",
+  "date": "2026-05-01",
+  "week_start": "2026-04-28",
+  "week_end": "2026-05-01",
+  "vol_no": "VOL 1 · NO 001",
+  "edition_type": "weekly_recap",
+  "top_headline": "THE GREAT SPLIT — AI delivers or gets punished for spending; SPX +1.3% WK / +10.4% APR; PCE +4.5% stagflation signal; Powell's final FOMC 8-4 vote; Brent $126 → Iran peace bid",
+  "chapters": [
+    "I · WEEK IN REVIEW — NARRATIVE ARC",
+    "II · MAG-4 EARNINGS — CAPEX OR DELIVERY",
+    "III · MACRO — THE POLICY BIND (GDP +2.0% / PCE +4.5%)",
+    "IV · GEOPOLITICS — OIL SHOCK + APPLE CLOSE",
+    "V · TRACK RECORD — INAUGURAL (NO PRIOR SETUPS)",
+    "VI · WHAT WORKED — GOOGL / AAPL / LONG OIL",
+    "VII · WHAT DIDN'T — META / MSFT / AI INFRA",
+    "VIII · NEXT WEEK — EARNINGS CALENDAR (4–8 MAY)",
+    "IX · NEXT WEEK — DATA CALENDAR (ISM / ADP / NFP)",
+    "X · COVER"
+  ],
+  "weekly_review": true,
+  "week_setups_total": 0,
+  "week_setups_wins": 0,
+  "week_setups_losses": 0,
+  "week_setups_flat": 0,
+  "flagged_setups": [],
+  "narrative_threads": [
+    "AI capex debate: Alphabet/Amazon rewarded for cloud delivery, Meta/Microsoft punished for open-ended capex expansion",
+    "Stagflation signal: Q1 GDP +2.0% (below est.) + Q1 PCE +4.5% (from +2.9%) = policy bind",
+    "Powell's final FOMC: held 3.5–3.75% on 8-4 vote, most dissents since October 1992; Warsh takes over May 15",
+    "Iran war / Hormuz disruption: Brent to $126/bbl intraday, IEA 'largest supply disruption in history', peace signal Friday",
+    "OpenAI revenue miss Monday: market share fell from 80% to 64.5%, triggered AI infrastructure selloff",
+    "Apple as the week's clean close: Revenue +17% YoY, China +28%, Q3 guide above consensus"
+  ],
+  "index_returns": {
+    "SPX_week": "+1.3%",
+    "SPX_april": "+10.4%",
+    "NDX_april": "~+15%",
+    "RUT_week": "~FLAT",
+    "notes": "SPX April best month since November 2020; NDX April best month since 2002"
+  },
+  "key_movers": {
+    "gainers": [
+      { "ticker": "GOOGL", "return": "+10.0%", "catalyst": "Q1 Cloud +63% YoY, revenue +22%, ATH" },
+      { "ticker": "AAPL", "return": "+4.6%", "catalyst": "Q2 revenue +17%, China +28%, Q3 guide above est." },
+      { "ticker": "RDDT", "return": "+16% premarket", "catalyst": "Strong quarterly revenue forecast" },
+      { "ticker": "TSLA", "return": "+1.7% WoW", "catalyst": "NHTSA Model Y probe closed without action" }
+    ],
+    "losers": [
+      { "ticker": "META", "return": "-9.0%", "catalyst": "Capex raised to $125-145B; JP Morgan downgrade" },
+      { "ticker": "MSFT", "return": "-4.0%", "catalyst": "Beat on earnings but ~$190B annualized capex" },
+      { "ticker": "NVDA/AVGO/AMD/ORCL", "return": "-1 to -3%", "catalyst": "OpenAI revenue miss Monday selloff" }
+    ]
+  },
+  "macro_events": [
+    { "date": "2026-04-28", "event": "WSJ: OpenAI missed Q1 revenue/user targets; Nasdaq -1.1%" },
+    { "date": "2026-04-29", "event": "FOMC held 3.5-3.75%, 8-4 vote; Powell final press conference; Warsh cleared Senate Banking" },
+    { "date": "2026-04-30", "event": "Q1 GDP +2.0% advance; PCE +4.5%; Brent $126 intraday; GOOGL/MSFT/META/AMZN earnings after close" },
+    { "date": "2026-05-01", "event": "AAPL Q2 beat (+17% rev, China +28%); Iran peace signal via Pakistan mediators; SPX new ATH ~7,254" }
+  ],
+  "next_week_calendar": [
+    { "date": "2026-05-04", "event": "PLTR Q1 earnings (EPS est. $0.28)" },
+    { "date": "2026-05-05", "event": "AMD Q1 earnings after close (EPS est. $1.30); SHOP Q1 before open; ISM Services PMI; JOLTS" },
+    { "date": "2026-05-06", "event": "DIS Q2 earnings (EPS est. $1.49); UBER Q1 before open (EPS est. $0.71); ARM Q4; APP Q1; ADP payrolls" },
+    { "date": "2026-05-07", "event": "Initial Jobless Claims; Q1 Productivity & Unit Labor Costs (preliminary)" },
+    { "date": "2026-05-08", "event": "NFP April jobs report (8:30 AM ET); Michigan Consumer Sentiment preliminary" }
+  ],
+  "ticker_tape": "WEEK IN REVIEW · SPX +1.3% WK / +10.4% APR · NDX ~+15% APR BEST SINCE 2002 · GOOGL +10% CLOUD +63% · AAPL +4.6% CHINA +28% · META −9% CAPEX $145B · MSFT −4% CAPEX $190B · POWELL FINAL FOMC 8-4 VOTE · PCE +4.5% STAGFLATION · BRENT $126 → IRAN PEACE RALLY · AMD EARNS TUE 5 MAY · NFP FRI 8 MAY",
+  "file": "archive/2026-05-01-weekly-vol-1-no-001.html",
+  "sources": [
+    "CNBC · Alphabet Q1 2026 earnings · Apr 29 2026",
+    "CNBC · Meta Q1 2026 earnings · Apr 29 2026",
+    "CNBC · Microsoft Q3 2026 earnings · Apr 29 2026",
+    "Apple IR · Q2 FY2026 earnings press release · Apr 30 2026",
+    "BEA · GDP Advance Estimate Q1 2026 · Apr 30 2026",
+    "Federal Reserve · FOMC Statement Apr 29 2026",
+    "CNBC · Powell final press conference · Apr 29 2026",
+    "Euronews · Brent $126 · Apr 30 2026",
+    "WSJ via CNBC · OpenAI revenue miss · Apr 28 2026",
+    "Advisor Perspectives · SPX weekly return · May 1 2026",
+    "Benzinga · NDX best April since 2002 · May 1 2026"
+  ]
+}
