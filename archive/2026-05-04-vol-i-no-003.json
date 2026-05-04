@@ -1,0 +1,143 @@
+{
+  "issue_id": "vol-i-no-003",
+  "date": "2026-05-04",
+  "vol_no": "VOL I · NO 003",
+  "edition_type": "daily_premarket",
+  "issue_time": "08:00 Asia/Jerusalem (~01:00 ET)",
+  "top_headline": "PLTR earns AH tonight $1.54B test; AMD $9.8B tomorrow; Warsh 11 days; Brent $111+ Hormuz shut",
+  "chapters": [
+    "I · MACRO — Warsh 11 Days / ISM Prices 84.6% / PCE +4.5% Stagflation Bind",
+    "II · AI TRADE — PLTR $1.54B Earnings Preview / AMD $9.8B Setup / NVDA ~$200",
+    "III · EARNINGS — PLTR/AMD/SHOP Preview · Full Week Docket (7 Reports + NFP) · APR Movers",
+    "IV · GEOPOLITICS — Hormuz Deadlock Wk 2 / Brent $111+ / Peace Stalled"
+  ],
+  "flagged_setups": [
+    {
+      "ticker": "PLTR",
+      "direction": "long",
+      "thesis": "Post-earnings momentum setup if AIP commercial clears $771M (+94% YoY). New logo acceleration and US govt. AI contracts are secondary confirms. Entry on open May 5 if report beats and guidance raised. Binary risk: HSBC downgraded pre-earnings; options at ±10.06%.",
+      "flag_date": "2026-05-04",
+      "price_at_flag": 144.07,
+      "price_note": "$144.07 close May 1 / $144.41 AH · MarketBeat / StockInvest",
+      "horizon_trading_days": 5
+    },
+    {
+      "ticker": "AMD",
+      "direction": "long",
+      "thesis": "Post-earnings momentum if Q1 Rev clears $9.8B guide and gross margin holds ~55%. EPYC Genoa server share + Instinct MI350 data points key. Cathie Wood selling $79.9M pre-earnings is a caution; only enter on beat+raise. Stock +68% YTD so bar is high.",
+      "flag_date": "2026-05-04",
+      "price_at_flag": 360.54,
+      "price_note": "$360.54 close May 1 · Yahoo Finance / TheStreet",
+      "horizon_trading_days": 5
+    },
+    {
+      "ticker": "BRENT",
+      "direction": "long",
+      "thesis": "Hormuz deadlock entering week 2 with no diplomatic breakthrough over weekend. Iran refuses nuclear concessions; Trump maintains blockade. IEA 'largest supply disruption in history.' Structural support above $108 while strait stays shut. Any peace breakthrough is sharp reversal risk.",
+      "flag_date": "2026-05-04",
+      "price_at_flag": 111.0,
+      "price_note": "$111+ Brent crude May 1 close · CNBC",
+      "horizon_trading_days": 7
+    }
+  ],
+  "watchlist_hits": [
+    {
+      "ticker": "PLTR",
+      "event": "Q1 FY2026 earnings AH tonight — Rev est $1.54B (+74%), EPS $0.28 (+115%), AIP commercial key",
+      "move": "±10.06% options pricing",
+      "priority": "core"
+    },
+    {
+      "ticker": "AMD",
+      "event": "Q1 FY2026 earnings AH tomorrow — Rev $9.8B (+32%), EPS $1.28; ARK sold $79.9M pre-earnings",
+      "move": "watch",
+      "priority": "core"
+    },
+    {
+      "ticker": "NVDA",
+      "event": "~$200 premarket, down from $216.61 ATH Apr 27; hyperscaler in-house chip overhang continues",
+      "move": "~$200 (~-7% from ATH)",
+      "priority": "core"
+    },
+    {
+      "ticker": "GOOGL",
+      "event": "Prior week Cloud +63%, April best month since 2004; continuing AI delivery narrative",
+      "move": "+10% wk, closed ATH",
+      "priority": "core"
+    }
+  ],
+  "tase_events": [
+    {
+      "event": "TA-125 at 4,371 (+1.33% May 1, +6.41% month, +70.71% YoY); resilience on defense demand",
+      "ticker": "TA-125",
+      "materiality": "informational"
+    }
+  ],
+  "narrative_threads": [
+    "AI capex discipline vs. delivery: GOOGL/AAPL rewarded, META/MSFT punished — PLTR and AMD are the next test cases",
+    "Stagflation bind deepening: ISM Prices 84.6% (Apr) + PCE +4.5% (Q1) = Warsh inherits inflation without policy room",
+    "Warsh Fed transition May 15: AI-deflation thesis untested against current data; 8-4 FOMC dissent signals fractured committee",
+    "Iran/Hormuz deadlock: Week 2 with no breakthrough; Brent $111+ on structural supply shock; nuclear sticking point",
+    "AMD re-rating parabolic: +68% YTD into earnings — ARK selling signals smart money taking profits ahead of binary event"
+  ],
+  "macro_snapshot": {
+    "ES_futures": "+0.13% ~7,268",
+    "NQ_futures": "+0.37% ~27,939",
+    "YM_futures": "-0.09% ~49,600",
+    "SPX_close_May1": "7,230.12 ATH",
+    "NDX_close_May1": "25,114.44 ATH",
+    "TNX_10y": "~4.42%",
+    "VIX": "16.82",
+    "brent": "$111+ (May 1 settle)",
+    "WTI": "~$107",
+    "ISM_mfg_prices_paid": "84.6% (Apr 2026)",
+    "PCE_Q1": "+4.5% YoY",
+    "GDP_Q1_advance": "+2.0%"
+  },
+  "today_calendar": [
+    {"time": "AH tonight", "event": "PLTR Q1 2026 earnings (EPS est $0.28, Rev est $1.54B +74%)"}
+  ],
+  "week_calendar": [
+    {"date": "2026-05-04", "event": "PLTR Q1 AH (EPS est $0.28, Rev $1.54B)"},
+    {"date": "2026-05-05", "event": "AMD Q1 AH (Rev $9.8B +32%, EPS $1.28); SHOP Q1 BMO (Rev +31%); ISM Services PMI; JOLTS"},
+    {"date": "2026-05-06", "event": "DIS Q2 AH (EPS est $1.49); UBER Q1 BMO (Rev $13.33B); ARM Q4 AH; APP Q1 AH; ADP payrolls"},
+    {"date": "2026-05-07", "event": "Initial Jobless Claims; Q1 Productivity & Unit Labor Costs preliminary"},
+    {"date": "2026-05-08", "event": "NFP April jobs report 8:30am ET (March +178K); Michigan Consumer Sentiment prelim"}
+  ],
+  "ticker_tape": "PLTR EARNS AH · $1.54B EST · ±10% MOVE · AMD EARNS TMR · $9.8B EST · NVDA ~$200 · BRENT $111+ · HORMUZ SHUT · ES +0.13% · NQ +0.37% · WARSH MAY 15 · AMD +68% YTD · SHOP BMO TMR · ISM SVCS TMR · NFP FRI 8 MAY · TA-125 4371 +1.33%",
+  "track_record": "SKIPPED — flagged setups from vol-i-no-002 (2026-05-01) are only 1 trading day old; below 3-day review threshold",
+  "file": "archive/2026-05-04-vol-i-no-003.html",
+  "page_count": 8,
+  "sources": [
+    "TipRanks · Palantir PLTR Q1 2026 earnings preview · May 1–3 2026",
+    "MarketBeat · PLTR earnings dates 2026",
+    "TradingKey · PLTR Q1 2026 earnings preview · May 2026",
+    "ForeignPolicyJournal · PLTR Q1 earnings options analysis · May 3 2026",
+    "TipRanks · AMD Q1 2026 earnings preview · May 2026",
+    "TheStreet · Cathie Wood sells $79.9M AMD · May 2026",
+    "TipRanks · Cathie Wood AMD ARM Invest transactions · May 2026",
+    "TradingKey · AMD Q1 2026 earnings gross margin · May 2026",
+    "Bitget News · AMD Q1 2026 earnings preview · May 2026",
+    "StockTitan · SHOP Q1 2026 May 5 announcement",
+    "TIKR · SHOP stock down 33% from highs · May 2026",
+    "Quiver Quantitative · SHOP +4.2% earnings positioning · May 2026",
+    "CNBC · FOMC statement Apr 29 2026 · 3.50-3.75% hold 8-4 vote",
+    "NAI500 · Warsh Fed chair rate cut prospects 2026 · May 2026",
+    "Motley Fool · Warsh vs Powell Fed policy · May 2 2026",
+    "Moneywise · Warsh Senate Banking clearance May 15 2026",
+    "CNBC · Oil prices Iran peace talks Brent WTI · May 1 2026",
+    "Al Jazeera · Oil prices Iran Hormuz proposal · Apr 28 2026",
+    "CBS News · Iran war Hormuz Trump blockade nuclear deal · May 2026",
+    "NBC News · US cool on Iran peace proposal · May 1 2026",
+    "ING Think · Oil forecasts Hormuz disruption · Apr 28 2026",
+    "CNN · Brent $126 four-year high · Apr 30 2026",
+    "StockInvest · PLTR stock price May 1 2026 $144.07",
+    "MarketBeat / StockInvest · PLTR $144.07 close May 1 AH $144.41",
+    "Yahoo Finance / TheStreet · AMD $360.54 close May 1 +65.77% MoM",
+    "CNBC · S&P 500 NDX ATH close Apr 30 · May 1 2026",
+    "Investing.com · ES NQ futures May 4 2026 premarket",
+    "CNBC · NVDA $200.64 premarket May 4 ATH $216.61 Apr 27",
+    "Trading Economics · Israel TA-125 4371 May 1 2026",
+    "ISM · Manufacturing PMI April 2026 52.7% prices 84.6%"
+  ]
+}

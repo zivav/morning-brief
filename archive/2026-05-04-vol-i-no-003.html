@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Markets Brief — 04 MAY 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* =========================================================
+     MORNING MARKETS BRIEF — MASTER TEMPLATE
+     Layouts available (each <section class="page" data-layout="X">):
+       1. cover           - cover/index page
+       2. fullbleed       - full-bleed image with overlay text
+       3. split           - text left, visual/stats right
+       4. threepanel      - headline + two comparison panels
+       5. bignumber       - one giant number callout
+       6. chart           - text + chart visualization
+       7. honor           - earnings beats grid (4-8 cards)
+       8. movers          - gainers/losers two-column tabular
+       9. trackrecord     - prior issue ticker performance audit
+     The routine picks layouts per chapter, duplicates as needed, and
+     fills <!-- SLOT: name --> markers with content.
+     ========================================================= */
+  :root {
+    --bg: #000000;
+    --panel: #0a0a0a;
+    --card: #141414;
+    --card-2: #1a1a1a;
+    --border: #232323;
+    --border-2: #2e2e2e;
+    --muted: #737373;
+    --muted-2: #525252;
+    --text: #ffffff;
+    --text-soft: rgba(255,255,255,0.85);
+    --green: #22c55e;
+    --green-soft: rgba(34,197,94,0.08);
+    --green-border: rgba(34,197,94,0.4);
+    --red: #ef4444;
+    --red-soft: rgba(239,68,68,0.08);
+    --red-border: rgba(239,68,68,0.4);
+    --blue: #3b82f6;
+    --blue-soft: rgba(59,130,246,0.08);
+    --blue-border: rgba(59,130,246,0.4);
+    --yellow: #eab308;
+    --yellow-soft: rgba(234,179,8,0.08);
+    --yellow-border: rgba(234,179,8,0.4);
+    --header-red: #dc2626;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --serif: 'Playfair Display', 'Times New Roman', serif;
+    --mono: 'JetBrains Mono', 'Courier New', monospace;
+  }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); }
+
+/* -- PAGE SHELL -- */
+.page {
+  scroll-snap-align: start;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.live-strip {
+  background: var(--header-red);
+  color: white;
+  padding: 8px 28px;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+.live-strip .left::before { content: "● "; }
+
+.meta-strip {
+  padding: 12px 28px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+.meta-strip .vol-no { display: flex; gap: 16px; align-items: center; }
+.meta-strip .vol-no svg { width: 14px; height: 14px; opacity: 0.6; }
+
+.chip {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  background: rgba(34,197,94,0.05);
+  color: var(--green);
+  border-color: var(--green-border);
+}
+.chip.macro { color: var(--blue); border-color: var(--blue-border); background: rgba(59,130,246,0.05); }
+.chip.geo { color: var(--yellow); border-color: var(--yellow-border); background: rgba(234,179,8,0.05); }
+.chip.earnings { color: var(--green); border-color: var(--green-border); background: rgba(34,197,94,0.05); }
+
+.ticker-tape {
+  border-top: 1px solid var(--border);
+  padding: 14px 28px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+}
+.ticker-tape .sep { margin: 0 18px; color: var(--border-2); }
+
+.page-foot {
+  padding: 14px 28px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+.page-foot .arrow {
+  width: 22px; height: 22px;
+  border: 1px solid var(--border-2);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 9px;
+  color: var(--muted);
+}
+
+/* -- TYPOGRAPHY -- */
+.headline-mega {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(44px, 6.5vw, 88px);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+}
+.headline-mega em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: -0.01em;
+}
+.headline-large {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(36px, 4.8vw, 64px);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+.headline-large em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: -0.01em;
+}
+
+.kicker {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.kicker.macro { color: var(--blue); }
+.kicker.geo { color: var(--yellow); }
+.kicker.earnings { color: var(--green); }
+.kicker.ai { color: var(--green); }
+
+.body-text {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text-soft);
+  max-width: 580px;
+}
+
+/* -- BADGES & CHIPS -- */
+.badge-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.badge {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid;
+}
+.badge.pos { color: var(--green); border-color: var(--green-border); background: var(--green-soft); }
+.badge.neg { color: var(--red); border-color: var(--red-border); background: var(--red-soft); }
+.badge.neu { color: var(--blue); border-color: var(--blue-border); background: var(--blue-soft); }
+.badge.warn { color: var(--yellow); border-color: var(--yellow-border); background: var(--yellow-soft); }
+
+/* -- METRIC GRID -- */
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.metric-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.metric-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.metric-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+.metric-cell {
+  background: var(--card);
+  padding: 16px 20px;
+}
+.metric-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.metric-value {
+  font-family: var(--mono);
+  font-size: 16px;
+  font-weight: 600;
+}
+.metric-value.pos { color: var(--green); }
+.metric-value.neg { color: var(--red); }
+.metric-value.neu { color: var(--blue); }
+.metric-value.warn { color: var(--yellow); }
+
+/* -- TOP STORIES RAIL -- */
+.top-stories { display: flex; flex-direction: column; gap: 14px; }
+.story-card {
+  background: var(--card);
+  border-left: 3px solid var(--green);
+  padding: 16px 20px;
+}
+.story-card.macro { border-left-color: var(--blue); }
+.story-card.geo { border-left-color: var(--yellow); }
+.story-card.ai { border-left-color: var(--green); }
+.story-card .label {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--green);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.story-card.macro .label { color: var(--blue); }
+.story-card.geo .label { color: var(--yellow); }
+.story-card .title {
+  font-weight: 800;
+  font-size: 22px;
+  margin: 6px 0 10px;
+  letter-spacing: -0.012em;
+  text-transform: uppercase;
+}
+.story-card .summary {
+  font-size: 13px;
+  color: var(--text-soft);
+  line-height: 1.5;
+}
+
+/* -- LAYOUT: COVER -- */
+.layout-cover .body { padding: 36px 48px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; }
+.cover-stat-strip { padding: 0 48px 24px; }
+
+/* -- LAYOUT: FULL-BLEED -- */
+.layout-fullbleed .body { padding: 36px 48px; position: relative; }
+.layout-fullbleed .full-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  filter: brightness(0.35) saturate(0.85);
+  z-index: 0;
+}
+.layout-fullbleed .body > * { position: relative; z-index: 1; }
+.layout-fullbleed .corner-chip {
+  position: absolute; top: 36px; right: 48px;
+  background: var(--card-2); border: 1px solid var(--yellow-border);
+  padding: 14px 18px; min-width: 140px; z-index: 2;
+}
+.corner-chip .chip-label { font-family: var(--mono); font-size: 9px; color: var(--yellow); letter-spacing: 0.15em; text-transform: uppercase; }
+.corner-chip .chip-value { font-weight: 900; font-size: 22px; line-height: 1.1; margin-top: 6px; text-transform: uppercase; }
+.corner-chip .chip-attr { font-family: var(--mono); font-size: 10px; color: var(--muted); margin-top: 6px; }
+
+.quote-block {
+  border-left: 2px solid var(--yellow);
+  padding: 6px 0 6px 16px;
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--text-soft);
+  font-size: 16px;
+  margin-top: 24px;
+  max-width: 640px;
+}
+.quote-block .attr {
+  font-family: var(--sans);
+  font-style: normal;
+  color: var(--muted);
+  font-size: 12px;
+  display: block;
+  margin-top: 4px;
+}
+
+/* -- LAYOUT: SPLIT -- */
+.layout-split .body { padding: 36px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.layout-split .split-visual {
+  aspect-ratio: 1.1 / 1;
+  background: var(--card);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+}
+.visual-glyph {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(60px, 9vw, 140px);
+  color: var(--green);
+  letter-spacing: -0.04em;
+}
+.visual-glyph.neu { color: var(--blue); }
+
+/* -- LAYOUT: THREE PANEL -- */
+.layout-threepanel .body { padding: 36px 48px; display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 24px; }
+.panel-card {
+  background: var(--card);
+  border-top: 2px solid var(--green);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.panel-card.warn { border-top-color: var(--yellow); }
+.panel-card.neu { border-top-color: var(--blue); }
+.panel-card.neg { border-top-color: var(--red); }
+.panel-card .panel-label {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--green);
+}
+.panel-card.warn .panel-label { color: var(--yellow); }
+.panel-card.neu .panel-label { color: var(--blue); }
+.panel-card.neg .panel-label { color: var(--red); }
+.panel-card .panel-headline { font-weight: 900; font-size: 36px; line-height: 1; letter-spacing: -0.02em; }
+.panel-card .panel-sub { font-family: var(--mono); font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+.panel-card .panel-body { font-size: 13px; color: var(--text-soft); line-height: 1.5; }
+
+/* -- LAYOUT: BIG NUMBER -- */
+.layout-bignumber .body { padding: 36px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.big-number {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(96px, 12vw, 180px);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  color: var(--green);
+}
+.big-number.neg { color: var(--red); }
+.big-number.neu { color: var(--blue); }
+.big-number-caption {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 16px;
+}
+.big-number-pill {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 8px 16px;
+  background: var(--green-soft);
+  border: 1px solid var(--green-border);
+  color: var(--green);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.big-number-tag {
+  margin-top: 28px;
+  padding: 12px 16px;
+  border: 1px solid var(--yellow-border);
+  background: var(--yellow-soft);
+}
+.big-number-tag .tag-label { font-family: var(--mono); font-size: 10px; color: var(--yellow); letter-spacing: 0.12em; text-transform: uppercase; }
+.big-number-tag .tag-text { font-family: var(--mono); font-size: 12px; color: var(--text); margin-top: 4px; letter-spacing: 0.04em; text-transform: uppercase; }
+
+/* -- LAYOUT: CHART -- */
+.layout-chart .body { padding: 36px 48px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: center; }
+.chart-svg-wrap {
+  width: 100%;
+  aspect-ratio: 1.6 / 1;
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 24px;
+}
+
+/* -- LAYOUT: HONOR ROLL -- */
+.layout-honor .body { padding: 36px 48px; }
+.honor-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 28px;
+}
+.honor-card {
+  background: var(--card);
+  border-top: 2px solid var(--green);
+  padding: 18px 20px;
+}
+.honor-card .ticker-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+}
+.honor-card .ticker { font-weight: 900; font-size: 22px; letter-spacing: -0.01em; }
+.honor-card .change { color: var(--green); font-family: var(--mono); font-weight: 700; font-size: 16px; }
+.honor-card .detail {
+  margin-top: 10px;
+  font-size: 11.5px;
+  color: var(--text-soft);
+  line-height: 1.5;
+  font-family: var(--sans);
+}
+
+/* -- LAYOUT: GAINERS / LOSERS -- */
+.layout-movers .body { padding: 36px 48px; display: grid; grid-template-columns: 1.7fr 1fr; gap: 48px; }
+.mover-list h2 {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: 32px;
+  text-transform: uppercase;
+  letter-spacing: -0.015em;
+  padding-bottom: 8px;
+  margin-bottom: 4px;
+}
+.mover-list h2.gainers { color: var(--green); border-bottom: 1px solid var(--green); }
+.mover-list h2.losers { color: var(--red); border-bottom: 1px solid var(--red); }
+.mover-list .count-tag {
+  font-family: var(--mono); font-size: 11px; color: var(--muted);
+  letter-spacing: 0.08em; text-transform: uppercase; margin-left: 12px;
+}
+.mover-row {
+  display: grid;
+  grid-template-columns: 60px 70px 1fr;
+  gap: 14px;
+  padding: 8px 0;
+  align-items: baseline;
+  font-size: 13px;
+}
+.mover-row .ticker { font-weight: 800; }
+.mover-row .change { font-family: var(--mono); font-weight: 700; }
+.mover-row .change.pos { color: var(--green); }
+.mover-row .change.neg { color: var(--red); }
+.mover-row .reason { color: var(--text-soft); font-size: 12.5px; }
+
+/* -- LAYOUT: TRACK RECORD -- */
+.layout-trackrecord .body { padding: 36px 48px; }
+.track-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 24px;
+}
+.track-table th, .track-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+.track-table th {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+}
+.track-table .ticker-cell { font-weight: 800; font-size: 15px; }
+.track-table .return-cell { font-family: var(--mono); font-weight: 700; }
+.track-table .return-cell.pos { color: var(--green); }
+.track-table .return-cell.neg { color: var(--red); }
+.track-table .verdict { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+.track-table .verdict.win { color: var(--green); }
+.track-table .verdict.loss { color: var(--red); }
+.track-table .verdict.flat { color: var(--muted); }
+.track-summary {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  background: var(--border); border: 1px solid var(--border);
+  margin-top: 28px;
+}
+.track-summary > div { background: var(--card); padding: 16px 20px; }
+
+/* -- PRINT -- */
+@media print {
+  body { scroll-snap-type: none; height: auto; }
+  .page { min-height: 100vh; page-break-after: always; }
+}
+
+/* -- MOBILE FALLBACK -- */
+@media (max-width: 900px) {
+  .layout-cover .body,
+  .layout-split .body,
+  .layout-bignumber .body,
+  .layout-chart .body,
+  .layout-movers .body { grid-template-columns: 1fr; gap: 32px; }
+  .layout-threepanel .body { grid-template-columns: 1fr; }
+  .honor-grid { grid-template-columns: repeat(2, 1fr); }
+  .live-strip, .meta-strip, .page-foot, .ticker-tape { padding-left: 16px; padding-right: 16px; }
+  .layout-cover .body, .layout-split .body, .layout-fullbleed .body,
+  .layout-threepanel .body, .layout-bignumber .body, .layout-chart .body,
+  .layout-honor .body, .layout-movers .body, .layout-trackrecord .body { padding: 24px 16px; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- ========================================================================
+     PAGE 01 — COVER / INDEX
+     ======================================================================== -->
+
+<section class="page layout-cover" data-layout="cover" id="page-01">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span>04 MAY 2026 · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I · NO 003</span>
+      <span>MORNING MARKETS BRIEF · 10 STORIES · 4 CHAPTERS</span>
+    </div>
+    <span>01 / 08</span>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="kicker">MORNING MARKETS · 04 MAY 2026</div>
+      <h1 class="headline-mega">THE AIP<br><em>Reckoning</em></h1>
+      <p class="body-text" style="margin-top: 28px;">Palantir reports AH tonight — <strong>$1.54B revenue test</strong>, AIP commercial adoption in the dock, options pricing a <strong>±10.06% binary event</strong>. AMD follows tomorrow. Warsh inherits the Fed in <strong>11 days</strong>. Hormuz stays shut; Brent holds above <strong>$111</strong>.</p>
+      <div class="badge-row" style="margin-top: 36px;">
+        <span class="badge pos">PLTR EARNS AH · $144</span>
+        <span class="badge pos">AMD EARNS TMR · $361</span>
+        <span class="badge neu">ES +0.13% · 7,268</span>
+        <span class="badge warn">BRENT $111+ · HORMUZ SHUT</span>
+        <span class="badge warn">WARSH MAY 15 · 11 DAYS</span>
+        <span class="badge neu">NQ +0.37% · 27,939</span>
+        <span class="badge pos">AMD +68% YTD</span>
+        <span class="badge neu">NFP FRI MAY 8</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="kicker">TODAY'S TOP STORIES</div>
+      <div class="top-stories">
+        <div class="story-card ai">
+          <div class="label">II · AI TRADE</div>
+          <div class="title">PLTR NIGHT</div>
+          <div class="summary">AIP commercial hits $1.54B test AH tonight. Options pricing ±10.06% binary. HSBC downgraded to Hold on Friday. 21× revenue multiple — conviction under exam.</div>
+        </div>
+        <div class="story-card macro">
+          <div class="label">I · MACRO</div>
+          <div class="title">WARSH EVE</div>
+          <div class="summary">Fed transition 11 days away. Warsh's AI-deflation thesis collides with 84.6% ISM prices. Market pricing zero 2026 cuts vs. Fed's one projected.</div>
+        </div>
+        <div class="story-card geo">
+          <div class="label">IV · GEOPOLITICS</div>
+          <div class="title">HORMUZ HELD</div>
+          <div class="summary">Iran doubled down over weekend; Trump: blockade until nuclear deal. IEA calls it unprecedented. Brent above $111 for second straight week.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="metric-grid cols-4 cover-stat-strip">
+    <div class="metric-cell">
+      <div class="metric-label">ES FUTURES</div>
+      <div class="metric-value pos">+0.13% · 7,268</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-label">BRENT CRUDE</div>
+      <div class="metric-value warn">$111+ · HORMUZ</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-label">PLTR BINARY MOVE</div>
+      <div class="metric-value warn">±10.06%</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-label">AMD YTD GAIN</div>
+      <div class="metric-value pos">+68.35%</div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">PLTR EARNS AH · $1.54B EST · ±10% MOVE · AMD EARNS TMR · $9.8B EST · NVDA ~$200 · BRENT $111+ · HORMUZ SHUT · ES +0.13% · NQ +0.37% · WARSH MAY 15 · AMD +68% YTD · SHOP BMO TMR · ISM SVCS TMR · NFP FRI 8 MAY · TA-125 4371 +1.33%</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>01 / 08</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+
+<!-- ========================================================================
+     PAGE 02 — CHAPTER I · MACRO — WARSH INHERITS STAGFLATION
+     ======================================================================== -->
+
+<section class="page layout-fullbleed" data-layout="fullbleed" id="page-02">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span>04 MAY 2026 · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I · NO 003</span>
+      <span class="chip macro">I · MACRO</span>
+    </div>
+    <span>02 / 08</span>
+  </div>
+
+  <div class="body">
+    <div class="full-bg" style="background-image: linear-gradient(135deg, #0a0f1e 0%, #0d1117 40%, #111827 100%);"></div>
+
+    <div class="corner-chip">
+      <div class="chip-label">DAYS TO WARSH</div>
+      <div class="chip-value" style="color: var(--yellow);">11</div>
+      <div class="chip-attr">MAY 15 · FED TRANSITION</div>
+    </div>
+
+    <div class="kicker macro">I · MACRO · 04 MAY 2026</div>
+    <h1 class="headline-mega">WARSH INHERITS<br><em>Stagflation</em></h1>
+    <p class="body-text" style="margin-top: 24px; max-width: 660px;">Kevin Warsh takes the Federal Reserve chair on <strong>May 15</strong> — inheriting a policy bind: rates held at <strong>3.50–3.75%</strong> on an <strong>8-4 dissent vote</strong> (most fractured FOMC since October 1992), with inflation structurally elevated and growth decelerating. The stagflation playbook has no clean exit.</p>
+
+    <ul class="body-text" style="margin-top: 18px; max-width: 640px; padding-left: 18px;">
+      <li><strong>ISM Prices Paid</strong> — 84.6% in April, highest since April 2022; 19th consecutive month of expansion</li>
+      <li><strong>PCE Q1 2026</strong> — +4.5% YoY, surging from +2.9%; GDP advance only +2.0%</li>
+      <li><strong>Market pricing</strong> — zero 2026 cuts; Fed median still projects one 25bp cut</li>
+      <li><strong>Warsh thesis</strong> — AI is deflationary, Fed balance sheet too large, mandate needs rethinking for the AI-debt era</li>
+      <li><strong>FOMC dissenters</strong> — four members wanted to act; Warsh inherits a fractured committee</li>
+    </ul>
+
+    <div class="quote-block" style="margin-top: 28px;">
+      "The Fed balance sheet has played a particularly unhelpful role in helping the Fed achieve its dual mandate."
+      <span class="attr">— Kevin Warsh, pre-confirmation testimony · Apr 2026</span>
+    </div>
+
+    <div class="metric-grid cols-5" style="margin-top: 32px; max-width: 900px;">
+      <div class="metric-cell">
+        <div class="metric-label">FED FUNDS RATE</div>
+        <div class="metric-value neu">3.50–3.75%</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">10Y YIELD</div>
+        <div class="metric-value warn">~4.42%</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">ISM PRICES PAID</div>
+        <div class="metric-value warn">84.6% APR</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">PCE Q1 2026</div>
+        <div class="metric-value neg">+4.5% YOY</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">VIX</div>
+        <div class="metric-value neu">16.82</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">PLTR EARNS AH · $1.54B EST · ±10% MOVE · AMD EARNS TMR · $9.8B EST · NVDA ~$200 · BRENT $111+ · HORMUZ SHUT · ES +0.13% · NQ +0.37% · WARSH MAY 15 · AMD +68% YTD · SHOP BMO TMR · ISM SVCS TMR · NFP FRI 8 MAY · TA-125 4371 +1.33%</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>02 / 08</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+<!-- ========================================================================
+     PAGE 03 — CHAPTER II · AI TRADE — PLTR EARNINGS SETUP
+     ======================================================================== -->
+
+<section class="page layout-split" data-layout="split" id="page-03">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span>04 MAY 2026 · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I · NO 003</span>
+      <span class="chip ai">II · AI TRADE</span>
+    </div>
+    <span>03 / 08</span>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="kicker ai">II · AI TRADE · PLTR EARNINGS PREVIEW</div>
+      <h1 class="headline-large">AIP EARNS ITS<br><em>Price Tag</em></h1>
+      <p class="body-text" style="margin-top: 24px;"><strong>PLTR</strong> enters tonight's report at <strong>$144.07</strong> — roughly <strong>21× forward revenue</strong> — priced for AIP commercial to accelerate, not just sustain. The key number isn't EPS; it's whether commercial revenue clears <strong>$771M (+94% YoY)</strong> and new logo additions confirm the AIG-type contract pipeline is not one-off.</p>
+
+      <ul class="body-text" style="margin-top: 18px; padding-left: 18px;">
+        <li><strong>Revenue est.</strong> — $1.54B (+74% YoY); government $771M est., commercial $771M est.</li>
+        <li><strong>EPS est.</strong> — $0.28 (+115% YoY); four straight quarters of GAAP profitability</li>
+        <li><strong>Options move</strong> — ±10.06% priced in; binary outcome given valuation</li>
+        <li><strong>HSBC downgrade</strong> — cut to Hold from Buy on May 1, citing valuation stretch</li>
+        <li><strong>Bull case</strong> — commercial beats $771M, AIP seat expansion data, US govt. AI contract momentum</li>
+        <li><strong>Bear case</strong> — any deceleration in new logos or commercial growth rate — stock punished at 21× revenue</li>
+      </ul>
+
+      <div class="metric-grid" style="margin-top: 32px;">
+        <div class="metric-cell">
+          <div class="metric-label">REVENUE EST.</div>
+          <div class="metric-value pos">$1.54B</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">EPS EST.</div>
+          <div class="metric-value pos">$0.28</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">COMM. REV EST.</div>
+          <div class="metric-value pos">$771M +94%</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">OPTIONS MOVE</div>
+          <div class="metric-value warn">±10.06%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="split-visual">
+      <span class="visual-glyph">$1.54<span style="font-size: 0.45em; vertical-align: super;">B</span></span>
+    </div>
+  </div>
+
+  <div class="ticker-tape">PLTR EARNS AH · $1.54B EST · ±10% MOVE · AMD EARNS TMR · $9.8B EST · NVDA ~$200 · BRENT $111+ · HORMUZ SHUT · ES +0.13% · NQ +0.37% · WARSH MAY 15 · AMD +68% YTD · SHOP BMO TMR · ISM SVCS TMR · NFP FRI 8 MAY · TA-125 4371 +1.33%</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>03 / 08</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+<!-- ========================================================================
+     PAGE 04 — CHAPTER II · AI TRADE — AMD $9.8B SETUP
+     ======================================================================== -->
+
+<section class="page layout-bignumber" data-layout="bignumber" id="page-04">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span>04 MAY 2026 · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I · NO 003</span>
+      <span class="chip ai">II · AI TRADE</span>
+    </div>
+    <span>04 / 08</span>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="kicker ai">II · AI TRADE · AMD EARNINGS PREVIEW</div>
+      <h1 class="headline-mega">CHIPS DOWN<br><em>Tomorrow</em></h1>
+      <p class="body-text" style="margin-top: 24px;"><strong>AMD</strong> reports Q1 2026 AH tomorrow. Revenue guided at <strong>$9.8B ±$300M</strong>, the <strong>EPYC Genoa</strong> server share thesis and <strong>Instinct MI350</strong> GPU cycle are the focal points. The stock surged <strong>+65% in April alone</strong> — the bar is now high. ARK Invest sold <strong>$79.9M</strong> of AMD pre-earnings: a classic momentum-top warning signal to monitor.</p>
+
+      <ul class="body-text" style="margin-top: 18px; padding-left: 18px;">
+        <li><strong>Rev. guide</strong> — $9.8B (+32% YoY), midpoint of $9.5–10.1B range</li>
+        <li><strong>EPS est.</strong> — $1.28 (+33% YoY); gross margin ~55% non-GAAP focus</li>
+        <li><strong>Data center</strong> — Instinct MI350 demand + EPYC Genoa server share key metrics</li>
+        <li><strong>OpenAI partnership</strong> — cited pre-earnings; Watch for concrete deployment data</li>
+        <li><strong>Risk</strong> — Gross margin headwinds flagged by TradingKey; +68% YTD = elevated expectations</li>
+        <li><strong>ARK signal</strong> — Cathie Wood sold $79.9M on strength (May 1); ARK trimmed 172,305 shares</li>
+      </ul>
+
+      <div class="metric-grid" style="margin-top: 32px; max-width: 460px;">
+        <div class="metric-cell">
+          <div class="metric-label">AMD CLOSE MAY 1</div>
+          <div class="metric-value pos">$360.54</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">YTD GAIN</div>
+          <div class="metric-value pos">+68.35%</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">EPS EST.</div>
+          <div class="metric-value pos">$1.28 +33%</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">ARK SOLD MAY 1</div>
+          <div class="metric-value warn">$79.9M</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center;">
+      <div class="big-number">$9.8<span style="font-size: 0.4em; vertical-align: super; color: var(--green);">B</span></div>
+      <div class="big-number-caption">AMD Q1 2026 REVENUE GUIDE (±$300M RANGE)</div>
+      <span class="big-number-pill">+32% YOY · REPORTS MAY 5 AH</span>
+
+      <div class="big-number-tag">
+        <div class="tag-label">CATHIE WOOD SOLD PRE-EARNINGS</div>
+        <div class="tag-text">$79.9M AMD · ARK INVEST · MAY 1 2026</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">PLTR EARNS AH · $1.54B EST · ±10% MOVE · AMD EARNS TMR · $9.8B EST · NVDA ~$200 · BRENT $111+ · HORMUZ SHUT · ES +0.13% · NQ +0.37% · WARSH MAY 15 · AMD +68% YTD · SHOP BMO TMR · ISM SVCS TMR · NFP FRI 8 MAY · TA-125 4371 +1.33%</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>04 / 08</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+<!-- ========================================================================
+     PAGE 05 — CHAPTER III · EARNINGS — THREE BINARY EVENTS
+     ======================================================================== -->
+
+<section class="page layout-threepanel" data-layout="threepanel" id="page-05">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span>04 MAY 2026 · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I · NO 003</span>
+      <span class="chip earnings">III · EARNINGS</span>
+    </div>
+    <span>05 / 08</span>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="kicker earnings">III · EARNINGS · MON–TUE PREVIEW</div>
+      <h1 class="headline-large">THREE<br>BINARY<br><em>Events</em></h1>
+      <p style="font-size: 13px; color: var(--muted); margin-top: 16px; font-family: var(--mono); letter-spacing: 0.06em; text-transform: uppercase;">48 HRS · 3 REPORTS · COMBINED MKT CAP >$700B</p>
+    </div>
+
+    <div class="panel-card">
+      <div class="panel-label">PLTR · MAY 4 AH · TONIGHT</div>
+      <div class="panel-headline" style="color: var(--green);">$144</div>
+      <div class="panel-sub">REPORTS AFTER CLOSE · 8:30PM ET CALL</div>
+      <div class="panel-body">
+        <ul style="padding-left: 16px; margin-top: 8px;">
+          <li>Rev est. <strong>$1.54B</strong> (+74% YoY)</li>
+          <li>EPS est. <strong>$0.28</strong> (+115% YoY)</li>
+          <li>Commercial <strong>$771M</strong> (+94%) is the swing metric</li>
+          <li>HSBC downgraded to Hold pre-earnings</li>
+          <li>Options: <strong>±10.06%</strong> binary move priced</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel-card neu">
+      <div class="panel-label">AMD · MAY 5 AH · TOMORROW</div>
+      <div class="panel-headline" style="color: var(--blue);">$361</div>
+      <div class="panel-sub">REPORTS AFTER CLOSE · Q1 FY2026</div>
+      <div class="panel-body">
+        <ul style="padding-left: 16px; margin-top: 8px;">
+          <li>Rev guide <strong>$9.8B</strong> (+32% YoY)</li>
+          <li>EPS est. <strong>$1.28</strong> (+33% YoY)</li>
+          <li>EPYC Genoa + Instinct MI350 key</li>
+          <li>ARK sold <strong>$79.9M</strong> on May 1 strength</li>
+          <li>Stock up <strong>+68% YTD</strong>; bar elevated</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel-card warn">
+      <div class="panel-label">SHOP · MAY 5 BMO · TOMORROW AM</div>
+      <div class="panel-headline" style="color: var(--yellow);">$0.33</div>
+      <div class="panel-sub">BEFORE OPEN · 8:30AM ET CALL</div>
+      <div class="panel-body">
+        <ul style="padding-left: 16px; margin-top: 8px;">
+          <li>EPS est. <strong>$0.33</strong> (+28% YoY)</li>
+          <li>Rev growth guided <strong>low-thirties %</strong> YoY</li>
+          <li>Stock down <strong>33% from highs</strong></li>
+          <li>AI commerce + B2B expansion in focus</li>
+          <li>+4.2% Friday on earnings positioning</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">PLTR EARNS AH · $1.54B EST · ±10% MOVE · AMD EARNS TMR · $9.8B EST · NVDA ~$200 · BRENT $111+ · HORMUZ SHUT · ES +0.13% · NQ +0.37% · WARSH MAY 15 · AMD +68% YTD · SHOP BMO TMR · ISM SVCS TMR · NFP FRI 8 MAY · TA-125 4371 +1.33%</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>05 / 08</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+<!-- ========================================================================
+     PAGE 06 — CHAPTER III · EARNINGS — FULL WEEK DOCKET
+     ======================================================================== -->
+
+<section class="page layout-honor" data-layout="honor" id="page-06">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span>04 MAY 2026 · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I · NO 003</span>
+      <span class="chip earnings">III · EARNINGS</span>
+    </div>
+    <span>06 / 08</span>
+  </div>
+
+  <div class="body">
+    <h1 class="headline-large">THE WEEK'S<br><em>Docket</em> <span style="color: var(--blue); font-weight: 500; font-size: 0.45em; vertical-align: middle;">4–8 MAY 2026 · 7 REPORTS + NFP</span></h1>
+
+    <div class="honor-grid">
+      <div class="honor-card">
+        <div class="ticker-row">
+          <span class="ticker">PLTR</span>
+          <span class="change">MON AH</span>
+        </div>
+        <div class="detail">Rev est. $1.54B (+74%) · EPS $0.28 · AIP commercial $771M swing metric · ±10% options move</div>
+      </div>
+
+      <div class="honor-card">
+        <div class="ticker-row">
+          <span class="ticker">AMD</span>
+          <span class="change">TUE AH</span>
+        </div>
+        <div class="detail">Rev $9.8B (+32%) · EPS $1.28 · EPYC Genoa + Instinct MI350 · Gross margin 55% watch · ARK sold $79.9M</div>
+      </div>
+
+      <div class="honor-card" style="border-top-color: var(--yellow);">
+        <div class="ticker-row">
+          <span class="ticker">SHOP</span>
+          <span class="change" style="color: var(--yellow);">TUE BMO</span>
+        </div>
+        <div class="detail">Rev growth low-30s% YoY · EPS $0.33 · AI commerce + B2B · Down 33% from highs · +4.2% Fri positioning</div>
+      </div>
+
+      <div class="honor-card" style="border-top-color: var(--blue);">
+        <div class="ticker-row">
+          <span class="ticker">DIS</span>
+          <span class="change" style="color: var(--blue);">WED AH</span>
+        </div>
+        <div class="detail">EPS est. $1.49 Q2 FY26 · Streaming profitability + parks demand · Hulu integration progress</div>
+      </div>
+
+      <div class="honor-card" style="border-top-color: var(--blue);">
+        <div class="ticker-row">
+          <span class="ticker">UBER</span>
+          <span class="change" style="color: var(--blue);">WED BMO</span>
+        </div>
+        <div class="detail">Rev est. $13.33B Q1 · EPS est. $0.71 · Core rides + delivery momentum · Autonomous catalyst watch</div>
+      </div>
+
+      <div class="honor-card">
+        <div class="ticker-row">
+          <span class="ticker">ARM</span>
+          <span class="change">WED AH</span>
+        </div>
+        <div class="detail">Q4 FY2026 · AI chip licensing royalties · Server + smartphone share · Royalty rate expansion key</div>
+      </div>
+
+      <div class="honor-card">
+        <div class="ticker-row">
+          <span class="ticker">APP</span>
+          <span class="change">WED AH</span>
+        </div>
+        <div class="detail">Q1 2026 · Ad tech + AI targeting momentum · App Store iOS advertising scaling</div>
+      </div>
+
+      <div class="honor-card" style="border-top-color: var(--red);">
+        <div class="ticker-row">
+          <span class="ticker">NFP</span>
+          <span class="change" style="color: var(--red);">FRI 8:30AM</span>
+        </div>
+        <div class="detail">April jobs report · March +178K · ADP Wed precursor · Fed Warsh watch; any miss = rate-cut narrative revives</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">PLTR EARNS AH · $1.54B EST · ±10% MOVE · AMD EARNS TMR · $9.8B EST · NVDA ~$200 · BRENT $111+ · HORMUZ SHUT · ES +0.13% · NQ +0.37% · WARSH MAY 15 · AMD +68% YTD · SHOP BMO TMR · ISM SVCS TMR · NFP FRI 8 MAY · TA-125 4371 +1.33%</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>06 / 08</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+<!-- ========================================================================
+     PAGE 07 — CHAPTER III · EARNINGS — APR 28–MAY 1 MOVERS
+     ======================================================================== -->
+
+<section class="page layout-movers" data-layout="movers" id="page-07">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span>04 MAY 2026 · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I · NO 003</span>
+      <span class="chip earnings">III · EARNINGS</span>
+    </div>
+    <span>07 / 08</span>
+  </div>
+
+  <div class="body">
+    <div class="mover-list">
+      <h2 class="gainers">GAINERS <span class="count-tag">5 MOVERS · APR 28 – MAY 1</span></h2>
+
+      <div class="mover-row" style="border-bottom: 1px solid var(--border);">
+        <span class="ticker">GOOGL</span>
+        <span class="change pos">+10.0%</span>
+        <span class="reason">Q1 Cloud +63% YoY → $20B; Search +19%; April best month since 2004 (TheStreet)</span>
+      </div>
+      <div class="mover-row" style="border-bottom: 1px solid var(--border);">
+        <span class="ticker">PLTR</span>
+        <span class="change pos">+5.0%</span>
+        <span class="reason">$144.07 close May 1 (+3.57% Fri); AIP govt. contracts + commercial pipeline into earnings (StockInvest)</span>
+      </div>
+      <div class="mover-row" style="border-bottom: 1px solid var(--border);">
+        <span class="ticker">AAPL</span>
+        <span class="change pos">+4.6%</span>
+        <span class="reason">Q2 Rev $111.18B record; iPhone +22%; Services +19%; Q3 guide above consensus (Apple IR)</span>
+      </div>
+      <div class="mover-row" style="border-bottom: 1px solid var(--border);">
+        <span class="ticker">AMD</span>
+        <span class="change pos">+65% APR</span>
+        <span class="reason">AI semis re-rating: EPYC + MI350 demand; $360.54 close May 1; +68% YTD (Yahoo Finance / TheStreet)</span>
+      </div>
+      <div class="mover-row">
+        <span class="ticker">RDDT</span>
+        <span class="change pos">+16%</span>
+        <span class="reason">Pre-market surge on strong Q1 quarterly revenue forecast; AI data licensing narrative (TheStreet)</span>
+      </div>
+    </div>
+
+    <div class="mover-list">
+      <h2 class="losers">LOSERS <span class="count-tag">4 MOVERS</span></h2>
+
+      <div class="mover-row" style="border-bottom: 1px solid var(--border);">
+        <span class="ticker">META</span>
+        <span class="change neg">−9.0%</span>
+        <span class="reason">Capex raised to $125–145B FY26; JP Morgan downgrade; AI spend without near-term revenue offset (CNBC)</span>
+      </div>
+      <div class="mover-row" style="border-bottom: 1px solid var(--border);">
+        <span class="ticker">MSFT</span>
+        <span class="change neg">−4.0%</span>
+        <span class="reason">Beat on EPS but ~$190B annualized capex pace alarmed market; capex discipline theme punishes (CNBC)</span>
+      </div>
+      <div class="mover-row" style="border-bottom: 1px solid var(--border);">
+        <span class="ticker">RBLX</span>
+        <span class="change neg">−24%</span>
+        <span class="reason">Q1 2026 guidance slashed; DAU deceleration; monetization shortfall (Benzinga / Sherwood)</span>
+      </div>
+      <div class="mover-row">
+        <span class="ticker">NVDA</span>
+        <span class="change neg">−7% ATH</span>
+        <span class="reason">~$200 vs. $216.61 ATH Apr 27; hyperscaler in-house chips (AWS Trainium, Google TPUs) overhang (Yahoo Finance)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">PLTR EARNS AH · $1.54B EST · ±10% MOVE · AMD EARNS TMR · $9.8B EST · NVDA ~$200 · BRENT $111+ · HORMUZ SHUT · ES +0.13% · NQ +0.37% · WARSH MAY 15 · AMD +68% YTD · SHOP BMO TMR · ISM SVCS TMR · NFP FRI 8 MAY · TA-125 4371 +1.33%</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>07 / 08</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+<!-- ========================================================================
+     PAGE 08 — CHAPTER IV · GEOPOLITICS — HORMUZ DEADLOCK
+     ======================================================================== -->
+
+<section class="page layout-fullbleed" data-layout="fullbleed" id="page-08">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span>04 MAY 2026 · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I · NO 003</span>
+      <span class="chip geo">IV · GEOPOLITICS</span>
+    </div>
+    <span>08 / 08</span>
+  </div>
+
+  <div class="body">
+    <div class="full-bg" style="background-image: linear-gradient(160deg, #1a0a00 0%, #150d00 35%, #0d0d0d 100%);"></div>
+
+    <div class="corner-chip">
+      <div class="chip-label">BRENT CRUDE</div>
+      <div class="chip-value" style="color: var(--yellow);">$111+</div>
+      <div class="chip-attr">HORMUZ SHUT · WEEK 2</div>
+    </div>
+
+    <div class="kicker geo">IV · GEOPOLITICS · HORMUZ DEADLOCK · 04 MAY 2026</div>
+    <h1 class="headline-mega">SHUT STRAIT,<br><em>Stuck Talks</em></h1>
+    <p class="body-text" style="margin-top: 24px; max-width: 660px;">The Iran-US impasse entered its second week with <strong>no breakthrough over the weekend</strong>. Iran doubled down on Hormuz closure; Trump maintained the naval blockade. Face-to-face negotiations remain stalled on the single sticking point: <strong>Iran's refusal to surrender nuclear capabilities</strong>. The IEA called it the <strong>"largest supply disruption in history."</strong></p>
+
+    <ul class="body-text" style="margin-top: 18px; max-width: 640px; padding-left: 18px;">
+      <li><strong>Brent</strong> — peaked $126.41 (Apr 30), settled above $111 May 1; second weekly gain running</li>
+      <li><strong>Iran's position</strong> — willing to reopen Hormuz without nuclear concessions; US rejects</li>
+      <li><strong>Trump</strong> — <em>"blockade until a comprehensive nuclear deal"</em>; no softening over weekend</li>
+      <li><strong>Pakistan mediation</strong> — peace proposal delivered; US described as "cool" (NBC News, May 1)</li>
+      <li><strong>Hormuz flow</strong> — ~20% of global oil + LNG trade disrupted; GCC producers also hit</li>
+      <li><strong>TASE context</strong> — TA-125 at 4,371 (+1.33% May 1, +6.41% month); Israeli market resilient on defense orders</li>
+    </ul>
+
+    <div class="quote-block" style="margin-top: 28px;">
+      "We will maintain our naval blockade until Iran agrees to a comprehensive nuclear deal."
+      <span class="attr">— President Trump, per NBC News · May 1 2026</span>
+    </div>
+
+    <div class="metric-grid cols-5" style="margin-top: 32px; max-width: 900px;">
+      <div class="metric-cell">
+        <div class="metric-label">BRENT (MAY 1)</div>
+        <div class="metric-value warn">$111+</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">WK PEAK (APR 30)</div>
+        <div class="metric-value neg">$126.41</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">HORMUZ SHARE</div>
+        <div class="metric-value warn">~20% OIL</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">PEACE STATUS</div>
+        <div class="metric-value neg">STALLED</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">TA-125</div>
+        <div class="metric-value pos">4371 +1.33%</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">PLTR EARNS AH · $1.54B EST · ±10% MOVE · AMD EARNS TMR · $9.8B EST · NVDA ~$200 · BRENT $111+ · HORMUZ SHUT · ES +0.13% · NQ +0.37% · WARSH MAY 15 · AMD +68% YTD · SHOP BMO TMR · ISM SVCS TMR · NFP FRI 8 MAY · TA-125 4371 +1.33%</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>08 / 08</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+</body>
+</html>
