@@ -1,0 +1,142 @@
+{
+  "issue_id": "vol-i-no-004",
+  "date": "2026-05-05",
+  "vol_no": "VOL I · NO 004",
+  "edition_type": "daily_premarket",
+  "issue_time": "08:00 Asia/Jerusalem (~01:00 ET)",
+  "top_headline": "Fujairah hit — Iran breaks ceasefire, strikes Hormuz bypass; PLTR $1.63B +85% YoY; AMD AH tonight",
+  "chapters": [
+    "I · MACRO — Warsh Vote Week of May 11 / TNX 4.35% / VIX 18.24 / ISM Services + JOLTS 10AM",
+    "II · AI TRADE — AMD $9.9B AH Tonight / SHOP $3.08B BMO / PLTR Post-Earnings Setup",
+    "III · EARNINGS — PLTR $1.63B +85% Beat / Honor Roll / AMD+SHOP Preview / Movers",
+    "IV · GEOPOLITICS — Fujairah Oil Hub Hit / Ceasefire Broken / Brent $114.44 4yr High / Bypass Eliminated"
+  ],
+  "flagged_setups": [
+    {
+      "ticker": "PLTR",
+      "direction": "long",
+      "thesis": "Post-earnings momentum setup: $1.63B revenue +85% YoY, EPS $0.33 +18% beat, FY guide raised 10% to $7.65B. US Commercial +133% to $595M. Muted AH reaction (+0.84%) on valuation (~200x fwd). Watch open print at 16:30 IST — if stock holds above $147 and builds, momentum continuation into 5-day window. Key risk: Q4 repeat (stock dropped 11.6% day after prior quarter on valuation). Rule of 40 at 145% is extraordinary.",
+      "flag_date": "2026-05-05",
+      "price_at_flag": 147.26,
+      "price_note": "$147.26 AH close May 4 (regular close $146.03) · CNBC / TradingView May 4 2026",
+      "horizon_trading_days": 5
+    },
+    {
+      "ticker": "AMD",
+      "direction": "long",
+      "thesis": "Post-earnings setup pending tonight's Q1 AH report. Est: Rev $9.9B (+33%), EPS $1.29, Data Center $5.56B (+51.5%), non-GAAP GM ~55%. Three-condition entry: clean DC beat + credible MI325 roadmap + margin holds. Stock moved $341.54 (Mon close, risk-off Hormuz) to ~$360 pre-market — all of that pre-earnings pricing. If beat+raise confirmed, enter on May 6 open. Binary event — miss on margin = sharp reversal risk.",
+      "flag_date": "2026-05-05",
+      "price_at_flag": 360.0,
+      "price_note": "~$360 pre-market May 5 (Mon close $341.54) · Investing.com / Capital.com May 5 2026",
+      "horizon_trading_days": 5
+    },
+    {
+      "ticker": "BRENT",
+      "direction": "long",
+      "thesis": "Structural supply shock deepened: Iran attacks Fujairah oil hub (Hormuz bypass endpoint), breaking ceasefire. Brent peaked $114.44 (4-year high) and now holds $113.54. With both Hormuz AND Fujairah bypass compromised, structural supply disruption is more severe than prior week. No diplomatic breakthrough in sight. IEA cited 'largest supply disruption in history.' Support floor above $110 until Fujairah repair and/or ceasefire re-established. Sharp reversal risk on any peace breakthrough.",
+      "flag_date": "2026-05-05",
+      "price_at_flag": 113.54,
+      "price_note": "$113.54 Brent at 02:00 GMT May 5 (peak $114.44 Mon close) · CNBC / Al Jazeera May 5 2026",
+      "horizon_trading_days": 7
+    }
+  ],
+  "watchlist_hits": [
+    {
+      "ticker": "PLTR",
+      "event": "Q1 FY2026 earnings AH May 4 — beat on all lines: Rev $1.63B +85% YoY vs $1.54B est, EPS $0.33 vs $0.28 est; FY guide raised 10% to $7.65B; US Commercial +133%",
+      "move": "+0.84% AH to $147.26",
+      "priority": "core"
+    },
+    {
+      "ticker": "AMD",
+      "event": "Q1 FY2026 earnings AH tonight May 5 — Rev est $9.9B (+33%), EPS $1.29, DC $5.56B; stock $341→$360 pre-market swing",
+      "move": "binary — report AH",
+      "priority": "core"
+    },
+    {
+      "ticker": "NVDA",
+      "event": "Below ATH at ~$200; hyperscaler in-house chip overhang continues; AMD tonight is direct read-across for semis AI infrastructure spend",
+      "move": "~$200 (~-7% from $216.61 ATH Apr 27)",
+      "priority": "core"
+    },
+    {
+      "ticker": "AVGO",
+      "event": "AI semis sector watch alongside AMD earnings tonight; custom silicon narrative vs. merchant silicon",
+      "move": "watch",
+      "priority": "core"
+    }
+  ],
+  "tase_events": [
+    {
+      "event": "TA-125 at 4,371 (+70.71% YoY); defense export demand providing partial insulation from oil shock; Brent $113+ net negative for Israel energy costs but defense sector benefits from war-economy demand",
+      "ticker": "TA-125",
+      "materiality": "informational"
+    }
+  ],
+  "narrative_threads": [
+    "Hormuz + Fujairah: Week 3+ of disruption — ceasefire broken May 4; Iran attacks bypass route; both Hormuz AND Abu Dhabi pipeline terminus now compromised; Brent $114.44 4-year high",
+    "AI capex delivery: PLTR +85% confirms AIP commercial acceleration beyond consensus; AMD tonight is next test; muted PLTR AH = valuation overhang persists across AI names",
+    "Warsh inheritance deepens: Week of May 11 Senate vote; he inherits Brent $113+, PCE +4.5%, ISM Prices 84.6%, VIX 18.24 — oil supply shock + sticky inflation = zero rate-cut cover",
+    "Amazon freight disruption: Independent freight/fulfillment/parcel service announced May 4; GXO/UPS/FedEx logistic model under structural threat; separate from AI/Hormuz narrative but systemic",
+    "SHOP BMO today: AI-driven commerce (orders from AI Search +15x TTM, B2B GMV +84% Q4) — first major read on AI-enabling commerce platforms after PLTR AIP beat"
+  ],
+  "macro_snapshot": {
+    "brent_peak_may4": "$114.44 (4-year high)",
+    "brent_may5_0200gmt": "$113.54",
+    "wti_settle_may4": "$106.42",
+    "TNX_10y": "~4.35% (May 1 close; Fujairah attack reignites upside pressure)",
+    "VIX": "18.24 (+7.36% Mon from 16.99 May 1)",
+    "ES_futures": "+0.23%",
+    "PLTR_AH": "$147.26 (+0.84%)",
+    "AMD_PM_may5": "~$360 (Mon close $341.54)",
+    "ISM_svcs_march": "54.0% (April not yet released, releases 10am ET)"
+  },
+  "today_calendar": [
+    {"time": "BMO (before US open)", "event": "SHOP Q1 2026 earnings (Rev est $3.08B +31%, EPS $0.32, GMV +32% cons)"},
+    {"time": "10:00am ET", "event": "ISM Services PMI April (prev March 54.0%; watch pricing component)"},
+    {"time": "10:00am ET", "event": "JOLTS Job Openings March (labor market slack indicator)"},
+    {"time": "AH tonight", "event": "AMD Q1 2026 earnings (Rev est $9.9B +33%, EPS $1.29, DC $5.56B, GM ~55%)"}
+  ],
+  "week_calendar": [
+    {"date": "2026-05-05", "event": "SHOP Q1 BMO; AMD Q1 AH ($9.9B est); ISM Services PMI Apr; JOLTS Mar"},
+    {"date": "2026-05-06", "event": "DIS Q2 AH (EPS $1.49 est); UBER Q1 BMO ($13.33B est); ARM Q4 AH; APP Q1 AH; ADP payrolls"},
+    {"date": "2026-05-07", "event": "Initial Jobless Claims; Q1 Productivity & Unit Labor Costs preliminary"},
+    {"date": "2026-05-08", "event": "NFP April (prev March +178K); Michigan Consumer Sentiment prelim"},
+    {"date": "2026-05-11", "event": "Warsh full Senate confirmation vote (expected week of May 11)"},
+    {"date": "2026-05-15", "event": "Powell's term expires; Warsh takes over as Fed Chair"}
+  ],
+  "track_record": "SKIPPED — vol-i-no-003 setups (PLTR, AMD, BRENT flagged May 4) are 1 trading day old; vol-i-no-002 setups (AAPL, PLTR, AMD flagged May 1) are 2 trading days old; minimum threshold is 3 trading days",
+  "ticker_tape": "PLTR $1.63B +85% YoY · EPS $0.33 VS $0.28 EST · AH +0.84% · FUJAIRAH HIT · BRENT $113.54 · CEASEFIRE BROKEN · AMD EARNS AH · $9.9B EST · SHOP BMO · WARSH VOTE WK MAY 11 · VIX 18.24 · JOLTS + ISM SVCS 10AM ET · PINS +18% REV",
+  "file": "archive/2026-05-05-vol-i-no-004.html",
+  "page_count": 8,
+  "sources": [
+    "TradingView · Palantir Q1 CY2026 Results · May 4 2026",
+    "Motley Fool · Palantir PLTR Q1 2026 Earnings Transcript · May 4 2026",
+    "Seeking Alpha · Palantir Q1 2026 Results Earnings Call · May 4 2026",
+    "CNBC · Palantir PLTR Q1 2026 Earnings Report · May 4 2026",
+    "Yahoo Finance · Palantir Q1 2026 US Revenue Surge · May 4 2026",
+    "SaaStr · Palantir Q1 2026 Revenue Accelerates to 85% at $6B ARR · May 2026",
+    "HeyGoTrade · Palantir Q1 2026 Earnings Reaction · May 4 2026",
+    "Bloomberg · Palantir Issues Strong Revenue Outlook 2026 · May 4 2026",
+    "TipRanks · AMD Q1 2026 Earnings Preview · May 2026",
+    "Capital.com · AMD Stock Forecast Q1 2026 Earnings · May 4 2026",
+    "HeyGoTrade · Shopify Q1 2026 Preview GMV Take Rate · May 2026",
+    "Yahoo Finance · Shopify SHOP Q1 Earnings Expect · May 4 2026",
+    "GuruFocus · Shopify Q1 2026 Revenue Growth · May 2026",
+    "Al Jazeera · Oil Prices Surge Violence Flares Strait of Hormuz · May 5 2026",
+    "CNBC · Oil Prices Jump Iran Attacks UAE Hormuz · May 4 2026",
+    "US News · Fujairah Oil Zone Hit Fire Drone Attack UAE Intercepts Iran Missiles · May 4 2026",
+    "Al Jazeera · UAE Reports Missile Drone Strikes from Iran · May 4 2026",
+    "CNBC · Strait Hormuz Gas Price Oil Shock Recession Risk · May 4 2026",
+    "NPR · Iran War Updates UAE Attacked · May 4 2026",
+    "BusinessToday · UAE Airspace Partially Closed Iran Missiles Drones May 4-11 · May 5 2026",
+    "CNBC · Al Jazeera · Oil Prices May 5 2026 Brent WTI Iran War Trump Hormuz",
+    "Al Jazeera · Senate Panel Advances Kevin Warsh Nomination Fed Chair · Apr 29 2026",
+    "CNBC · Trump Fed Pick Kevin Warsh Clears Senate Hurdle · Apr 29 2026",
+    "Yahoo Finance · Senate Committee Confirms Kevin Warsh Full Senate Vote · Apr 29 2026",
+    "TheStreet · Stock Market Today May 4 2026 Updates Dow Russell UAE Iran",
+    "Guru Focus · Palantir PLTR Micron MU Pre-Market Gains · May 5 2026",
+    "Investing.com · AMD Stock Price May 4-5 2026",
+    "ISM World · Services PMI Release Calendar · Mar 2026 54.0%"
+  ]
+}
