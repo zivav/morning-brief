@@ -1,0 +1,186 @@
+{
+  "issue_id": "vol-i-no-005",
+  "date": "2026-05-06",
+  "vol_no": "VOL I · NO 005",
+  "edition_type": "daily_premarket",
+  "issue_time": "08:00 Asia/Jerusalem (~01:00 ET)",
+  "top_headline": "AMD $10.3B +38% blowout — DC +57%, Meta+OpenAI 12GW, dual-vendor AI era opens; PLTR/SHOP sell-the-news",
+  "chapters": [
+    "I · MACRO — SPX ATH 7,259 / Nasdaq ATH 25,326 / SOX New High / ADP+DIS+UBER+ARM+APP Today / NFP Fri 49K Cons",
+    "II · AI TRADE — AMD $10.3B +38% Beat / DC $5.8B +57% / Meta 6GW + OpenAI 6GW MI450 / Q2 Guide $11.2B",
+    "III · EARNINGS — AMD +16.5% AH / SHOP -8.7% Rev Beat / PLTR -6.59% Beat-But-Sell / Honor Roll / Movers",
+    "IV · GEOPOLITICS — Hormuz Week 4 / Brent $113.54 / Fujairah Hub Damaged / Ceasefire Barely Held",
+    "V · TRACK RECORD — Vol I No 002 Setups: AMD +23.6% WIN / AAPL -0.95% FLAT / PLTR -1.19% FLAT"
+  ],
+  "flagged_setups": [
+    {
+      "ticker": "AMD",
+      "direction": "long",
+      "thesis": "Post-blowout continuation: Meta+OpenAI 12GW combined mandate represents multi-year institutional demand anchor. Q2 guide $11.2B vs $10.5B cons — sequential DC ramp confirmation. MI450 (432GB HBM4, 19.6TB/s) is first hyperscaler-co-engineered AMD GPU; HBM4 supply constraints from MU/SK Hynix could gating risk. Entry at AH print ~$414. Risk: 3-day post-earnings gap fill; ROCm ecosystem concern could resurface at developer conferences.",
+      "flag_date": "2026-05-06",
+      "price_at_flag": 414.0,
+      "price_note": "~$414 AH close May 5 (EBC Financial: 'AMD Stock Tops $400 After Hours' / CNBC +16.5% from $355.26 close = ~$413.60) · AMD IR May 5 2026",
+      "horizon_trading_days": 5
+    },
+    {
+      "ticker": "SHOP",
+      "direction": "short",
+      "thesis": "Beat-but-sell pattern confirmed. Rev $3.17B +34% beat (vs $3.08B est), GMV $101B — no issue with top line. Problem: rising transaction and loan losses at P/E 135x. Market has now sold two consecutive PLTR beats and one SHOP beat — high-multiple growth exhaustion is the trade. Entry ~$116.45 PM. Key risk: positive ADP or NFP could lift all growth stocks indiscriminately.",
+      "flag_date": "2026-05-06",
+      "price_at_flag": 116.45,
+      "price_note": "~$116.45 pre-market May 6 (Investing.com: 'Shopify Q1 2026 slides: stock falls on concerns' pre-market −8.7%) · Investing.com May 5-6 2026",
+      "horizon_trading_days": 5
+    },
+    {
+      "ticker": "BRENT",
+      "direction": "long",
+      "thesis": "Continuation from prior issue. Fujairah terminal hit May 4 — both Hormuz AND the Fujairah bypass now damaged. Ceasefire 'barely held' per CNBC. Slight pullback to $113.54 from $114.44 peak but structural supply disruption unchanged. No diplomatic breakthrough. Warsh inheriting oil shock + PCE +4.5% = zero rate-cut cover = oil bid preserved. Floor ~$110 until Fujairah repair or genuine ceasefire.",
+      "flag_date": "2026-05-06",
+      "price_at_flag": 113.54,
+      "price_note": "$113.54 Brent at 02:00 GMT May 6 (slight pullback from $114.44 May 4 peak) · Al Jazeera / CNBC / Trading Economics May 5-6 2026",
+      "horizon_trading_days": 7
+    }
+  ],
+  "watchlist_hits": [
+    {
+      "ticker": "AMD",
+      "event": "Q1 FY2026 earnings AH May 5 — Rev $10.3B +38% vs $9.84B est; EPS $1.37 vs $1.27; DC $5.8B +57%; Q2 guide $11.2B vs $10.5B cons; Meta 6GW + OpenAI 6GW MI450 mandates",
+      "move": "+16.5% AH to ~$414, topped $400",
+      "priority": "core"
+    },
+    {
+      "ticker": "NVDA",
+      "event": "AMD Meta+OpenAI 12GW partnerships — structural dual-vendor signal. SOX new ATH suggests market prices expanded TAM not NVDA displacement. Read-across: NVDA Blackwell demand unchanged but market share concentration risk re-priced.",
+      "move": "SOX new ATH; NVDA watch on open May 6",
+      "priority": "core"
+    },
+    {
+      "ticker": "PLTR",
+      "event": "Sell-the-news reaction: Rev $1.63B +85% YoY beat, EPS $0.33 vs $0.28 beat — stock fell 6.59% to $135.68. ~200x fwd P/E valuation overrode the fundamental beat. Pattern: second quarter running.",
+      "move": "-6.59% to $135.68 close May 5",
+      "priority": "core"
+    },
+    {
+      "ticker": "AVGO",
+      "event": "Custom silicon narrative — AMD+Meta co-engineering of MI450 is direct read-across. AVGO also has custom chip co-development with Google (TPU) and Meta. Structural positive for AVGO's custom silicon model.",
+      "move": "watch — semis re-rating context",
+      "priority": "core"
+    }
+  ],
+  "tase_events": [
+    {
+      "event": "TA-125 context: Iran/Fujairah attack geopolitical escalation — Israel adjacent risk; Brent $113+ net negative for Israeli energy import costs; defense sector demand from conflict-economy persists. No single material TASE event today.",
+      "ticker": "TA-125",
+      "materiality": "informational"
+    }
+  ],
+  "narrative_threads": [
+    "Dual-vendor AI era opens: Meta and OpenAI simultaneously commit 12GW to AMD Instinct MI450 — NVDA's monopoly on frontier model training structurally diluted; SOX ATH confirms market prices expanded total silicon TAM",
+    "Beat-but-sell exhaustion: PLTR (second time), SHOP, and prior META/MSFT — high-multiple growth names sold on beats; AMD escaped via structural re-rate catalyst (12GW partnerships), not just quarterly beat",
+    "Hormuz/Fujairah week 4+: Brent slight pullback but structural supply disruption unchanged; Fujairah terminal damaged removes bypass route; Warsh inherits oil shock + PCE +4.5% with zero cut cover",
+    "Warsh transition T-9 days: Full Senate vote week of May 11; takes over May 15; inherits SPX ATH, SOX ATH, Brent $113, PCE +4.5% — no policy room on either side",
+    "Track record theme: AMD flagged May 1 at $335 delivered 23.6% WIN in 3 trading days via pre-earnings structural thesis; PLTR flat despite correct fundamental view — valuation risk cannot be eliminated by conviction"
+  ],
+  "track_record_summary": {
+    "source_issue": "vol-i-no-002",
+    "flag_date": "2026-05-01",
+    "review_date": "2026-05-06",
+    "trading_days_elapsed": 3,
+    "setups": [
+      {
+        "ticker": "AMD",
+        "direction": "long",
+        "price_at_flag": 335.0,
+        "price_at_review": 414.0,
+        "return_pct": 23.58,
+        "verdict": "WIN",
+        "price_note": "AH close ~$414 May 5 · EBC Financial / CNBC"
+      },
+      {
+        "ticker": "AAPL",
+        "direction": "long",
+        "price_at_flag": 279.49,
+        "price_at_review": 276.83,
+        "return_pct": -0.95,
+        "verdict": "FLAT",
+        "price_note": "Regular close $276.83 May 5 · MarketBeat / Investing.com"
+      },
+      {
+        "ticker": "PLTR",
+        "direction": "long",
+        "price_at_flag": 137.32,
+        "price_at_review": 135.68,
+        "return_pct": -1.19,
+        "verdict": "FLAT",
+        "price_note": "Regular close $135.68 May 5 · TradingKey / Yahoo Finance"
+      }
+    ],
+    "wins": 1,
+    "losses": 0,
+    "flat": 2,
+    "avg_return_pct": 7.15
+  },
+  "macro_snapshot": {
+    "SPX_close_May5": "7,259.22 ATH (+0.81%)",
+    "NDX_close_May5": "25,326.13 ATH (+1.03%)",
+    "DJIA_close_May5": "49,298.25 (+0.73%)",
+    "SOX": "New all-time high May 5",
+    "AMD_AH": "~$414 (+16.5% from $355.26 close)",
+    "PLTR_close_May5": "$135.68 (-6.59%)",
+    "SHOP_PM_May6": "~$116.45 (-8.7% pre-market)",
+    "AAPL_close_May5": "$276.83",
+    "Brent": "~$113.54 (slight pullback from $114.44 May 4 peak)",
+    "WTI": "~$108",
+    "VIX": "~18 (elevated geopolitical premium)",
+    "NFP_Apr_consensus": "49K (vs March +178K)",
+    "Warsh_vote": "Week of May 11 2026"
+  },
+  "today_calendar": [
+    {"time": "08:15am ET", "event": "ADP April private payrolls (harbinger for NFP Friday)"},
+    {"time": "BMO", "event": "DIS Q2 FY2026 (Rev est $24.84B, EPS $1.49); UBER Q1 FY2026 (GBV $52-53.5B, EBITDA $2.37-2.47B)"},
+    {"time": "AH", "event": "ARM Q4 FY2026 (Rev $1.47B, EPS $0.58 est); APP Q1 FY2026 (Rev $1.77B, EPS $3.40 est +53%)"}
+  ],
+  "week_calendar": [
+    {"date": "2026-05-06", "event": "ADP payrolls; DIS+UBER BMO; ARM+APP AH"},
+    {"date": "2026-05-07", "event": "Initial Jobless Claims; Q1 Productivity & Unit Labor Costs preliminary"},
+    {"date": "2026-05-08", "event": "NFP April (cons 49K, UE 4.3%); Michigan Consumer Sentiment prelim"},
+    {"date": "2026-05-11", "event": "Warsh full Senate confirmation vote (expected)"},
+    {"date": "2026-05-15", "event": "Powell's term expires; Warsh takes over as Fed Chair"}
+  ],
+  "ticker_tape": "AMD +16.5% AH · DC $5.8B +57% YoY · Q2 GUIDE $11.2B CRUSHES · META+OAI 6GW EACH · SOX NEW HIGH · SPX ATH 7,259 · SHOP -8.7% BEAT-SELL · PLTR -6.59% SELL NEWS · BRENT $113.54 HORMUZ WK4 · DIS+UBER BMO · ARM+APP AH · ADP 8:15AM ET · NFP FRI 49K CONS",
+  "file": "archive/2026-05-06-vol-i-no-005.html",
+  "page_count": 9,
+  "sources": [
+    "CNBC · AMD Q1 2026 earnings report +16.5% AH · May 5 2026",
+    "AMD IR · Q1 2026 earnings press release $10.3B rev · May 5 2026",
+    "Investing.com · AMD Q1 2026 slides data center surge 38% revenue growth · May 5 2026",
+    "Seeking Alpha · AMD shoots up Q1 results guidance top estimates · May 5 2026",
+    "Yahoo Finance · AMD stock rises Q1 earnings beat outlook · May 5 2026",
+    "EBC Financial · AMD Stock Tops $400 After Hours AI Infrastructure Repriced · May 5-6 2026",
+    "FX Leaders · AMD stock surges 16.5% after hours data center revenue jumps 57% · May 6 2026",
+    "StockTitan · AMD Q1 2026 financial results $10.3B data center $5.8B · May 5 2026",
+    "Meyka · AMD stock today May 6 Morgan Stanley raises price target · May 6 2026",
+    "AMD Newsroom · AMD and Meta expanded strategic partnership 6GW · Feb 24 2026 (disclosed Q1 call)",
+    "OpenAI · AMD and OpenAI strategic partnership 6GW deploy · Feb 2026 (disclosed Q1 call)",
+    "AMD IR · AMD and OpenAI announce strategic partnership 6 gigawatts · Feb 2026",
+    "ServeTheHome · AMD and Meta massive 6GW deal · 2026",
+    "Data Centre Dynamics · Meta and AMD multi-year agreement 6GW GPU deployment · 2026",
+    "TickerReport · AMD expands Meta AI deal 6GW custom MI450 160M share warrant · 2026",
+    "Shopify IR / GlobeNewswire · Shopify Q1 2026 financial results GMV $101B · May 5 2026",
+    "Investing.com · Shopify Q1 2026 slides revenue surges 34% stock falls · May 5 2026",
+    "StockTitan · Shopify Q1 2026 revenue $3.17B EPS $-0.45 · May 5 2026",
+    "TradingKey · PLTR stock opened down May 5 sell-the-news · May 5 2026",
+    "Motley Fool · After Palantir blowout earnings is stock a buy hold or sell · May 5 2026",
+    "Al Jazeera · Oil prices surge violence Strait of Hormuz · May 5 2026",
+    "Fortune · Iran ceasefire oil Brent crude Hormuz · May 4 2026",
+    "Trading Economics · Brent crude oil price $113.54 · May 2026",
+    "TheStreet · Stock market today May 5 2026 small-caps tech records Russell Nasdaq · May 5 2026",
+    "24/7 Wall St · Stock market live May 5 SPY bounces pullback oil AMD · May 5 2026",
+    "FX Leaders · Forex signals May 6 DoorDash ARM AppLovin Disney Uber earnings preview · May 5 2026",
+    "Meyka · DIS earnings preview Disney reports May 6 $24.84B revenue estimate · May 5 2026",
+    "Benzinga · Earnings volatility watch ARM CoreWeave AppLovin May 2026 · May 2026",
+    "Meyka · APP AppLovin Q1 2026 earnings preview May 6 · May 5 2026",
+    "ADP Media Center · National Employment Report preliminary estimate April 2026 · Apr 2026",
+    "FX Leaders · MU stock record high after hours AMD SMCI beat Q1 · May 5 2026"
+  ]
+}
