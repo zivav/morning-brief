@@ -1,0 +1,170 @@
+{
+  "issue_id": "vol-i-no-005",
+  "date": "2026-05-07",
+  "vol_no": "VOL I · NO 005",
+  "edition_type": "daily_premarket",
+  "issue_time": "08:00 Asia/Jerusalem (~01:00 ET)",
+  "top_headline": "AMD +18.6% best post-earnings day in 7 years; Brent -7.8% $101 on Iran peace MOU",
+  "chapters": [
+    "I · MACRO — Warsh Vote Wk May 11 / ADP +109K vs 84K est / Jobless Claims + Productivity Today / NFP Friday",
+    "II · AI TRADE — AMD $10.25B +38% Q1 Record / DC $5.8B +57% / Q2 Guide $11.2B / NVDA +5.4% Lagging / ARM Record $1.49B",
+    "III · EARNINGS — Honor Roll: DIS+7%, UBER+10%, ARM Record, APP+59%, SHOP+34% / PLTR -9.7% Valuation Compression / Movers",
+    "IV · GEOPOLITICS — Iran Peace MOU via Pakistan / Hormuz Escort Paused / Brent -7.8% $101 / SPX+NQ New ATH",
+    "V · TRACK RECORD — 6 Setups Reviewed (No.002 May 1 + No.003 May 4) / 3W 3L / AMD +25.8% +16.9% / BRENT -8.1% Reversal"
+  ],
+  "flagged_setups": [
+    {
+      "ticker": "AMD",
+      "direction": "long",
+      "thesis": "Post-earnings momentum setup: Q1 $10.25B +38% YoY, DC $5.8B +57%, EPS $1.37 vs $1.28 est, Q2 guide $11.2B midpoint crushes $10.52B consensus. Eight analyst firms raised targets. Best post-earnings day since 2019. Stock set new ATH at $421.39. Three-condition entry: DC acceleration confirmed, margin held, guide beat. Momentum continuation into 5-day window. Risk: one-day +18% gains often see 3-5% mean reversion before resuming; any macro shock or NVDA-negative news could drag semis.",
+      "flag_date": "2026-05-07",
+      "price_at_flag": 421.39,
+      "price_note": "$421.39 close May 6 2026 — all-time high · StockAnalysis / CNBC / Artvoice May 6 2026",
+      "horizon_trading_days": 5
+    },
+    {
+      "ticker": "DIS",
+      "direction": "long",
+      "thesis": "Post-earnings setup: Q2 EPS $1.57 beat $1.50 est, Rev $25.2B +7%, SVOD operating margin 10.6% (first double-digit milestone), Experiences record revenue, FY26 adj. EPS guide +16% incl. 53rd week, Q3 total segment OSI guide $5.3B. D'Amaro first earnings beat by $320M — new CEO narrative building. At least $8B share repurchase planned. Entry: $107.42 close May 6 after +6.9% session. Risk: streaming competition intensifies, FX headwinds on international Experiences.",
+      "flag_date": "2026-05-07",
+      "price_at_flag": 107.42,
+      "price_note": "$107.42 close May 6 2026 (+6.92%) · Motley Fool / TradingKey / Yahoo Finance May 6 2026",
+      "horizon_trading_days": 5
+    },
+    {
+      "ticker": "BRENT",
+      "direction": "short",
+      "thesis": "Iran peace deal near: US sent one-page MOU via Pakistan intermediaries; Trump paused Project Freedom (Hormuz escort); Iran reviewing and expected to respond Thursday. Brent already -7.8% from $113.54 to $101.27 on May 6. If deal closes and Hormuz reopens, ING forecasts $85-90 range. Supply normalization takes weeks — shipping flows will lag. Short bias at $101.96 May 7 AM. Risk: deal collapses (Trump already threatening renewed strikes), Fujairah damage slower to repair than expected.",
+      "flag_date": "2026-05-07",
+      "price_at_flag": 101.96,
+      "price_note": "$101.96 Brent May 7 early AM (+0.68% from $101.27 May 6 close, which was -7.8%) · Trading Economics / CNBC May 7 2026",
+      "horizon_trading_days": 7
+    }
+  ],
+  "watchlist_hits": [
+    {
+      "ticker": "AMD",
+      "event": "Q1 FY2026 earnings AH May 5: Rev $10.25B +38% vs $9.89B est; EPS $1.37 vs $1.28 est; DC $5.8B +57%; Q2 guide $11.2B vs $10.52B est; stock +18.6% to $421.39 ATH on May 6",
+      "move": "+18.6% to $421.39 — best post-earnings day since 2019",
+      "priority": "core"
+    },
+    {
+      "ticker": "NVDA",
+      "event": "Corning optical fiber partnership for AI infrastructure announced May 6; read-across from AMD DC beat; underperformed vs AMD on the session",
+      "move": "+5.4% to $208.15 May 6 (below $216.61 ATH Apr 27)",
+      "priority": "core"
+    },
+    {
+      "ticker": "PLTR",
+      "event": "Valuation compression despite Q1 beat ($1.63B +85%, EPS $0.33). Post-earnings AH of +0.84% reversed into full session decline. Pattern: Q4 repeat of post-beat selloff on ~200x fwd PE.",
+      "move": "-9.7% to ~$133.43 May 6 (from $147.26 AH peak May 4)",
+      "priority": "core"
+    },
+    {
+      "ticker": "AVGO",
+      "event": "AI semis rally companion to AMD; custom silicon vs merchant silicon narrative ongoing; ARM DC royalty doubling is a read-across for AI accelerator demand",
+      "move": "watch",
+      "priority": "core"
+    }
+  ],
+  "tase_events": [
+    {
+      "event": "Iran peace deal near — material positive for Israeli security environment; TASE energy importers benefit from Brent -7.8%; defense sector (Elbit/Rafael) may see reduced urgency on US supplemental arms packages if deal materializes",
+      "ticker": "TA-35",
+      "materiality": "informational"
+    }
+  ],
+  "narrative_threads": [
+    "Hormuz resolution in motion: US-Iran MOU via Pakistan; Brent -7.8% to $101 — peace dividend priced in partially; full Hormuz + Fujairah normalization is weeks-long process; deal not yet signed",
+    "AMD vs NVDA divergence: AMD set new ATH (+18.6%) while NVDA gained only +5.4% and remains below Apr 27 ATH — merchant vs custom silicon narrative, export controls, hyperscaler in-house competition all weigh on NVDA specifically",
+    "PLTR valuation ceiling: Two consecutive post-earnings selloffs despite fundamental beats (74%→85% revenue acceleration); ~200x fwd PE creates structural resistance at $147-150; institutional selling pattern consistent",
+    "Warsh transition T-8 days: Full Senate vote wk May 11; Powell exits May 15; Warsh inherits Brent collapse (removes oil inflation impulse) but PCE +4.5%, ISM Prices 84.6% still structural; labor still tight (ADP +109K, claims at 57-year lows)",
+    "Streaming profitability moment: DIS SVOD 10.6% margin is a sector milestone; validates Netflix's margin path and pressure on PARA/WBD to accelerate. D'Amaro era begins with a beat."
+  ],
+  "macro_snapshot": {
+    "SPX_close_May6": "7,365.12 (record)",
+    "NDX_close_May6": "25,838.94 (record)",
+    "ES_futures_May7": "+0.25% · 7,305.25",
+    "NQ_futures_May7": "+0.52% · 28,282",
+    "brent_may6_close": "$101.27 (-7.8%)",
+    "brent_may7_early": "$101.96 (+0.68%)",
+    "WTI_may6": "~$94",
+    "TNX_10y": "~4.32% (falling on peace bid)",
+    "VIX": "~16.8",
+    "ADP_april": "+109K vs 84K est",
+    "jobless_claims_today": "forecast 205K; prev 189K (lowest since 1969); releases 8:30 ET",
+    "productivity_Q1_prelim": "est +0.7% (prev +1.8%); releases today 8:30 ET",
+    "ULC_Q1_prelim": "est +2.6% (prev +4.4%); releases today 8:30 ET"
+  },
+  "today_calendar": [
+    {"time": "8:30am ET", "event": "Initial Jobless Claims (wk ending May 2; prev 189K; cons 205K)"},
+    {"time": "8:30am ET", "event": "Q1 2026 Nonfarm Productivity prelim (est +0.7%)"},
+    {"time": "8:30am ET", "event": "Q1 2026 Unit Labor Costs prelim (est +2.6%)"},
+    {"time": "BMO", "event": "Shell (SHEL), McDonald's (MCD), Gilead (GILD), McKesson (MCK) earnings"},
+    {"time": "AH", "event": "CoreWeave (CRWV), Coinbase (COIN), Airbnb (ABNB) earnings"}
+  ],
+  "week_calendar": [
+    {"date": "2026-05-07", "event": "Jobless Claims; Q1 Productivity + ULC; SHEL MCD GILD BMO; CRWV COIN ABNB AH"},
+    {"date": "2026-05-08", "event": "NFP April jobs report 8:30am ET (prev March +178K); Michigan Consumer Sentiment prelim"},
+    {"date": "2026-05-11", "event": "Kevin Warsh full Senate confirmation vote (expected); Brent response to Iran deal outcome"},
+    {"date": "2026-05-15", "event": "Powell's final day; Warsh takes over as Fed Chair"}
+  ],
+  "track_record": {
+    "window": "No. 002 (May 1) + No. 003 (May 4) — 3–4 trading days old",
+    "setups_reviewed": 6,
+    "wins": 3,
+    "losses": 3,
+    "flat": 0,
+    "avg_return_pct": 4.53,
+    "results": [
+      {"ticker": "AAPL", "flag_issue": "no-002", "flag_date": "2026-05-01", "price_at_flag": 279.49, "price_now": 287.39, "return_pct": 2.83, "verdict": "WIN"},
+      {"ticker": "PLTR", "flag_issue": "no-002", "flag_date": "2026-05-01", "price_at_flag": 137.32, "price_now": 133.43, "return_pct": -2.83, "verdict": "LOSS"},
+      {"ticker": "AMD",  "flag_issue": "no-002", "flag_date": "2026-05-01", "price_at_flag": 335.00, "price_now": 421.39, "return_pct": 25.79, "verdict": "WIN"},
+      {"ticker": "PLTR", "flag_issue": "no-003", "flag_date": "2026-05-04", "price_at_flag": 144.07, "price_now": 133.43, "return_pct": -7.38, "verdict": "LOSS"},
+      {"ticker": "AMD",  "flag_issue": "no-003", "flag_date": "2026-05-04", "price_at_flag": 360.54, "price_now": 421.39, "return_pct": 16.88, "verdict": "WIN"},
+      {"ticker": "BRENT","flag_issue": "no-003", "flag_date": "2026-05-04", "price_at_flag": 111.00, "price_now": 101.96, "return_pct": -8.14, "verdict": "LOSS"}
+    ]
+  },
+  "ticker_tape": "AMD +18.6% $10.25B Q1 RECORD · DATA CENTER $5.8B +57% · BRENT -7.8% $101 · IRAN DEAL NEAR · SPX 7,365 ATH · NQ 25,839 ATH · DIS +7% $25.2B · UBER +10% BOOKINGS $53.7B · APP $1.84B +59% · ARM $1.49B RECORD · SHOP $3.17B +34% · ADP +109K VS 84K EST · WARSH VOTE WK MAY 11 · JOBLESS CLAIMS 8:30 ET · NFP FRI",
+  "file": "archive/2026-05-07-vol-i-no-005.html",
+  "published_url": "https://zivav.github.io/morning-brief/archive/2026-05-07-vol-i-no-005.html",
+  "page_count": 8,
+  "sources": [
+    "AMD IR · Q1 2026 Financial Results Press Release · May 5 2026",
+    "CNBC · AMD Q1 2026 earnings report · May 5 2026",
+    "Bitget News · AMD Q1 2026 revenue $10.25B +38% · May 5 2026",
+    "Yahoo Finance · AMD stock soars Q1 earnings beat · May 5 2026",
+    "Artvoice · AMD stock +20% best post-earnings day in 7 years · May 6 2026",
+    "Meyka · AMD stock May 6 Morgan Stanley price target raise · May 6 2026",
+    "247WallSt · Eight firms hike AMD price targets after Q1 · May 6 2026",
+    "Shopify IR · Q1 2026 GMV $101B revenue $3.17B · May 5 2026",
+    "GlobeNewswire · Shopify Q1 2026 financial results · May 5 2026",
+    "Investing.com · Shopify Q1 2026 revenue beats forecasts stock dips · May 5 2026",
+    "CNBC · Disney DIS Q2 2026 earnings · May 6 2026",
+    "Motley Fool · Disney Q2 2026 earnings transcript · May 6 2026",
+    "Motley Fool · Why Walt Disney stock jumped 8.6% today · May 6 2026",
+    "TradingKey · DIS stock moved up 6.11% May 6 · May 6 2026",
+    "Yahoo Finance · Uber Q1 2026 earnings revenue miss stock pops guidance · May 6 2026",
+    "Investing.com · Uber Q1 2026 profitability surges 44% · May 6 2026",
+    "Arm Newsroom · ARM Q4 FY26 record quarterly results · May 6 2026",
+    "Shacknews · ARM Q4 FY26 earnings results beat · May 6 2026",
+    "BusinessWire · AppLovin Q1 2026 financial results · May 6 2026",
+    "StockTitan · AppLovin Q1 revenue $1.84B +59% · May 6 2026",
+    "CNBC · Oil prices fall 7% US Iran near deal · May 6 2026",
+    "NBC News · Oil markets gas prices US Iran near deal end war · May 6 2026",
+    "CBC News · Markets soar oil prices sink hopes rise US-Iran peace · May 6 2026",
+    "Fox News · Trump halts Project Freedom Hormuz cites progress Iran deal · May 6 2026",
+    "Al Jazeera · US accepted Iran demand Hormuz first nuclear later · May 6 2026",
+    "Times of Israel · US Iran closing in framework permanent deal · May 6 2026",
+    "Trading Economics · Brent crude $101.96 May 7 2026",
+    "ADP / PRNewswire · National Employment Report April 2026 +109K · May 6 2026",
+    "CNBC · Private payrolls +109K April ADP · May 6 2026",
+    "Bloomberg · US firms added 109K jobs April ADP · May 6 2026",
+    "CNBC · Kevin Warsh clears Senate hurdle · Apr 29 2026",
+    "Yahoo Finance · Senate committee confirms Warsh full Senate vote · Apr 29 2026",
+    "Fortune · Kevin Warsh Claudia Sahm partisanship · Apr 30 2026",
+    "CNBC · Nvidia semiconductor chip sector rally Nvidia lagging · May 6 2026",
+    "StockTwits · Nasdaq S&P 500 futures rise Iran deal AMD rally · May 6 2026",
+    "Schwab · Rally rolls on fueled by peace hopes AMD results · May 6 2026"
+  ]
+}
