@@ -1,0 +1,190 @@
+{
+  "issue_id": "weekly-vol-i-no-006",
+  "date": "2026-05-08",
+  "week_start": "2026-05-04",
+  "week_end": "2026-05-08",
+  "vol_no": "VOL I · WEEKLY NO 002 · ISSUE NO 006",
+  "edition_type": "weekly_recap",
+  "top_headline": "AI DELIVERS, OIL RETREATS — AMD $10.25B record beat; PLTR valuation ceiling confirmed; Iran MOU erases $13 from Brent; SPX +1.5% / NDX +3.0% / RUT FLAT",
+  "chapters": [
+    "I · WEEK IN REVIEW — MON-TUE (PLTR beats, Fujairah hit) / WED (AMD erupts, MOU signed) / THU-FRI (mean reversion, NFP +115K)",
+    "II · MARKETS — SPX +1.5%, NDX +3.0%, RUT FLAT, Brent -11.2% week",
+    "III · TRACK RECORD — 9 setups reviewed (No.003-005) · 3W / 5L / 1F · avg -0.79%",
+    "IV · WHAT WORKED — AMD (×2 entries +13%), DIS +1.94%",
+    "V · WHAT DIDN'T — PLTR (×2 valuation wall), BRENT long (×2 peace reversal), AMD post-ATH buy",
+    "VI · NEXT WEEK — Warsh vote Mon, CPI Tue, PPI Wed, HD+Retail Thu, Warsh takes over Fri",
+    "VII · WATCHLIST — NVDA catch-up, DIS hold, Brent short continuation, AMD reset re-entry"
+  ],
+  "weekly_review": true,
+  "week_setups_total": 9,
+  "week_setups_wins": 3,
+  "week_setups_losses": 5,
+  "week_setups_flat": 1,
+  "week_setups_avg_return_pct": -0.79,
+  "daily_issues_this_week": [
+    "2026-05-04-vol-i-no-003.html",
+    "2026-05-05-vol-i-no-004.html",
+    "2026-05-07-vol-i-no-005.html"
+  ],
+  "index_returns": {
+    "SPX_week": "+1.5%",
+    "SPX_mon_open": "7230.12",
+    "SPX_wed_ath": "7365.12",
+    "SPX_fri_close": "~7300",
+    "NDX_week": "+3.0%",
+    "NDX_mon_open": "25114.44",
+    "NDX_wed_ath": "25838.94",
+    "RUT_week": "FLAT",
+    "RUT_note": "Set intraday record Tue; fell -1.63% Fri",
+    "VIX_fri": "~16.8",
+    "TNX_10y": "~4.32%"
+  },
+  "flagged_setups": [
+    {
+      "ticker": "PLTR",
+      "direction": "long",
+      "flag_issue": "no-003",
+      "flag_date": "2026-05-04",
+      "price_at_flag": 144.07,
+      "price_fri_close": 135.99,
+      "return_pct": -5.61,
+      "verdict": "LOSS",
+      "thesis": "Post-earnings momentum if AIP commercial accelerates"
+    },
+    {
+      "ticker": "AMD",
+      "direction": "long",
+      "flag_issue": "no-003",
+      "flag_date": "2026-05-04",
+      "price_at_flag": 360.54,
+      "price_fri_close": 408.46,
+      "return_pct": 13.29,
+      "verdict": "WIN",
+      "thesis": "Post-earnings if Q1 clears $9.8B and DC margin holds"
+    },
+    {
+      "ticker": "BRENT",
+      "direction": "long",
+      "flag_issue": "no-003",
+      "flag_date": "2026-05-04",
+      "price_at_flag": 111.0,
+      "price_fri_close": 100.54,
+      "return_pct": -9.42,
+      "verdict": "LOSS",
+      "thesis": "Hormuz deadlock Wk2, structural support above $108"
+    },
+    {
+      "ticker": "PLTR",
+      "direction": "long",
+      "flag_issue": "no-004",
+      "flag_date": "2026-05-05",
+      "price_at_flag": 147.26,
+      "price_fri_close": 135.99,
+      "return_pct": -7.65,
+      "verdict": "LOSS",
+      "thesis": "$1.63B +85% beat, FY guide raised 10% to $7.65B"
+    },
+    {
+      "ticker": "AMD",
+      "direction": "long",
+      "flag_issue": "no-004",
+      "flag_date": "2026-05-05",
+      "price_at_flag": 360.0,
+      "price_fri_close": 408.46,
+      "return_pct": 13.46,
+      "verdict": "WIN",
+      "thesis": "Beat+raise confirmed; entry on May 6 open if DC clears $5.56B"
+    },
+    {
+      "ticker": "BRENT",
+      "direction": "long",
+      "flag_issue": "no-004",
+      "flag_date": "2026-05-05",
+      "price_at_flag": 113.54,
+      "price_fri_close": 100.54,
+      "return_pct": -11.45,
+      "verdict": "LOSS",
+      "thesis": "Fujairah hit; both Hormuz AND Abu Dhabi terminus compromised"
+    },
+    {
+      "ticker": "AMD",
+      "direction": "long",
+      "flag_issue": "no-005",
+      "flag_date": "2026-05-07",
+      "price_at_flag": 421.39,
+      "price_fri_close": 408.46,
+      "return_pct": -3.07,
+      "verdict": "LOSS",
+      "thesis": "Post-earnings momentum continuation at ATH $421.39"
+    },
+    {
+      "ticker": "DIS",
+      "direction": "long",
+      "flag_issue": "no-005",
+      "flag_date": "2026-05-07",
+      "price_at_flag": 107.42,
+      "price_fri_close": 109.5,
+      "price_fri_note": "~$109.50 estimated; search confirmed ~$110.39 May 7 close",
+      "return_pct": 1.94,
+      "verdict": "WIN",
+      "thesis": "SVOD 10.6% margin, FY EPS guide +16%, D'Amaro first beat $320M"
+    },
+    {
+      "ticker": "BRENT",
+      "direction": "short",
+      "flag_issue": "no-005",
+      "flag_date": "2026-05-07",
+      "price_at_flag": 101.96,
+      "price_fri_close": 100.54,
+      "return_pct": 1.39,
+      "verdict": "FLAT",
+      "thesis": "Iran MOU near, Project Freedom paused; ING targets $85-90",
+      "note": "0.11pp short of WIN threshold; intraday range $96.80-$108.80"
+    }
+  ],
+  "narrative_threads": [
+    "AMD vs PLTR: Fundamentals delivered on both, but valuation is the separator — AMD at reasonable multiples rewarded; PLTR at ~200x fwd PE structurally sold on every beat",
+    "Peace dividend speed: Iran MOU arrived 2-3 days faster than modeled, erasing both BRENT long positions and turning a thesis-correct short into a near-WIN rather than clean WIN",
+    "Entry price as risk management: AMD post-ATH entry (No.005) vs. at-flag entry (No.003/004) produced -3% vs +13% — identical thesis, different entry = opposite outcome",
+    "Warsh transition: Powell exits May 15 as Brent collapsed, removing the oil inflation impulse but PCE +4.5% and ISM Prices 84.6% still structural — hawkish inheritance",
+    "AI capex delivery confirmed: AMD $10.25B Q1 + DC $5.8B +57% validates hyperscaler spend trajectory; NVDA May 20 is the next test against a very high bar"
+  ],
+  "macro_snapshot": {
+    "SPX_fri": "~7300",
+    "NDX_fri": "~25879",
+    "brent_fri": "$100.54",
+    "brent_intraday_range_fri": "$96.80-$108.80",
+    "NFP_april": "+115K vs 62K est",
+    "TNX_10y": "~4.32%",
+    "VIX": "~16.8"
+  },
+  "next_week_calendar": [
+    {"date": "2026-05-11", "event": "Warsh full Senate confirmation vote (expected)"},
+    {"date": "2026-05-12", "event": "CPI April — 8:30am ET (prior: +3.3% YoY; first post-Hormuz read)"},
+    {"date": "2026-05-13", "event": "PPI April — 8:30am ET (pipeline inflation; oil reversal should show)"},
+    {"date": "2026-05-14", "event": "Home Depot Q1 BMO (confirmed); Retail Sales April 8:30am ET"},
+    {"date": "2026-05-15", "event": "Powell's final day; Warsh takes over as Fed Chair; Michigan Consumer Sentiment 10am ET"},
+    {"date": "2026-05-20", "event": "NVDA Q1 earnings (preview — merchant vs custom silicon; AMD ATH sets bar)"}
+  ],
+  "ticker_tape": "WEEKLY RECAP WK 4-8 MAY · SPX +1.5% · NDX +3.0% · RUT FLAT · 3W / 5L / 1F SETUPS · AMD +13% WK · BRENT -9% PEACE REVERSAL · PLTR -8% VALUATION WALL · NFP +115K VS 62K EST · CPI TUE 12 MAY · WARSH VOTE MON 11 MAY · POWELL EXITS FRI 15 MAY",
+  "file": "archive/2026-05-08-weekly-vol-i-no-006.html",
+  "published_url": "https://zivav.github.io/morning-brief/archive/2026-05-08-weekly-vol-i-no-006.html",
+  "page_count": 8,
+  "sources": [
+    "StockAnalysis / CNBC · AMD close May 8 2026 $408.46 (previous close $421.39)",
+    "Yahoo Finance / MarketBeat · PLTR May 8 2026 range $134.50-$140.95, ~$135.99",
+    "Trading Economics / CNBC · Brent crude May 8 2026 close $100.54 (intraday range $96.80-$108.80)",
+    "TheStreet · DIS May 7 2026 $110.39 (prev close $108.06); May 8 estimated ~$109.50",
+    "BLS / Trading Economics · NFP April 2026 +115K vs 62K estimate",
+    "SPY Options Substack · SPX May 8 high 7385, close ~7300-7335",
+    "TheStreet · Stock Market Today May 5 2026 — Russell 2000 intraday record",
+    "Yahoo Finance · SPX May 6 ATH 7365.12 / NDX May 6 ATH 25838.94 (from no-005 JSON)",
+    "EarningsWhispers · Earnings calendar week May 11-15 2026",
+    "BLS · CPI April 2026 release scheduled May 12 8:30am ET",
+    "Home Depot IR / ad-hoc-news.de · Home Depot Q1 2026 earnings May 14 BMO",
+    "CNBC / Yahoo Finance · Kevin Warsh full Senate vote week of May 11",
+    "NVDA IR / Yahoo Finance · NVDA Q1 2026 earnings May 20 2026",
+    "Rigzone · Brent crude May 8 2026 oil market update",
+    "Trading Economics / Investing.com · Retail Sales April 2026 May 14"
+  ]
+}
