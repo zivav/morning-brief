@@ -1,0 +1,182 @@
+{
+  "issue_id": "vol-i-no-007",
+  "date": "2026-05-11",
+  "vol_no": "VOL I · NO 007",
+  "edition_type": "daily_premarket",
+  "issue_time": "08:00 Asia/Jerusalem (~01:00 ET)",
+  "top_headline": "WARSH DAY / CPI EVE — Senate cloture 3pm ET; Hormuz frays, Brent +3.2% $104; CPI tomorrow 3.7%; AMD ATH $455; NVDA May 20",
+  "chapters": [
+    "I · MACRO — Warsh Senate cloture vote 3pm ET; confirmation expected this week; Powell exits May 15; CPI April tomorrow 3.7% YoY est (from 3.3%); Core 2.7%",
+    "II · AI TRADE — NVDA May 20 preview: $78.8B est +79% / $1.77 EPS; hyperscaler capex $725B +77%; AMD ATH $455.19; AKAM +26% $1.8B AI cloud deal",
+    "III · EARNINGS — Honor Roll: AKAM +26%, INOD +51%, AMD ATH, DIS +6.9%, UBER +10%, APP +59%, SHOP +34%, ARM record / Movers: FWRD -44%, HUBS -23%",
+    "IV · GEOPOLITICS & CAPITAL — Hormuz ceasefire frays (US fires on tankers, Iran fires at UAE, Brent +3.2% $104.49); US-UK deal signed May 8; Trump-Xi summit May 14-15 Beijing",
+    "V · TRACK RECORD — No-003 (4 May) setups: AMD +26.3% WIN / PLTR -4.4% LOSS / BRENT -5.9% LOSS / 1W 2L / avg +5.3%"
+  ],
+  "flagged_setups": [
+    {
+      "ticker": "NVDA",
+      "direction": "long",
+      "thesis": "May 20 Q1 FY2027 earnings preview. Revenue consensus $78.8B +78.6% YoY; EPS $1.77 +118.5% YoY — in line with management guidance of $78B. Hyperscalers (MSFT/AMZN/GOOGL/META) collectively guided ~$725B capex for 2026 (+77% vs 2025). Goldman Sachs: 'major re-rating' likely; expects beat-and-raise. AMD ATH $455 sets a high bar for AI capex delivery. NVDA forward P/E ~25x — compressed vs AI-era average. 3-condition entry: revenue beat >$78B + DC GPU demand commentary strong + China exclusion confirmed not worsening. Risk: stock historically falls more often post-earnings than rises even on beats; AMD set very high bar; Trump-Xi summit May 14-15 could escalate export controls.",
+      "flag_date": "2026-05-11",
+      "price_at_flag": 217.0,
+      "price_note": "~$217 per Bloomberg/Investing.com; ATH was $217.80 on May 8 2026",
+      "horizon_trading_days": 9
+    },
+    {
+      "ticker": "BRENT",
+      "direction": "short",
+      "thesis": "Iran ceasefire fraying but Citi targets deal end-May with $85-90 range on Hormuz normalization. Qatar PM mediation active; Iran sent response to US proposal via Pakistan. Current Brent $104.49 (+3.16% May 11) on ceasefire uncertainty — elevated entry point for short. CENTCOM fired on Iranian tankers May 8; Iran fired at UAE. Trump insists ceasefire 'intact.' Deal thesis: end-May resolution, shipping flows normalize over weeks, supply normalization takes 4-8 weeks from deal to Brent repricing. Risk: ceasefire collapse = spike to $115+; structural if deal fails; Warsh's inflation problem gets much worse.",
+      "flag_date": "2026-05-11",
+      "price_at_flag": 104.49,
+      "price_note": "$104.49 Brent crude futures May 11 2026 +3.16% (CNBC oil prices today May 11)",
+      "horizon_trading_days": 7
+    }
+  ],
+  "watchlist_hits": [
+    {
+      "ticker": "NVDA",
+      "event": "May 20 Q1 FY2027 earnings approaching; consensus $78.8B +79%; hyperscaler capex $725B; Goldman beat-and-raise call; AMD ATH $455 sets precedent",
+      "move": "~$217 (ATH $217.80 May 8)",
+      "priority": "core"
+    },
+    {
+      "ticker": "AMD",
+      "event": "New ATH $455.19 on May 8 — continued post-earnings momentum from $10.25B Q1 +38% beat; DC $5.8B +57%; 8 analyst upgrades",
+      "move": "+12% week to new ATH $455.19",
+      "priority": "core"
+    },
+    {
+      "ticker": "PLTR",
+      "event": "Valuation wall confirmed — $137.80 as of May 10; structurally unable to hold above $147 despite fundamental beats; ~200x fwd PE ceiling",
+      "move": "$137.80 (from $147.26 AH peak May 4)",
+      "priority": "core"
+    },
+    {
+      "ticker": "AKAM",
+      "event": "Q1 report + $1.8B 7-year AI cloud commitment from frontier model provider; Cloud Infrastructure +40% YoY; AI inference validation",
+      "move": "+26% premarket May 11",
+      "priority": "ai"
+    }
+  ],
+  "tase_events": [
+    {
+      "event": "TASE Ltd (TASE.TA) reports Q1 2026 results tomorrow May 12 after market close (conference call 8pm Israeli time). Market cap 15.29B ILS +2.24% last week. Iran ceasefire uncertainty and Brent bounce $104.49 negative for Israeli energy importers; positive for defense sector demand. TA-35 directional watch tied to Warsh/CPI risk and Hormuz resolution.",
+      "ticker": "TASE.TA",
+      "materiality": "informational"
+    }
+  ],
+  "narrative_threads": [
+    "Warsh inheritance locked: Fed Chair transition T-4 days; Warsh receives PCE +4.5%, CPI tomorrow 3.7% est, ISM Prices 84.6%, Brent bouncing above $100 — oil inflation impulse that was supposed to dissipate is re-accelerating; zero rate cuts in 2026 now consensus",
+    "Hormuz deal timing risk: Iran MOU expected end-May per Citi; but active skirmishes (US fires on tankers, Iran fires at UAE) suggest deal is not imminent; each week of delay = another month of elevated CPI; this is the core tension for Warsh's first decision",
+    "AMD vs NVDA resolution: AMD delivered ATH +26.3% from May 4 flag; NVDA still waiting for May 20 catalyst; AMD set the bar very high for AI DC revenue; if NVDA misses or guides light, the AI capex narrative gets complicated — but Goldman and hyperscaler $725B spending suggest beat-and-raise",
+    "PLTR valuation ceiling: Three post-earnings selloffs in a row despite fundamental beats; $135-140 appears to be institutional bid floor; $147-150 is structural ceiling; this pattern is now well-established",
+    "Trade architecture week: US-UK signed, Trump-Xi May 14-15; two deals in one week would be historically significant; EU still without framework; China Section 301 investigations create escalation risk even as summit signals engagement"
+  ],
+  "macro_snapshot": {
+    "ES_futures": "-0.16% / 7,407.25",
+    "NQ_futures": "-0.02% / 29,326.75",
+    "brent_may11": "$104.49 +3.16%",
+    "wti_est": "~$97",
+    "NVDA_atH_may8": "$217.80",
+    "AMD_close_may8": "$455.19 ATH",
+    "PLTR_close_may10": "$137.80",
+    "DIS_close_may8": "$108.02",
+    "CPI_apr_est_yoy": "3.7%",
+    "CPI_apr_est_mom": "+0.6%",
+    "CPI_core_est_yoy": "2.7%",
+    "TNX_10y": "~4.32%",
+    "VIX": "~16.8"
+  },
+  "today_calendar": [
+    {"time": "3:00PM ET", "event": "Warsh cloture vote — Senate floor (full confirmation vote expected later this week)"},
+    {"time": "BMO / AH", "event": "No major S&P 500 earnings today; 220 reports scheduled across indices"}
+  ],
+  "week_calendar": [
+    {"date": "2026-05-12", "event": "CPI April 8:30am ET (3.7% YoY est, 2.7% Core); TASE Q1 results after close"},
+    {"date": "2026-05-13", "event": "PPI April 8:30am ET — pipeline inflation read; Brent reversal should begin showing"},
+    {"date": "2026-05-14", "event": "Home Depot Q1 BMO; Retail Sales April 8:30am ET; Trump-Xi summit Beijing Day 1"},
+    {"date": "2026-05-15", "event": "Powell's last day; Warsh takes over as Fed Chair; Michigan Consumer Sentiment 10am ET; Trump-Xi summit Day 2"},
+    {"date": "2026-05-20", "event": "NVDA Q1 FY2027 earnings — $78.8B rev est; AI capex verdict; merchant vs custom silicon; export controls"}
+  ],
+  "track_record": {
+    "window": "No. 003 (4 May 2026) — 5 trading days",
+    "setups_reviewed": 3,
+    "wins": 1,
+    "losses": 2,
+    "flat": 0,
+    "avg_return_pct": 5.3,
+    "results": [
+      {
+        "ticker": "AMD",
+        "direction": "long",
+        "flag_issue": "no-003",
+        "flag_date": "2026-05-04",
+        "price_at_flag": 360.54,
+        "price_now": 455.19,
+        "price_note": "$455.19 AMD close May 8 2026 ATH — StockAnalysis / Investing.com",
+        "return_pct": 26.3,
+        "verdict": "WIN",
+        "thesis": "Post-earnings if DC clears $5.56B and margin holds"
+      },
+      {
+        "ticker": "PLTR",
+        "direction": "long",
+        "flag_issue": "no-003",
+        "flag_date": "2026-05-04",
+        "price_at_flag": 144.07,
+        "price_now": 137.80,
+        "price_note": "$137.80 PLTR as of May 10 2026 — Investing.com",
+        "return_pct": -4.4,
+        "verdict": "LOSS",
+        "thesis": "Post-earnings momentum if AIP commercial accelerates"
+      },
+      {
+        "ticker": "BRENT",
+        "direction": "long",
+        "flag_issue": "no-003",
+        "flag_date": "2026-05-04",
+        "price_at_flag": 111.00,
+        "price_now": 104.49,
+        "price_note": "$104.49 Brent crude May 11 2026 — CNBC oil prices today",
+        "return_pct": -5.9,
+        "verdict": "LOSS",
+        "thesis": "Hormuz deadlock Wk2, structural support above $108"
+      }
+    ]
+  },
+  "ticker_tape": "BRENT +3.2% $104.49 · CEASEFIRE FRAYS · WARSH CLOTURE 3PM ET · CPI TOMORROW 3.7% EST · AMD ATH $455 · NVDA $78.8B MAY 20 · AKAM +26% $1.8B AI CLOUD · INOD +51% · US-UK DEAL SIGNED · TRUMP-XI MAY 14 · ES FUTURES −0.16%",
+  "file": "archive/2026-05-11-vol-i-no-007.html",
+  "published_url": "https://zivav.github.io/morning-brief/archive/2026-05-11-vol-i-no-007.html",
+  "page_count": 9,
+  "sources": [
+    "CNBC · Oil price today: Brent, WTI rise on Iran war worries · May 11 2026",
+    "CBS News / NPR · Live Updates: Trump insists ceasefire still intact; US fires on Iranian tankers · May 8 2026",
+    "Al Jazeera · Iran war day 70: US, Iran trade fire in Hormuz amid ceasefire tensions · May 8 2026",
+    "CNBC · US and Iran trade fire in Strait of Hormuz · May 7 2026",
+    "Senate Daily Press · Thursday May 7 2026 — Warsh cloture vote schedule",
+    "CNBC · Trump Fed pick Kevin Warsh clears key Senate hurdle · Apr 29 2026",
+    "Fortune · This is not normal — Claudia Sahm on Warsh · Apr 30 2026",
+    "Kiplinger · What to Expect From the April CPI Report · May 2026",
+    "Robinhood Prediction Markets · CPI April 2026 YoY Forecast May 12",
+    "HeyGoTrade · US Market Outlook May 11-15 2026: CPI Is Key",
+    "Cleveland Fed · Inflation Nowcasting — April 2026",
+    "BLS · CPI Home — release schedule May 12 2026",
+    "Whitehouse.gov · Fact Sheet: US-UK Reach Historic Trade Deal · May 8 2026 (original deal May 2025, updated terms May 2026)",
+    "Yahoo Finance / UK Finance · Wall Street rises on trade optimism US-UK deal · May 8 2026",
+    "EconoTimes · Trump-Xi Summit 2026 Trade War Tensions and Tariff Talks",
+    "Polymarket · US-China tariff agreement by May 31 — 50/50 as of May 2026",
+    "Atlantic Council · Trump-Xi summit draws closer, trade uncertainty looms",
+    "Motley Fool · Should You Buy Nvidia Stock Before May 20 · May 10 2026",
+    "TipRanks · Nvidia stock could see major re-rating ahead of earnings, Goldman Sachs · May 2026",
+    "Seeking Alpha · NVDA FQ1 Earnings Preview: Back To Cash Flow · May 2026",
+    "Benzinga · Why Akamai shares are trading higher by 26% · May 11 2026",
+    "Investing.com · Why is Akamai Technologies stock surging today · May 11 2026",
+    "StocksToTrade · Akamai Stock Jumps as AI Deal and Security Momentum Fuel Breakout · May 8 2026",
+    "Motley Fool · AKAM Q1 2026 Earnings Transcript · May 7 2026",
+    "StockAnalysis · AMD stock price history — $455.19 May 8 2026 ATH",
+    "Investing.com · PLTR stock price $137.80 as of May 10 2026",
+    "StockAnalysis / CNBC · DIS stock price $108.02 May 8 2026",
+    "Yahoo Finance · TASE.TA Q1 2026 results scheduled May 12 2026",
+    "Bloomberg / Investing.com · ES Futures 7407.25 / NQ Futures 29326.75 May 11 2026"
+  ]
+}
