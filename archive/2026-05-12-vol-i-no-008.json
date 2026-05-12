@@ -1,0 +1,66 @@
+{
+  "issue_id": "vol-i-no-008",
+  "date": "2026-05-12",
+  "vol_no": "VOL I · NO 008",
+  "edition_type": "daily_premarket",
+  "issue_time": "08:00 Asia/Jerusalem (~01:00 ET)",
+  "top_headline": "TRIPLE CATALYST MORNING — CPI 3.7% est at 8:30 ET; Warsh Fed Board vote today; Trump departs Beijing with 17 CEOs",
+  "chapters": [
+    "I · MACRO — CPI April 3.7% YoY est (8:30 ET); biggest since Jan 2024; oil-driven +40bp vs March 3.3%; Core 2.7%",
+    "I · MACRO — Warsh Fed Board vote today (cloture 49-44 May 11); Chair vote this week; Powell exits May 15; zero cuts in 2026",
+    "II · AI TRADE — NVDA $214 AH T-8 to May 20; $78.5B rev / $1.76 EPS consensus; $725B hyperscaler capex; copper record $14,000+/t",
+    "III · GEOPOLITICS — Trump departs Beijing today; 17 CEOs (Musk, Cook, Fink); Iran agenda primary; trade truce modest extension",
+    "III · GEOPOLITICS — Brent $104.97 +0.7% overnight; ceasefire 'massive life support'; 100M bbl/week supply loss; Aramco CEO warning",
+    "IV · MARKETS — SPX/NDX/RUT all ATH May 11 (7,412/26,274/2,868); AMD +8.7% wk to $458; copper record; NVDA -3.4% AH; PLTR -2.2%",
+    "V · TRACK RECORD — No-005 (7 May) 3-day review: AMD +8.69% WIN / DIS -2.49% LOSS / BRENT SHORT -2.95% LOSS / 1W 2L avg +1.08%"
+  ],
+  "flagged_setups": [
+    {
+      "ticker": "NVDA",
+      "direction": "long",
+      "thesis": "Pre-earnings entry at $214.34 AH (T-8 to May 20 Q1 FY2027 report). Consensus: $78.5B revenue +78.2% YoY, EPS $1.76 +116.9% YoY. AMD $10.25B Q1 +38% validates merchant silicon DC demand; hyperscaler $725B capex 2026 (+77%) is the strongest demand floor since 2024. Goldman $250 PT, consensus $272, 37/37 Strong Buy. Risk: PLTR-style valuation selloff even on beat; China export control wildcard from Beijing summit; NVDA historically falls more often than rises post-earnings even on beats.",
+      "flag_date": "2026-05-12",
+      "price_at_flag": 214.34,
+      "price_note": "$214.34 NVDA pre-market May 12 2026 — Yahoo Finance / MarketChameleon premarket VWAP",
+      "horizon_trading_days": 8
+    }
+  ],
+  "watchlist_hits": [
+    {"ticker": "NVDA", "event": "T-8 to May 20 Q1 FY2027 earnings; $214.34 AH pullback from $221.98 May 11 close; Goldman $250 PT; consensus $272", "move": "-3.4% AH to $214.34 from $221.98", "priority": "core"},
+    {"ticker": "AMD", "event": "Post-earnings momentum to $458.02 close May 11; +8.69% from May 7 flag $421.39; DC momentum sustained", "move": "+8.69% since May 7 flag; $458.02 May 11 close", "priority": "core"},
+    {"ticker": "MSFT", "event": "$190B 2026 capex vs $154B expected — strongest hyperscaler capex signal; read-across for NVDA demand", "move": "capex signal", "priority": "core"},
+    {"ticker": "AAPL", "event": "Tim Cook traveling to Beijing with Trump delegation May 14-15; China supply chain / sales narrative", "move": "Beijing delegation", "priority": "core"},
+    {"ticker": "TSLA", "event": "Elon Musk traveling to Beijing with Trump delegation; China EV market access / tariff angle", "move": "Beijing delegation", "priority": "core"}
+  ],
+  "tase_events": [
+    {"event": "TASE Ltd (TASE.TA) Q1 2026 results released after market close today (May 12). Conference call at 8pm Israeli time. Market context: SPX/NDX/RUT all at ATH; Brent $104.97; Warsh confirmation hawkish signal.", "ticker": "TASE.TA", "materiality": "high"}
+  ],
+  "narrative_threads": [
+    "Warsh inheritance: Fed Chair confirmed to Board today; Chair vote this week; inherits PCE 4.5%, ISM Prices 84.6%, CPI 3.7% est today, Brent $105",
+    "Hormuz resolution timing: Trump rejected Iran's latest proposal ('massive life support'); Citi end-May thesis intact but deal not imminent",
+    "NVDA May 20 countdown: AMD set the bar; hyperscaler $725B capex signals peak demand; Goldman beat-and-raise thesis; $214 AH is pre-earnings dip entry",
+    "Triple ATH session (May 11): SPX 7,412 + NDX 26,274 + RUT 2,868 all record closes",
+    "Beijing CEO delegation: 17 CEOs including Musk, Cook, Fink; Iran agenda dominates over tariffs"
+  ],
+  "macro_snapshot": {
+    "SPX_close_may11": "7,412.84 ATH",
+    "NDX_close_may11": "26,274.13 ATH",
+    "RUT_close_may11": "2,868.58 ATH",
+    "NVDA_ah_may12": "$214.34",
+    "AMD_close_may11": "$458.02",
+    "brent_may12_overnight": "$104.97 +0.7%",
+    "CPI_apr_est_yoy": "3.7%",
+    "CPI_apr_core_est": "2.7%"
+  },
+  "track_record": {
+    "window": "No. 005 (7 May 2026) — 3 trading days",
+    "setups_reviewed": 3, "wins": 1, "losses": 2, "flat": 0, "avg_return_pct": 1.08,
+    "results": [
+      {"ticker": "AMD", "direction": "long", "flag_issue": "no-005", "flag_date": "2026-05-07", "price_at_flag": 421.39, "price_now": 458.02, "return_pct": 8.69, "verdict": "WIN"},
+      {"ticker": "DIS", "direction": "long", "flag_issue": "no-005", "flag_date": "2026-05-07", "price_at_flag": 107.42, "price_now": 104.75, "return_pct": -2.49, "verdict": "LOSS"},
+      {"ticker": "BRENT", "direction": "short", "flag_issue": "no-005", "flag_date": "2026-05-07", "price_at_flag": 101.96, "price_now": 104.97, "return_pct": -2.95, "verdict": "LOSS"}
+    ]
+  },
+  "published_url": "https://zivav.github.io/morning-brief/archive/2026-05-12-vol-i-no-008.html",
+  "page_count": 8
+}
