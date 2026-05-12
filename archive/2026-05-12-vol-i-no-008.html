@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Markets Brief &mdash; 12 MAY 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* =========================================================
+     MORNING MARKETS BRIEF — MASTER TEMPLATE
+     Layouts available (each <section class="page" data-layout="X">):
+       1. cover           - cover/index page
+       2. fullbleed       - full-bleed image with overlay text
+       3. split           - text left, visual/stats right
+       4. threepanel      - headline + two comparison panels
+       5. bignumber       - one giant number callout
+       6. chart           - text + chart visualization
+       7. honor           - earnings beats grid (4-8 cards)
+       8. movers          - gainers/losers two-column tabular
+       9. trackrecord     - prior issue ticker performance audit
+     ========================================================= */
+  :root {
+    --bg: #000000;
+    --panel: #0a0a0a;
+    --card: #141414;
+    --card-2: #1a1a1a;
+    --border: #232323;
+    --border-2: #2e2e2e;
+    --muted: #737373;
+    --muted-2: #525252;
+    --text: #ffffff;
+    --text-soft: rgba(255,255,255,0.85);
+    --green: #22c55e;
+    --green-soft: rgba(34,197,94,0.08);
+    --green-border: rgba(34,197,94,0.4);
+    --red: #ef4444;
+    --red-soft: rgba(239,68,68,0.08);
+    --red-border: rgba(239,68,68,0.4);
+    --blue: #3b82f6;
+    --blue-soft: rgba(59,130,246,0.08);
+    --blue-border: rgba(59,130,246,0.4);
+    --yellow: #eab308;
+    --yellow-soft: rgba(234,179,8,0.08);
+    --yellow-border: rgba(234,179,8,0.4);
+    --header-red: #dc2626;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --serif: 'Playfair Display', 'Times New Roman', serif;
+    --mono: 'JetBrains Mono', 'Courier New', monospace;
+  }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); }
+
+/* -- PAGE SHELL -- */
+.page {
+  scroll-snap-align: start;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.live-strip {
+  background: var(--header-red);
+  color: white;
+  padding: 8px 28px;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+.live-strip .left::before { content: "● "; }
+
+.meta-strip {
+  padding: 12px 28px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+.meta-strip .vol-no { display: flex; gap: 16px; align-items: center; }
+.meta-strip .vol-no svg { width: 14px; height: 14px; opacity: 0.6; }
+
+.chip {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  background: rgba(34,197,94,0.05);
+  color: var(--green);
+  border-color: var(--green-border);
+}
+.chip.macro { color: var(--blue); border-color: var(--blue-border); background: rgba(59,130,246,0.05); }
+.chip.geo { color: var(--yellow); border-color: var(--yellow-border); background: rgba(234,179,8,0.05); }
+.chip.earnings { color: var(--green); border-color: var(--green-border); background: rgba(34,197,94,0.05); }
+
+.ticker-tape {
+  border-top: 1px solid var(--border);
+  padding: 14px 28px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+}
+.ticker-tape .sep { margin: 0 18px; color: var(--border-2); }
+
+.page-foot {
+  padding: 14px 28px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+.page-foot .arrow {
+  width: 22px; height: 22px;
+  border: 1px solid var(--border-2);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 9px;
+  color: var(--muted);
+}
+
+/* -- TYPOGRAPHY -- */
+.headline-mega {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(44px, 6.5vw, 88px);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+}
+.headline-mega em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: -0.01em;
+}
+.headline-large {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(36px, 4.8vw, 64px);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+.headline-large em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: -0.01em;
+}
+
+.kicker {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.kicker.macro { color: var(--blue); }
+.kicker.geo { color: var(--yellow); }
+.kicker.earnings { color: var(--green); }
+.kicker.ai { color: var(--green); }
+
+.body-text {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text-soft);
+  max-width: 580px;
+}
+
+.body-text ul, .panel-card ul { padding-left: 1.4em; margin-top: 10px; }
+.body-text ul li, .panel-card ul li { margin-bottom: 6px; }
+
+/* -- BADGES & CHIPS -- */
+.badge-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.badge {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid;
+}
+.badge.pos { color: var(--green); border-color: var(--green-border); background: var(--green-soft); }
+.badge.neg { color: var(--red); border-color: var(--red-border); background: var(--red-soft); }
+.badge.neu { color: var(--blue); border-color: var(--blue-border); background: var(--blue-soft); }
+.badge.warn { color: var(--yellow); border-color: var(--yellow-border); background: var(--yellow-soft); }
+
+/* -- METRIC GRID -- */
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.metric-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.metric-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.metric-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+.metric-cell {
+  background: var(--card);
+  padding: 16px 20px;
+}
+.metric-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.metric-value {
+  font-family: var(--mono);
+  font-size: 16px;
+  font-weight: 600;
+}
+.metric-value.pos { color: var(--green); }
+.metric-value.neg { color: var(--red); }
+.metric-value.neu { color: var(--blue); }
+.metric-value.warn { color: var(--yellow); }
+
+/* -- TOP STORIES RAIL -- */
+.top-stories { display: flex; flex-direction: column; gap: 14px; }
+.story-card {
+  background: var(--card);
+  border-left: 3px solid var(--green);
+  padding: 16px 20px;
+}
+.story-card.macro { border-left-color: var(--blue); }
+.story-card.geo { border-left-color: var(--yellow); }
+.story-card.ai { border-left-color: var(--green); }
+.story-card .label {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--green);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.story-card.macro .label { color: var(--blue); }
+.story-card.geo .label { color: var(--yellow); }
+.story-card .title {
+  font-weight: 800;
+  font-size: 22px;
+  margin: 6px 0 10px;
+  letter-spacing: -0.012em;
+  text-transform: uppercase;
+}
+.story-card .summary {
+  font-size: 13px;
+  color: var(--text-soft);
+  line-height: 1.5;
+}
+
+/* -- LAYOUT: COVER -- */
+.layout-cover .body { padding: 36px 48px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; }
+.cover-stat-strip { padding: 0 48px 24px; }
+
+/* -- LAYOUT: FULL-BLEED -- */
+.layout-fullbleed .body { padding: 36px 48px; position: relative; }
+.layout-fullbleed .full-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  filter: brightness(0.35) saturate(0.85);
+  z-index: 0;
+}
+.layout-fullbleed .body > * { position: relative; z-index: 1; }
+.layout-fullbleed .corner-chip {
+  position: absolute; top: 36px; right: 48px;
+  background: var(--card-2); border: 1px solid var(--yellow-border);
+  padding: 14px 18px; min-width: 140px; z-index: 2;
+}
+.corner-chip .chip-label { font-family: var(--mono); font-size: 9px; color: var(--yellow); letter-spacing: 0.15em; text-transform: uppercase; }
+.corner-chip .chip-value { font-weight: 900; font-size: 22px; line-height: 1.1; margin-top: 6px; text-transform: uppercase; }
+.corner-chip .chip-attr { font-family: var(--mono); font-size: 10px; color: var(--muted); margin-top: 6px; }
+
+.quote-block {
+  border-left: 2px solid var(--yellow);
+  padding: 6px 0 6px 16px;
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--text-soft);
+  font-size: 16px;
+  margin-top: 24px;
+  max-width: 640px;
+}
+.quote-block .attr {
+  font-family: var(--sans);
+  font-style: normal;
+  color: var(--muted);
+  font-size: 12px;
+  display: block;
+  margin-top: 4px;
+}
+
+/* -- LAYOUT: SPLIT -- */
+.layout-split .body { padding: 36px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.layout-split .split-visual {
+  aspect-ratio: 1.1 / 1;
+  background: var(--card);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+}
+.visual-glyph {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(60px, 9vw, 140px);
+  color: var(--green);
+  letter-spacing: -0.04em;
+}
+.visual-glyph.neu { color: var(--blue); }
+
+/* -- LAYOUT: THREE PANEL -- */
+.layout-threepanel .body { padding: 36px 48px; display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 24px; }
+.panel-card {
+  background: var(--card);
+  border-top: 2px solid var(--green);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.panel-card.warn { border-top-color: var(--yellow); }
+.panel-card.neu { border-top-color: var(--blue); }
+.panel-card.neg { border-top-color: var(--red); }
+.panel-card .panel-label {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--green);
+}
+.panel-card.warn .panel-label { color: var(--yellow); }
+.panel-card.neu .panel-label { color: var(--blue); }
+.panel-card.neg .panel-label { color: var(--red); }
+.panel-card .panel-headline { font-weight: 900; font-size: 36px; line-height: 1; letter-spacing: -0.02em; }
+.panel-card .panel-sub { font-family: var(--mono); font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+.panel-card .panel-body { font-size: 13px; color: var(--text-soft); line-height: 1.5; }
+
+/* -- LAYOUT: BIG NUMBER -- */
+.layout-bignumber .body { padding: 36px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.big-number {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(96px, 12vw, 180px);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  color: var(--green);
+}
+.big-number.neg { color: var(--red); }
+.big-number.neu { color: var(--blue); }
+.big-number-caption {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 16px;
+}
+.big-number-pill {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 8px 16px;
+  background: var(--yellow-soft);
+  border: 1px solid var(--yellow-border);
+  color: var(--yellow);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.big-number-tag {
+  margin-top: 28px;
+  padding: 12px 16px;
+  border: 1px solid var(--yellow-border);
+  background: var(--yellow-soft);
+}
+.big-number-tag .tag-label { font-family: var(--mono); font-size: 10px; color: var(--yellow); letter-spacing: 0.12em; text-transform: uppercase; }
+.big-number-tag .tag-text { font-family: var(--mono); font-size: 12px; color: var(--text); margin-top: 4px; letter-spacing: 0.04em; text-transform: uppercase; }
+
+/* -- LAYOUT: CHART -- */
+.layout-chart .body { padding: 36px 48px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: center; }
+.chart-svg-wrap {
+  width: 100%;
+  aspect-ratio: 1.6 / 1;
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 24px;
+}
+
+/* -- LAYOUT: HONOR ROLL -- */
+.layout-honor .body { padding: 36px 48px; }
+.honor-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 28px;
+}
+.honor-card {
+  background: var(--card);
+  border-top: 2px solid var(--green);
+  padding: 18px 20px;
+}
+.honor-card .ticker-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+}
+.honor-card .ticker { font-weight: 900; font-size: 22px; letter-spacing: -0.01em; }
+.honor-card .change { color: var(--green); font-family: var(--mono); font-weight: 700; font-size: 16px; }
+.honor-card .detail {
+  margin-top: 10px;
+  font-size: 11.5px;
+  color: var(--text-soft);
+  line-height: 1.5;
+  font-family: var(--sans);
+}
+
+/* -- LAYOUT: GAINERS / LOSERS -- */
+.layout-movers .body { padding: 36px 48px; display: grid; grid-template-columns: 1.7fr 1fr; gap: 48px; }
+.mover-list h2 {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: 32px;
+  text-transform: uppercase;
+  letter-spacing: -0.015em;
+  padding-bottom: 8px;
+  margin-bottom: 4px;
+}
+.mover-list h2.gainers { color: var(--green); border-bottom: 1px solid var(--green); }
+.mover-list h2.losers { color: var(--red); border-bottom: 1px solid var(--red); }
+.mover-list .count-tag {
+  font-family: var(--mono); font-size: 11px; color: var(--muted);
+  letter-spacing: 0.08em; text-transform: uppercase; margin-left: 12px;
+}
+.mover-row {
+  display: grid;
+  grid-template-columns: 60px 70px 1fr;
+  gap: 14px;
+  padding: 8px 0;
+  align-items: baseline;
+  font-size: 13px;
+}
+.mover-row .ticker { font-weight: 800; }
+.mover-row .change { font-family: var(--mono); font-weight: 700; }
+.mover-row .change.pos { color: var(--green); }
+.mover-row .change.neg { color: var(--red); }
+.mover-row .reason { color: var(--text-soft); font-size: 12.5px; }
+
+/* -- LAYOUT: TRACK RECORD -- */
+.layout-trackrecord .body { padding: 36px 48px; }
+.track-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 24px;
+}
+.track-table th, .track-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+.track-table th {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+}
+.track-table .ticker-cell { font-weight: 800; font-size: 15px; }
+.track-table .return-cell { font-family: var(--mono); font-weight: 700; }
+.track-table .return-cell.pos { color: var(--green); }
+.track-table .return-cell.neg { color: var(--red); }
+.track-table .verdict { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+.track-table .verdict.win { color: var(--green); }
+.track-table .verdict.loss { color: var(--red); }
+.track-table .verdict.flat { color: var(--muted); }
+.track-summary {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  background: var(--border); border: 1px solid var(--border);
+  margin-top: 28px;
+}
+.track-summary > div { background: var(--card); padding: 16px 20px; }
+
+/* -- PRINT -- */
+@media print {
+  body { scroll-snap-type: none; height: auto; }
+  .page { min-height: 100vh; page-break-after: always; }
+}
+
+/* -- MOBILE FALLBACK -- */
+@media (max-width: 900px) {
+  .layout-cover .body,
+  .layout-split .body,
+  .layout-bignumber .body,
+  .layout-chart .body,
+  .layout-movers .body { grid-template-columns: 1fr; gap: 32px; }
+  .layout-threepanel .body { grid-template-columns: 1fr; }
+  .honor-grid { grid-template-columns: repeat(2, 1fr); }
+  .live-strip, .meta-strip, .page-foot, .ticker-tape { padding-left: 16px; padding-right: 16px; }
+  .layout-cover .body, .layout-split .body, .layout-fullbleed .body,
+  .layout-threepanel .body, .layout-bignumber .body, .layout-chart .body,
+  .layout-honor .body, .layout-movers .body, .layout-trackrecord .body { padding: 24px 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ====================================================================
+     PAGE 01 — COVER
+     ==================================================================== -->
+<section class="page layout-cover" data-layout="cover" id="page-01">
+  <div class="live-strip">
+    <span class="left">LIVE &bull; PRE-MARKET</span>
+    <span>12 MAY 2026 &middot; US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I &middot; NO 008 &middot; MORNING MARKETS BRIEF</span>
+      <span>MORNING MARKETS BRIEF &middot; 9 STORIES &middot; 5 CHAPTERS</span>
+    </div>
+    <span>01 of 08</span>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="kicker">MORNING MARKETS &middot; 12 MAY 2026</div>
+      <h1 class="headline-mega">TRIPLE <em>CATALYST</em><br>MORNING</h1>
+      <p class="body-text" style="margin-top: 28px;">CPI April lands at 8:30 ET; Warsh wins his Fed Board seat today; Trump departs for Beijing with 17 CEOs &mdash; the most front-loaded macro morning of 2026.</p>
+      <div class="badge-row" style="margin-top: 36px;">
+        <span class="badge warn">CPI 3.7% EST &middot; 8:30 ET</span>
+        <span class="badge warn">WARSH FED BOARD VOTE TODAY</span>
+        <span class="badge pos">SPX ATH 7,412.84</span>
+        <span class="badge neu">TRUMP DEPARTS BEIJING &middot; 17 CEOS</span>
+        <span class="badge pos">NVDA $214 AH &middot; T-8 TO MAY 20</span>
+        <span class="badge warn">BRENT $104.97 &middot; CEASEFIRE STALLS</span>
+        <span class="badge pos">AMD $458 &middot; NEW ATH</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="kicker">TODAY&rsquo;S TOP STORIES</div>
+      <div class="top-stories">
+        <div class="story-card macro">
+          <div class="label">I &middot; MACRO</div>
+          <div class="title">CPI DAY</div>
+          <div class="summary">April data hits at 8:30 ET. <strong>3.7% YoY</strong> consensus = biggest jump since Jan 2024, driven by Brent averaging above $100 through the month. Warsh inherits the hottest headline inflation of his career &mdash; on Day 1.</div>
+        </div>
+        <div class="story-card ai">
+          <div class="label">II &middot; AI TRADE</div>
+          <div class="title">NVDA T-8</div>
+          <div class="summary"><strong>$214</strong> AH vs <strong>$272</strong> consensus target; T-8 to May 20 earnings. Copper breaks record above <strong>$14,000/tonne</strong> on AI data center demand. Hyperscalers locked in <strong>$725B</strong> capex for 2026.</div>
+        </div>
+        <div class="story-card geo">
+          <div class="label">III &middot; GEOPOLITICS</div>
+          <div class="title">BEIJING BOUND</div>
+          <div class="summary">Trump departs today with Musk, Cook, Fink &amp; 14 more CEOs. Iran agenda dominates the summit; trade truce extension modest. Hormuz ceasefire on <strong>&ldquo;massive life support.&rdquo;</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="metric-grid cols-4 cover-stat-strip">
+    <div class="metric-cell">
+      <div class="metric-label">ES FUTURES</div>
+      <div class="metric-value neu">~FLAT</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-label">BRENT CRUDE</div>
+      <div class="metric-value warn">$104.97 +0.7%</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-label">CPI APR EST (YoY)</div>
+      <div class="metric-value warn">3.7%</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-label">SPX MAY 11 CLOSE</div>
+      <div class="metric-value pos">7,412.84 ATH</div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">CPI 3.7% EST &middot; 8:30 ET TODAY<span class="sep">&middot;</span>WARSH FED BOARD VOTE<span class="sep">&middot;</span>POWELL EXITS FRI<span class="sep">&middot;</span>TRUMP DEPARTS BEIJING<span class="sep">&middot;</span>17 CEO DELEGATION<span class="sep">&middot;</span>NVDA $214 AH &middot; T-8 TO MAY 20<span class="sep">&middot;</span>BRENT $104.97 +0.7%<span class="sep">&middot;</span>SPX ATH 7,412<span class="sep">&middot;</span>COPPER RECORD HIGH<span class="sep">&middot;</span>TASE Q1 AH TODAY<span class="sep">&middot;</span>ES FUTURES FLAT</div>
+  <div class="page-foot">
+    <span class="arrow">&#9664;</span>
+    <span>01 of 08</span>
+    <span class="arrow">&#9654;</span>
+  </div>
+</section>
+
+
+<!-- ====================================================================
+     PAGE 02 — CHAPTER I · MACRO — FULLBLEED — CPI APRIL 2026
+     ==================================================================== -->
+<section class="page layout-fullbleed" data-layout="fullbleed" id="page-02">
+  <div class="live-strip">
+    <span class="left">LIVE &bull; PRE-MARKET</span>
+    <span>12 MAY 2026 &middot; US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I &middot; NO 008</span>
+      <span class="chip macro">I &middot; MACRO</span>
+    </div>
+    <span>02 of 08</span>
+  </div>
+
+  <div class="body">
+    <div class="full-bg" style="background-image: linear-gradient(135deg, #0a1628 0%, #0f1d35 40%, #141414 100%);"></div>
+
+    <div class="corner-chip">
+      <div class="chip-label">BIGGEST SINCE</div>
+      <div class="chip-value" style="color: var(--yellow);">JAN 2024</div>
+      <div class="chip-attr">CPI 3.9% YoY &mdash; FactSet</div>
+    </div>
+
+    <div class="kicker macro">CHAPTER I &middot; MACRO &middot; 12 MAY 2026</div>
+    <h1 class="headline-mega">APRIL INFLATION<br><em>LANDS</em> AT 8:30</h1>
+    <p class="body-text" style="margin-top: 24px;">April CPI prints today at <strong>8:30am ET</strong> &mdash; the first read fully capturing <strong>Brent averaging $100-108/bbl</strong> during the Hormuz crisis. Consensus: <strong>3.7% YoY</strong>, <strong>+0.6% MoM</strong>, core <strong>2.7% YoY</strong>.</p>
+
+    <ul class="body-text" style="margin-top: 18px; padding-left: 20px; list-style: disc;">
+      <li><strong>3.7% headline</strong> = +40bp from March&rsquo;s 3.3% &mdash; oil accounts for nearly the full swing</li>
+      <li><strong>Core 2.7%</strong> signals underlying disinflation intact; shelter still sticky near 5.5%</li>
+      <li><strong>+0.6% MoM</strong> est vs +0.3% prior &mdash; a +0.7%+ print triggers immediate yield spike and dollar rally</li>
+      <li><strong>Tariff pass-through</strong>: core goods starting to show; Warsh inherits this on Day 1</li>
+      <li><strong>Beat scenario</strong>: &gt;3.8% YoY pushes first cut from early 2027 to mid-2027 or beyond</li>
+      <li><strong>Miss scenario</strong>: &lt;3.5% YoY would require energy to have surprised lower; low probability</li>
+    </ul>
+
+    <div class="metric-grid cols-5" style="margin-top: 36px; max-width: 960px;">
+      <div class="metric-cell">
+        <div class="metric-label">CPI EST (YoY)</div>
+        <div class="metric-value warn">3.7%</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">CORE CPI EST (YoY)</div>
+        <div class="metric-value warn">2.7%</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">PRIOR (MAR YoY)</div>
+        <div class="metric-value neu">3.3%</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">MoM EST</div>
+        <div class="metric-value warn">+0.6%</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">BRENT AVG APR</div>
+        <div class="metric-value neg">~$105/bbl</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">CPI 3.7% EST &middot; 8:30 ET TODAY<span class="sep">&middot;</span>WARSH FED BOARD VOTE<span class="sep">&middot;</span>POWELL EXITS FRI<span class="sep">&middot;</span>TRUMP DEPARTS BEIJING<span class="sep">&middot;</span>17 CEO DELEGATION<span class="sep">&middot;</span>NVDA $214 AH T-8 MAY 20<span class="sep">&middot;</span>BRENT $104.97 +0.7%<span class="sep">&middot;</span>SPX ATH 7,412<span class="sep">&middot;</span>COPPER RECORD HIGH<span class="sep">&middot;</span>TASE Q1 AH TODAY<span class="sep">&middot;</span>ES FUTURES FLAT</div>
+  <div class="page-foot">
+    <span class="arrow">&#9664;</span>
+    <span>02 of 08</span>
+    <span class="arrow">&#9654;</span>
+  </div>
+</section>
+
+
+<!-- ====================================================================
+     PAGE 03 — CHAPTER I · MACRO — THREEPANEL — WARSH / FED TRANSITION
+     ==================================================================== -->
+<section class="page layout-threepanel" data-layout="threepanel" id="page-03">
+  <div class="live-strip">
+    <span class="left">LIVE &bull; PRE-MARKET</span>
+    <span>12 MAY 2026 &middot; US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I &middot; NO 008</span>
+      <span class="chip macro">I &middot; MACRO</span>
+    </div>
+    <span>03 of 08</span>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="kicker macro">CHAPTER I &middot; MACRO &middot; FED TRANSITION</div>
+      <h1 class="headline-large">WARSH <em>INHERITS</em><br>THE FIRE</h1>
+      <p class="body-text" style="margin-top: 20px; font-size: 13px; color: var(--text-soft);">Senate votes today on Warsh&rsquo;s Fed Board seat (cloture passed <strong>49&ndash;44</strong> May 11). Chair vote follows later this week. Powell exits <strong>Friday May 15</strong> &mdash; T&ndash;3 days.</p>
+      <ul class="body-text" style="margin-top: 14px; padding-left: 18px; list-style: disc; font-size: 13px;">
+        <li>Only <strong>2 Democrats</strong> crossed party lines (Fetterman, Coons) &mdash; narrowest confirmation in Fed history</li>
+        <li>Trump brings a <strong>17-CEO delegation</strong> to Beijing today &mdash; confirmation day coincides with summit departure</li>
+        <li><strong>TASE.TA</strong> Q1 2026 results after close today &mdash; Israel market event</li>
+      </ul>
+    </div>
+
+    <div class="panel-card">
+      <div class="panel-label">FED BOARD VOTE TODAY</div>
+      <div class="panel-headline" style="font-size: 28px;">49&ndash;44</div>
+      <div class="panel-sub">CLOTURE VOTE &middot; MAY 11</div>
+      <div class="panel-body">
+        Senate votes today to confirm Warsh to the Fed Board; Chair confirmation follows &mdash; likely Thu or Fri. Powell steps down <strong>May 15</strong>.
+        <ul style="margin-top: 10px; padding-left: 16px; list-style: disc;">
+          <li>First fully partisan Fed Chair confirmation in history</li>
+          <li>Warsh testified at Senate Apr 21: &ldquo;patient and data-dependent&rdquo;</li>
+          <li>Markets pricing <strong>zero cuts</strong> in 2026 &mdash; consensus since NFP +115K beat</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel-card neu">
+      <div class="panel-label">WHAT WARSH INHERITS</div>
+      <div class="panel-headline" style="color: var(--yellow);">4.5%</div>
+      <div class="panel-sub">PCE &middot; APRIL 2026</div>
+      <div class="panel-body">
+        <ul style="margin-top: 6px; padding-left: 16px; list-style: disc;">
+          <li><strong>PCE</strong>: 4.5% &mdash; above target by 250bp</li>
+          <li><strong>ISM Prices</strong>: 84.6% &mdash; near cycle highs</li>
+          <li><strong>CPI today</strong>: 3.7% est &mdash; biggest since Jan 2024</li>
+          <li><strong>Core CPI</strong>: 2.7% &mdash; not alarming but not 2%</li>
+          <li><strong>NFP April</strong>: +115K (above 62K est) &mdash; labor tight</li>
+          <li><strong>Brent</strong>: $105 &mdash; oil inflation impulse re-accelerating</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel-card warn">
+      <div class="panel-label">RATE CUT WINDOW</div>
+      <div class="panel-headline">0</div>
+      <div class="panel-sub">CUTS PRICED IN 2026</div>
+      <div class="panel-body">
+        Fed funds target: <strong>4.25&ndash;4.50%</strong>. Market moved first cut to early 2027.
+        <ul style="margin-top: 10px; padding-left: 16px; list-style: disc;">
+          <li>Political pressure for easing vs structural inflation</li>
+          <li>Oil at $105 forecloses any near-term window</li>
+          <li>Warsh&rsquo;s hawkish 2011 record creates credibility floor</li>
+          <li>If CPI beats today: 2027 cut pricing could push to mid-year</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">CPI 3.7% EST &middot; 8:30 ET TODAY<span class="sep">&middot;</span>WARSH FED BOARD VOTE<span class="sep">&middot;</span>POWELL EXITS FRI<span class="sep">&middot;</span>TRUMP DEPARTS BEIJING<span class="sep">&middot;</span>17 CEO DELEGATION<span class="sep">&middot;</span>NVDA $214 AH T-8 MAY 20<span class="sep">&middot;</span>BRENT $104.97 +0.7%<span class="sep">&middot;</span>SPX ATH 7,412<span class="sep">&middot;</span>COPPER RECORD HIGH<span class="sep">&middot;</span>TASE Q1 AH TODAY<span class="sep">&middot;</span>ES FUTURES FLAT</div>
+  <div class="page-foot">
+    <span class="arrow">&#9664;</span>
+    <span>03 of 08</span>
+    <span class="arrow">&#9654;</span>
+  </div>
+</section>
+
+
+<!-- ====================================================================
+     PAGE 04 — CHAPTER II · AI TRADE — SPLIT — NVDA T-8 TO MAY 20
+     ==================================================================== -->
+<section class="page layout-split" data-layout="split" id="page-04">
+  <div class="live-strip">
+    <span class="left">LIVE &bull; PRE-MARKET</span>
+    <span>12 MAY 2026 &middot; US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I &middot; NO 008</span>
+      <span class="chip">II &middot; AI TRADE</span>
+    </div>
+    <span>04 of 08</span>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="kicker ai">CHAPTER II &middot; AI TRADE &middot; T-8 TO MAY 20</div>
+      <h1 class="headline-large">NVDA: THE <em>$78.5B</em> MOMENT</h1>
+      <p class="body-text" style="margin-top: 24px;"><strong>NVDA</strong> pulled to <strong>$214.34 AH</strong> from its <strong>$221.98</strong> regular-session close on May 11, as Trump&rsquo;s rejection of Iran&rsquo;s peace proposal triggered mild risk-off across semis overnight. The dip sets up a pre-earnings entry with T&ndash;8 to the quarter that defines AI capex for 2026.</p>
+
+      <ul class="body-text" style="margin-top: 18px; padding-left: 20px; list-style: disc;">
+        <li><strong>Revenue est</strong>: $78.5B (+78.2% YoY) &mdash; Goldman models beat-and-raise</li>
+        <li><strong>EPS est</strong>: $1.76 (+116.9% YoY)</li>
+        <li><strong>Hyperscaler capex</strong>: $725B combined 2026 guidance (+77% vs 2025)</li>
+        <li><strong>MSFT alone</strong>: $190B vs $154B expected &mdash; strongest single-name signal</li>
+        <li><strong>AMD precedent</strong>: DC $5.8B +57% Q1 &mdash; merchant silicon demand confirmed</li>
+        <li><strong>Copper record</strong>: $14,000+/tonne on AI data center demand; 500K t/yr by 2030 (S&amp;P Global)</li>
+        <li><strong>Bear case</strong>: PLTR-style valuation selloff even on beat; China export control risk from Beijing summit</li>
+      </ul>
+
+      <p class="body-text" style="margin-top: 18px;">Motley Fool notes NVDA historically falls more often post-earnings than rises even on beats. But Goldman maintains <strong>$250 PT</strong>, consensus at <strong>$272</strong>, and 37 of 37 covering analysts rate it <strong>Strong Buy</strong>.</p>
+
+      <div class="metric-grid cols-2" style="margin-top: 28px; max-width: 460px;">
+        <div class="metric-cell">
+          <div class="metric-label">NVDA AH (MAY 12)</div>
+          <div class="metric-value neg">$214.34</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">NVDA CLOSE (MAY 11)</div>
+          <div class="metric-value pos">$221.98</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">REV CONSENSUS</div>
+          <div class="metric-value neu">$78.5B</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">EPS CONSENSUS</div>
+          <div class="metric-value neu">$1.76</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">GOLDMAN PT</div>
+          <div class="metric-value pos">$250</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">CONSENSUS PT</div>
+          <div class="metric-value pos">$272</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="split-visual">
+      <span class="visual-glyph" style="font-size: clamp(48px, 7vw, 100px); color: var(--green);">$78.5B</span>
+    </div>
+  </div>
+
+  <div class="ticker-tape">CPI 3.7% EST &middot; 8:30 ET TODAY<span class="sep">&middot;</span>WARSH FED BOARD VOTE<span class="sep">&middot;</span>POWELL EXITS FRI<span class="sep">&middot;</span>TRUMP DEPARTS BEIJING<span class="sep">&middot;</span>17 CEO DELEGATION<span class="sep">&middot;</span>NVDA $214 AH T-8 MAY 20<span class="sep">&middot;</span>BRENT $104.97 +0.7%<span class="sep">&middot;</span>SPX ATH 7,412<span class="sep">&middot;</span>COPPER RECORD HIGH<span class="sep">&middot;</span>TASE Q1 AH TODAY<span class="sep">&middot;</span>ES FUTURES FLAT</div>
+  <div class="page-foot">
+    <span class="arrow">&#9664;</span>
+    <span>04 of 08</span>
+    <span class="arrow">&#9654;</span>
+  </div>
+</section>
+
+
+<!-- ====================================================================
+     PAGE 05 — CHAPTER III · GEOPOLITICS — FULLBLEED — TRUMP-XI BEIJING
+     ==================================================================== -->
+<section class="page layout-fullbleed" data-layout="fullbleed" id="page-05">
+  <div class="live-strip">
+    <span class="left">LIVE &bull; PRE-MARKET</span>
+    <span>12 MAY 2026 &middot; US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I &middot; NO 008</span>
+      <span class="chip geo">III &middot; GEOPOLITICS</span>
+    </div>
+    <span>05 of 08</span>
+  </div>
+
+  <div class="body">
+    <div class="full-bg" style="background-image: linear-gradient(135deg, #1a0f2e 0%, #0f1a1a 50%, #141414 100%);"></div>
+
+    <div class="corner-chip">
+      <div class="chip-label">SUMMIT DATES</div>
+      <div class="chip-value">MAY 14&ndash;15</div>
+      <div class="chip-attr">BEIJING, CHINA</div>
+    </div>
+
+    <div class="kicker geo">CHAPTER III &middot; GEOPOLITICS &middot; 12 MAY 2026</div>
+    <h1 class="headline-mega">TRUMP FLIES WEST<br>TO <em>XI</em></h1>
+    <p class="body-text" style="margin-top: 24px;">Trump departs Washington <strong>today</strong> for a May 14&ndash;15 summit in Beijing &mdash; his most consequential foreign trip of the year. Joining him: <strong>17 CEOs</strong> representing $870B+ of market cap, including Elon Musk (Tesla), Tim Cook (Apple), Larry Fink (BlackRock), David Solomon (Goldman Sachs), Jane Fraser (Citigroup), Stephen Schwarzman (Blackstone), and Kelly Ortberg (Boeing). &mdash; Bloomberg, CNBC.</p>
+
+    <ul class="body-text" style="margin-top: 18px; padding-left: 20px; list-style: disc;">
+      <li><strong>Iran / Hormuz</strong>: Treasury Sec Bessent confirmed Iran dominates the agenda &mdash; China is Tehran&rsquo;s largest oil buyer and holds leverage on a deal</li>
+      <li><strong>Trade truce</strong>: October 2025 truce expected to be extended; China likely announces purchases of US soybeans, beef, Boeing jets</li>
+      <li><strong>Tariff wall</strong>: Supreme Court struck down many original tariffs; federal court also voided temporary replacements &mdash; new legal framework needed</li>
+      <li><strong>Rare earths</strong>: China export controls on critical minerals unresolved; key risk for AI/semis supply chains</li>
+      <li><strong>Taiwan</strong>: Stability language expected; no framework changes anticipated</li>
+      <li><strong>Fortune</strong>: &ldquo;China may not offer breakthroughs &mdash; Beijing is working backward from US midterm elections&rdquo;</li>
+    </ul>
+
+    <div class="quote-block" style="margin-top: 28px; border-left-color: var(--yellow);">
+      &ldquo;China may not offer breakthroughs when Trump meets Xi because Beijing is working backward from our midterm elections.&rdquo;
+      <span class="attr">&mdash; Fortune, May 10 2026</span>
+    </div>
+
+    <div class="metric-grid cols-5" style="margin-top: 32px; max-width: 960px;">
+      <div class="metric-cell">
+        <div class="metric-label">SUMMIT</div>
+        <div class="metric-value neu">MAY 14&ndash;15</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">CEO DELEGATION</div>
+        <div class="metric-value pos">17 CEOS</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">TRADE TRUCE</div>
+        <div class="metric-value neu">OCT 2025</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">US&rarr;CN TARIFF</div>
+        <div class="metric-value warn">145% (HELD)</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">IRAN AGENDA</div>
+        <div class="metric-value warn">PRIMARY</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">CPI 3.7% EST &middot; 8:30 ET TODAY<span class="sep">&middot;</span>WARSH FED BOARD VOTE<span class="sep">&middot;</span>POWELL EXITS FRI<span class="sep">&middot;</span>TRUMP DEPARTS BEIJING<span class="sep">&middot;</span>17 CEO DELEGATION<span class="sep">&middot;</span>NVDA $214 AH T-8 MAY 20<span class="sep">&middot;</span>BRENT $104.97 +0.7%<span class="sep">&middot;</span>SPX ATH 7,412<span class="sep">&middot;</span>COPPER RECORD HIGH<span class="sep">&middot;</span>TASE Q1 AH TODAY<span class="sep">&middot;</span>ES FUTURES FLAT</div>
+  <div class="page-foot">
+    <span class="arrow">&#9664;</span>
+    <span>05 of 08</span>
+    <span class="arrow">&#9654;</span>
+  </div>
+</section>
+
+
+<!-- ====================================================================
+     PAGE 06 — CHAPTER III · GEOPOLITICS — BIGNUMBER — BRENT / HORMUZ
+     ==================================================================== -->
+<section class="page layout-bignumber" data-layout="bignumber" id="page-06">
+  <div class="live-strip">
+    <span class="left">LIVE &bull; PRE-MARKET</span>
+    <span>12 MAY 2026 &middot; US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I &middot; NO 008</span>
+      <span class="chip geo">III &middot; GEOPOLITICS</span>
+    </div>
+    <span>06 of 08</span>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="kicker geo">CHAPTER III &middot; GEOPOLITICS &middot; HORMUZ</div>
+      <h1 class="headline-mega">CEASEFIRE ON<br><em>&ldquo;MASSIVE<br>LIFE SUPPORT&rdquo;</em></h1>
+      <p class="body-text" style="margin-top: 24px;">Trump rejected Tehran&rsquo;s latest peace proposal over the weekend, calling the ceasefire &ldquo;on massive life support.&rdquo; Brent extended its run to <strong>$104.97</strong> (+0.7% overnight). Saudi Aramco&rsquo;s CEO Amin Nasser warned markets are losing <strong>~100 million barrels/week</strong> from the disruption.</p>
+
+      <ul class="body-text" style="margin-top: 18px; padding-left: 20px; list-style: disc;">
+        <li><strong>US fired on Iranian tankers</strong> May 8; Iran fired at UAE: both sides escalated post-MOU</li>
+        <li><strong>Citi end-May deal thesis</strong>: Qatar PM still mediating; deal timing is weeks, not days</li>
+        <li><strong>Normalization lag</strong>: Even a signed deal takes 4&ndash;8 weeks to reprice Brent through shipping flow normalization</li>
+        <li><strong>CPI read-through</strong>: Every week of delay = another month of elevated headline inflation; forecloses Warsh&rsquo;s cut window</li>
+        <li><strong>Trump Beijing agenda</strong>: China&rsquo;s leverage on Iran could accelerate deal IF Xi cooperates &mdash; key summit wildcard</li>
+      </ul>
+
+      <div class="metric-grid cols-2" style="margin-top: 28px; max-width: 360px;">
+        <div class="metric-cell">
+          <div class="metric-label">BRENT MAY 11</div>
+          <div class="metric-value neg">$104.49 +3.2%</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">BRENT MAY 12 AH</div>
+          <div class="metric-value neg">$104.97 +0.7%</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center;">
+      <div class="big-number neg">$105</div>
+      <div class="big-number-caption">BRENT CRUDE &middot; MAY 12 2026 &middot; OVERNIGHT FUTURES</div>
+      <span class="big-number-pill" style="background: var(--red-soft); border-color: var(--red-border); color: var(--red);">+0.7% OVERNIGHT &middot; CEASEFIRE STALLS</span>
+
+      <div class="big-number-tag" style="border-color: var(--yellow-border); background: var(--yellow-soft); margin-top: 28px;">
+        <div class="tag-label" style="color: var(--yellow);">TRUMP &mdash; MAY 11 2026</div>
+        <div class="tag-text">&ldquo;THE CEASEFIRE IS ON MASSIVE LIFE SUPPORT&rdquo;</div>
+      </div>
+
+      <div class="big-number-tag" style="border-color: var(--red-border); background: var(--red-soft); margin-top: 12px;">
+        <div class="tag-label" style="color: var(--red);">SAUDI ARAMCO CEO NASSER</div>
+        <div class="tag-text">~100M BARRELS/WEEK SUPPLY LOSS &middot; NORMALIZATION &ldquo;NEXT YEAR&rdquo;</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">CPI 3.7% EST &middot; 8:30 ET TODAY<span class="sep">&middot;</span>WARSH FED BOARD VOTE<span class="sep">&middot;</span>POWELL EXITS FRI<span class="sep">&middot;</span>TRUMP DEPARTS BEIJING<span class="sep">&middot;</span>17 CEO DELEGATION<span class="sep">&middot;</span>NVDA $214 AH T-8 MAY 20<span class="sep">&middot;</span>BRENT $104.97 +0.7%<span class="sep">&middot;</span>SPX ATH 7,412<span class="sep">&middot;</span>COPPER RECORD HIGH<span class="sep">&middot;</span>TASE Q1 AH TODAY<span class="sep">&middot;</span>ES FUTURES FLAT</div>
+  <div class="page-foot">
+    <span class="arrow">&#9664;</span>
+    <span>06 of 08</span>
+    <span class="arrow">&#9654;</span>
+  </div>
+</section>
+
+
+<!-- ====================================================================
+     PAGE 07 — CHAPTER IV · MARKETS — MOVERS — INDEX RECORDS + SECTOR
+     ==================================================================== -->
+<section class="page layout-movers" data-layout="movers" id="page-07">
+  <div class="live-strip">
+    <span class="left">LIVE &bull; PRE-MARKET</span>
+    <span>12 MAY 2026 &middot; US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I &middot; NO 008</span>
+      <span class="chip macro">IV &middot; MARKETS</span>
+    </div>
+    <span>07 of 08</span>
+  </div>
+
+  <div class="body">
+    <div class="mover-list">
+      <h2 class="gainers">GAINERS <span class="count-tag">5 MOVERS &middot; 11&ndash;12 MAY 2026</span></h2>
+      <div class="mover-row">
+        <span class="ticker">SPX</span>
+        <span class="change pos">+0.19%</span>
+        <span class="reason">ATH 7,412.84 close May 11 &mdash; S&amp;P, Nasdaq, and Russell all hit records in same session; TheStreet</span>
+      </div>
+      <div class="mover-row">
+        <span class="ticker">NDX</span>
+        <span class="change pos">+0.10%</span>
+        <span class="reason">ATH 26,274.13 May 11 &mdash; AI/tech lead intact despite Brent headwind and Warsh confirmation noise; CNBC</span>
+      </div>
+      <div class="mover-row">
+        <span class="ticker">RUT</span>
+        <span class="change pos">+0.26%</span>
+        <span class="reason">ATH 2,868.58 May 11 &mdash; small-cap confirms broad participation; third record in 2 weeks; Benzinga</span>
+      </div>
+      <div class="mover-row">
+        <span class="ticker">AMD</span>
+        <span class="change pos">+8.7% wk</span>
+        <span class="reason">$458.02 close May 11 from $421.39 flag May 7 &mdash; DC momentum intact; 8 analyst upgrades post-Q1; Meyka</span>
+      </div>
+      <div class="mover-row">
+        <span class="ticker">COPPER</span>
+        <span class="change pos">Record</span>
+        <span class="reason">Above $14,000/tonne &mdash; AI data centers + electrification demand vs supply crunch; S&amp;P Global, US Funds</span>
+      </div>
+    </div>
+
+    <div class="mover-list">
+      <h2 class="losers">LOSERS <span class="count-tag">4 MOVERS</span></h2>
+      <div class="mover-row">
+        <span class="ticker">NVDA</span>
+        <span class="change neg">-3.4% AH</span>
+        <span class="reason">$214.34 AH vs $221.98 close &mdash; Iran risk-off + pre-earnings position trimming; Yahoo Finance</span>
+      </div>
+      <div class="mover-row">
+        <span class="ticker">PLTR</span>
+        <span class="change neg">-2.2% wk</span>
+        <span class="reason">$134.77 May 11 &mdash; valuation ceiling pattern persists; ~200x fwd PE; third post-earnings selloff; FX Leaders</span>
+      </div>
+      <div class="mover-row">
+        <span class="ticker">DIS</span>
+        <span class="change neg">-2.5%</span>
+        <span class="reason">$104.75 May 12 vs $107.42 flag (May 7) &mdash; post-earnings pop fading; SVOD story intact but priced in; Yahoo Finance</span>
+      </div>
+      <div class="mover-row">
+        <span class="ticker">BRENT</span>
+        <span class="change neg">+3.0% wk</span>
+        <span class="reason">$104.97 overnight vs $101.96 May 7 entry &mdash; Iran deal stalls; ceasefire &ldquo;massive life support&rdquo;; CNBC</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">CPI 3.7% EST &middot; 8:30 ET TODAY<span class="sep">&middot;</span>WARSH FED BOARD VOTE<span class="sep">&middot;</span>POWELL EXITS FRI<span class="sep">&middot;</span>TRUMP DEPARTS BEIJING<span class="sep">&middot;</span>17 CEO DELEGATION<span class="sep">&middot;</span>NVDA $214 AH T-8 MAY 20<span class="sep">&middot;</span>BRENT $104.97 +0.7%<span class="sep">&middot;</span>SPX ATH 7,412<span class="sep">&middot;</span>COPPER RECORD HIGH<span class="sep">&middot;</span>TASE Q1 AH TODAY<span class="sep">&middot;</span>ES FUTURES FLAT</div>
+  <div class="page-foot">
+    <span class="arrow">&#9664;</span>
+    <span>07 of 08</span>
+    <span class="arrow">&#9654;</span>
+  </div>
+</section>
+
+
+<!-- ====================================================================
+     PAGE 08 — CHAPTER V · TRACK RECORD — NO-005 SETUPS REVIEW
+     ==================================================================== -->
+<section class="page layout-trackrecord" data-layout="trackrecord" id="page-08">
+  <div class="live-strip">
+    <span class="left">LIVE &bull; PRE-MARKET</span>
+    <span>12 MAY 2026 &middot; US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I &middot; NO 008</span>
+      <span class="chip">V &middot; TRACK RECORD</span>
+    </div>
+    <span>08 of 08</span>
+  </div>
+
+  <div class="body">
+    <div class="kicker">CHAPTER V &middot; TRACK RECORD &middot; NO. 005 (7 MAY 2026) &mdash; 3 TRADING DAYS</div>
+    <h1 class="headline-large">DID THE <em>TRADE</em> WORK?</h1>
+    <p class="body-text" style="margin-top: 18px; max-width: 760px;">Three setups flagged in No. 005 (May 7, 2026) have reached their review window at <strong>3 trading days</strong>. <strong>AMD</strong>&rsquo;s post-earnings momentum carried through to new highs above $458. But <strong>BRENT</strong> reversed hard as Trump rejected Iran&rsquo;s latest peace proposal, and <strong>DIS</strong> faded from its post-earnings pop as broader market digested the gains. Note: these setups were reviewed at day 1 in the weekly (No. 006, May 8); this is the first daily review at the 3-day mark.</p>
+
+    <table class="track-table">
+      <thead>
+        <tr>
+          <th style="width: 70px;">Ticker</th>
+          <th>Setup / Thesis</th>
+          <th style="width: 90px;">Flagged</th>
+          <th style="width: 90px;">At Flag</th>
+          <th style="width: 90px;">Now</th>
+          <th style="width: 80px;">Return</th>
+          <th style="width: 80px;">Verdict</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="ticker-cell">AMD</td>
+          <td>Post-earnings momentum; DC $5.8B +57%, Q2 guide $11.2B crushes est &mdash; 8 analyst upgrades</td>
+          <td>07 MAY</td>
+          <td>$421.39</td>
+          <td>$458.02</td>
+          <td class="return-cell pos">+8.69%</td>
+          <td class="verdict win">WIN</td>
+        </tr>
+        <tr>
+          <td class="ticker-cell">DIS</td>
+          <td>SVOD 10.6% margin (first double-digit); D&rsquo;Amaro first beat by $320M; FY EPS guide +16%</td>
+          <td>07 MAY</td>
+          <td>$107.42</td>
+          <td>$104.75</td>
+          <td class="return-cell neg">-2.49%</td>
+          <td class="verdict loss">LOSS</td>
+        </tr>
+        <tr>
+          <td class="ticker-cell">BRENT</td>
+          <td>SHORT &mdash; Iran deal near; US sent MOU via Pakistan; Project Freedom paused; ING $85-90 target</td>
+          <td>07 MAY</td>
+          <td>$101.96</td>
+          <td>$104.97</td>
+          <td class="return-cell neg">-2.95%</td>
+          <td class="verdict loss">LOSS</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="track-summary">
+      <div>
+        <div class="metric-label">SETUPS REVIEWED</div>
+        <div class="metric-value">3</div>
+      </div>
+      <div>
+        <div class="metric-label">WINS</div>
+        <div class="metric-value pos">1</div>
+      </div>
+      <div>
+        <div class="metric-label">LOSSES</div>
+        <div class="metric-value neg">2</div>
+      </div>
+      <div>
+        <div class="metric-label">AVG RETURN</div>
+        <div class="metric-value warn">+1.08%</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 28px; padding: 16px 20px; border: 1px solid var(--border); background: var(--card);">
+      <div class="metric-label" style="color: var(--green);">NEW FLAGGED SETUP &mdash; TODAY (NO. 008)</div>
+      <div style="margin-top: 10px; font-size: 13px; color: var(--text-soft); line-height: 1.55;">
+        <strong>NVDA LONG</strong> &mdash; Entry: <strong>~$214 AH</strong> (pre-market May 12). T&ndash;8 to May 20 Q1 FY2027 earnings.
+        <ul style="margin-top: 8px; padding-left: 18px; list-style: disc;">
+          <li>Consensus: $78.5B revenue (+78.2% YoY), $1.76 EPS; Goldman $250 PT; 37/37 analysts Strong Buy</li>
+          <li>AMD precedent ($10.25B Q1 +38%, DC $5.8B +57%) validates merchant silicon demand signal</li>
+          <li>Hyperscaler $725B capex commitment: MSFT $190B alone &mdash; strongest demand floor since 2024</li>
+          <li>Risk: PLTR-style valuation selloff on beat; China export controls wildcard from Beijing summit</li>
+        </ul>
+        Horizon: <strong>8 trading days</strong> to earnings. Price at flag: <strong>$214.34</strong> &mdash; Yahoo Finance / MarketChameleon premarket May 12 2026.
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">CPI 3.7% EST &middot; 8:30 ET TODAY<span class="sep">&middot;</span>WARSH FED BOARD VOTE<span class="sep">&middot;</span>POWELL EXITS FRI<span class="sep">&middot;</span>TRUMP DEPARTS BEIJING<span class="sep">&middot;</span>17 CEO DELEGATION<span class="sep">&middot;</span>NVDA $214 AH T-8 MAY 20<span class="sep">&middot;</span>BRENT $104.97 +0.7%<span class="sep">&middot;</span>SPX ATH 7,412<span class="sep">&middot;</span>COPPER RECORD HIGH<span class="sep">&middot;</span>TASE Q1 AH TODAY<span class="sep">&middot;</span>ES FUTURES FLAT</div>
+  <div class="page-foot">
+    <span class="arrow">&#9664;</span>
+    <span>08 of 08</span>
+    <span class="arrow">&#9654;</span>
+  </div>
+</section>
+
+</body>
+</html>
