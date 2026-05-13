@@ -1,0 +1,85 @@
+{
+  "issue_id": "vol-i-no-009",
+  "date": "2026-05-13",
+  "vol_no": "VOL I · NO 009",
+  "edition_type": "daily_premarket",
+  "issue_time": "08:00 Asia/Jerusalem (~01:00 ET)",
+  "top_headline": "WARSH CORNERED, HUANG AIRBORNE — CPI 3.8% locks hike risk; NVDA CEO boards Air Force One for Beijing",
+  "chapters": [
+    "I · MACRO — CPI April 3.8% YoY (vs 3.7% est); hottest since May 2023; Core 2.8%; Energy +17.9% YoY; TNX 4.46% 1-yr high; Warsh inherits fire May 15",
+    "I · MACRO — CME FedWatch: 58% zero cuts 2026; 30-35% rate-hike probability by Dec; June hold ~98%; SPX −0.16%, NDX −0.71%, SOXX −5%",
+    "II · AI TRADE — Jensen Huang initially excluded from Beijing delegation; Trump called personally; Huang boards Air Force One from Alaska; NVDA reverses to ~$219-220",
+    "II · AI TRADE — SOXX −5% May 12: QCOM −11% (worst since 2020), INTC −8%, ON −6%; valuation compression on CPI; Michael Burry bubble warning",
+    "III · GEOPOLITICS — Trump-Xi summit starts May 14; 17 CEOs (Musk, Cook, Fink, Huang); Boeing 500 planes; rare earths; Iran dominating agenda",
+    "IV · GEOPOLITICS — Trump rejects Iran 30-day ceasefire proposal as 'piece of garbage'; Pentagon eyes Operation Sledgehammer; Brent $107.05; $29B war cost",
+    "V · TRACK RECORD — No-004 (5 May) 6-day review: AMD +24.6% WIN / PLTR −7.0% LOSS / BRENT −5.7% LOSS / 1W 2L avg +3.9%"
+  ],
+  "flagged_setups": [
+    {
+      "ticker": "NVDA",
+      "direction": "long",
+      "thesis": "Updated pre-earnings thesis with Beijing binary. NVDA now has two potential catalysts before May 20 Q1 FY2027 earnings: (1) China export relief signal from Trump-Xi summit — Huang told SCSP the ban 'largely backfired'; any softening on H200-class restrictions = China revenue restoration; (2) Beat-and-raise on $78.5B revenue consensus (+79% YoY, $1.77 EPS) with AMD's $10.25B Q1 +38% confirming DC demand floor. Compound bull case: China relief + NVDA beat = significant re-rating. Risk: stock historically sells off post-earnings even on beats; SOXX −5% May 12 reset sentiment; hot CPI raises discount rate; QCOM −11% shows valuation is not bulletproof.",
+      "flag_date": "2026-05-13",
+      "price_at_flag": 219.44,
+      "price_note": "$219.44 NVDA close May 12 2026 — confirmed via FX Leaders / Yahoo Finance",
+      "horizon_trading_days": 7
+    }
+  ],
+  "watchlist_hits": [
+    {"ticker": "NVDA", "event": "T-7 to May 20 Q1 FY2027 earnings; CEO Huang joins Air Force One for Beijing after Trump call; China chip ban 'largely backfired' per Huang; stock reversed premarket dip from $214.34 to close ~$219-220", "move": "Premarket low $214.34 → close ~$219.44 (+2.4%) on Huang reversal", "priority": "core"},
+    {"ticker": "AMD", "event": "May 12 close $448.53; ATH $456.29 May 8; held better than SOXX peers (−2.1% vs SOXX −5%); DC momentum intact", "move": "−2.1% to $448.53 May 12 close; YTD +320%", "priority": "core"},
+    {"ticker": "AAPL", "event": "Tim Cook in Beijing CEO delegation; China supply chain narrative", "move": "Beijing delegation", "priority": "core"},
+    {"ticker": "QCOM", "event": "−11% on May 12 — worst session since March 2020; CEO Amon in Beijing delegation", "move": "−11% May 12", "priority": "watchlist"}
+  ],
+  "tase_events": [
+    {"event": "TA-35 / TA-125 watch: CPI 3.8% + TNX 4.46% hawkish signal globally; Iran ceasefire collapse risk with Lebanon/Hezbollah escalation adds direct regional security pressure", "ticker": "TA-35", "materiality": "informational"}
+  ],
+  "narrative_threads": [
+    "Warsh inheritance reaches critical mass: Takes chair May 15 inheriting CPI 3.8%, PCE 4.5%, ISM Prices 84.6%, TNX 4.46%, Brent $107 — rate-hike probability now structural, not tail-risk",
+    "NVDA Beijing binary: Huang's last-minute AF-1 invitation transforms May 20 earnings from single-catalyst to dual-catalyst setup; China export relief from Trump-Xi could move NVDA before earnings week begins",
+    "PLTR valuation ceiling — third cycle confirmed: Three consecutive post-earnings selloffs despite fundamental beats; ~200x forward PE ceiling institutionally enforced",
+    "SOXX −5% inflection: Worst session since early 2026 on CPI; NVDA only major name recovering same day; AI-centric vs legacy semi divergence is structural",
+    "Iran deal — no deal: 'Piece of garbage' rejection and Operation Sledgehammer contingency push Citi end-May thesis to June or later; Brent $107 is ceasefire-in-crisis level"
+  ],
+  "macro_snapshot": {
+    "SPX_close_may12": "7,400.96 (−0.16%)",
+    "NDX_close_may12": "26,088.20 (−0.71%)",
+    "ES_futures_may13": "7,436.25 (+0.13%)",
+    "NQ_futures_may13": "29,278.50 (+0.37%)",
+    "RTY_futures_may13": "2,873.50 (−0.19%)",
+    "NVDA_close_may12": "~$219.44",
+    "AMD_close_may12": "$448.53",
+    "QCOM_may12": "−11%",
+    "INTC_may12": "−8%",
+    "SOXX_may12": "−5%",
+    "CPI_apr_yoy": "3.8% (vs 3.7% est)",
+    "CPI_apr_core_yoy": "2.8% (vs 2.7% est)",
+    "CPI_apr_mom": "+0.6%",
+    "energy_CPI_yoy": "+17.9%",
+    "TNX_10y_post_CPI": "4.46% (1-yr high)",
+    "brent_may13": "$107.05"
+  },
+  "today_calendar": [
+    {"time": "8:30 AM ET", "event": "PPI April 2026 — March PPI was +4.0% YoY; energy pass-through expected"},
+    {"time": "TOMORROW MAY 14", "event": "Trump-Xi Summit Beijing — Day 1; 17 CEOs including Huang"},
+    {"time": "MAY 15", "event": "Powell's last day; Warsh becomes Fed Chair"},
+    {"time": "MAY 20", "event": "NVDA Q1 FY2027 earnings — $78.5B rev consensus"}
+  ],
+  "track_record": {
+    "window": "No. 004 (5 May 2026) — 6 trading days",
+    "setups_reviewed": 3,
+    "wins": 1,
+    "losses": 2,
+    "flat": 0,
+    "avg_return_pct": 3.9,
+    "results": [
+      {"ticker": "AMD", "direction": "long", "flag_issue": "no-004", "flag_date": "2026-05-05", "price_at_flag": 360.00, "price_now": 448.53, "return_pct": 24.6, "verdict": "WIN"},
+      {"ticker": "PLTR", "direction": "long", "flag_issue": "no-004", "flag_date": "2026-05-05", "price_at_flag": 147.26, "price_now": 137.00, "return_pct": -7.0, "verdict": "LOSS"},
+      {"ticker": "BRENT", "direction": "long", "flag_issue": "no-004", "flag_date": "2026-05-05", "price_at_flag": 113.54, "price_now": 107.05, "return_pct": -5.7, "verdict": "LOSS"}
+    ]
+  },
+  "ticker_tape": "CPI 3.8% BEATS EST · CORE 2.8% · TNX 4.46% 1-YR HIGH · HIKE RISK 30–35% · SOXX −5% · QCOM −11% · INTC −8% · NVDA HUANG BOARDS AF-1 · T-7 TO MAY 20 · AMD $448 · BRENT $107.05 · CEASEFIRE 'PIECE OF GARBAGE' · TRUMP-XI SUMMIT T-1 · PPI 8:30 ET TODAY",
+  "file": "archive/2026-05-13-vol-i-no-009.html",
+  "published_url": "https://zivav.github.io/morning-brief/archive/2026-05-13-vol-i-no-009.html",
+  "page_count": 8
+}
