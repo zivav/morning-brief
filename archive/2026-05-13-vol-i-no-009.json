@@ -1,0 +1,184 @@
+{
+  "issue_id": "vol-i-no-009",
+  "date": "2026-05-13",
+  "vol_no": "VOL I · NO 009",
+  "edition_type": "daily_premarket",
+  "issue_time": "08:00 Asia/Jerusalem (~01:00 ET)",
+  "top_headline": "WARSH CORNERED, HUANG AIRBORNE — CPI 3.8% locks hike risk; NVDA CEO boards Air Force One for Beijing",
+  "chapters": [
+    "I · MACRO — CPI April 3.8% YoY (vs 3.7% est); hottest since May 2023; Core 2.8%; Energy +17.9% YoY; TNX 4.46% 1-yr high; Warsh inherits fire May 15",
+    "I · MACRO — CME FedWatch: 58% zero cuts 2026; 30-35% rate-hike probability by Dec; June hold ~98%; SPX −0.16%, NDX −0.71%, SOXX −5%",
+    "II · AI TRADE — Jensen Huang initially excluded from Beijing delegation; Trump called personally; Huang boards Air Force One from Alaska; NVDA reverses to ~$219-220",
+    "II · AI TRADE — SOXX −5% May 12: QCOM −11% (worst since 2020), INTC −8%, ON −6%; valuation compression on CPI; Michael Burry bubble warning",
+    "III · GEOPOLITICS — Trump-Xi summit starts May 14; 17 CEOs (Musk, Cook, Fink, Huang); Boeing 500 planes; rare earths; Iran dominating agenda",
+    "IV · GEOPOLITICS — Trump rejects Iran 30-day ceasefire proposal as 'piece of garbage'; Pentagon eyes Operation Sledgehammer; Brent $107.05; $29B war cost",
+    "V · TRACK RECORD — No-004 (5 May) 6-day review: AMD +24.6% WIN / PLTR −7.0% LOSS / BRENT −5.7% LOSS / 1W 2L avg +3.9%"
+  ],
+  "flagged_setups": [
+    {
+      "ticker": "NVDA",
+      "direction": "long",
+      "thesis": "Updated pre-earnings thesis with Beijing binary. NVDA now has two potential catalysts before May 20 Q1 FY2027 earnings: (1) China export relief signal from Trump-Xi summit — Huang told SCSP the ban 'largely backfired'; any softening on H200-class restrictions = China revenue restoration; (2) Beat-and-raise on $78.5B revenue consensus (+79% YoY, $1.77 EPS) with AMD's $10.25B Q1 +38% confirming DC demand floor. Compound bull case: China relief + NVDA beat = significant re-rating. Risk: stock historically sells off post-earnings even on beats; SOXX −5% May 12 reset sentiment; hot CPI raises discount rate; QCOM −11% shows valuation is not bulletproof.",
+      "flag_date": "2026-05-13",
+      "price_at_flag": 219.44,
+      "price_note": "$219.44 NVDA close May 12 2026 — confirmed via FX Leaders / Yahoo Finance track record agent",
+      "horizon_trading_days": 7
+    }
+  ],
+  "watchlist_hits": [
+    {
+      "ticker": "NVDA",
+      "event": "T-7 to May 20 Q1 FY2027 earnings; CEO Huang joins Air Force One for Beijing after Trump call; China chip ban 'largely backfired' per Huang; stock reversed premarket dip from $214.34 to close ~$219-220",
+      "move": "Premarket low $214.34 → close ~$219.44 (+2.4%) on Huang reversal",
+      "priority": "core"
+    },
+    {
+      "ticker": "AMD",
+      "event": "May 12 close $448.53; ATH $456.29 May 8; held better than SOXX peers (−2.1% vs SOXX −5%); DC momentum from $10.25B Q1 +38% intact; AMD doubled longer-term CPU market outlook May 12",
+      "move": "−2.1% to $448.53 May 12 close; YTD +320%",
+      "priority": "core"
+    },
+    {
+      "ticker": "MSFT",
+      "event": "Dividend $0.91/share ex-date May 21; OpenAI investment tracking toward $92B return; part of Beijing CEO delegation signal",
+      "move": "Watch: summit tech signal",
+      "priority": "core"
+    },
+    {
+      "ticker": "AAPL",
+      "event": "Tim Cook in Beijing CEO delegation; China supply chain and sales narrative; Services revenue ~$31B +16% YoY in recent quarter",
+      "move": "Beijing delegation · China supply chain",
+      "priority": "core"
+    },
+    {
+      "ticker": "QCOM",
+      "event": "−11% on May 12 — worst session since March 2020; losing Apple modem share, weak Android demand, NVDA Windows processor competition; CEO Amon in Beijing delegation — China chip sales potential",
+      "move": "−11% May 12",
+      "priority": "watchlist"
+    }
+  ],
+  "tase_events": [
+    {
+      "event": "TA-35 / TA-125 watch: CPI 3.8% + TNX 4.46% hawkish signal globally; Iran ceasefire collapse risk with Lebanon/Hezbollah escalation adds direct regional security pressure; TASE Ltd (TASE.TA) Q1 2026 results released May 12 after close — results not yet incorporated in today's issue.",
+      "ticker": "TA-35",
+      "materiality": "informational"
+    }
+  ],
+  "narrative_threads": [
+    "Warsh inheritance reaches critical mass: Takes chair May 15 inheriting CPI 3.8%, PCE 4.5%, ISM Prices 84.6%, TNX 4.46%, Brent $107 — the worst macro inheritance for a new Fed Chair since Volcker; rate-hike probability now structural, not tail-risk",
+    "NVDA Beijing binary: Huang's last-minute AF-1 invitation transforms May 20 earnings from a single-catalyst event to a dual-catalyst setup; China export relief signal from Trump-Xi (May 14-15) could move NVDA before earnings week even begins",
+    "PLTR valuation ceiling — third cycle confirmed: Three consecutive post-earnings selloffs despite fundamental beats ($147.26 → $137); the ~200x forward PE ceiling is institutionally enforced; structural pattern now well-documented",
+    "SOXX −5% inflection: The semiconductor index fell its worst session since early 2026 on hot CPI valuation compression; NVDA was the only major name that recovered the same day; divergence between AI-centric (NVDA, AMD) and legacy semi names (QCOM, INTC) is structural, not just a session artifact",
+    "Iran deal — no deal: Trump's 'piece of garbage' rejection and Operation Sledgehammer contingency push the Citi end-May deal thesis toward June or later; Brent $107 is the ceasefire-in-crisis level; a deal would reprice sharply toward $85-90"
+  ],
+  "macro_snapshot": {
+    "SPX_close_may12": "7,400.96 (−0.16%)",
+    "NDX_close_may12": "26,088.20 (−0.71%)",
+    "ES_futures_may13": "7,436.25 (+0.13%)",
+    "NQ_futures_may13": "29,278.50 (+0.37%)",
+    "RTY_futures_may13": "2,873.50 (−0.19%)",
+    "NVDA_close_may12": "~$219.44",
+    "AMD_close_may12": "$448.53",
+    "QCOM_may12": "−11% (worst since March 2020)",
+    "INTC_may12": "−8%",
+    "SOXX_may12": "−5%",
+    "CPI_apr_yoy": "3.8% (vs 3.7% est)",
+    "CPI_apr_core_yoy": "2.8% (vs 2.7% est)",
+    "CPI_apr_mom": "+0.6%",
+    "energy_CPI_yoy": "+17.9%",
+    "TNX_10y_post_CPI": "4.46% (1-yr high)",
+    "brent_may13": "$107.05",
+    "VIX_est": "~16-17 range (elevated post-CPI)"
+  },
+  "today_calendar": [
+    {"time": "8:30 AM ET", "event": "PPI April 2026 — pipeline inflation read; March PPI was +4.0% YoY; energy pass-through expected to show"},
+    {"time": "DAY 1 TOMORROW", "event": "Trump-Xi Summit Beijing — starts May 14; CEO delegation (17 including Huang); Iran + rare earths + Boeing 500 + tariffs"},
+    {"time": "MAY 15", "event": "Jerome Powell's last day; Kevin Warsh becomes Fed Chair"},
+    {"time": "MAY 19-20", "event": "NVDA Q1 FY2027 earnings — $78.5B rev consensus; Home Depot Q1 BMO May 19"}
+  ],
+  "track_record": {
+    "window": "No. 004 (5 May 2026) — 6 trading days",
+    "setups_reviewed": 3,
+    "wins": 1,
+    "losses": 2,
+    "flat": 0,
+    "avg_return_pct": 3.9,
+    "results": [
+      {
+        "ticker": "AMD",
+        "direction": "long",
+        "flag_issue": "no-004",
+        "flag_date": "2026-05-05",
+        "price_at_flag": 360.00,
+        "price_now": 448.53,
+        "price_note": "$448.53 AMD close May 12 2026 — Yahoo Finance / StockAnalysis",
+        "return_pct": 24.6,
+        "verdict": "WIN",
+        "thesis": "Post-earnings entry if DC cleared $5.56B and margin held; beat confirmed $10.25B +38%, DC $5.8B +57%"
+      },
+      {
+        "ticker": "PLTR",
+        "direction": "long",
+        "flag_issue": "no-004",
+        "flag_date": "2026-05-05",
+        "price_at_flag": 147.26,
+        "price_now": 137.00,
+        "price_note": "~$137.00 PLTR est. May 12 (last confirmed $137.80 May 10 — Investing.com); CPI selloff likely held at floor",
+        "return_pct": -7.0,
+        "verdict": "LOSS",
+        "thesis": "Post-earnings momentum; $1.63B +85% YoY beat, FY raised 10%; valuation wall ~200x fwd PE overrode fundamentals"
+      },
+      {
+        "ticker": "BRENT",
+        "direction": "long",
+        "flag_issue": "no-004",
+        "flag_date": "2026-05-05",
+        "price_at_flag": 113.54,
+        "price_now": 107.05,
+        "price_note": "$107.05 Brent crude May 13 2026 — CNBC (down from $113.54 Fujairah peak flag)",
+        "return_pct": -5.7,
+        "verdict": "LOSS",
+        "thesis": "Fujairah hit; both Hormuz AND bypass route compromised; Iran MOU (May 6-7) erased structural supply thesis"
+      }
+    ]
+  },
+  "ticker_tape": "CPI 3.8% BEATS EST · CORE 2.8% · TNX 4.46% 1-YR HIGH · HIKE RISK 30–35% · SOXX −5% · QCOM −11% · INTC −8% · NVDA HUANG BOARDS AF-1 · T-7 TO MAY 20 · AMD $448 · BRENT $107.05 · CEASEFIRE 'PIECE OF GARBAGE' · TRUMP-XI SUMMIT T-1 · PPI 8:30 ET TODAY",
+  "file": "archive/2026-05-13-vol-i-no-009.html",
+  "published_url": "https://zivav.github.io/morning-brief/archive/2026-05-13-vol-i-no-009.html",
+  "page_count": 8,
+  "sources": [
+    "CNBC · CPI inflation April 2026: Prices rose 3.8% annually · May 12 2026",
+    "BLS · Consumer Price Index April 2026 release · May 12 2026",
+    "Fox Business · CPI inflation April 2026 · May 12 2026",
+    "Quartz · US CPI inflation April 2026 energy gas prices · May 12 2026",
+    "InvestorIdeas · Hot US inflation Fed Chair Warsh cornered rates · May 12 2026",
+    "CNBC · Markets raise chances for a Fed rate hike following hot inflation report · May 12 2026",
+    "Deseret News · Trump inflation Iran war Strait of Hormuz interest rates Warsh · May 12 2026",
+    "Motley Fool · Stock market today live coverage May 12 2026",
+    "US News Money · April CPI rises more than expected bond yields climb · May 12 2026",
+    "TheStreet · Stock market today May 12 2026 updates · May 12 2026",
+    "Yahoo Finance · Stock market today Nasdaq S&P 500 Dow fall CPI inflation print · May 12 2026",
+    "247WallSt · Stock Market Live May 12 2026 S&P 500 sinks on higher inflation",
+    "CNBC · Nvidia CEO Jensen Huang is joining Trump's China trip · May 13 2026",
+    "CNBC · Nvidia CEO Huang was not part of Trump China trip chip sales · May 12 2026",
+    "MSN/StockTwits · NVDA stock gains in premarket CEO Jensen Huang says China chip export ban largely backfired",
+    "GuruFocus · Nvidia CEO left off Trump China delegation despite $50B opportunity · May 12 2026",
+    "Motley Fool · Massive news for AMD stock investors · May 12 2026",
+    "CNBC · Qualcomm drops 11% as chip stocks pull back · May 12 2026",
+    "GuruFocus · Semiconductor stocks retreat Intel Qualcomm AMD · May 12 2026",
+    "CNBC · What's at stake Trump-Xi China summit · May 12 2026",
+    "CNBC · Trump invites CEOs Elon Musk Tim Cook Larry Fink Xi China summit · May 11 2026",
+    "Fortune · Elon Musk Tim Cook Larry Fink joining Trump's entourage to Beijing · May 12 2026",
+    "Foreign Policy · China rare earth leverage Trump-Xi summit · May 12 2026",
+    "CSIS · Trump-Xi summit Beijing managing world's most important relationship · May 2026",
+    "CNBC · Iran focus at Trump-Xi summit may delay progress on tariffs rare earths · May 8 2026",
+    "CNBC · Brent tops $104 on life support ceasefire comments · May 11 2026",
+    "CNN · Iran war live updates Trump news · May 12 2026",
+    "NBC News · Pentagon considering renaming Iran war Operation Sledgehammer · May 2026",
+    "Al Jazeera · Oil prices surge violence flares Strait of Hormuz · May 5 2026",
+    "StockAnalysis · AMD stock price history $448.53 May 12 2026",
+    "Investing.com · PLTR stock price ~$137.80 May 10 2026",
+    "Fortune · Price of oil May 12 2026 $107 Brent",
+    "FX Leaders · NVDA stock forecast May 12 2026 $219.44"
+  ]
+}
