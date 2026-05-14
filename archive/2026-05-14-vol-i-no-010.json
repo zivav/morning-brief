@@ -1,0 +1,168 @@
+{
+  "issue_id": "vol-i-no-010",
+  "date": "2026-05-14",
+  "vol_no": "VOL I · NO 010",
+  "edition_type": "daily_premarket",
+  "issue_time": "08:00 Asia/Jerusalem (~01:00 ET)",
+  "top_headline": "BEIJING DELIVERS — WARSH CONFIRMED 54-45 · PPI +6.0% SHOCK · SPX/NDX SIMULTANEOUS ATH",
+  "chapters": [
+    "I · MACRO — PPI April +6.0% YoY vs +4.9% est — hottest since Dec 2022; MoM +1.4% vs +0.5%; gasoline +15.6% MoM; core +5.2% vs +4.3%; TNX spiked to 4.49%",
+    "I · MACRO — Warsh confirmed 54-45 May 13 — narrowest modern Fed vote; one Dem crossover (Fetterman); Powell exits May 16; first FOMC June 16-17; inherits CPI 3.8% + PPI 6.0% + Brent $108 + rate hike risk 30-35%",
+    "II · AI TRADE — NVDA T-6 to May 20: Huang boards Air Force One in Anchorage after Trump call; H200 chip framework discussed in Beijing (~$3.5-4B annual China revenue); May 13 close $225.83 +2.29%; Goldman EPS $1.86 above $1.77 consensus; BofA PT $320",
+    "III · EARNINGS — CSCO Q3 FY2026 record revenue $15.84B vs $15.54B est (+12% YoY); EPS $1.06 vs $1.04; surged ~17% AH on AI networking demand from hyperscalers",
+    "III · EARNINGS — BABA FY2026 Q4 RMB 243.38B (~$35.3B) missed est; swung to operating loss on AI/cloud capex; 1T yuan FY milestone; stock +6.5% on summit tailwinds + cloud optionality",
+    "IV · GEOPOLITICS — Trump-Xi Day 1 Beijing: Boeing 500-aircraft (86% Kalshi prob), soybeans 25M t/yr, H200 licensing framework, rare earths partial relief; Musk: 'Many good things achieved'; Xi: 'Partners not rivals' / Thucydides Trap",
+    "V · TRACK RECORD — No-005/No-007 review: NVDA long $217→$225.83 WIN +4.07%; BRENT short $101.96→$108 LOSS −5.92%; BRENT short $104.49→$108 LOSS −3.36%; 1W/2L/0F avg −1.73%"
+  ],
+  "flagged_setups": [
+    {
+      "ticker": "NVDA",
+      "direction": "long",
+      "thesis": "Dual-catalyst pre-earnings setup with T-6 days to May 20 Q1 FY2027 report. Fundamental case: consensus $78.6-80.1B revenue +78-80% YoY, EPS ~$1.77 (Goldman $1.86, 7-8% above consensus); AMD's $10.25B Q1 +38% validates DC demand floor; hyperscaler $725B capex 2026 (+77%). Summit catalyst: H200 chip licensing framework under active discussion in Beijing — could restore $3.5-4B annual China revenue. BofA PT $320, consensus PT $272, 37/37 Strong Buy. Risk: NVDA historically falls post-earnings even on beats; QCOM −11% precedent; beat-and-raise may already be priced at $225.",
+      "flag_date": "2026-05-14",
+      "price_at_flag": 225.83,
+      "price_note": "$225.83 NVDA close May 13 2026 — Yahoo Finance / 247wallst; pre-market May 14 ~$226.39",
+      "horizon_trading_days": 5
+    }
+  ],
+  "watchlist_hits": [
+    {
+      "ticker": "NVDA",
+      "event": "Huang boards Air Force One for Beijing after Trump call; H200 chip framework in active summit discussion; T-6 to May 20 earnings; $225.83 May 13 close",
+      "move": "+2.29% to $225.83 May 13; pre-market $226.39 May 14",
+      "priority": "core"
+    },
+    {
+      "ticker": "AMD",
+      "event": "May 13 close $446.40 — slight underperformance vs NVDA; 'Unfortunate News' Motley Fool analyst note; still +~114% YTD 2026",
+      "move": "−0.47% to $446.40 May 13",
+      "priority": "core"
+    },
+    {
+      "ticker": "MSFT",
+      "event": "CEO Satya Nadella in Beijing CEO delegation; $190B 2026 capex signal intact; part of Mag7 +1.4-3.9% May 13 advance",
+      "move": "Summit delegation",
+      "priority": "core"
+    },
+    {
+      "ticker": "AAPL",
+      "event": "Tim Cook in Beijing CEO delegation; China supply chain / sales optionality on tariff reduction 30%/10%",
+      "move": "Summit delegation",
+      "priority": "core"
+    }
+  ],
+  "tase_events": [
+    {
+      "event": "TA-125 May 13 close: ~4,438 pts (−0.22%). Summit optimism + PPI shock create mixed signal. Iran ceasefire fragility remains direct regional security risk. TASE.TA Q1 2026 results were released May 12 after close (conference call May 12 8pm Israel time). TA-125 up +65.36% YoY — extraordinary run relative to global peers.",
+      "ticker": "TA-125",
+      "materiality": "informational"
+    }
+  ],
+  "narrative_threads": [
+    "Warsh succession lock-in: Fed Chair confirmed 54-45 on May 13; Powell exits May 16; Warsh inherits the worst inflation setup of any incoming Chair since Volcker — CPI 3.8%, PPI 6.0%, PCE 4.5%, Brent $108, TNX 4.49%, rate hike probability 30-35%; first FOMC June 16-17 will set the tone for his independence vs Trump alignment",
+    "Beijing summit chip-for-trade architecture: H200 licensing framework is the centrepiece technology deal; $3.5-4B China revenue restoration would be NVDA's largest single-summit catalyst; Huang personally invited by Trump signals chip policy is not an afterthought — it's the primary strategic agenda",
+    "NVDA May 20 compound setup: dual-catalyst (H200 deal + fundamental beat) makes this the most loaded NVDA earnings since the original AI breakout in May 2023; Goldman above-consensus at $1.86; 37/37 Strong Buy; but SOXX -5% May 12 precedent and QCOM -11% show valuation is not bulletproof",
+    "PPI pass-through accelerating: gasoline +15.6% MoM and trade services +2.7% confirm Iran war and tariff costs are now flowing into producer margins — CPI May (released ~June 12) will reveal if this feeds consumers; Warsh's first inflation reading before his first FOMC",
+    "Brent short thesis failing: Two consecutive short setups on Iran deal timing (no-007 −3.36%, no-005 −5.92%) confirm the deal remains perpetually 'end-of-month'; IEA warns undersupply until October even if conflict ends; Brent has stabilized in $105-110 range — the Citi $85-90 thesis requires a deal that keeps not arriving"
+  ],
+  "macro_snapshot": {
+    "SPX_close_may13": "7,444.25 ATH (+0.58%)",
+    "NDX_close_may13": "29,366.94 ATH (+1.04%)",
+    "NASDAQ_comp_may13": "26,402.34 ATH (+1.20%)",
+    "RUT_close_may13": "2,843.93 (+0.07%)",
+    "DOW_close_may13": "49,693.19 (−0.14%)",
+    "ES_futures_may14": "~+16 pts (+0.22%)",
+    "NVDA_close_may13": "$225.83 (+2.29%)",
+    "NVDA_premarket_may14": "~$226.39",
+    "AMD_close_may13": "$446.40 (−0.47%)",
+    "BRENT_may13": "~$108.00",
+    "TNX_may13": "4.49% (1-yr high)",
+    "VIX_may13": "17.99",
+    "PPI_apr_yoy": "+6.0% vs +4.9% est",
+    "PPI_apr_mom": "+1.4% vs +0.5% est",
+    "PPI_core_yoy": "+5.2% vs +4.3% est",
+    "gasoline_mom": "+15.6%",
+    "US_tariff_china": "30%",
+    "china_tariff_us": "10%",
+    "TA125_may13": "~4,438 (−0.22%)"
+  },
+  "today_calendar": [
+    {"time": "8:30 AM ET", "event": "Advance Retail Sales April 2026 — flat MoM vs March +1.7%; core −0.2% MoM (Census); +0.34% MoM SA per NRF credit/debit data"},
+    {"time": "8:30 AM ET", "event": "Initial Jobless Claims weekly"},
+    {"time": "8:30 AM ET", "event": "Import / Export Prices April"},
+    {"time": "ONGOING", "event": "Trump-Xi Summit Beijing Day 1→2 (continues May 15)"},
+    {"time": "MAY 15", "event": "Powell's last day as Chair; Warsh officially in command; term expires May 16"},
+    {"time": "MAY 19", "event": "Home Depot Q1 2026 earnings BMO — est. EPS $3.42 / rev $41.64B"},
+    {"time": "MAY 20", "event": "NVDA Q1 FY2027 earnings — $78.6-80.1B revenue est; T-6 from today"},
+    {"time": "MAY 21", "event": "Walmart Q1 FY2027 earnings"},
+    {"time": "JUNE 16-17", "event": "First Warsh FOMC meeting — market pricing hold"}
+  ],
+  "track_record": {
+    "window": "No-005 (7 May 2026) BRENT short — 5 trading days; No-007 (11 May 2026) NVDA long + BRENT short — 3 trading days",
+    "setups_reviewed": 3,
+    "wins": 1,
+    "losses": 2,
+    "flat": 0,
+    "avg_return_pct": -1.73,
+    "results": [
+      {
+        "ticker": "BRENT",
+        "direction": "short",
+        "flag_issue": "no-005",
+        "flag_date": "2026-05-07",
+        "price_at_flag": 101.96,
+        "price_now": 108.00,
+        "price_note": "~$108.00 BRENT May 13 2026 close — CNBC",
+        "return_pct": -5.92,
+        "verdict": "LOSS",
+        "thesis": "Iran MOU near, Project Freedom paused, ING targets $85-90 on Hormuz normalization"
+      },
+      {
+        "ticker": "NVDA",
+        "direction": "long",
+        "flag_issue": "no-007",
+        "flag_date": "2026-05-11",
+        "price_at_flag": 217.00,
+        "price_now": 225.83,
+        "price_note": "$225.83 NVDA close May 13 2026 — Yahoo Finance / 247wallst",
+        "return_pct": 4.07,
+        "verdict": "WIN",
+        "thesis": "May 20 Q1 FY2027 pre-earnings setup; hyperscaler $725B capex; Goldman $1.86 EPS; dual catalyst with Beijing H200 binary"
+      },
+      {
+        "ticker": "BRENT",
+        "direction": "short",
+        "flag_issue": "no-007",
+        "flag_date": "2026-05-11",
+        "price_at_flag": 104.49,
+        "price_now": 108.00,
+        "price_note": "~$108.00 BRENT May 13 2026 close — CNBC",
+        "return_pct": -3.36,
+        "verdict": "LOSS",
+        "thesis": "Ceasefire fraying but Citi end-May deal thesis intact; $104.49 elevated entry for short"
+      }
+    ]
+  },
+  "ticker_tape": "TRUMP-XI DAY 1 BEIJING · H200 CHIP FRAMEWORK DISCUSSED · US 30% / CHINA 10% TARIFFS · PPI +6.0% VS +4.9% EST · WARSH CONFIRMED 54-45 · SPX 7,444 ATH · NDX 29,366 ATH · NVDA $225.83 T-6 TO MAY 20 · CSCO +17% AH RECORD Q3 · BABA +6.5% · MU +5% REBOUND · BRENT ~$108 · TNX 4.49% · RETAIL SALES FLAT APRIL · MAY 19 HD · MAY 20 NVDA EARNINGS · JUNE 17 FIRST WARSH FOMC",
+  "file": "archive/2026-05-14-vol-i-no-010.html",
+  "published_url": "https://zivav.github.io/morning-brief/archive/2026-05-14-vol-i-no-010.html",
+  "page_count": 8,
+  "sources": [
+    "BLS PPI News Release May 13 2026 — bls.gov/news.release/archives/ppi_05132026.htm",
+    "CNBC — PPI inflation report April 2026 · May 13 2026",
+    "TheStreet — Stock Market Today May 13 2026",
+    "247wallst — Stock Market Live May 13 2026",
+    "CNBC — Jensen Huang joins Trump's China trip · May 13 2026",
+    "CNBC — Trump in China: CEOs Musk, Cook, Huang join trade talks · May 13 2026",
+    "CBS News — Trump meets Xi in Beijing · May 14 2026",
+    "CNBC — Warsh wins Senate confirmation as next Federal Reserve chair · May 13 2026",
+    "NPR — Senate confirms Kevin Warsh · May 13 2026",
+    "Cisco Investor Relations — Q3 FY2026 earnings · May 13 2026",
+    "Meyka / Seeking Alpha — Alibaba Q4 FY2026 earnings · May 13 2026",
+    "FactSet Earnings Insight — May 8 2026 (Q1 2026 season 84% beat rate)",
+    "Trading Economics — Israel TA-125 / Brent crude May 13-14 2026",
+    "CNBC — Oil price / Iran ceasefire on life support · May 12-13 2026",
+    "abhs.in — Trump-Xi Beijing Summit H200/AI semiconductor outcomes",
+    "NRF / Census — Retail Sales April 2026 · May 14 2026"
+  ]
+}
