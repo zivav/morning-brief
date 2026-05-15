@@ -1,0 +1,174 @@
+{
+  "issue_id": "vol-i-no-010",
+  "date": "2026-05-15",
+  "vol_no": "VOL I · NO 010",
+  "edition_type": "daily_premarket",
+  "issue_time": "08:00 Asia/Jerusalem (~01:00 ET)",
+  "top_headline": "WARSH INHERITS FIRE / BEIJING UNLOCKS NVDA — PPI +6.0% Day 1; H200 China licensed",
+  "chapters": [
+    "I · MACRO — Warsh confirmed 54-45 May 13; Day 1 inherits PPI +6.0% YoY (est +4.9%) — biggest since Dec 2022; PPI MoM +1.4% (est +0.5%); gasoline +15.6%; June FOMC 97% hold; Michigan Sentiment 48.2 (est 49.5); final reading 10am ET today",
+    "I · MACRO — CPI 3.8% + PPI 6.0% + PCE 4.5% = pipeline accelerating; Warsh 'QT-for-Cuts' framework; no Day 1 speech; first FOMC June 17; hike probability structural not tail-risk",
+    "II · AI TRADE — US Commerce approved H200 export licenses for ~10 Chinese firms (Alibaba/Tencent/ByteDance/JD.com + Lenovo/Foxconn); 75K chips/customer cap; Beijing directed pause on H200 purchases (State Council supply-chain review); no shipments yet; NVDA May 14 close ~$233; $5.7T market cap record",
+    "II · AI TRADE — AMAT record Q2 $7.91B (est $7.69B); EPS $2.86 vs $2.68; Q3 guide $8.95B; industry growth raised >30% CY2026 (from >20%); +8% AH May 14. CSCO +14% AH on AI infrastructure orders blowout; FY guidance raised. AMD PM $435.39 (-2.27%); MI-series excluded from China H200 approvals",
+    "III · EARNINGS — Gainers: CSCO +14% AH, AMAT +8% AH; Losers: DOCS -26.1% AH (Q4 miss + guidance), LWLG -17.4%; Calendar: HD Q1 May 19 ($41.5B est), NVDA Q1 FY2027 May 20 ($78.5B est +79%)",
+    "IV · GEOPOLITICS — Trump-Xi summit: 3-year strategic stability framework; Board of Trade $30B proposed; rare earths: China pauses export restrictions; NVDA H200 US-side licenses (see Ch. II); Xi Taiwan warning ('clashes and conflicts'); no sweeping deal",
+    "IV · GEOPOLITICS — Iran/Hormuz ceasefire 'massive life support'; talks stalled; IEA: undersupplied through October; 4M bbl/day Hormuz flow loss; Brent $106.89 +1.1%; 112-nation UN Hormuz resolution",
+    "V · TRACK RECORD — Issues 007-008 (May 11-12) 3-4 day review: NVDA +7.4% WIN / BRENT short -0.6% FLAT / NVDA +8.7% WIN; 2W/0L/1F avg +5.2%"
+  ],
+  "flagged_setups": [],
+  "watchlist_hits": [
+    {
+      "ticker": "NVDA",
+      "event": "H200 export licenses approved for ~10 Chinese firms; Beijing purchase pause remains; May 14 close ~$233 ($5.7T market cap record); T-5 to May 20 Q1 FY2027 earnings; active flag from no-009 ($219.44, May 13) = +6.2% unrealized",
+      "move": "~$233 May 14 close (+7.4% from May 11 flag of $217)",
+      "priority": "core"
+    },
+    {
+      "ticker": "AMD",
+      "event": "Pre-market May 15 $435.39 (-2.27%); MI-series excluded from China H200 approvals; no direct China lift; SOXX -5% hangover still weighing",
+      "move": "$435.39 PM May 15 (-2.27%)",
+      "priority": "core"
+    },
+    {
+      "ticker": "AMAT",
+      "event": "Record Q2 $7.91B vs $7.69B est; EPS $2.86 vs $2.68; Q3 guide $8.95B; industry growth raised to >30% CY2026; +8% AH May 14",
+      "move": "+8% AH May 14 (base price unconfirmed — watchlist only)",
+      "priority": "ai"
+    },
+    {
+      "ticker": "CSCO",
+      "event": "Fiscal Q3 AH blowout on AI infrastructure orders; FY guidance raised; broadest enterprise AI signal of cycle; +13-14% AH May 14",
+      "move": "+13-14% AH May 14",
+      "priority": "watchlist"
+    }
+  ],
+  "tase_events": [
+    {
+      "event": "TA-35 watch: Trump-Xi summit stabilization framework positive for global trade risk-on; H200 China licenses reduce tech-war escalation risk; Brent $106.89 sustained = Israeli energy import cost pressure. Iran ceasefire stall = continued regional security premium for Israeli defense sector (Elbit/Rafael bid)",
+      "ticker": "TA-35",
+      "materiality": "informational"
+    }
+  ],
+  "narrative_threads": [
+    "Warsh inheritance complete: Day 1 Fed Chair receives CPI 3.8% + PPI 6.0% + PCE 4.5% + TNX 4.46% + Michigan 48.2 — worst inflation stack handed to a new Fed Chair since Volcker era; no rate cuts in 2026; hike probability structural",
+    "NVDA Beijing binary — half-resolved: Washington approved H200 exports; Beijing blocked purchases pending State Council review. The China revenue wildcard ($50B estimated market per Huang) is now a May 20 earnings guidance catalyst — bulls need NVDA management to signal when Beijing approvals materialize",
+    "Hormuz / Iran — structural stalemate: Ceasefire 'massive life support'; both sides trading fire; IEA undersupplied through October; Brent stays above $100 until deal closes; Warsh's inflation problem gets worse each week of stalemate",
+    "AMAT / CSCO equipment cycle: Raising industry growth to >30% CY2026 is a structural AI capex confirmation. Sets an extremely high bar before NVDA May 20 — if NVDA misses, the discrepancy between equipment demand and end-chip demand creates narrative confusion",
+    "Trump-Xi: Stabilization, not transformation: 3-year framework preserves managed competition. Rare earth pause + H200 licenses = targeted wins. No sweeping tariff cut; Taiwan risk re-surfaced. AI chips remain the primary bilateral friction point"
+  ],
+  "macro_snapshot": {
+    "SPX_may14": ">7,500 ATH (+0.77% May 14)",
+    "ES_futures_may15": "7,521-7,526 (flat)",
+    "NVDA_may14_close": "~$233",
+    "NVDA_market_cap_may14": "$5.7T (record)",
+    "AMD_pm_may15": "$435.39 (-2.27%)",
+    "brent_may15": "$106.89 (+1.1%)",
+    "PPI_apr_yoy": "+6.0% (est +4.9%)",
+    "PPI_apr_mom": "+1.4% (est +0.5%)",
+    "PPI_core_mom": "+1.0% (est +0.4%)",
+    "CPI_apr_yoy": "+3.8%",
+    "michigan_sentiment_prelim": "48.2 (est 49.5)",
+    "TNX_10y": "4.46%",
+    "warsh_confirmation_vote": "54-45 May 13"
+  },
+  "today_calendar": [
+    {"time": "10:00am ET", "event": "Michigan Consumer Sentiment Final May 2026 — prelim 48.2; 1-yr expectations 4.5%"},
+    {"time": "ALL DAY", "event": "Warsh Day 1 as Fed Chair — watch for any public remarks; first FOMC June 17"},
+    {"time": "ALL DAY", "event": "Trump-Xi summit Day 2 wrap-up / closing statement from Beijing"}
+  ],
+  "week_ahead_calendar": [
+    {"date": "2026-05-19", "event": "Home Depot Q1 FY2026 BMO — $41.5B rev est (+4.2% YoY); EPS $3.42"},
+    {"date": "2026-05-20", "event": "NVDA Q1 FY2027 earnings — $78.5B rev est (+79% YoY); $1.77 EPS; China guidance is key swing factor"}
+  ],
+  "track_record": {
+    "window": "No. 007-008 (May 11-12, 2026) — 3-4 trading days",
+    "setups_reviewed": 3,
+    "wins": 2,
+    "losses": 0,
+    "flat": 1,
+    "avg_return_pct": 5.2,
+    "results": [
+      {
+        "ticker": "NVDA",
+        "direction": "long",
+        "flag_issue": "no-007",
+        "flag_date": "2026-05-11",
+        "price_at_flag": 217.00,
+        "price_now": 233.00,
+        "price_note": "~$233 May 14 close — MacroTrends / StockAnalysis / GuruFocus",
+        "return_pct": 7.4,
+        "verdict": "WIN",
+        "thesis": "T-9 to May 20; Beijing binary; AMD set bar; hyperscaler $725B capex floor"
+      },
+      {
+        "ticker": "BRENT",
+        "direction": "short",
+        "flag_issue": "no-007",
+        "flag_date": "2026-05-11",
+        "price_at_flag": 104.49,
+        "price_now": 105.10,
+        "price_note": "~$105.10 Brent May 14 settlement — Fortune / Energy Intelligence",
+        "return_pct": -0.6,
+        "verdict": "FLAT",
+        "thesis": "Iran deal near; Hormuz normalization thesis; ING target $85-90 on deal close"
+      },
+      {
+        "ticker": "NVDA",
+        "direction": "long",
+        "flag_issue": "no-008",
+        "flag_date": "2026-05-12",
+        "price_at_flag": 214.34,
+        "price_now": 233.00,
+        "price_note": "~$233 May 14 close — MacroTrends / StockAnalysis / GuruFocus",
+        "return_pct": 8.7,
+        "verdict": "WIN",
+        "thesis": "T-8 to May 20; Huang on AF-1; AMD $10.25B validates DC demand; pre-earnings dip entry"
+      }
+    ]
+  },
+  "active_flags": [
+    {
+      "ticker": "NVDA",
+      "direction": "long",
+      "flag_issue": "no-009",
+      "flag_date": "2026-05-13",
+      "price_at_flag": 219.44,
+      "price_now_unrealized": 233.00,
+      "return_unrealized_pct": 6.2,
+      "horizon_trading_days_remaining": 5,
+      "note": "Awaiting May 20 earnings resolution; H200 China license is additional catalyst (partially resolved); Beijing purchase pause is May 20 guidance wildcard"
+    }
+  ],
+  "ticker_tape": "SPX NEW ATH 7,500+ · ES 7,521 FLAT · NVDA H200 CHINA LICENSED · 75K CHIPS/CUSTOMER · CSCO +14% AH AI SURGE · AMAT RECORD $7.91B +8% AH · PPI YOY +6.0% SHOCK · WARSH DAY 1 · JUNE HOLD 97% · AMD $435 PM · BRENT $107 HORMUZ FLAT · DOCS -26% AH · T-5 NVDA MAY 20",
+  "file": "archive/2026-05-15-vol-i-no-010.html",
+  "published_url": "https://zivav.github.io/morning-brief/archive/2026-05-15-vol-i-no-010.html",
+  "page_count": 8,
+  "sources": [
+    "BLS / CNBC · PPI April 2026 +6.0% YoY / +1.4% MoM — May 13 2026",
+    "Neil Sethi Substack · PPI April 2026 breakdown — May 13 2026",
+    "CNBC · Kevin Warsh wins Senate confirmation 54-45 — May 13 2026",
+    "Motley Fool · Warsh policy framework / QT-for-Cuts — May 14 2026",
+    "Motley Fool · No rate cuts this year Warsh — May 14 2026",
+    "InvestingLive / UMich · Michigan Consumer Sentiment May 48.2 vs 49.5 — May 8 2026 prelim",
+    "CNBC · U.S. clears H200 chip sales to 10 China firms — May 14 2026",
+    "Reuters / US News · Exclusive: US clears H200 chip sales — May 14 2026",
+    "The Next Web / GuruFocus · Nvidia H200 approvals but shipments stall (Beijing pause) — May 14 2026",
+    "CNBC · Jensen Huang joins Trump China trip — May 13 2026",
+    "GuruFocus · Nvidia NVDA hits $5.7 trillion market cap — May 14 2026",
+    "StockTitan / 24-7WallSt · Applied Materials Q2 record $7.91B — May 14 2026",
+    "Motley Fool / CNBC · Cisco CSCO +14% AH blowout — May 14 2026",
+    "CNBC · Stocks making biggest midday moves — DOCS -26% — May 14 2026",
+    "CNBC · Trump-Xi Beijing summit trade Taiwan AI — May 14 2026",
+    "Al Jazeera · Low expectations for summit deal — May 15 2026",
+    "Reuters / US News · Trump Xi to weigh tariff cuts on $30B Board of Trade — May 13 2026",
+    "CNBC · Xi China open US business AI chips — May 14 2026",
+    "CBS News / NPR · Trump Xi meeting Taiwan warning — May 14 2026",
+    "CNN / CBS News · Iran ceasefire massive life support — May 11-14 2026",
+    "Al Jazeera · UN Hormuz resolution 112 nations — May 13 2026",
+    "Fortune / Energy Intelligence · Brent crude $105-107 May 14-15 2026",
+    "MacroTrends / StockAnalysis · NVDA stock price ~$233 May 14 2026",
+    "MarketChameleon / Robinhood · AMD pre-market $435.39 May 15 2026",
+    "TheStreet / Investing.com · ES futures 7521-7526 May 15 2026",
+    "Home Depot IR · Q1 FY2026 earnings call May 19 2026 — May 5 2026 press release"
+  ]
+}

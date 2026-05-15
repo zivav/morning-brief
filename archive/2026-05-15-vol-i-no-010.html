@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Markets Brief — 15 MAY 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* =========================================================
+     MORNING MARKETS BRIEF — MASTER TEMPLATE
+     Layouts: cover · fullbleed · split · threepanel · bignumber
+              chart · honor · movers · trackrecord
+     ========================================================= */
+  :root {
+    --bg: #000000;
+    --panel: #0a0a0a;
+    --card: #141414;
+    --card-2: #1a1a1a;
+    --border: #232323;
+    --border-2: #2e2e2e;
+    --muted: #737373;
+    --muted-2: #525252;
+    --text: #ffffff;
+    --text-soft: rgba(255,255,255,0.85);
+    --green: #22c55e;
+    --green-soft: rgba(34,197,94,0.08);
+    --green-border: rgba(34,197,94,0.4);
+    --red: #ef4444;
+    --red-soft: rgba(239,68,68,0.08);
+    --red-border: rgba(239,68,68,0.4);
+    --blue: #3b82f6;
+    --blue-soft: rgba(59,130,246,0.08);
+    --blue-border: rgba(59,130,246,0.4);
+    --yellow: #eab308;
+    --yellow-soft: rgba(234,179,8,0.08);
+    --yellow-border: rgba(234,179,8,0.4);
+    --header-red: #dc2626;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --serif: 'Playfair Display', 'Times New Roman', serif;
+    --mono: 'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); }
+
+  /* -- PAGE SHELL -- */
+  .page {
+    scroll-snap-align: start;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .live-strip {
+    background: var(--header-red);
+    color: white;
+    padding: 8px 28px;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+  }
+  .live-strip .left::before { content: "● "; }
+
+  .meta-strip {
+    padding: 12px 28px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .meta-strip .vol-no { display: flex; gap: 16px; align-items: center; }
+  .meta-strip .vol-no svg { width: 14px; height: 14px; opacity: 0.6; }
+
+  .chip {
+    display: inline-block;
+    padding: 4px 10px;
+    border: 1px solid var(--border);
+    background: rgba(34,197,94,0.05);
+    color: var(--green);
+    border-color: var(--green-border);
+  }
+  .chip.macro { color: var(--blue); border-color: var(--blue-border); background: rgba(59,130,246,0.05); }
+  .chip.geo { color: var(--yellow); border-color: var(--yellow-border); background: rgba(234,179,8,0.05); }
+  .chip.earnings { color: var(--green); border-color: var(--green-border); background: rgba(34,197,94,0.05); }
+
+  .ticker-tape {
+    border-top: 1px solid var(--border);
+    padding: 14px 28px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+  }
+  .ticker-tape .sep { margin: 0 18px; color: var(--border-2); }
+
+  .page-foot {
+    padding: 14px 28px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .page-foot .arrow {
+    width: 22px; height: 22px;
+    border: 1px solid var(--border-2);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 9px;
+    color: var(--muted);
+  }
+
+  /* -- TYPOGRAPHY -- */
+  .headline-mega {
+    font-family: var(--sans);
+    font-weight: 900;
+    font-size: clamp(44px, 6.5vw, 88px);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    text-transform: uppercase;
+  }
+  .headline-mega em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: -0.01em;
+  }
+  .headline-large {
+    font-family: var(--sans);
+    font-weight: 900;
+    font-size: clamp(36px, 4.8vw, 64px);
+    line-height: 1;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+  }
+  .headline-large em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: -0.01em;
+  }
+
+  .kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .kicker.macro { color: var(--blue); }
+  .kicker.geo { color: var(--yellow); }
+  .kicker.earnings { color: var(--green); }
+  .kicker.ai { color: var(--green); }
+
+  .body-text {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--text-soft);
+    max-width: 580px;
+  }
+
+  /* -- BADGES & CHIPS -- */
+  .badge-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .badge {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 6px 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: 1px solid;
+  }
+  .badge.pos { color: var(--green); border-color: var(--green-border); background: var(--green-soft); }
+  .badge.neg { color: var(--red); border-color: var(--red-border); background: var(--red-soft); }
+  .badge.neu { color: var(--blue); border-color: var(--blue-border); background: var(--blue-soft); }
+  .badge.warn { color: var(--yellow); border-color: var(--yellow-border); background: var(--yellow-soft); }
+
+  /* -- METRIC GRID -- */
+  .metric-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .metric-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .metric-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .metric-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  .metric-cell {
+    background: var(--card);
+    padding: 16px 20px;
+  }
+  .metric-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .metric-value {
+    font-family: var(--mono);
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .metric-value.pos { color: var(--green); }
+  .metric-value.neg { color: var(--red); }
+  .metric-value.neu { color: var(--blue); }
+  .metric-value.warn { color: var(--yellow); }
+
+  /* -- TOP STORIES RAIL -- */
+  .top-stories { display: flex; flex-direction: column; gap: 14px; }
+  .story-card {
+    background: var(--card);
+    border-left: 3px solid var(--green);
+    padding: 16px 20px;
+  }
+  .story-card.macro { border-left-color: var(--blue); }
+  .story-card.geo { border-left-color: var(--yellow); }
+  .story-card.ai { border-left-color: var(--green); }
+  .story-card .label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--green);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .story-card.macro .label { color: var(--blue); }
+  .story-card.geo .label { color: var(--yellow); }
+  .story-card .title {
+    font-weight: 800;
+    font-size: 22px;
+    margin: 6px 0 10px;
+    letter-spacing: -0.012em;
+    text-transform: uppercase;
+  }
+  .story-card .summary {
+    font-size: 13px;
+    color: var(--text-soft);
+    line-height: 1.5;
+  }
+
+  /* -- LAYOUT: COVER -- */
+  .layout-cover .body { padding: 36px 48px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; }
+  .cover-stat-strip { padding: 0 48px 24px; }
+
+  /* -- LAYOUT: FULL-BLEED -- */
+  .layout-fullbleed .body { padding: 36px 48px; position: relative; }
+  .layout-fullbleed .full-bg {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center;
+    filter: brightness(0.35) saturate(0.85);
+    z-index: 0;
+  }
+  .layout-fullbleed .body > * { position: relative; z-index: 1; }
+  .layout-fullbleed .corner-chip {
+    position: absolute; top: 36px; right: 48px;
+    background: var(--card-2); border: 1px solid var(--yellow-border);
+    padding: 14px 18px; min-width: 140px; z-index: 2;
+  }
+  .corner-chip .chip-label { font-family: var(--mono); font-size: 9px; color: var(--yellow); letter-spacing: 0.15em; text-transform: uppercase; }
+  .corner-chip .chip-value { font-weight: 900; font-size: 22px; line-height: 1.1; margin-top: 6px; text-transform: uppercase; }
+  .corner-chip .chip-attr { font-family: var(--mono); font-size: 10px; color: var(--muted); margin-top: 6px; }
+
+  .quote-block {
+    border-left: 2px solid var(--yellow);
+    padding: 6px 0 6px 16px;
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--text-soft);
+    font-size: 16px;
+    margin-top: 24px;
+    max-width: 640px;
+  }
+  .quote-block .attr {
+    font-family: var(--sans);
+    font-style: normal;
+    color: var(--muted);
+    font-size: 12px;
+    display: block;
+    margin-top: 4px;
+  }
+
+  /* -- LAYOUT: SPLIT -- */
+  .layout-split .body { padding: 36px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .layout-split .split-visual {
+    aspect-ratio: 1.1 / 1;
+    background: var(--card);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+  }
+  .visual-glyph {
+    font-family: var(--sans);
+    font-weight: 900;
+    font-size: clamp(60px, 9vw, 140px);
+    color: var(--green);
+    letter-spacing: -0.04em;
+  }
+  .visual-glyph.neu { color: var(--blue); }
+
+  /* -- LAYOUT: THREE PANEL -- */
+  .layout-threepanel .body { padding: 36px 48px; display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 24px; }
+  .panel-card {
+    background: var(--card);
+    border-top: 2px solid var(--green);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .panel-card.warn { border-top-color: var(--yellow); }
+  .panel-card.neu { border-top-color: var(--blue); }
+  .panel-card.neg { border-top-color: var(--red); }
+  .panel-card .panel-label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--green);
+  }
+  .panel-card.warn .panel-label { color: var(--yellow); }
+  .panel-card.neu .panel-label { color: var(--blue); }
+  .panel-card.neg .panel-label { color: var(--red); }
+  .panel-card .panel-headline { font-weight: 900; font-size: 36px; line-height: 1; letter-spacing: -0.02em; }
+  .panel-card .panel-sub { font-family: var(--mono); font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+  .panel-card .panel-body { font-size: 13px; color: var(--text-soft); line-height: 1.5; }
+
+  /* -- LAYOUT: BIG NUMBER -- */
+  .layout-bignumber .body { padding: 36px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .big-number {
+    font-family: var(--sans);
+    font-weight: 900;
+    font-size: clamp(96px, 12vw, 180px);
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    color: var(--green);
+  }
+  .big-number.neg { color: var(--red); }
+  .big-number.neu { color: var(--blue); }
+  .big-number-caption {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 16px;
+  }
+  .big-number-pill {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 8px 16px;
+    background: var(--green-soft);
+    border: 1px solid var(--green-border);
+    color: var(--green);
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .big-number-tag {
+    margin-top: 28px;
+    padding: 12px 16px;
+    border: 1px solid var(--green-border);
+    background: var(--green-soft);
+  }
+  .big-number-tag .tag-label { font-family: var(--mono); font-size: 10px; color: var(--green); letter-spacing: 0.12em; text-transform: uppercase; }
+  .big-number-tag .tag-text { font-family: var(--mono); font-size: 12px; color: var(--text); margin-top: 4px; letter-spacing: 0.04em; text-transform: uppercase; }
+
+  /* -- LAYOUT: CHART -- */
+  .layout-chart .body { padding: 36px 48px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: center; }
+  .chart-svg-wrap {
+    width: 100%;
+    aspect-ratio: 1.6 / 1;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 24px;
+  }
+
+  /* -- LAYOUT: HONOR ROLL -- */
+  .layout-honor .body { padding: 36px 48px; }
+  .honor-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .honor-card {
+    background: var(--card);
+    border-top: 2px solid var(--green);
+    padding: 18px 20px;
+  }
+  .honor-card .ticker-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .honor-card .ticker { font-weight: 900; font-size: 22px; letter-spacing: -0.01em; }
+  .honor-card .change { color: var(--green); font-family: var(--mono); font-weight: 700; font-size: 16px; }
+  .honor-card .detail {
+    margin-top: 10px;
+    font-size: 11.5px;
+    color: var(--text-soft);
+    line-height: 1.5;
+    font-family: var(--sans);
+  }
+
+  /* -- LAYOUT: GAINERS / LOSERS -- */
+  .layout-movers .body { padding: 36px 48px; display: grid; grid-template-columns: 1.7fr 1fr; gap: 48px; }
+  .mover-list h2 {
+    font-family: var(--sans);
+    font-weight: 900;
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: -0.015em;
+    padding-bottom: 8px;
+    margin-bottom: 4px;
+  }
+  .mover-list h2.gainers { color: var(--green); border-bottom: 1px solid var(--green); }
+  .mover-list h2.losers { color: var(--red); border-bottom: 1px solid var(--red); }
+  .mover-list .count-tag {
+    font-family: var(--mono); font-size: 11px; color: var(--muted);
+    letter-spacing: 0.08em; text-transform: uppercase; margin-left: 12px;
+  }
+  .mover-row {
+    display: grid;
+    grid-template-columns: 60px 70px 1fr;
+    gap: 14px;
+    padding: 8px 0;
+    align-items: baseline;
+    font-size: 13px;
+  }
+  .mover-row .ticker { font-weight: 800; }
+  .mover-row .change { font-family: var(--mono); font-weight: 700; }
+  .mover-row .change.pos { color: var(--green); }
+  .mover-row .change.neg { color: var(--red); }
+  .mover-row .reason { color: var(--text-soft); font-size: 12.5px; }
+
+  /* -- LAYOUT: TRACK RECORD -- */
+  .layout-trackrecord .body { padding: 36px 48px; }
+  .track-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+  }
+  .track-table th, .track-table td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+  }
+  .track-table th {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 500;
+  }
+  .track-table .ticker-cell { font-weight: 800; font-size: 15px; }
+  .track-table .return-cell { font-family: var(--mono); font-weight: 700; }
+  .track-table .return-cell.pos { color: var(--green); }
+  .track-table .return-cell.neg { color: var(--red); }
+  .track-table .verdict { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .track-table .verdict.win { color: var(--green); }
+  .track-table .verdict.loss { color: var(--red); }
+  .track-table .verdict.flat { color: var(--muted); }
+  .track-summary {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+    background: var(--border); border: 1px solid var(--border);
+    margin-top: 28px;
+  }
+  .track-summary > div { background: var(--card); padding: 16px 20px; }
+
+  /* -- PRINT -- */
+  @media print {
+    body { scroll-snap-type: none; height: auto; }
+    .page { min-height: 100vh; page-break-after: always; }
+  }
+
+  /* -- MOBILE FALLBACK -- */
+  @media (max-width: 900px) {
+    .layout-cover .body,
+    .layout-split .body,
+    .layout-bignumber .body,
+    .layout-chart .body,
+    .layout-movers .body { grid-template-columns: 1fr; gap: 32px; }
+    .layout-threepanel .body { grid-template-columns: 1fr; }
+    .honor-grid { grid-template-columns: repeat(2, 1fr); }
+    .live-strip, .meta-strip, .page-foot, .ticker-tape { padding-left: 16px; padding-right: 16px; }
+    .layout-cover .body, .layout-split .body, .layout-fullbleed .body,
+    .layout-threepanel .body, .layout-bignumber .body, .layout-chart .body,
+    .layout-honor .body, .layout-movers .body, .layout-trackrecord .body { padding: 24px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- =====================================================================
+     PAGE 01 — COVER
+     ===================================================================== -->
+<section class="page layout-cover" data-layout="cover" id="page-01">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span>15 MAY 2026 · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I · NO 010 · 15 MAY 2026</span>
+      <span>MORNING MARKETS BRIEF · 8 STORIES · 5 CHAPTERS</span>
+    </div>
+    <span>01 / 08</span>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="kicker">MORNING MARKETS · 15 MAY 2026</div>
+      <h1 class="headline-mega">WARSH INHERITS FIRE / BEIJING <em>UNLOCKS</em> NVDA</h1>
+      <p class="body-text" style="margin-top: 28px;">PPI explodes to <strong>+6.0% YoY</strong> — worst print since December 2022 — on Warsh's first day as Fed Chair. Trump-Xi delivers H200 export licenses for Chinese AI firms; NVDA hits record <strong>$5.7T market cap</strong>. SPX closes above <strong>7,500</strong> for first time. Track record posts <strong>2W / 0L / 1F</strong>, avg <strong>+5.2%</strong>.</p>
+      <div class="badge-row" style="margin-top: 36px;">
+        <span class="badge pos">NVDA H200 CHINA LICENSED</span>
+        <span class="badge neg">PPI +6.0% YOY SHOCK</span>
+        <span class="badge warn">WARSH DAY 1</span>
+        <span class="badge pos">SPX 7,500 ATH</span>
+        <span class="badge pos">CSCO +14% AH</span>
+        <span class="badge pos">AMAT RECORD $7.91B</span>
+        <span class="badge neg">DOCS -26% AH</span>
+        <span class="badge neu">T-5 NVDA MAY 20</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="kicker">TODAY'S TOP STORIES</div>
+      <div class="top-stories">
+        <div class="story-card ai">
+          <div class="label">II · AI TRADE</div>
+          <div class="title">BEIJING DELIVERS</div>
+          <div class="summary">H200 export licenses approved for Alibaba, Tencent, ByteDance, JD.com — 75K chips/customer. ~$3.5–4B China revenue pathway opens 5 days before May 20 earnings. NVDA $5.7T market cap record.</div>
+        </div>
+        <div class="story-card macro">
+          <div class="label">I · MACRO</div>
+          <div class="title">WARSH'S FIRE</div>
+          <div class="summary">PPI +6.0% YoY on Day 1 — 110bp above consensus. CPI 3.8% + PPI 6.0% = pipeline accelerating. Michigan Sentiment 48.2, near June 2022 lows. June FOMC 97% hold.</div>
+        </div>
+        <div class="story-card">
+          <div class="label">III · EARNINGS</div>
+          <div class="title">SEMIS SURGE</div>
+          <div class="summary">CSCO +14% AH on AI infrastructure orders. AMAT record Q2 $7.91B; industry >30% growth. DOCS -26% AH guidance miss. HD Q1 BMO May 14.</div>
+        </div>
+        <div class="story-card geo">
+          <div class="label">V · TRACK RECORD</div>
+          <div class="title">2W / 0L / 1F</div>
+          <div class="summary">NVDA longs from issues 007 &amp; 008: +7.4% WIN / +8.7% WIN. Brent short (issue 007) FLAT at −0.6%. Avg return +5.2% across 3 reviewed setups.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="metric-grid cols-4 cover-stat-strip">
+    <div class="metric-cell">
+      <div class="metric-label">ES FUTURES</div>
+      <div class="metric-value neu">7,521 FLAT</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-label">NVDA MAY 14 CLOSE</div>
+      <div class="metric-value pos">~$233 +7.4% WK</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-label">PPI APRIL YOY</div>
+      <div class="metric-value neg">+6.0% SHOCK</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-label">BRENT CRUDE</div>
+      <div class="metric-value warn">$106.89 +1.1%</div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">SPX NEW ATH 7,500+ · ES 7,521 FLAT · NVDA H200 CHINA LICENSED · 75K CHIPS/CUSTOMER · CSCO +14% AH AI SURGE · AMAT RECORD $7.91B +8% AH · PPI YOY +6.0% SHOCK · WARSH DAY 1 · JUNE HOLD 97% · AMD $435 PM · BRENT $107 HORMUZ FLAT · DOCS -26% AH · T-5 NVDA MAY 20</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>01 / 08</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     PAGE 02 — CHAPTER I · MACRO · WARSH DAY 1
+     ===================================================================== -->
+<section class="page layout-fullbleed" data-layout="fullbleed" id="page-02">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span>15 MAY 2026 · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I · NO 010</span>
+      <span class="chip macro">I · MACRO</span>
+    </div>
+    <span>02 / 08</span>
+  </div>
+
+  <div class="body">
+    <div class="full-bg" style="background-image: linear-gradient(135deg, #0a0f1e 0%, #1a0a0a 60%, #0f0a1a 100%);"></div>
+
+    <div class="corner-chip">
+      <div class="chip-label">FIRST FOMC MEETING</div>
+      <div class="chip-value">JUNE 17</div>
+      <div class="chip-attr">97% HOLD · ZERO CUTS 2026</div>
+    </div>
+
+    <div class="kicker macro">I · MACRO · FRIDAY 15 MAY 2026</div>
+    <h1 class="headline-mega">WARSH <em>INHERITS</em> FIRE</h1>
+    <p class="body-text" style="margin-top: 24px;">Kevin Warsh's Day 1 as the 17th Fed Chair arrives with a catastrophic data surprise. April PPI surged <strong>+6.0% YoY</strong> — largest annual jump since December 2022 — as gasoline (+15.6%) and core services (+1.2% MoM) both burned hotter than estimated. The inherited macro stack is the most hostile since Warsh's predecessor arrived in 2022.</p>
+    <ul class="body-text" style="margin-top: 18px; padding-left: 20px; list-style: disc; display: flex; flex-direction: column; gap: 6px;">
+      <li><strong>PPI April YoY</strong>: +6.0% (est +4.9%) — 110bp shock; biggest since Dec 2022 — BLS/CNBC</li>
+      <li><strong>PPI MoM</strong>: +1.4% (est +0.5%) — biggest since March 2022; gasoline +15.6%</li>
+      <li><strong>Core PPI MoM</strong>: +1.0% (est +0.4%); Services +1.2%</li>
+      <li><strong>CPI April</strong>: +3.8% YoY / Core +2.8% — confirmed hot May 12 (CNBC)</li>
+      <li><strong>Michigan Sentiment</strong>: 48.2 prelim (est 49.5); final reading 10am ET today (UMich/InvestingLive)</li>
+      <li><strong>1-yr inflation expectations</strong>: 4.5%; 5-yr: 3.4% — still elevated despite slight pullback</li>
+      <li><strong>Warsh confirmation</strong>: 54-45 May 13 — closest modern-era Fed confirmation (CNBC)</li>
+    </ul>
+
+    <div class="quote-block" style="margin-top: 32px;">
+      "Inflation is a choice, and the Fed must take responsibility for it."
+      <span class="attr">— Kevin Warsh, Senate confirmation hearing · May 2026</span>
+    </div>
+
+    <div class="metric-grid cols-5" style="margin-top: 36px; max-width: 900px;">
+      <div class="metric-cell">
+        <div class="metric-label">PPI APR YOY</div>
+        <div class="metric-value neg">+6.0%</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">PPI APR MOM</div>
+        <div class="metric-value neg">+1.4%</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">CPI APR YOY</div>
+        <div class="metric-value neg">+3.8%</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">JUNE HOLD PROB</div>
+        <div class="metric-value neu">97%</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">TNX 10Y</div>
+        <div class="metric-value warn">4.46%</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">SPX NEW ATH 7,500+ · ES 7,521 FLAT · NVDA H200 CHINA LICENSED · 75K CHIPS/CUSTOMER · CSCO +14% AH AI SURGE · AMAT RECORD $7.91B +8% AH · PPI YOY +6.0% SHOCK · WARSH DAY 1 · JUNE HOLD 97% · AMD $435 PM · BRENT $107 HORMUZ FLAT · DOCS -26% AH · T-5 NVDA MAY 20</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>02 / 08</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     PAGE 03 — CHAPTER I · MACRO · PPI +6.0% BIG NUMBER
+     ===================================================================== -->
+<section class="page layout-bignumber" data-layout="bignumber" id="page-03">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span>15 MAY 2026 · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I · NO 010</span>
+      <span class="chip macro">I · MACRO</span>
+    </div>
+    <span>03 / 08</span>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="kicker macro">I · MACRO · PPI APRIL 2026</div>
+      <h1 class="headline-mega">PIPELINE <em>BURNS</em></h1>
+      <p class="body-text" style="margin-top: 24px;">April's PPI devastated the "disinflation-complete" narrative. The <strong>+1.4% MoM</strong> Final Demand print — triple the +0.5% estimate — was driven by gasoline (+15.6%) via the Hormuz supply shock and core services at +1.2% MoM. Warsh inherits not just a hot CPI but a pipeline that is <em>accelerating</em>.</p>
+      <ul class="body-text" style="margin-top: 18px; padding-left: 20px; list-style: disc; display: flex; flex-direction: column; gap: 6px;">
+        <li><strong>Goods PPI MoM</strong>: +2.0% — gasoline alone +15.6%</li>
+        <li><strong>Services PPI MoM</strong>: +1.2% — biggest since March 2022</li>
+        <li><strong>Core PPI MoM</strong>: +1.0% vs +0.4% est — broad-based</li>
+        <li><strong>YoY acceleration</strong>: March +4.0% → April +6.0% (+200bp in one month)</li>
+      </ul>
+      <div class="metric-grid" style="margin-top: 32px; max-width: 460px;">
+        <div class="metric-cell">
+          <div class="metric-label">MARCH PPI YOY</div>
+          <div class="metric-value warn">+4.0%</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">APRIL PPI YOY</div>
+          <div class="metric-value neg">+6.0%</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">YOY ACCELERATION</div>
+          <div class="metric-value neg">+200bp</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">VS CONSENSUS</div>
+          <div class="metric-value neg">BEAT +110bp</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center;">
+      <div class="big-number neg">+6.0%</div>
+      <div class="big-number-caption">APRIL PPI YOY — BIGGEST SINCE DEC 2022</div>
+      <span class="big-number-pill" style="background: var(--red-soft); border-color: var(--red-border); color: var(--red);">VS +4.9% CONSENSUS · BLS MAY 13</span>
+      <div class="big-number-tag" style="border-color: var(--red-border); background: var(--red-soft);">
+        <div class="tag-label" style="color: var(--red);">WARSH DAY 1 INHERITANCE</div>
+        <div class="tag-text">CPI 3.8% · PPI 6.0% · PCE 4.5% · TNX 4.46%</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">SPX NEW ATH 7,500+ · ES 7,521 FLAT · NVDA H200 CHINA LICENSED · 75K CHIPS/CUSTOMER · CSCO +14% AH AI SURGE · AMAT RECORD $7.91B +8% AH · PPI YOY +6.0% SHOCK · WARSH DAY 1 · JUNE HOLD 97% · AMD $435 PM · BRENT $107 HORMUZ FLAT · DOCS -26% AH · T-5 NVDA MAY 20</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>03 / 08</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     PAGE 04 — CHAPTER II · AI TRADE · NVDA H200 CHINA LICENSE
+     ===================================================================== -->
+<section class="page layout-split" data-layout="split" id="page-04">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span>15 MAY 2026 · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I · NO 010</span>
+      <span class="chip ai">II · AI TRADE</span>
+    </div>
+    <span>04 / 08</span>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="kicker ai">II · AI TRADE · BEIJING BINARY RESOLVED</div>
+      <h1 class="headline-large">NVDA'S <em>CHINA</em> KEY</h1>
+      <p class="body-text" style="margin-top: 24px;">US Commerce approved H200 export licenses for ~10 Chinese AI firms. Jensen Huang's last-minute AF-1 boarding paid off — the <em>Washington</em> side of the binary is resolved. The complication: Beijing directed Chinese companies to pause H200 purchases pending a State Council supply-chain security review. The key unlocks but the door remains ajar.</p>
+      <ul class="body-text" style="margin-top: 18px; padding-left: 20px; list-style: disc; display: flex; flex-direction: column; gap: 6px;">
+        <li><strong>H200 licenses granted</strong>: Alibaba, Tencent, ByteDance, JD.com + distributors Lenovo, Foxconn — 75K chips/customer cap (Reuters/CNBC May 14)</li>
+        <li><strong>Beijing stall</strong>: State Council directed domestic firms to pause H200 orders — no shipments yet (The Next Web/GuruFocus)</li>
+        <li><strong>Huang's asks in Beijing</strong>: (1) Beijing greenlight for H200 deliveries; (2) Chinese easing of gallium/rare-earth curbs</li>
+        <li><strong>Revenue upside</strong>: China was 13% of NVDA revenue pre-ban; Huang estimates $50B China AI market in 2026 (247 Wall St/CNBC)</li>
+        <li><strong>NVDA May 14 close</strong>: ~$233; market cap record $5.7T on H200 news (GuruFocus)</li>
+        <li><strong>T-5 to May 20</strong>: Q1 FY2027 consensus $78.5B rev +79% YoY / $1.77 EPS — China license is now a guidance catalyst</li>
+      </ul>
+      <div class="metric-grid" style="margin-top: 32px;">
+        <div class="metric-cell">
+          <div class="metric-label">H200 LICENSEES</div>
+          <div class="metric-value neu" style="font-size: 12px;">~10 FIRMS APPROVED</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">CHIPS/CUSTOMER CAP</div>
+          <div class="metric-value pos">75,000</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">NVDA MAY 14 CLOSE</div>
+          <div class="metric-value pos">~$233</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">EARNINGS COUNTDOWN</div>
+          <div class="metric-value neu">T-5 MAY 20</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="split-visual">
+      <span class="visual-glyph">H200</span>
+    </div>
+  </div>
+
+  <div class="ticker-tape">SPX NEW ATH 7,500+ · ES 7,521 FLAT · NVDA H200 CHINA LICENSED · 75K CHIPS/CUSTOMER · CSCO +14% AH AI SURGE · AMAT RECORD $7.91B +8% AH · PPI YOY +6.0% SHOCK · WARSH DAY 1 · JUNE HOLD 97% · AMD $435 PM · BRENT $107 HORMUZ FLAT · DOCS -26% AH · T-5 NVDA MAY 20</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>04 / 08</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     PAGE 05 — CHAPTER II · AI TRADE · SEMI EQUIPMENT SURGE
+     ===================================================================== -->
+<section class="page layout-threepanel" data-layout="threepanel" id="page-05">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span>15 MAY 2026 · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I · NO 010</span>
+      <span class="chip ai">II · AI TRADE</span>
+    </div>
+    <span>05 / 08</span>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="kicker ai">II · AI TRADE · SEMI EQUIPMENT CYCLE</div>
+      <h1 class="headline-large">EQUIPMENT CYCLE <em>ACCELERATES</em></h1>
+      <p class="body-text" style="margin-top: 18px;">Applied Materials delivered a record Q2 and raised the industry growth forecast from <strong>&gt;20%</strong> to <strong>&gt;30%</strong> for calendar 2026. Cisco's AI infrastructure blowout broadens the signal beyond hyperscalers into enterprise. Both reports validate the AI capex arc heading into T-5 NVDA earnings.</p>
+      <ul class="body-text" style="margin-top: 16px; padding-left: 20px; list-style: disc; display: flex; flex-direction: column; gap: 6px; font-size: 13px;">
+        <li>AMAT Q2 rev <strong>$7.91B</strong> vs $7.69B est — record (StockTitan)</li>
+        <li>AMAT Q3 guide <strong>$8.95B</strong> — well above Street models</li>
+        <li>CSCO fiscal Q3: AI orders surge, FY guidance raised (Motley Fool)</li>
+        <li>AMD pre-market <strong>$435.39 (−2.27%)</strong> — no direct China H200 lift</li>
+      </ul>
+    </div>
+
+    <div class="panel-card">
+      <div class="panel-label">APPLIED MATERIALS · AMAT</div>
+      <div class="panel-headline">$7.91B</div>
+      <div class="panel-sub">Q2 RECORD REVENUE · +8% AH</div>
+      <div class="panel-body">
+        <ul style="padding-left: 16px; list-style: disc; display: flex; flex-direction: column; gap: 5px;">
+          <li>EPS <strong>$2.86</strong> vs $2.68 est</li>
+          <li>Q3 guide <strong>$8.95B</strong> — above models</li>
+          <li>Industry growth raised <strong>&gt;30%</strong> CY2026 (from &gt;20%)</li>
+          <li>Source: StockTitan / 247WallSt May 14</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel-card neu">
+      <div class="panel-label">CISCO SYSTEMS · CSCO</div>
+      <div class="panel-headline">+14%</div>
+      <div class="panel-sub">AH · AI ORDERS BLOWOUT</div>
+      <div class="panel-body">
+        <ul style="padding-left: 16px; list-style: disc; display: flex; flex-direction: column; gap: 5px;">
+          <li>Fiscal Q3 beat; FY guidance raised</li>
+          <li>AI-related infrastructure orders primary driver</li>
+          <li>Enterprise AI spend broadening beyond hyperscalers</li>
+          <li>Source: Motley Fool / CNBC May 14</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel-card warn">
+      <div class="panel-label">AMD · CAUTION</div>
+      <div class="panel-headline">$435</div>
+      <div class="panel-sub">PRE-MKT −2.27%</div>
+      <div class="panel-body">
+        <ul style="padding-left: 16px; list-style: disc; display: flex; flex-direction: column; gap: 5px;">
+          <li>MI-series excluded from China H200 approvals</li>
+          <li>SOXX −5% hangover (QCOM/INTC) still fresh</li>
+          <li>AMAT &gt;30% guide = high bar for May 20 NVDA</li>
+          <li>Source: MarketChameleon / Robinhood May 15 PM</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">SPX NEW ATH 7,500+ · ES 7,521 FLAT · NVDA H200 CHINA LICENSED · 75K CHIPS/CUSTOMER · CSCO +14% AH AI SURGE · AMAT RECORD $7.91B +8% AH · PPI YOY +6.0% SHOCK · WARSH DAY 1 · JUNE HOLD 97% · AMD $435 PM · BRENT $107 HORMUZ FLAT · DOCS -26% AH · T-5 NVDA MAY 20</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>05 / 08</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     PAGE 06 — CHAPTER III · EARNINGS · GAINERS / LOSERS
+     ===================================================================== -->
+<section class="page layout-movers" data-layout="movers" id="page-06">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span>15 MAY 2026 · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I · NO 010</span>
+      <span class="chip earnings">III · EARNINGS</span>
+    </div>
+    <span>06 / 08</span>
+  </div>
+
+  <div class="body">
+    <div class="mover-list">
+      <h2 class="gainers">GAINERS <span class="count-tag">2 MOVERS · AH MAY 14</span></h2>
+      <div class="mover-row">
+        <span class="ticker">CSCO</span>
+        <span class="change pos">+14%</span>
+        <span class="reason">Fiscal Q3 AH blowout — AI infrastructure orders surge; FY guidance raised. Broadest enterprise AI signal of the cycle (Motley Fool / CNBC May 14)</span>
+      </div>
+      <div class="mover-row">
+        <span class="ticker">AMAT</span>
+        <span class="change pos">+8%</span>
+        <span class="reason">Record Q2 $7.91B vs $7.69B est; EPS $2.86 vs $2.68; Q3 guide $8.95B; industry growth raised to &gt;30% CY2026 (StockTitan / 247WallSt May 14)</span>
+      </div>
+
+      <h2 class="losers" style="margin-top: 32px;">LOSERS <span class="count-tag">2 MOVERS · AH MAY 14</span></h2>
+      <div class="mover-row">
+        <span class="ticker">DOCS</span>
+        <span class="change neg">−26%</span>
+        <span class="reason">Q4 miss + disappointing guidance; Doximity health-tech selloff; largest AH decline of the session (CNBC May 14)</span>
+      </div>
+      <div class="mover-row">
+        <span class="ticker">LWLG</span>
+        <span class="change neg">−17%</span>
+        <span class="reason">Lightwave Logic — widening net losses; no revenue path clarified (CNBC May 14 midday movers)</span>
+      </div>
+
+      <h2 style="font-size: 18px; color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-top: 32px; text-transform: uppercase; letter-spacing: -0.01em;">CALENDAR AHEAD</h2>
+      <div class="mover-row" style="grid-template-columns: 80px 1fr;">
+        <span class="ticker" style="font-size: 11px; color: var(--muted);">MAY 19</span>
+        <span class="reason"><strong>Home Depot Q1 FY2026</strong> — consensus $41.5B rev (+4.2% YoY); EPS $3.42 (down mid-single digits YoY). HD guided: 2.5–4.5% sales growth, adj op margin 12.8–13%. (HD IR / Zacks)</span>
+      </div>
+      <div class="mover-row" style="grid-template-columns: 80px 1fr;">
+        <span class="ticker" style="font-size: 11px; color: var(--muted);">MAY 20</span>
+        <span class="reason"><strong>NVDA Q1 FY2027</strong> — $78.5B revenue (+79% YoY); EPS $1.77. China guidance is now the key swing factor post-H200 license.</span>
+      </div>
+    </div>
+
+    <div class="mover-list">
+      <h2 style="font-size: 18px; color: var(--blue); border-bottom: 1px solid var(--blue-border); padding-bottom: 8px; text-transform: uppercase; letter-spacing: -0.01em;">MACRO READS</h2>
+      <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 14px;">
+        <div style="background: var(--card); padding: 16px; border-left: 3px solid var(--blue);">
+          <div class="metric-label">CSCO READ-THROUGH</div>
+          <div style="font-size: 13px; color: var(--text-soft); margin-top: 8px; line-height: 1.5;">Enterprise AI networking spend is real and accelerating. CSCO's blowout validates the AI infrastructure thesis beyond the Mag7 hyperscaler layer — switching, routing, and data center interconnect all benefiting.</div>
+        </div>
+        <div style="background: var(--card); padding: 16px; border-left: 3px solid var(--green);">
+          <div class="metric-label">AMAT READ-THROUGH</div>
+          <div style="font-size: 13px; color: var(--text-soft); margin-top: 8px; line-height: 1.5;">Raising industry growth to &gt;30% signals wafer fab equipment demand is materially ahead of prior models. Watch <strong>KLAC</strong> and <strong>LRCX</strong> for sympathy gap-ups. Sets a high bar before NVDA May 20.</div>
+        </div>
+        <div style="background: var(--card); padding: 16px; border-left: 3px solid var(--red);">
+          <div class="metric-label">DOCS LESSON</div>
+          <div style="font-size: 13px; color: var(--text-soft); margin-top: 8px; line-height: 1.5;">Health-tech AI story that never monetized at scale. −26% AH is a reminder that AI adjacency without direct revenue traction is punished hard when guidance disappoints.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">SPX NEW ATH 7,500+ · ES 7,521 FLAT · NVDA H200 CHINA LICENSED · 75K CHIPS/CUSTOMER · CSCO +14% AH AI SURGE · AMAT RECORD $7.91B +8% AH · PPI YOY +6.0% SHOCK · WARSH DAY 1 · JUNE HOLD 97% · AMD $435 PM · BRENT $107 HORMUZ FLAT · DOCS -26% AH · T-5 NVDA MAY 20</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>06 / 08</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     PAGE 07 — CHAPTER IV · GEOPOLITICS · TRUMP-XI + IRAN/BRENT
+     ===================================================================== -->
+<section class="page layout-fullbleed" data-layout="fullbleed" id="page-07">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span>15 MAY 2026 · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I · NO 010</span>
+      <span class="chip geo">IV · GEOPOLITICS</span>
+    </div>
+    <span>07 / 08</span>
+  </div>
+
+  <div class="body">
+    <div class="full-bg" style="background-image: linear-gradient(150deg, #0f1d10 0%, #1a1a0a 50%, #0a0f1d 100%);"></div>
+
+    <div class="corner-chip">
+      <div class="chip-label">BRENT CRUDE</div>
+      <div class="chip-value">$106.89</div>
+      <div class="chip-attr">+1.1% · HORMUZ LOCKED</div>
+    </div>
+
+    <div class="kicker geo">IV · GEOPOLITICS & CAPITAL · BEIJING SUMMIT VERDICT</div>
+    <h1 class="headline-mega">STABILIZATION, NOT <em>REVITALIZATION</em></h1>
+    <p class="body-text" style="margin-top: 24px;">The Trump-Xi summit closed with a 3-year framework of "constructive strategic stability" — managed competition, not transformative deal-making. The headline market win was NVDA's H200 licenses. The headline risk: Xi's sharp Taiwan warning and an Iran ceasefire still on "massive life support" with IEA forecasting Hormuz undersupply through October.</p>
+    <ul class="body-text" style="margin-top: 18px; padding-left: 20px; list-style: disc; display: flex; flex-direction: column; gap: 6px;">
+      <li><strong>Trade framework</strong>: "Constructive U.S.-China relationship of strategic stability" — 3-year template; no sweeping deal signed (Al Jazeera / CNBC May 14-15)</li>
+      <li><strong>Board of Trade</strong>: $30B non-sensitive goods framework proposed by USTR Greer — under discussion, no formal agreement (Reuters/US News)</li>
+      <li><strong>Rare earths</strong>: China paused export restrictions on rare-earth metals; US dropped threatened 100% tariff (CNBC May 14)</li>
+      <li><strong>NVDA H200</strong>: US-side licenses granted — Beijing stall remains; see Ch. II for details</li>
+      <li><strong>Taiwan</strong>: Xi warned mishandling = "clashes and conflicts — entire relationship in jeopardy"; Trump did not respond to reporters on Taiwan (CNBC / CBS News)</li>
+      <li><strong>Iran/Hormuz</strong>: Ceasefire "massive life support" — both sides traded fire since ceasefire; talks stalled (CNN / CBS News)</li>
+      <li><strong>Brent</strong>: $106.89 +1.1%; IEA flags 4M bbl/day Hormuz flow loss; market undersupplied through October (IEA / Fortune May 14)</li>
+      <li><strong>UN resolution</strong>: 112 co-sponsors for Hormuz freedom-of-navigation resolution (Al Jazeera May 13)</li>
+    </ul>
+
+    <div class="quote-block" style="margin-top: 28px;">
+      "Mishandling Taiwan will cause clashes and conflicts, putting the entire relationship in great jeopardy."
+      <span class="attr">— Xi Jinping to President Trump, Beijing · 14 May 2026 (CNBC)</span>
+    </div>
+
+    <div class="metric-grid cols-5" style="margin-top: 32px; max-width: 900px;">
+      <div class="metric-cell">
+        <div class="metric-label">SUMMIT OUTCOME</div>
+        <div class="metric-value neu" style="font-size: 13px;">3-YR STABILITY</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">RARE EARTHS</div>
+        <div class="metric-value pos" style="font-size: 13px;">PAUSED CURBS</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">BRENT CRUDE</div>
+        <div class="metric-value warn">$106.89</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">HORMUZ FLOW LOSS</div>
+        <div class="metric-value neg" style="font-size: 13px;">4M BPD</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">UN COSIGNERS</div>
+        <div class="metric-value neu">112</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">SPX NEW ATH 7,500+ · ES 7,521 FLAT · NVDA H200 CHINA LICENSED · 75K CHIPS/CUSTOMER · CSCO +14% AH AI SURGE · AMAT RECORD $7.91B +8% AH · PPI YOY +6.0% SHOCK · WARSH DAY 1 · JUNE HOLD 97% · AMD $435 PM · BRENT $107 HORMUZ FLAT · DOCS -26% AH · T-5 NVDA MAY 20</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>07 / 08</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     PAGE 08 — CHAPTER V · TRACK RECORD
+     ===================================================================== -->
+<section class="page layout-trackrecord" data-layout="trackrecord" id="page-08">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span>15 MAY 2026 · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I · NO 010</span>
+      <span class="chip">V · TRACK RECORD</span>
+    </div>
+    <span>08 / 08</span>
+  </div>
+
+  <div class="body">
+    <div class="kicker">CHAPTER V · TRACK RECORD · ISSUES 007-008 · 3-4 TRADING DAYS</div>
+    <h1 class="headline-large">DID THE <em>TRADE</em> WORK?</h1>
+    <p class="body-text" style="margin-top: 18px; max-width: 760px;">Three setups from issues 007 (May 11) and 008 (May 12) under review. Both NVDA long entries capitalized on the Beijing binary — H200 licenses approved ahead of May 20 earnings. The Brent short stalled as Iran talks froze and Hormuz flows stayed crimped; a near-flat verdict at −0.6%. NVDA current ~$233 sourced from MacroTrends / StockAnalysis / GuruFocus (May 14 close estimate); Brent ~$105.10 from Fortune / Energy Intelligence (May 14 settlement).</p>
+
+    <table class="track-table">
+      <thead>
+        <tr>
+          <th style="width: 70px;">Ticker</th>
+          <th>Setup / Thesis</th>
+          <th style="width: 90px;">Flagged</th>
+          <th style="width: 90px;">At Flag</th>
+          <th style="width: 90px;">Now</th>
+          <th style="width: 80px;">Return</th>
+          <th style="width: 80px;">Verdict</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="ticker-cell">NVDA</td>
+          <td>Long · T-9 to May 20; Beijing binary; AMD set bar; hyperscaler $725B capex floor (No. 007)</td>
+          <td>11 MAY</td>
+          <td>$217.00</td>
+          <td>~$233.00</td>
+          <td class="return-cell pos">+7.4%</td>
+          <td class="verdict win">WIN</td>
+        </tr>
+        <tr>
+          <td class="ticker-cell">BRENT</td>
+          <td>Short · Iran deal near; Hormuz normalization thesis; ING target $85-90 on deal close (No. 007)</td>
+          <td>11 MAY</td>
+          <td>$104.49</td>
+          <td>~$105.10</td>
+          <td class="return-cell neg">−0.6%</td>
+          <td class="verdict flat">FLAT</td>
+        </tr>
+        <tr>
+          <td class="ticker-cell">NVDA</td>
+          <td>Long · T-8 to May 20; pre-earnings dip entry; Huang on AF-1; AMD $10.25B validates DC demand (No. 008)</td>
+          <td>12 MAY</td>
+          <td>$214.34</td>
+          <td>~$233.00</td>
+          <td class="return-cell pos">+8.7%</td>
+          <td class="verdict win">WIN</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="track-summary">
+      <div>
+        <div class="metric-label">SETUPS REVIEWED</div>
+        <div class="metric-value">3</div>
+      </div>
+      <div>
+        <div class="metric-label">WINS</div>
+        <div class="metric-value pos">2</div>
+      </div>
+      <div>
+        <div class="metric-label">LOSSES</div>
+        <div class="metric-value neg">0</div>
+      </div>
+      <div>
+        <div class="metric-label">AVG RETURN</div>
+        <div class="metric-value pos">+5.2%</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 28px; background: var(--card); border: 1px solid var(--border); padding: 20px;">
+      <div class="metric-label" style="margin-bottom: 12px;">NARRATIVE NOTE · WHAT WORKED / WHAT DIDN'T</div>
+      <ul style="font-size: 13px; color: var(--text-soft); padding-left: 20px; list-style: disc; display: flex; flex-direction: column; gap: 8px; line-height: 1.5;">
+        <li><strong>NVDA double WIN</strong>: Both entries (+7.4% / +8.7%) benefited from the H200 China license announcement on May 14. The binary resolved favorably on the US side — though Beijing's purchase pause introduces a May 20 earnings guidance wildcard.</li>
+        <li><strong>BRENT short FLAT</strong>: Iran deal thesis remains structurally intact (IEA, Citi end-May timeline) but every week of Hormuz stalemate = elevated energy CPI. The short is not wrong — it's just slow. Brent at $106.89 vs $104.49 flag = Washington side of the deal incomplete.</li>
+        <li><strong>Active flag</strong>: NVDA long from issue 009 (May 13, $219.44, 7-day horizon) enters Day 2 of review window — $233 current = +6.2% unrealized. Awaiting May 20 earnings resolution.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ticker-tape">SPX NEW ATH 7,500+ · ES 7,521 FLAT · NVDA H200 CHINA LICENSED · 75K CHIPS/CUSTOMER · CSCO +14% AH AI SURGE · AMAT RECORD $7.91B +8% AH · PPI YOY +6.0% SHOCK · WARSH DAY 1 · JUNE HOLD 97% · AMD $435 PM · BRENT $107 HORMUZ FLAT · DOCS -26% AH · T-5 NVDA MAY 20</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>08 / 08</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+</body>
+</html>
