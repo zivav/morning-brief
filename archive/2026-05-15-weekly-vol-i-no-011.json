@@ -1,0 +1,137 @@
+{
+  "issue_id": "weekly-vol-i-no-011",
+  "date": "2026-05-15",
+  "vol_no": "VOL I · WEEKLY NO 003 · ISSUE NO 011",
+  "edition_type": "weekly_recap",
+  "week_of": "2026-05-11",
+  "week_through": "2026-05-15",
+  "top_headline": "WARSH INHERITS FIRE — CPI 3.8% + PPI +6.0% + H200 China licensed + NVDA +12% wk + 3W/1L setups (75%)",
+  "chapters": [
+    "I · WEEK IN REVIEW — Triple ATH Mon (SPX 7,412 / NDX 26,274 / RUT 2,868); CPI 3.8% hottest since May 2023; SOXX -5% Tue; Huang joins AF-1 Wed; H200 China licenses Thu; SPX ATH 7,501 Thu; PPI +6.0% Fri; Warsh Day 1",
+    "II · AI TRADE — NVDA +12% wk: Huang on Air Force One; H200 export licenses 10 Chinese firms; $5.7T market cap May 14; CSCO +14% AH AI infra blowout; AMAT record $7.91B industry growth >30%",
+    "III · MACRO — Warsh confirmed 54-45 May 13; CPI 3.8% (est 3.7%); PPI +6.0% YoY (est +4.9%); TNX 4.46% 1-yr high; CME: 58% zero cuts / 30-35% hike probability; Michigan 48.2",
+    "IV · TRACK RECORD — Issues 007-009 (May 11-13): NVDA long x3 (WIN/WIN/WIN); BRENT short (LOSS); 3W/1L/0F; avg P&L +2.75%",
+    "V · WHAT WORKED — NVDA triple: AMD demand validation, Huang AF-1 signal, H200 approval materialized, SOXX dip = gift entry, institutional floor 37/37 Buy, AMAT/CSCO confirmed cycle",
+    "VI · WHAT DIDN'T — BRENT short: 'piece of garbage' rejection; Sledgehammer escalation; IEA structural deficit through Oct; 4M bbl/day gap; Citi end-May wrong 3 weeks running",
+    "VII · NEXT WEEK SETUP — NVDA May 20 ($78.5B est +79%); HD May 19 ($41.5B); BIDU May 18; FOMC minutes May 20; WMT May 21; UMich final May 22",
+    "VIII · KEY LEVELS — NVDA $250/$272 bull targets; BRENT $100 deal / $115 spike; TNX 4.5% hike trigger; SPX 7,501 ATH retest"
+  ],
+  "weekly_review": true,
+  "daily_issues_this_week": [
+    "vol-i-no-007 (2026-05-11)",
+    "vol-i-no-008 (2026-05-12)",
+    "vol-i-no-009 (2026-05-13)",
+    "vol-i-no-010 (2026-05-15)"
+  ],
+  "week_setups_total": 4,
+  "week_setups_wins": 3,
+  "week_setups_losses": 1,
+  "week_setups_flat": 0,
+  "week_win_rate_pct": 75.0,
+  "week_avg_pnl_pct": 2.75,
+  "flagged_setups_this_week": [
+    {
+      "ticker": "NVDA",
+      "direction": "long",
+      "flag_issue": "no-007",
+      "flag_date": "2026-05-11",
+      "price_at_flag": 217.00,
+      "price_may15": 226.51,
+      "return_pct": 4.4,
+      "verdict": "WIN",
+      "thesis_summary": "May 20 earnings pre-entry; AMD $10.25B validates DC demand; hyperscaler $725B capex floor"
+    },
+    {
+      "ticker": "BRENT",
+      "direction": "short",
+      "flag_issue": "no-007",
+      "flag_date": "2026-05-11",
+      "price_at_flag": 104.49,
+      "price_may15": 106.89,
+      "return_pct": -2.3,
+      "verdict": "LOSS",
+      "thesis_summary": "Iran deal near-term (Citi end-May); Hormuz normalization; short elevated entry"
+    },
+    {
+      "ticker": "NVDA",
+      "direction": "long",
+      "flag_issue": "no-008",
+      "flag_date": "2026-05-12",
+      "price_at_flag": 214.34,
+      "price_may15": 226.51,
+      "return_pct": 5.7,
+      "verdict": "WIN",
+      "thesis_summary": "T-8 pre-earnings dip; Huang joins Beijing delegation; SOXX -5% creates better entry"
+    },
+    {
+      "ticker": "NVDA",
+      "direction": "long",
+      "flag_issue": "no-009",
+      "flag_date": "2026-05-13",
+      "price_at_flag": 219.44,
+      "price_may15": 226.51,
+      "return_pct": 3.2,
+      "verdict": "WIN",
+      "thesis_summary": "Beijing binary: H200 China relief + beat-and-raise dual catalyst"
+    }
+  ],
+  "index_weekly_performance": {
+    "SPX": "~flat (ATH 7,501 Thu; gave back Fri)",
+    "NDX": "~+1.2%",
+    "RUT": "~flat",
+    "SPX_atH_date": "2026-05-14",
+    "SPX_ath_level": 7501.24
+  },
+  "watchlist_hits": [
+    {"ticker": "NVDA", "weekly_move": "+12%", "note": "H200 China licensed; Huang AF-1; $5.7T cap May 14"},
+    {"ticker": "AMD", "weekly_move": "-6%", "note": "MI-series excluded from China H200 approvals; $449→$431"},
+    {"ticker": "CSCO", "weekly_move": "+14% AH May 14", "note": "AI infrastructure blowout; FY guide raised"},
+    {"ticker": "AMAT", "weekly_move": "+8% AH May 14", "note": "Record Q2 $7.91B; industry growth raised to >30% CY2026"}
+  ],
+  "macro_week_summary": {
+    "CPI_april_yoy": "3.8% (est 3.7%) — hottest since May 2023",
+    "PPI_april_yoy": "+6.0% (est +4.9%) — worst since Dec 2022",
+    "TNX_10y": "4.46% (1-year high)",
+    "warsh_confirmation": "54-45 May 13; Fed Chair from May 15",
+    "michigan_prelim": "48.2 (est 49.5)",
+    "cme_june_hold": "97%",
+    "cme_hike_prob_dec": "30-35%",
+    "brent_week": "$104.49 → $106.89 (+2.3%)"
+  },
+  "next_week_calendar": [
+    {"date": "2026-05-18", "event": "BIDU Q1 2026 earnings — China AI bellwether"},
+    {"date": "2026-05-19", "event": "HD Q1 FY2026 — $41.5B est (+4.2% YoY); EPS $3.42 est; Housing Starts/Permits"},
+    {"date": "2026-05-20", "event": "NVDA Q1 FY2027 — $78.5B est (+79% YoY); $1.77 EPS est; China guidance key swing factor"},
+    {"date": "2026-05-20", "event": "FOMC May minutes released — first post-Warsh era read; June 17 rate framework"},
+    {"date": "2026-05-20", "event": "TJX, LOW, WSM, INTU Q1 earnings"},
+    {"date": "2026-05-21", "event": "WMT Q1 FY2027 — consumer bellwether; DE, RL, ROST, ZM, DECK earnings"},
+    {"date": "2026-05-22", "event": "Michigan Consumer Sentiment final May 2026 — prelim 48.2; 1-yr expectations 4.5%"}
+  ],
+  "narrative_threads": [
+    "Warsh inheritance complete: Fed Chair Day 1 receives CPI 3.8% + PPI 6.0% + PCE 4.5% + TNX 4.46% + Michigan 48.2 — worst inflation stack handed to new Fed Chair since Volcker era; no rate cuts in 2026; hike probability structural",
+    "NVDA Beijing binary — half-resolved: H200 export licenses approved for 10 Chinese firms; Beijing purchase pause still in effect pending State Council review; May 20 earnings guidance = next resolution point",
+    "Hormuz / Iran structural stalemate: Ceasefire 'massive life support'; 'piece of garbage' rejection; IEA undersupplied through October; Citi end-May thesis wrong 3 weeks running; Brent $107 ceiling holds",
+    "AI equipment cycle confirmed: AMAT record $7.91B industry growth >30%; CSCO +14% AI infrastructure; multiple independent confirmations of NVDA demand floor before May 20",
+    "PLTR valuation ceiling — third cycle confirmed: AMD validates silicon demand; NVDA China unlock; but PLTR remains capped at ~200x fwd PE institutional ceiling"
+  ],
+  "sources": [
+    "CNBC / BLS — CPI April 2026 3.8% YoY — May 12 2026",
+    "BLS / Neil Sethi Substack — PPI April 2026 +6.0% YoY — May 13 2026",
+    "CNBC — Kevin Warsh wins Senate confirmation 54-45 — May 13 2026",
+    "CNBC — U.S. clears H200 chip sales to 10 China firms — May 14 2026",
+    "GuruFocus — Nvidia NVDA hits $5.7 trillion market cap — May 14 2026",
+    "Yahoo Finance / MarketChameleon — NVDA ~$226.51 intraday May 15 2026",
+    "Investing.com / AMD IR — AMD $430.98 intraday May 15 2026 (prev close $449.70 May 14)",
+    "StockTitan / 24-7WallSt — Applied Materials Q2 record $7.91B — May 14 2026",
+    "Motley Fool / CNBC — Cisco CSCO +14% AH blowout — May 14 2026",
+    "Fortune — Brent crude $106.89 May 15 2026",
+    "TheStreet — SPX May 14 close 7,501.24; May 15 opened -1.14% — May 2026",
+    "InvestingLive / UMich — Michigan Consumer Sentiment 48.2 prelim — May 2026",
+    "CNBC — Jensen Huang joins Trump China trip Air Force One — May 13 2026",
+    "CNN / CBS — Iran ceasefire 'piece of garbage' Trump — May 13 2026",
+    "Yahoo Finance — Next week earnings calendar May 18-22 2026"
+  ],
+  "file": "archive/2026-05-15-weekly-vol-i-no-011.html",
+  "published_url": "https://zivav.github.io/morning-brief/archive/2026-05-15-weekly-vol-i-no-011.html",
+  "page_count": 8
+}
