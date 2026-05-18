@@ -1,0 +1,129 @@
+{
+  "issue_id": "vol-i-no-012",
+  "date": "2026-05-18",
+  "vol_no": "VOL I · NO 012",
+  "edition_type": "daily_premarket",
+  "issue_time": "08:00 Asia/Jerusalem (~01:00 ET)",
+  "top_headline": "THE WEEK EVERYTHING LANDS — NVDA T-2 / FOMC 8-4 / BRENT $111 / HORMUZ CLOSED",
+  "chapters": [
+    "I · MACRO (pages 02-03) — Warsh's first full week: TNX 4.63%, 30Y 5.1%+ (highest since May 2025); FOMC 8–4 hold Apr 29 (most divided since 1992); <3% June cut probability; 30–35% Dec hike probability (CME); SPX May 15 close 7,408.50 (−1.24%); NDX 26,225.14 (−1.54%); Asian risk-off (Hang Seng −1.49%, Nikkei ~−1.45%); FOMC minutes Wednesday 2pm ET",
+    "II · AI TRADE (pages 04-05) — NVDA T-2 to May 20: PM $229.72 (range $228–$233); Goldman EPS $1.86 vs $1.77 consensus; Citi models $1.4B Q1 upside to $80.2B vs $78.5B consensus; Q2 FY27 guide $86.08B = THE swing number; H200 China paradox: 10 firms licensed, 0 units shipped; Beijing directing domestic AI sourcing; Huawei+DeepSeek hold 41% China AI accelerator market; active flag no-009 ($219.44 May 13) at +4.7% unrealized PM",
+    "III · EARNINGS (pages 06-07) — Weekly docket May 18–22: BIDU Q1 today 8am (EPS $1.69, Rev $4.66B, Apollo Go robotaxi key); HD Q1 tomorrow BMO ($41.5B, $3.41 EPS, −4% YoY, mgmt guided down); NVDA Wed AH ($78.5B, $1.77 EPS, Q2 guide $86B key); LOW Wed BMO (housing headwinds); TJX Wed BMO (consumer trade-down beneficiary); INTU Wed AH (AI ARPU); WMT Thu BMO (grocery share gains); FOMC Minutes Wed 2pm (8–4 dissent autopsy)",
+    "IV · GEOPOLITICS (page 08) — Hormuz effectively closed: Brent $110.74/bbl Mon (range $110.13–$111.99); May 15 close $109.26 (+3.35%, +8.1% wk); 4M bbl/day flow loss; IEA undersupplied through October; Iran ceasefire structurally dead; Trump: 'get moving, FAST'; Gold $4,495/oz (falling despite geopolitical tension — dollar + yields dominating); DXY 99.35"
+  ],
+  "flagged_setups": [],
+  "active_flags_monitoring": [
+    {
+      "ticker": "NVDA",
+      "direction": "long",
+      "flag_issue": "no-009",
+      "flag_date": "2026-05-13",
+      "price_at_flag": 219.44,
+      "price_now_pm": 229.72,
+      "return_unrealized_pct": 4.7,
+      "horizon_note": "7-day horizon; earnings May 20 is resolution event",
+      "status": "ACTIVE — reviewed in no-011 weekly at $226.51 (WIN); now $229.72 PM; position live into May 20 earnings binary"
+    }
+  ],
+  "track_record_chapter": "SKIPPED — fewer than 3 unique reviewable setups not already covered in no-011 weekly recap. NVDA no-009 long ($219.44) was reviewed in the weekly as WIN at $226.51; still live at $229.72 PM into May 20 earnings.",
+  "watchlist_hits": [
+    {
+      "ticker": "NVDA",
+      "event": "T-2 to Q1 FY2027 earnings May 20; PM $229.72 (range $228–$233); Goldman raised EPS to $1.86 vs $1.77 consensus; Citi $1.4B Q1 upside to $80.2B; Q2 FY27 guide $86.08B is the swing number; H200 China: 0 units shipped despite 10-firm approvals",
+      "move": "$229.72 PM May 18 (+4.7% from no-009 flag $219.44)",
+      "priority": "core"
+    },
+    {
+      "ticker": "AMD",
+      "event": "MI-series excluded from H200 China approvals; trading $420–450 range May 18; NVDA sympathy move expected Wednesday; DC demand validation in guidance",
+      "move": "$420–450 range May 18 (intraday high $450.82, close $420.16 per Investing.com)",
+      "priority": "core"
+    },
+    {
+      "ticker": "BIDU",
+      "event": "Q1 2026 earnings today 8am ET; EPS $1.69 consensus, Rev $4.66B; Apollo Go robotaxi 3.4M fully driverless rides Q4 2025; AI Cloud vs. ads revenue mix shift key",
+      "move": "Pre-earnings; avg PT $162.10 (+19.8% upside)",
+      "priority": "watchlist"
+    },
+    {
+      "ticker": "HD",
+      "event": "Q1 FY2026 earnings tomorrow BMO; EPS $3.41 (−4% YoY); Rev $41.5B (+4.2%); mgmt guided mid-single-digit EPS decline; TNX 4.63% = 30Y mortgage headwind",
+      "move": "Pre-earnings; management guided downward",
+      "priority": "watchlist"
+    }
+  ],
+  "tase_events": [
+    {
+      "event": "TA-35 / TA-125 watch: Brent $111/bbl sustained = direct Israeli energy import cost pressure; Iranian escalation and Hormuz closure = heightened regional security premium for Israeli defense sector (Elbit/Rafael/IWI); TNX 4.63% + risk-off global tone = headwind for TA-35 growth names",
+      "ticker": "TA-35",
+      "materiality": "informational"
+    }
+  ],
+  "narrative_threads": [
+    "Warsh's wall: Fed Chair enters first full week with TNX 4.63%, 30Y 5.1%+, Brent $111, and VIX 18.4 rising — the market is not complying with the rate-cut mandate he was appointed to pursue; FOMC 8–4 minutes Wednesday may formalize a hawkish pivot in language",
+    "NVDA May 20 binary: H200 China paradox is the defining overhang — US approved 10 firms, Beijing blocked all shipments; Wednesday earnings call is the ONLY forum where management provides China guidance; Q2 FY27 guide of $86B+ is the true bar the market watches",
+    "Hormuz structural closure: Ceasefire dead after weeks on 'massive life support'; Brent $111/bbl compounds Warsh's already-impossible inflation inheritance (CPI 3.8% + PPI 6.0%); IEA undersupply through October means no near-term relief without a diplomatic breakthrough",
+    "Earnings week finale: Five sessions, eight major reports, FOMC minutes, and NVDA — the densest catalyst week of the current earnings cycle; the week's collective output will set the risk tone through Memorial Day"
+  ],
+  "macro_snapshot": {
+    "ES_futures_may18": "~7,432 (Investing.com / Schwab)",
+    "SPX_may15_close": "7,408.50 (−1.24%)",
+    "NDX_may15_close": "26,225.14 (−1.54%)",
+    "NVDA_pm_may18": "$229.72 (range $228.15–$233.12, VWAP $230.38) — Market Chameleon",
+    "TNX_may18": "4.607% open; 4.631% high — Trading Economics / CNBC",
+    "30Y_may15": "5.1%+ (highest since May 2025) — TheStreet / CNBC",
+    "fed_funds": "3.50–3.75% (held 8–4 Apr 29)",
+    "hike_prob_dec2026": "30–35% (CME)",
+    "june_cut_prob": "<3% (CME)",
+    "brent_may18": "$110.74/bbl (range $110.13–$111.99) — Investing.com / Barchart",
+    "gold_may18": "~$4,495/oz — IndexBox / Fortune",
+    "DXY_may18": "99.35 — Trading Economics / Vantage Markets",
+    "VIX_may18": "~18.43 (+6.78%) — Trading Economics / Yahoo Finance",
+    "hang_seng_may18": "−1.49% — CNBC Asia-Pacific",
+    "nikkei_may18": "~60,520 (−1.45%) — CNBC Asia-Pacific"
+  },
+  "today_calendar": [
+    {"time": "8:00AM ET", "event": "BIDU Q1 2026 earnings — EPS $1.69 consensus; Rev $4.66B; Apollo Go robotaxi + AI Cloud key"},
+    {"time": "ALL DAY", "event": "Warsh first full week as Fed Chair — watching for any public remarks on rate path"}
+  ],
+  "week_ahead_calendar": [
+    {"date": "2026-05-19", "event": "HD Q1 FY2026 BMO — $41.5B rev (+4.2% YoY); EPS $3.41 (−4% YoY); Palo Alto Networks; Keysight"},
+    {"date": "2026-05-20", "event": "NVDA Q1 FY2027 AH — $78.5B consensus; $1.86 Goldman EPS; Q2 guide $86B key; FOMC minutes 2pm ET"},
+    {"date": "2026-05-20", "event": "LOW, TJX BMO; INTU AH — home improvement + consumer + SMB software triple"},
+    {"date": "2026-05-21", "event": "WMT Q1 FY2027 BMO — consumer bellwether; DE, RL, ROST, ZM earnings"},
+    {"date": "2026-05-22", "event": "Michigan Consumer Sentiment final May 2026 — prelim 48.2; 1-yr expectations 4.5%"}
+  ],
+  "ticker_tape": "NVDA $230 PM T-2 MAY 20 · ES ~7,432 · TNX 4.63% 1-YR HIGH · 30Y 5.1%+ · BRENT $111 HORMUZ CLOSED · BIDU Q1 8AM ET · HD BMO TUE · FOMC MIN WED 2PM · VIX 18.4 · GOLD $4,495 · DXY 99.35 · WARSH WEEK 1",
+  "file": "archive/2026-05-18-vol-i-no-012.html",
+  "published_url": "https://zivav.github.io/morning-brief/archive/2026-05-18-vol-i-no-012.html",
+  "page_count": 8,
+  "sources": [
+    "Market Chameleon — NVDA PM $229.72 / range $228.15–$233.12 / VWAP $230.38 — May 18 2026",
+    "stockinvest.us / MarketBeat — NVDA $225.32 close May 15 2026",
+    "Investing.com / Schwab Market Update — ES futures ~7,432 May 18 2026",
+    "TheStreet / Motley Fool — SPX 7,408.50 (−1.24%) / NDX 26,225.14 (−1.54%) May 15 close",
+    "Trading Economics / CNBC — TNX 4.607% open / 4.631% high May 18 2026",
+    "TheStreet / CNBC — 30Y yield 5.1%+ May 15 2026 (highest since May 2025)",
+    "Federal Reserve — FOMC statement Apr 29 2026 — 8-4 hold at 3.50–3.75%",
+    "Yahoo Finance / CME FedWatch — <3% June cut probability; 30–35% Dec hike probability",
+    "U.S. News — Kevin Warsh may find the Fed has other ideas — May 15 2026",
+    "Motley Fool — Big changes at Federal Reserve / NVDA Q1 FY2027 preview — May 13–15 2026",
+    "TheStreet — Goldman Sachs raises NVDA EPS to $1.86 ahead of earnings",
+    "Seeking Alpha — Citi: NVDA Q1 revenue expected to surpass consensus by $1.4B (to $80.2B)",
+    "TECHi — NVDA Q2 FY27 guide $86.08B consensus — May 2026",
+    "HeyGoTrade / TradingKey — NVDA Q1 FY2027 earnings preview buy at $224 — May 2026",
+    "CNBC — US clears H200 chip sales to 10 China firms — May 14 2026",
+    "NAI500 — Nvidia H200 paradox: US clears, China refuses to buy; Huawei 41% market share",
+    "TipRanks — Baidu Q1 2026 earnings preview; Apollo Go 3.4M rides Q4 2025 — May 2026",
+    "Baidu IR — Q1 2026 earnings release May 18 2026",
+    "AskTraders / Yahoo Finance — Home Depot Q1 FY2026 preview $41.5B rev $3.41 EPS",
+    "Alphastreet — Home Depot Q1 2026 setup: housing cooperation required",
+    "Investing.com / Barchart — Brent crude $110.74 / range $110.13–$111.99 May 18 2026",
+    "Fortune — Brent crude $109.26 close May 15 2026 (+3.35% on day)",
+    "IndexBox / Fortune — Gold $4,495/oz May 18 2026",
+    "Trading Economics / Vantage Markets — DXY 99.35 May 18 2026",
+    "Trading Economics / Yahoo Finance — VIX ~18.43 (+6.78%) May 18 2026",
+    "CNBC Asia-Pacific — Hang Seng −1.49% / Nikkei ~−1.45% May 18 2026",
+    "FX Street / Federal Reserve — FOMC minutes May 20 2pm ET (Apr 28–29 meeting)"
+  ]
+}

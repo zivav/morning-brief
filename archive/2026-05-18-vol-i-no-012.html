@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Markets Brief — 18 MAY 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* =========================================================
+     MORNING MARKETS BRIEF — MASTER TEMPLATE
+     Layouts: cover · fullbleed · split · threepanel · bignumber
+              chart · honor · movers · trackrecord
+     ========================================================= */
+  :root {
+    --bg: #000000;
+    --panel: #0a0a0a;
+    --card: #141414;
+    --card-2: #1a1a1a;
+    --border: #232323;
+    --border-2: #2e2e2e;
+    --muted: #737373;
+    --muted-2: #525252;
+    --text: #ffffff;
+    --text-soft: rgba(255,255,255,0.85);
+    --green: #22c55e;
+    --green-soft: rgba(34,197,94,0.08);
+    --green-border: rgba(34,197,94,0.4);
+    --red: #ef4444;
+    --red-soft: rgba(239,68,68,0.08);
+    --red-border: rgba(239,68,68,0.4);
+    --blue: #3b82f6;
+    --blue-soft: rgba(59,130,246,0.08);
+    --blue-border: rgba(59,130,246,0.4);
+    --yellow: #eab308;
+    --yellow-soft: rgba(234,179,8,0.08);
+    --yellow-border: rgba(234,179,8,0.4);
+    --header-red: #dc2626;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --serif: 'Playfair Display', 'Times New Roman', serif;
+    --mono: 'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); }
+
+  /* -- PAGE SHELL -- */
+  .page {
+    scroll-snap-align: start;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .live-strip {
+    background: var(--header-red);
+    color: white;
+    padding: 8px 28px;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+  }
+  .live-strip .left::before { content: "● "; }
+
+  .meta-strip {
+    padding: 12px 28px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .meta-strip .vol-no { display: flex; gap: 16px; align-items: center; }
+  .meta-strip .vol-no svg { width: 14px; height: 14px; opacity: 0.6; }
+
+  .chip {
+    display: inline-block;
+    padding: 4px 10px;
+    border: 1px solid var(--border);
+    background: rgba(34,197,94,0.05);
+    color: var(--green);
+    border-color: var(--green-border);
+  }
+  .chip.macro { color: var(--blue); border-color: var(--blue-border); background: rgba(59,130,246,0.05); }
+  .chip.geo { color: var(--yellow); border-color: var(--yellow-border); background: rgba(234,179,8,0.05); }
+  .chip.earnings { color: var(--green); border-color: var(--green-border); background: rgba(34,197,94,0.05); }
+
+  .ticker-tape {
+    border-top: 1px solid var(--border);
+    padding: 14px 28px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+  }
+  .ticker-tape .sep { margin: 0 18px; color: var(--border-2); }
+
+  .page-foot {
+    padding: 14px 28px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .page-foot .arrow {
+    width: 22px; height: 22px;
+    border: 1px solid var(--border-2);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 9px;
+    color: var(--muted);
+  }
+
+  /* -- TYPOGRAPHY -- */
+  .headline-mega {
+    font-family: var(--sans);
+    font-weight: 900;
+    font-size: clamp(44px, 6.5vw, 88px);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    text-transform: uppercase;
+  }
+  .headline-mega em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: -0.01em;
+  }
+  .headline-large {
+    font-family: var(--sans);
+    font-weight: 900;
+    font-size: clamp(36px, 4.8vw, 64px);
+    line-height: 1;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+  }
+  .headline-large em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: -0.01em;
+  }
+
+  .kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .kicker.macro { color: var(--blue); }
+  .kicker.geo { color: var(--yellow); }
+  .kicker.earnings { color: var(--green); }
+  .kicker.ai { color: var(--green); }
+
+  .body-text {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--text-soft);
+    max-width: 580px;
+  }
+
+  /* -- BADGES & CHIPS -- */
+  .badge-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .badge {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 6px 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: 1px solid;
+  }
+  .badge.pos { color: var(--green); border-color: var(--green-border); background: var(--green-soft); }
+  .badge.neg { color: var(--red); border-color: var(--red-border); background: var(--red-soft); }
+  .badge.neu { color: var(--blue); border-color: var(--blue-border); background: var(--blue-soft); }
+  .badge.warn { color: var(--yellow); border-color: var(--yellow-border); background: var(--yellow-soft); }
+
+  /* -- METRIC GRID -- */
+  .metric-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .metric-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .metric-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .metric-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  .metric-cell {
+    background: var(--card);
+    padding: 16px 20px;
+  }
+  .metric-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .metric-value {
+    font-family: var(--mono);
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .metric-value.pos { color: var(--green); }
+  .metric-value.neg { color: var(--red); }
+  .metric-value.neu { color: var(--blue); }
+  .metric-value.warn { color: var(--yellow); }
+
+  /* -- TOP STORIES RAIL -- */
+  .top-stories { display: flex; flex-direction: column; gap: 14px; }
+  .story-card {
+    background: var(--card);
+    border-left: 3px solid var(--green);
+    padding: 16px 20px;
+  }
+  .story-card.macro { border-left-color: var(--blue); }
+  .story-card.geo { border-left-color: var(--yellow); }
+  .story-card.ai { border-left-color: var(--green); }
+  .story-card .label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--green);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .story-card.macro .label { color: var(--blue); }
+  .story-card.geo .label { color: var(--yellow); }
+  .story-card .title {
+    font-weight: 800;
+    font-size: 22px;
+    margin: 6px 0 10px;
+    letter-spacing: -0.012em;
+    text-transform: uppercase;
+  }
+  .story-card .summary {
+    font-size: 13px;
+    color: var(--text-soft);
+    line-height: 1.5;
+  }
+
+  /* -- LAYOUT: COVER -- */
+  .layout-cover .body { padding: 36px 48px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; }
+  .cover-stat-strip { padding: 0 48px 24px; }
+
+  /* -- LAYOUT: FULL-BLEED -- */
+  .layout-fullbleed .body { padding: 36px 48px; position: relative; }
+  .layout-fullbleed .full-bg {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center;
+    filter: brightness(0.35) saturate(0.85);
+    z-index: 0;
+  }
+  .layout-fullbleed .body > * { position: relative; z-index: 1; }
+  .layout-fullbleed .corner-chip {
+    position: absolute; top: 36px; right: 48px;
+    background: var(--card-2); border: 1px solid var(--yellow-border);
+    padding: 14px 18px; min-width: 140px; z-index: 2;
+  }
+  .corner-chip .chip-label { font-family: var(--mono); font-size: 9px; color: var(--yellow); letter-spacing: 0.15em; text-transform: uppercase; }
+  .corner-chip .chip-value { font-weight: 900; font-size: 22px; line-height: 1.1; margin-top: 6px; text-transform: uppercase; }
+  .corner-chip .chip-attr { font-family: var(--mono); font-size: 10px; color: var(--muted); margin-top: 6px; }
+
+  .quote-block {
+    border-left: 2px solid var(--yellow);
+    padding: 6px 0 6px 16px;
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--text-soft);
+    font-size: 16px;
+    margin-top: 24px;
+    max-width: 640px;
+  }
+  .quote-block .attr {
+    font-family: var(--sans);
+    font-style: normal;
+    color: var(--muted);
+    font-size: 12px;
+    display: block;
+    margin-top: 4px;
+  }
+
+  /* -- LAYOUT: SPLIT -- */
+  .layout-split .body { padding: 36px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .layout-split .split-visual {
+    aspect-ratio: 1.1 / 1;
+    background: var(--card);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+  }
+  .visual-glyph {
+    font-family: var(--sans);
+    font-weight: 900;
+    font-size: clamp(60px, 9vw, 140px);
+    color: var(--green);
+    letter-spacing: -0.04em;
+  }
+  .visual-glyph.neu { color: var(--blue); }
+
+  /* -- LAYOUT: THREE PANEL -- */
+  .layout-threepanel .body { padding: 36px 48px; display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 24px; }
+  .panel-card {
+    background: var(--card);
+    border-top: 2px solid var(--green);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .panel-card.warn { border-top-color: var(--yellow); }
+  .panel-card.neu { border-top-color: var(--blue); }
+  .panel-card.neg { border-top-color: var(--red); }
+  .panel-card .panel-label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--green);
+  }
+  .panel-card.warn .panel-label { color: var(--yellow); }
+  .panel-card.neu .panel-label { color: var(--blue); }
+  .panel-card.neg .panel-label { color: var(--red); }
+  .panel-card .panel-headline { font-weight: 900; font-size: 36px; line-height: 1; letter-spacing: -0.02em; }
+  .panel-card .panel-sub { font-family: var(--mono); font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+  .panel-card .panel-body { font-size: 13px; color: var(--text-soft); line-height: 1.5; }
+
+  /* -- LAYOUT: BIG NUMBER -- */
+  .layout-bignumber .body { padding: 36px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .big-number {
+    font-family: var(--sans);
+    font-weight: 900;
+    font-size: clamp(96px, 12vw, 180px);
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    color: var(--green);
+  }
+  .big-number.neg { color: var(--red); }
+  .big-number.neu { color: var(--blue); }
+  .big-number-caption {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 16px;
+  }
+  .big-number-pill {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 8px 16px;
+    background: var(--green-soft);
+    border: 1px solid var(--green-border);
+    color: var(--green);
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .big-number-tag {
+    margin-top: 28px;
+    padding: 12px 16px;
+    border: 1px solid var(--green-border);
+    background: var(--green-soft);
+  }
+  .big-number-tag .tag-label { font-family: var(--mono); font-size: 10px; color: var(--green); letter-spacing: 0.12em; text-transform: uppercase; }
+  .big-number-tag .tag-text { font-family: var(--mono); font-size: 12px; color: var(--text); margin-top: 4px; letter-spacing: 0.04em; text-transform: uppercase; }
+
+  /* -- LAYOUT: CHART -- */
+  .layout-chart .body { padding: 36px 48px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: center; }
+  .chart-svg-wrap {
+    width: 100%;
+    aspect-ratio: 1.6 / 1;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 24px;
+  }
+
+  /* -- LAYOUT: HONOR ROLL -- */
+  .layout-honor .body { padding: 36px 48px; }
+  .honor-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .honor-card {
+    background: var(--card);
+    border-top: 2px solid var(--green);
+    padding: 18px 20px;
+  }
+  .honor-card .ticker-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .honor-card .ticker { font-weight: 900; font-size: 22px; letter-spacing: -0.01em; }
+  .honor-card .change { color: var(--green); font-family: var(--mono); font-weight: 700; font-size: 16px; }
+  .honor-card .detail {
+    margin-top: 10px;
+    font-size: 11.5px;
+    color: var(--text-soft);
+    line-height: 1.5;
+    font-family: var(--sans);
+  }
+
+  /* -- LAYOUT: GAINERS / LOSERS -- */
+  .layout-movers .body { padding: 36px 48px; display: grid; grid-template-columns: 1.7fr 1fr; gap: 48px; }
+  .mover-list h2 {
+    font-family: var(--sans);
+    font-weight: 900;
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: -0.015em;
+    padding-bottom: 8px;
+    margin-bottom: 4px;
+  }
+  .mover-list h2.gainers { color: var(--green); border-bottom: 1px solid var(--green); }
+  .mover-list h2.losers { color: var(--red); border-bottom: 1px solid var(--red); }
+  .mover-list .count-tag {
+    font-family: var(--mono); font-size: 11px; color: var(--muted);
+    letter-spacing: 0.08em; text-transform: uppercase; margin-left: 12px;
+  }
+  .mover-row {
+    display: grid;
+    grid-template-columns: 60px 70px 1fr;
+    gap: 14px;
+    padding: 8px 0;
+    align-items: baseline;
+    font-size: 13px;
+  }
+  .mover-row .ticker { font-weight: 800; }
+  .mover-row .change { font-family: var(--mono); font-weight: 700; }
+  .mover-row .change.pos { color: var(--green); }
+  .mover-row .change.neg { color: var(--red); }
+  .mover-row .reason { color: var(--text-soft); font-size: 12.5px; }
+
+  /* -- LAYOUT: TRACK RECORD -- */
+  .layout-trackrecord .body { padding: 36px 48px; }
+  .track-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+  }
+  .track-table th, .track-table td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+  }
+  .track-table th {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 500;
+  }
+  .track-table .ticker-cell { font-weight: 800; font-size: 15px; }
+  .track-table .return-cell { font-family: var(--mono); font-weight: 700; }
+  .track-table .return-cell.pos { color: var(--green); }
+  .track-table .return-cell.neg { color: var(--red); }
+  .track-table .verdict { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .track-table .verdict.win { color: var(--green); }
+  .track-table .verdict.loss { color: var(--red); }
+  .track-table .verdict.flat { color: var(--muted); }
+  .track-summary {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+    background: var(--border); border: 1px solid var(--border);
+    margin-top: 28px;
+  }
+  .track-summary > div { background: var(--card); padding: 16px 20px; }
+
+  /* -- PRINT -- */
+  @media print {
+    body { scroll-snap-type: none; height: auto; }
+    .page { min-height: 100vh; page-break-after: always; }
+  }
+
+  /* -- MOBILE FALLBACK -- */
+  @media (max-width: 900px) {
+    .layout-cover .body,
+    .layout-split .body,
+    .layout-bignumber .body,
+    .layout-chart .body,
+    .layout-movers .body { grid-template-columns: 1fr; gap: 32px; }
+    .layout-threepanel .body { grid-template-columns: 1fr; }
+    .honor-grid { grid-template-columns: repeat(2, 1fr); }
+    .live-strip, .meta-strip, .page-foot, .ticker-tape { padding-left: 16px; padding-right: 16px; }
+    .layout-cover .body, .layout-split .body, .layout-fullbleed .body,
+    .layout-threepanel .body, .layout-bignumber .body, .layout-chart .body,
+    .layout-honor .body, .layout-movers .body, .layout-trackrecord .body { padding: 24px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- =====================================================================
+     PAGE 01 — COVER
+     ===================================================================== -->
+<section class="page layout-cover" data-layout="cover" id="page-01">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span>18 MAY 2026 · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I · NO 012 · 18 MAY 2026</span>
+      <span>MORNING MARKETS BRIEF · 8 STORIES · 4 CHAPTERS</span>
+    </div>
+    <span>01 / 08</span>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="kicker">MORNING MARKETS · 18 MAY 2026</div>
+      <h1 class="headline-mega">THE WEEK <em>EVERYTHING</em> LANDS</h1>
+      <p class="body-text" style="margin-top: 28px;">NVDA's <strong>$78.5B</strong> earnings test arrives Wednesday with the H200 China paradox unresolved — licenses approved, zero units shipped. Warsh opens his first full week with <strong>TNX at 4.63%</strong>, <strong>Brent at $111/bbl</strong>, and the FOMC's <strong>8–4</strong> dissent decoded at 2pm Wednesday.</p>
+      <div class="badge-row" style="margin-top: 36px;">
+        <span class="badge pos">NVDA $230 PM · T-2</span>
+        <span class="badge neu">BIDU Q1 · 8AM ET TODAY</span>
+        <span class="badge neu">HD Q1 BMO TOMORROW</span>
+        <span class="badge neu">FOMC MINUTES WED 2PM</span>
+        <span class="badge warn">TNX 4.63% · 30Y 5.1%+</span>
+        <span class="badge neg">BRENT $111 · HORMUZ CLOSED</span>
+        <span class="badge warn">WARSH WEEK 1</span>
+        <span class="badge warn">VIX 18.4 ↑</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="kicker">TODAY'S TOP STORIES</div>
+      <div class="top-stories">
+        <div class="story-card ai">
+          <div class="label">II · AI TRADE</div>
+          <div class="title">NVDA T-2</div>
+          <div class="summary">H200 China paradox: licenses approved, zero units shipped. Goldman raises EPS to $1.86 vs $1.77 consensus. Q2 FY27 guide ($86B consensus) is Wednesday's swing factor — not Q1.</div>
+        </div>
+        <div class="story-card macro">
+          <div class="label">I · MACRO</div>
+          <div class="title">WARSH'S WALL</div>
+          <div class="summary">TNX 4.63% + 30Y 5.1%+ entering Warsh's first full week. FOMC 8–4 dissent from Apr 29 decoded Wednesday 2pm. Rate hike probability 30–35% by Dec — structural, not tail-risk.</div>
+        </div>
+        <div class="story-card geo">
+          <div class="label">IV · GEOPOLITICS</div>
+          <div class="title">HORMUZ CLOSED</div>
+          <div class="summary">Brent surges to $111/bbl as Strait of Hormuz effectively shuts. Iran ceasefire dead. Trump: "get moving, FAST." 4M bbl/day at risk. Warsh's inflation problem deepens every session.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="metric-grid cols-4 cover-stat-strip">
+    <div class="metric-cell">
+      <div class="metric-label">ES FUTURES</div>
+      <div class="metric-value neu">~7,432</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-label">NVDA PRE-MARKET</div>
+      <div class="metric-value pos">$229.72 · T-2</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-label">TNX 10Y YIELD</div>
+      <div class="metric-value warn">4.63% 1-YR HIGH</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-label">BRENT CRUDE</div>
+      <div class="metric-value neg">$111/BBL HORMUZ</div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">NVDA $230 PM T-2 MAY 20 · ES ~7,432 · TNX 4.63% 1-YR HIGH · 30Y 5.1%+ · BRENT $111 HORMUZ CLOSED · BIDU Q1 8AM ET · HD BMO TUE · FOMC MIN WED 2PM · VIX 18.4 · GOLD $4,495 · DXY 99.35 · WARSH WEEK 1</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>01 / 08</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     PAGE 02 — CHAPTER I · MACRO · WARSH'S WALL (fullbleed)
+     ===================================================================== -->
+<section class="page layout-fullbleed" data-layout="fullbleed" id="page-02">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span>18 MAY 2026 · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I · NO 012</span>
+      <span class="chip macro">I · MACRO</span>
+    </div>
+    <span>02 / 08</span>
+  </div>
+
+  <div class="body">
+    <div class="full-bg" style="background-image: linear-gradient(135deg, #0a0a1e 0%, #0f1a2e 40%, #1a1a1a 100%);"></div>
+
+    <div class="corner-chip">
+      <div class="chip-label">10-YEAR YIELD</div>
+      <div class="chip-value" style="color: var(--yellow);">4.63%</div>
+      <div class="chip-attr">Near 1-Year High · Mon 18 May</div>
+    </div>
+
+    <div class="kicker geo">CHAPTER I · MACRO · MONDAY 18 MAY 2026</div>
+    <h1 class="headline-mega">WARSH'S <em>WALL</em></h1>
+    <p class="body-text" style="margin-top: 24px;">Warsh's first full week as Fed Chair opens with the bond market delivering a clear verdict: <strong>TNX at 4.63%</strong>, 30-year topping <strong>5.1%</strong> (highest since May 2025), and Asian equities broadly lower. The most contested FOMC vote since 1992 — an <strong>8–4 hold</strong> at April 29 — gets its public autopsy Wednesday at 2pm when minutes drop.</p>
+
+    <ul class="body-text" style="margin-top: 16px; padding-left: 18px;">
+      <li><strong>TNX</strong> — 4.607% open, 4.631% intraday high; 30Y cleared 5.1% on May 15</li>
+      <li><strong>Fed Funds</strong> — 3.50–3.75%; held 8–4 at Apr 29 (most divided since 1992)</li>
+      <li><strong>Rate hike probability</strong> — 30–35% by Dec 2026 (CME); &lt;3% chance of any 2026 cut</li>
+      <li><strong>Warsh inheritance</strong> — CPI 3.8% + PPI 6.0% + Brent $111 + Michigan 48.2</li>
+      <li><strong>FOMC Minutes</strong> — May 20, 2pm ET; first post-Warsh read; 4 dissenters exposed</li>
+      <li><strong>SPX May 15 close</strong> — 7,408.50 (−1.24%); NDX 26,225.14 (−1.54%)</li>
+    </ul>
+
+    <div class="quote-block" style="margin-top: 32px;">
+      "Chosen to lower interest rates, Kevin Warsh may find the Fed has other ideas."
+      <span class="attr">— U.S. News, 15 May 2026</span>
+    </div>
+
+    <div class="metric-grid cols-5" style="margin-top: 36px; max-width: 900px;">
+      <div class="metric-cell">
+        <div class="metric-label">TNX 10Y</div>
+        <div class="metric-value warn">4.63%</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">30Y YIELD</div>
+        <div class="metric-value warn">5.1%+</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">FED FUNDS</div>
+        <div class="metric-value neu">3.50–3.75%</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">CPI APRIL YOY</div>
+        <div class="metric-value neg">3.8%</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">JUNE CUT PROB</div>
+        <div class="metric-value neg">&lt;3%</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">NVDA $230 PM T-2 MAY 20 · ES ~7,432 · TNX 4.63% 1-YR HIGH · 30Y 5.1%+ · BRENT $111 HORMUZ CLOSED · BIDU Q1 8AM ET · HD BMO TUE · FOMC MIN WED 2PM · VIX 18.4 · GOLD $4,495 · DXY 99.35 · WARSH WEEK 1</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>02 / 08</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     PAGE 03 — CHAPTER I · MACRO · THE 8-4 DISSENT (bignumber)
+     ===================================================================== -->
+<section class="page layout-bignumber" data-layout="bignumber" id="page-03">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span>18 MAY 2026 · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I · NO 012</span>
+      <span class="chip macro">I · MACRO</span>
+    </div>
+    <span>03 / 08</span>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="kicker macro">CHAPTER I · MACRO · FOMC DISSENT AUTOPSY</div>
+      <h1 class="headline-mega">THE <em>8–4</em> DISSENT</h1>
+      <p class="body-text" style="margin-top: 24px;">April 29 FOMC: eight held, four dissented — most divided vote since 1992. Wednesday's minutes expose what the four wanted and why Warsh's framework now faces a market forcing rates higher, not lower.</p>
+
+      <ul class="body-text" style="margin-top: 16px; padding-left: 18px;">
+        <li><strong>The hold case</strong> — CPI 3.8%, PPI 6.0%, Brent $111: pause was vindicated</li>
+        <li><strong>The dissenters</strong> — likely favored cuts per Warsh's pre-chair public record</li>
+        <li><strong>The irony</strong> — Warsh installed to cut; market now pricing a hike instead</li>
+        <li><strong>Wednesday 2pm</strong> — FOMC minutes; same session as NVDA earnings (post-close)</li>
+        <li><strong>Key language watch</strong> — any shift from "sufficiently restrictive" to "may need to tighten"</li>
+        <li><strong>Nikkei May 18</strong> — ~60,520 (−1.45%); Hang Seng −1.49%; Asian risk-off</li>
+      </ul>
+
+      <div class="metric-grid" style="margin-top: 32px; max-width: 460px;">
+        <div class="metric-cell">
+          <div class="metric-label">DEC HIKE PROB</div>
+          <div class="metric-value warn">30–35%</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">PPI APRIL YOY</div>
+          <div class="metric-value neg">+6.0%</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">SPX FRI CLOSE</div>
+          <div class="metric-value neg">7,408 −1.24%</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">FOMC MINUTES</div>
+          <div class="metric-value neu">WED 2PM ET</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center;">
+      <div class="big-number" style="color: var(--yellow);">8–4</div>
+      <div class="big-number-caption">FOMC APRIL 29 VOTE · MOST CONTESTED SINCE 1992</div>
+      <span class="big-number-pill" style="background: var(--yellow-soft); border-color: var(--yellow-border); color: var(--yellow);">HOLD · 3.50–3.75%</span>
+
+      <div class="big-number-tag" style="border-color: var(--yellow-border); background: var(--yellow-soft);">
+        <div class="tag-label" style="color: var(--yellow);">FOMC MINUTES DROP</div>
+        <div class="tag-text">WEDNESDAY 20 MAY · 2:00PM ET · SAME DAY AS NVDA EARNINGS</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">NVDA $230 PM T-2 MAY 20 · ES ~7,432 · TNX 4.63% 1-YR HIGH · 30Y 5.1%+ · BRENT $111 HORMUZ CLOSED · BIDU Q1 8AM ET · HD BMO TUE · FOMC MIN WED 2PM · VIX 18.4 · GOLD $4,495 · DXY 99.35 · WARSH WEEK 1</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>03 / 08</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     PAGE 04 — CHAPTER II · AI TRADE · THE NVIDIA COUNTDOWN (split)
+     ===================================================================== -->
+<section class="page layout-split" data-layout="split" id="page-04">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span>18 MAY 2026 · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I · NO 012</span>
+      <span class="chip ai">II · AI TRADE</span>
+    </div>
+    <span>04 / 08</span>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="kicker ai">CHAPTER II · AI TRADE · T-2 TO MAY 20</div>
+      <h1 class="headline-large">THE NVIDIA <em>COUNTDOWN</em></h1>
+      <p class="body-text" style="margin-top: 24px;">NVDA pre-market <strong>$229.72</strong> (range $228–$233, VWAP $230.38) as Wednesday's Q1 FY2027 report arrives. Goldman revised EPS to <strong>$1.86</strong> vs <strong>$1.77</strong> Street consensus. Citi models <strong>$1.4B</strong> upside to $80.2B revenue — but the <strong>Q2 FY27 guide</strong> ($86.08B consensus) is Wednesday's true swing factor.</p>
+
+      <ul class="body-text" style="margin-top: 16px; padding-left: 18px;">
+        <li><strong>Q1 Rev consensus</strong> — $78.5–78.8B (+78–79% YoY); Citi whisper $80.2B</li>
+        <li><strong>Q1 EPS consensus</strong> — $1.77; Goldman revised to $1.86 (+5% above Street)</li>
+        <li><strong>Q2 FY27 guide</strong> — $86.08B consensus; THIS is the number to watch post-close</li>
+        <li><strong>Data Center</strong> — ~$73B embedded in Q1 consensus; +110% YoY implied</li>
+        <li><strong>Beat streak</strong> — 21 of last 23 quarters beat adjusted EPS</li>
+        <li><strong>Sell-the-news risk</strong> — stock fell on 4 of last 5 revenue beats; options pricing large move</li>
+        <li><strong>Active flag (no-009)</strong> — entry $219.44 May 13; pre-market +4.7% unrealized</li>
+      </ul>
+
+      <div class="metric-grid cols-4" style="margin-top: 32px;">
+        <div class="metric-cell">
+          <div class="metric-label">NVDA PM MAY 18</div>
+          <div class="metric-value pos">$229.72</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">Q1 REV CONSENSUS</div>
+          <div class="metric-value neu">$78.5B</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">EPS GOLDMAN</div>
+          <div class="metric-value pos">$1.86</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-label">Q2 GUIDE CONSENSUS</div>
+          <div class="metric-value neu">$86.08B</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="split-visual">
+      <span class="visual-glyph">T&#8209;2</span>
+    </div>
+  </div>
+
+  <div class="ticker-tape">NVDA $230 PM T-2 MAY 20 · ES ~7,432 · TNX 4.63% 1-YR HIGH · 30Y 5.1%+ · BRENT $111 HORMUZ CLOSED · BIDU Q1 8AM ET · HD BMO TUE · FOMC MIN WED 2PM · VIX 18.4 · GOLD $4,495 · DXY 99.35 · WARSH WEEK 1</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>04 / 08</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     PAGE 05 — CHAPTER II · AI TRADE · THE H200 PARADOX (threepanel)
+     ===================================================================== -->
+<section class="page layout-threepanel" data-layout="threepanel" id="page-05">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span>18 MAY 2026 · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I · NO 012</span>
+      <span class="chip ai">II · AI TRADE</span>
+    </div>
+    <span>05 / 08</span>
+  </div>
+
+  <div class="body">
+    <div>
+      <div class="kicker ai">CHAPTER II · AI TRADE · CHINA CHIP PARADOX</div>
+      <h1 class="headline-large">THE H200 <em>PARADOX</em></h1>
+    </div>
+
+    <div class="panel-card">
+      <div class="panel-label">US COMMERCE: APPROVED</div>
+      <div class="panel-headline">75K</div>
+      <div class="panel-sub">CHIPS / CUSTOMER CAP · 10 FIRMS LICENSED</div>
+      <div class="panel-body">
+        <ul style="padding-left: 16px; margin-top: 4px;">
+          <li>Alibaba, Tencent, ByteDance, JD.com approved</li>
+          <li>Distributors Lenovo and Foxconn included</li>
+          <li>US side of the paradox: fully resolved</li>
+          <li>Export licenses issued — sitting unused on shelf</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel-card neg">
+      <div class="panel-label">BEIJING: BLOCKED</div>
+      <div class="panel-headline" style="color: var(--red);">0</div>
+      <div class="panel-sub">UNITS SHIPPED · PURCHASE PAUSE IN EFFECT</div>
+      <div class="panel-body">
+        <ul style="padding-left: 16px; margin-top: 4px;">
+          <li>Beijing directing domestic AI sourcing investment</li>
+          <li>Huawei + DeepSeek hold <strong>41%</strong> of China AI accelerator market</li>
+          <li>Commerce Sec. Lutnick: China "directing investment toward domestic industry"</li>
+          <li>State Council review ongoing; no shipment timeline</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel-card warn">
+      <div class="panel-label">MAY 20 WILDCARD</div>
+      <div class="panel-headline" style="color: var(--yellow);">$50B</div>
+      <div class="panel-sub">CHINA AI MARKET EST. — HUANG</div>
+      <div class="panel-body">
+        <ul style="padding-left: 16px; margin-top: 4px;">
+          <li>Huang: chip ban "largely backfired" — told SCSP forum</li>
+          <li>Resolution timeline: NVDA management guided Wednesday only</li>
+          <li><strong>Bull:</strong> China guidance materializes + Q1 beat = dual catalyst</li>
+          <li><strong>Bear:</strong> shipments stall permanently; Huawei captures the market</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">NVDA $230 PM T-2 MAY 20 · ES ~7,432 · TNX 4.63% 1-YR HIGH · 30Y 5.1%+ · BRENT $111 HORMUZ CLOSED · BIDU Q1 8AM ET · HD BMO TUE · FOMC MIN WED 2PM · VIX 18.4 · GOLD $4,495 · DXY 99.35 · WARSH WEEK 1</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>05 / 08</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     PAGE 06 — CHAPTER III · EARNINGS · WEEKLY DOCKET (honor)
+     ===================================================================== -->
+<section class="page layout-honor" data-layout="honor" id="page-06">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span>18 MAY 2026 · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I · NO 012</span>
+      <span class="chip earnings">III · EARNINGS</span>
+    </div>
+    <span>06 / 08</span>
+  </div>
+
+  <div class="body">
+    <h1 class="headline-large">THE WEEK'S <em>DOCKET</em> <span style="color: var(--blue); font-weight: 500; font-size: 0.5em; vertical-align: middle;">MAY 18–22 · 8 KEY REPORTS · EARNINGS SEASON FINALE</span></h1>
+
+    <div class="honor-grid">
+      <div class="honor-card" style="border-top-color: var(--blue);">
+        <div class="ticker-row">
+          <span class="ticker">BIDU</span>
+          <span class="change" style="color: var(--blue);">TODAY 8AM</span>
+        </div>
+        <div class="detail">
+          <strong>Q1 2026 · EPS $1.69 est · Rev $4.66B est</strong><br>
+          Apollo Go: 3.4M fully driverless rides Q4 2025; 20M+ total across 26 cities. AI Cloud "strong momentum." Ads revenue structurally declining — cloud must offset. Avg PT $162.10 (+19.8% upside vs current). China AI bellwether ahead of NVDA.
+        </div>
+      </div>
+
+      <div class="honor-card" style="border-top-color: var(--blue);">
+        <div class="ticker-row">
+          <span class="ticker">HD</span>
+          <span class="change" style="color: var(--blue);">TUE BMO</span>
+        </div>
+        <div class="detail">
+          <strong>Q1 FY2026 · EPS $3.41 est (−4% YoY) · Rev $41.5B (+4.2%)</strong><br>
+          Mgmt guided mid-single-digit % negative EPS YoY; gross margin down ~50bps. Housing market cooperation required for 2026 growth thesis. TNX at 4.63% = 30yr mortgage headwind. Tariff cost pass-through is key watch.
+        </div>
+      </div>
+
+      <div class="honor-card" style="border-top-color: var(--green);">
+        <div class="ticker-row">
+          <span class="ticker">NVDA</span>
+          <span class="change">WED AH</span>
+        </div>
+        <div class="detail">
+          <strong>Q1 FY2027 · EPS $1.77 consensus ($1.86 Goldman) · Rev $78.5B (+79% YoY)</strong><br>
+          Q2 FY27 guide $86.08B consensus = THE swing number. Citi models $1.4B Q1 upside to $80.2B. Data Center ~$73B embed; +110% YoY. China H200 guidance = binary catalyst. 21-of-23 beat streak.
+        </div>
+      </div>
+
+      <div class="honor-card" style="border-top-color: var(--blue);">
+        <div class="ticker-row">
+          <span class="ticker">LOW</span>
+          <span class="change" style="color: var(--blue);">WED BMO</span>
+        </div>
+        <div class="detail">
+          <strong>Q1 FY2026 · Lowe's Companies</strong><br>
+          Reads same housing/consumer signals as HD. Home improvement sector under pressure from 4.63% mortgage rates and tariff cost inflation on lumber and building materials. Pro contractor segment is the key differentiator vs. HD.
+        </div>
+      </div>
+
+      <div class="honor-card" style="border-top-color: var(--blue);">
+        <div class="ticker-row">
+          <span class="ticker">TJX</span>
+          <span class="change" style="color: var(--blue);">WED BMO</span>
+        </div>
+        <div class="detail">
+          <strong>Q1 FY2027 · TJX Companies</strong><br>
+          Off-price retail is a consumer trade-down beneficiary. CPI 3.8% + Michigan 48.2 = value-retail structural tailwind. Inventory glut absorption drives margin expansion. Relative defensive in a high-rate, high-inflation environment.
+        </div>
+      </div>
+
+      <div class="honor-card" style="border-top-color: var(--blue);">
+        <div class="ticker-row">
+          <span class="ticker">INTU</span>
+          <span class="change" style="color: var(--blue);">WED AH</span>
+        </div>
+        <div class="detail">
+          <strong>Q3 FY2025 · Intuit</strong><br>
+          AI-powered tax and SMB platform. TurboTax AI integration + QuickBooks subscription acceleration. Watch: AI-driven ARPU expansion vs. customer count growth. Subscription economics insulate from macro volatility.
+        </div>
+      </div>
+
+      <div class="honor-card" style="border-top-color: var(--blue);">
+        <div class="ticker-row">
+          <span class="ticker">WMT</span>
+          <span class="change" style="color: var(--blue);">THU BMO</span>
+        </div>
+        <div class="detail">
+          <strong>Q1 FY2027 · Walmart · Consumer Bellwether</strong><br>
+          Grocery share gains structural. Ad + fulfillment margin lever. Tariff pass-through risk flagged by management. $80B+ revenue base expected. Pricing power stronger than most peers in inflationary environment.
+        </div>
+      </div>
+
+      <div class="honor-card" style="border-top-color: var(--yellow);">
+        <div class="ticker-row">
+          <span class="ticker">FOMC</span>
+          <span class="change" style="color: var(--yellow);">WED 2PM</span>
+        </div>
+        <div class="detail">
+          <strong>April 28–29 Minutes · 8–4 Hold · First Post-Warsh Read</strong><br>
+          Market parsing 4 dissenters' reasoning. Rate hike probability 30–35% by Dec. Watch for shift from "sufficiently restrictive" language. Drops 2 hours before NVDA earnings call — double-header for traders Wednesday.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">NVDA $230 PM T-2 MAY 20 · ES ~7,432 · TNX 4.63% 1-YR HIGH · 30Y 5.1%+ · BRENT $111 HORMUZ CLOSED · BIDU Q1 8AM ET · HD BMO TUE · FOMC MIN WED 2PM · VIX 18.4 · GOLD $4,495 · DXY 99.35 · WARSH WEEK 1</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>06 / 08</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     PAGE 07 — CHAPTER III · EARNINGS · SETUPS & RISKS (movers)
+     ===================================================================== -->
+<section class="page layout-movers" data-layout="movers" id="page-07">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span>18 MAY 2026 · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I · NO 012</span>
+      <span class="chip earnings">III · EARNINGS</span>
+    </div>
+    <span>07 / 08</span>
+  </div>
+
+  <div class="body">
+    <div class="mover-list">
+      <h2 class="gainers">BULL SETUPS <span class="count-tag">THIS WEEK'S EARNINGS · MAY 18–22</span></h2>
+      <div class="mover-row" style="border-bottom: 1px solid var(--border);">
+        <span class="ticker">NVDA</span>
+        <span class="change pos">$86B Q2</span>
+        <span class="reason">Q2 guide above $86.08B consensus + any China H200 shipment timeline = dual catalyst. Goldman $1.86 EPS. 21-of-23 beat streak. Citi $1.4B Q1 upside.</span>
+      </div>
+      <div class="mover-row" style="border-bottom: 1px solid var(--border);">
+        <span class="ticker">BIDU</span>
+        <span class="change pos">APOLLO GO</span>
+        <span class="reason">Robotaxi scaling (3.4M fully driverless Q4) may offset structural ad revenue decay. AI Cloud metric beat triggers re-rating. PT $162 → +20% upside from current.</span>
+      </div>
+      <div class="mover-row" style="border-bottom: 1px solid var(--border);">
+        <span class="ticker">TJX</span>
+        <span class="change pos">TRADE-DOWN</span>
+        <span class="reason">CPI 3.8% + Michigan 48.2 = value-retail structural tailwind. Consumer trading down from full-price retail. Inventory absorption drives margin expansion.</span>
+      </div>
+      <div class="mover-row" style="border-bottom: 1px solid var(--border);">
+        <span class="ticker">WMT</span>
+        <span class="change pos">GROCERY+</span>
+        <span class="reason">Grocery share gains accelerating. Ad + fulfillment services = margin expansion lever. Tariff cost-plus pricing power stronger than most consumer peers.</span>
+      </div>
+      <div class="mover-row" style="border-bottom: 1px solid var(--border);">
+        <span class="ticker">INTU</span>
+        <span class="change pos">AI ARPU</span>
+        <span class="reason">TurboTax AI drives per-user revenue expansion. QuickBooks subscription compound. Software economics resilient to rate volatility and macro headwinds.</span>
+      </div>
+      <div class="mover-row">
+        <span class="ticker">AMD</span>
+        <span class="change pos">$450 WATCH</span>
+        <span class="reason">MI-series excluded from H200 China approvals; trading $420–450 range. NVDA Wednesday = AMD sympathy move. Data center AI demand validation expected in guidance.</span>
+      </div>
+    </div>
+
+    <div class="mover-list">
+      <h2 class="losers">BEAR RISKS <span class="count-tag">THIS WEEK</span></h2>
+      <div class="mover-row" style="border-bottom: 1px solid var(--border);">
+        <span class="ticker">HD</span>
+        <span class="change neg">−4% EPS</span>
+        <span class="reason">Mgmt guided mid-single-digit EPS decline. TNX 4.63% = 30Y mortgage headwind. Tariff pass-through on building materials unresolved.</span>
+      </div>
+      <div class="mover-row" style="border-bottom: 1px solid var(--border);">
+        <span class="ticker">NVDA</span>
+        <span class="change neg">SELL NEWS</span>
+        <span class="reason">Fell on 4 of last 5 revenue beats. Options pricing large move either direction. China revenue zero = $50B market permanently lost.</span>
+      </div>
+      <div class="mover-row" style="border-bottom: 1px solid var(--border);">
+        <span class="ticker">LOW</span>
+        <span class="change neg">HOUSING</span>
+        <span class="reason">Same housing/mortgage headwinds as HD. Pro contractor softness. Tariff cost on lumber and building materials compresses gross margin.</span>
+      </div>
+      <div class="mover-row">
+        <span class="ticker">MACRO</span>
+        <span class="change neg">TNX 5%?</span>
+        <span class="reason">30Y at 5.1% threatens equity multiples. FOMC minutes may surface rate-hike language — compresses growth valuations on the same day as NVDA earnings.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">NVDA $230 PM T-2 MAY 20 · ES ~7,432 · TNX 4.63% 1-YR HIGH · 30Y 5.1%+ · BRENT $111 HORMUZ CLOSED · BIDU Q1 8AM ET · HD BMO TUE · FOMC MIN WED 2PM · VIX 18.4 · GOLD $4,495 · DXY 99.35 · WARSH WEEK 1</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>07 / 08</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     PAGE 08 — CHAPTER IV · GEOPOLITICS · HORMUZ CLOSES (fullbleed)
+     ===================================================================== -->
+<section class="page layout-fullbleed" data-layout="fullbleed" id="page-08">
+  <div class="live-strip">
+    <span class="left">LIVE • PRE-MARKET</span>
+    <span>18 MAY 2026 · US PRE-MARKET OPEN</span>
+  </div>
+  <div class="meta-strip">
+    <div class="vol-no">
+      <span>VOL I · NO 012</span>
+      <span class="chip geo">IV · GEOPOLITICS</span>
+    </div>
+    <span>08 / 08</span>
+  </div>
+
+  <div class="body">
+    <div class="full-bg" style="background-image: linear-gradient(135deg, #1a0800 0%, #2a1000 40%, #1a1010 100%);"></div>
+
+    <div class="corner-chip" style="border-color: var(--red-border);">
+      <div class="chip-label" style="color: var(--red);">BRENT CRUDE</div>
+      <div class="chip-value" style="color: var(--red);">$110.74</div>
+      <div class="chip-attr">Mon 18 May 2026 · Hormuz Closed</div>
+    </div>
+
+    <div class="kicker geo">CHAPTER IV · GEOPOLITICS · STRAIT OF HORMUZ</div>
+    <h1 class="headline-mega">HORMUZ <em>CLOSES</em></h1>
+    <p class="body-text" style="margin-top: 24px;">Strait of Hormuz is effectively shut. Brent surges to <strong>$110.74/bbl</strong> (intraday range $110.13–$111.99 Monday) — up <strong>+6.0%</strong> from $104.49 just one week prior. Trump's warning to Iran — <em>"get moving, FAST"</em> — signals escalation. IEA models the market undersupplied through October.</p>
+
+    <ul class="body-text" style="margin-top: 16px; padding-left: 18px;">
+      <li><strong>Brent May 15</strong> — $109.26/bbl (+3.35% on the day, +8.1% for the week)</li>
+      <li><strong>Brent May 18</strong> — $110.74/bbl intraday (range $110.13–$111.99); Investing.com / Barchart</li>
+      <li><strong>Hormuz flow loss</strong> — 4M bbl/day; IEA models undersupply through October 2026</li>
+      <li><strong>Iran ceasefire</strong> — structurally dead; "massive life support" for weeks; no deal in sight</li>
+      <li><strong>Macro consequence</strong> — Brent $111 adds directly to CPI/PPI; worsens Warsh's rate calculus every week</li>
+      <li><strong>Gold</strong> — $4,495/oz; falling despite geopolitical tension (dollar + yields dominating safe-haven flow)</li>
+      <li><strong>DXY</strong> — 99.35; strengthening on inflation premium and rising rate-hike probability</li>
+    </ul>
+
+    <div class="quote-block" style="margin-top: 32px;">
+      "Get moving, FAST."
+      <span class="attr">— President Trump, to Iran, 18 May 2026</span>
+    </div>
+
+    <div class="metric-grid cols-5" style="margin-top: 36px; max-width: 900px;">
+      <div class="metric-cell">
+        <div class="metric-label">BRENT CRUDE</div>
+        <div class="metric-value neg">$110.74</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">HORMUZ FLOW</div>
+        <div class="metric-value neg">−4M BBL/D</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">IEA OUTLOOK</div>
+        <div class="metric-value warn">UNDERSUPPLY OCT</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">GOLD SPOT</div>
+        <div class="metric-value neu">$4,495/OZ</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">DXY</div>
+        <div class="metric-value warn">99.35 ↑</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-tape">NVDA $230 PM T-2 MAY 20 · ES ~7,432 · TNX 4.63% 1-YR HIGH · 30Y 5.1%+ · BRENT $111 HORMUZ CLOSED · BIDU Q1 8AM ET · HD BMO TUE · FOMC MIN WED 2PM · VIX 18.4 · GOLD $4,495 · DXY 99.35 · WARSH WEEK 1</div>
+  <div class="page-foot">
+    <span class="arrow">◀</span>
+    <span>08 / 08</span>
+    <span class="arrow">▶</span>
+  </div>
+</section>
+
+</body>
+</html>
