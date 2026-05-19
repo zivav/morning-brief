@@ -1,0 +1,127 @@
+{
+  "issue_id": "vol-i-no-013",
+  "date": "2026-05-19",
+  "vol_no": "VOL I · NO 013",
+  "edition_type": "daily_premarket",
+  "issue_time": "08:00 Asia/Jerusalem (~01:00 ET)",
+  "top_headline": "FROM HORMUZ TO BARAKAH — UAE NUCLEAR PLANT STRUCK; NVDA T-1; FOMC MIN T-1",
+  "chapters": [
+    "I · MACRO (pages 02-03) — Warsh Week 2 opens: ES -0.41% / NQ -0.30% futures; TNX 4.60% (1-year high territory, +0.01pp); DXY ~99.35; SPX May 18 close 7,403.05 (-0.07%); Dec 2026 rate-hike probability now ~40% (CME FedWatch), up from 30-35% last week; June hold ~97%; FOMC minutes Wednesday 2pm ET (Apr 28-29 8-4 dissent autopsy); Gold $4,542 May 18; Warsh QT-for-Cuts framework intact, no Day 1 speech, first FOMC June 17",
+    "II · AI TRADE (page 04) — NVDA T-1 to May 20 AH earnings; closed ~$222 on May 18 (-3.4% from PM high $229.72); Q1 FY2027 consensus $78.5B rev (+79% YoY) / $1.77 EPS (+127% YoY); Goldman raised EPS to $1.86; Citi Q1 upside $80.2B; Q2 FY27 guide consensus $86.08B is the swing number; H200 China: 10 firm licenses approved, Beijing purchase pause active — May 20 call is only China guidance forum; implied move ±12.9% (~$28/share) — Market Chameleon; NVDA historically declines more often than rises post-earnings even on beats",
+    "III · EARNINGS (pages 05-06) — Today: HD Q1 FY2026 BMO ($41.6B / $3.41 EPS consensus, -4% YoY EPS, housing headwinds, TNX 4.60% 30Y mortgage, options ~5% move); KEYS Q2 FY2026 AH ($1.71B / $2.32 EPS consensus, AI T&M demand); Tomorrow: NVDA AH (see Chapter II); BIDU Q1 reported May 18: EPS $11.90 (est $11.80 beat); Rev RMB 31.62B (est 31.97B inline miss); AI-powered business +49% YoY to record RMB 13B+; stock +4% PM; CSCO +14% AH May 14 (AI infra blowout); AMAT +8% AH May 14 record $7.91B industry growth >30%",
+    "IV · GEOPOLITICS (pages 07-08) — Barakah nuclear plant drone attack May 17: three drones, two intercepted, one fire in external generator at UAE's Al Dhafra facility (Arab world's only nuclear plant, 25% UAE electricity); IAEA confirmed radiation normal; reactors operational; Brent spiked to $111.50 intraday May 18; Iran MOU 14-point memo stalled: Tehran hardliners blocking; US military briefing Trump on operations; 14-point MOU framework: Iran enrichment moratorium + uranium to Russia; US lifts sanctions + frozen funds; both lift Hormuz restrictions; deal target $85-90 Brent (ING); no-deal target $115-120; IEA undersupplied through October; 4M bbl/day Hormuz flow loss"
+  ],
+  "flagged_setups": [],
+  "active_flags_monitoring": [
+    {
+      "ticker": "NVDA",
+      "direction": "long",
+      "flag_issue": "no-009",
+      "flag_date": "2026-05-13",
+      "price_at_flag": 219.44,
+      "price_may18_close": 222.0,
+      "return_unrealized_pct": 1.2,
+      "horizon_note": "Resolution event: May 20 AH earnings. Active flag reviewed as WIN at $226.51 in weekly no-011; position still live into earnings binary.",
+      "status": "ACTIVE — May 18 close ~$222 (+1.2% from flag $219.44); resolution May 20 AH earnings; no-011 weekly called WIN at $226.51 but position still open"
+    }
+  ],
+  "track_record_chapter": "SKIPPED — fewer than 3 new/unreviewed setups from the 3-7 trading day window. The NVDA no-009 long ($219.44, May 13) was reviewed as WIN ($226.51) in weekly no-011. The active flag is still live into May 20 earnings.",
+  "watchlist_hits": [
+    {
+      "ticker": "NVDA",
+      "event": "T-1 to May 20 Q1 FY2027 earnings AH; closed ~$222 May 18 (-3.4% from PM $229.72); consensus $78.5B / $1.77 EPS; Goldman $1.86; Q2 guide $86.08B is the swing; implied move ±12.9%; H200 China purchase pause active",
+      "move": "~$222 May 18 close (active flag no-009 $219.44 = +1.2% unrealized)",
+      "priority": "core"
+    },
+    {
+      "ticker": "BIDU",
+      "event": "Q1 2026 reported May 18: EPS $11.90 vs $11.80 est (beat); Rev RMB 31.62B vs 31.97B est (inline miss); AI-powered business +49% to record RMB 13B+; stock +4% PM; Apollo Go robotaxi secular story intact",
+      "move": "+4% PM May 18",
+      "priority": "watchlist"
+    },
+    {
+      "ticker": "AMD",
+      "event": "MI-series excluded from H200 China approvals; monitoring NVDA sympathy move post-earnings May 20; NVDA China guidance also signals AMD DC demand trajectory",
+      "move": "Monitoring into NVDA earnings",
+      "priority": "core"
+    },
+    {
+      "ticker": "HD",
+      "event": "Q1 FY2026 reporting BMO May 19; consensus $41.6B rev / $3.41 EPS; comp sales -0.3%; TNX 4.60% = 30Y mortgage headwind; options ~5% move; FY guidance revision is the swing factor",
+      "move": "Pre-earnings at brief time (01:00 ET); BMO results typically 6-9am ET",
+      "priority": "watchlist"
+    }
+  ],
+  "tase_events": [
+    {
+      "event": "Barakah nuclear plant drone attack May 17 = direct Israeli security premium escalation; Iranian drone operations in Gulf = elevated Elbit Systems/Rafael/Israeli defense sector risk premium; Brent ~$109-111 sustained = Israeli energy import cost pressure; TNX 4.60% = global rate-risk headwind for TA-35 growth names; TA-35 tracking global risk-off tone",
+      "ticker": "TA-35",
+      "materiality": "informational"
+    }
+  ],
+  "narrative_threads": [
+    "Geopolitical escalation ladder: Hormuz closure (structural) → Barakah nuclear plant drone attack → US military Sledgehammer contingency → Iranian hardliner resistance to MOU; each rung up = higher Brent floor, more Warsh rate-hike pressure; deal closure = largest single macro relief event of the cycle",
+    "NVDA May 20 binary: T-1 setup shows stock drifting back from PM highs ($229.72 → $222); market not pre-pricing a blowout; the China guidance wildcard (H200 Beijing purchase pause) is the differentiator between beat vs. transformational beat; Q2 guide $86B+ is the only number that prevents a sell-the-news reaction",
+    "Warsh inflation inheritance — Week 2: CPI 3.8% + PPI 6.0% + Brent $111 + Barakah attack = Warsh cannot credibly point to inflation resolution at any near-term FOMC; hike probability now 40% is structurally driven, not tail-risk; FOMC minutes tomorrow will codify the hawkish language direction",
+    "AI capex validation wave: BIDU AI +49%, CSCO +14%, AMAT +8% record — three independent confirmations of AI demand floor before NVDA; sets extremely high bar but also structural floor under demand narrative; if NVDA beats AND guides up, three-leg stool (demand, supply, China) confirmed"
+  ],
+  "macro_snapshot": {
+    "SPX_may18_close": "7,403.05 (-0.07%) — Seeking Alpha / Investing.com",
+    "ES_futures_may19": "-0.41% — Barchart / CME",
+    "NQ_futures_may19": "-0.30% — Barchart / CME",
+    "NVDA_may18_close": "~$222 — Yahoo Finance / Morningstar",
+    "TNX_may19": "4.60% (+0.01pp) — Trading Economics",
+    "30Y_yield": "~5.1%+ (from no-012 data; May 19 not yet updated at brief time)",
+    "fed_funds": "3.50-3.75% (held 8-4 Apr 29)",
+    "june_hold_prob": "~97% (CME FedWatch)",
+    "dec_hike_prob": "~40% (CME FedWatch, up from 30-35%)",
+    "brent_may18": "$107.71 settlement / $111.50 intraday high post-Barakah news — countryeconomy.com / discoveryalert.com.au",
+    "brent_range": "~$109-111 range as of May 19 brief",
+    "gold_may18": "$4,542.49 — LiteFinance",
+    "DXY_may18": "~99.35 — Trading Economics (from no-012)",
+    "VIX_estimate": "~18-20 (rising from 18.43 May 18)"
+  },
+  "today_calendar": [
+    {"time": "BMO", "event": "HD Q1 FY2026 earnings — $41.6B rev / $3.41 EPS consensus; call 9am ET"},
+    {"time": "AH", "event": "KEYS Q2 FY2026 earnings — $1.71B rev / $2.32 EPS consensus; call 4:30pm ET"},
+    {"time": "ALL DAY", "event": "Warsh Week 2 — monitoring for any public remarks on rate path post-Barakah escalation"}
+  ],
+  "tomorrow_calendar": [
+    {"time": "AH", "event": "NVDA Q1 FY2027 earnings — $78.5B rev / $1.77 EPS consensus; Q2 guide $86.08B; China guidance key"},
+    {"time": "2:00 PM ET", "event": "FOMC minutes — Apr 28-29 meeting; 8-4 dissent autopsy; first post-Warsh-era read"},
+    {"time": "BMO", "event": "LOW, TJX, WSM Q1 earnings — home improvement and consumer backdrop"},
+    {"time": "AH", "event": "INTU Q1 earnings — AI-driven ARPU and SMB software demand"}
+  ],
+  "ticker_tape": "NVDA ~$222 T-1 MAY 20 AH · ES -0.41% · TNX 4.60% 1-YR HIGH · HIKE PROB ~40% CME · BARAKAH DRONE HIT MAY 17 · BRENT ~$109-111 HORMUZ+UAE · FOMC MIN T-1 WED 2PM · HD Q1 BMO TODAY · BIDU AI REV +49% · GOLD $4,542 · DXY ~99 · SPX 7,403",
+  "file": "archive/2026-05-19-vol-i-no-013.html",
+  "published_url": "https://zivav.github.io/morning-brief/archive/2026-05-19-vol-i-no-013.html",
+  "page_count": 8,
+  "sources": [
+    "Seeking Alpha / Investing.com — SPX May 18 close 7,403.05 (-0.07%) — May 18 2026",
+    "Barchart / CME — ES futures -0.41% / NQ futures -0.30% — May 19 2026",
+    "Yahoo Finance / Morningstar — NVDA ~$222 close May 18 2026",
+    "Market Chameleon / Barchart — NVDA implied move ±12.9% (~$28/share) — May 19 2026",
+    "Trading Economics — TNX 10-year 4.60% (+0.01pp) May 19 2026",
+    "Trading Economics / StreetStats — CME Dec 2026 rate-hike probability ~40% — May 19 2026",
+    "Federal Reserve / FOMC statement Apr 29 2026 — 8-4 hold 3.50-3.75%",
+    "TECHi / MarketBeat — NVDA Q1 FY2027 consensus $78.5B / $1.77 EPS — May 2026",
+    "TheStreet / Goldman Sachs — NVDA EPS raised to $1.86 — May 2026",
+    "Seeking Alpha / Citi — NVDA Q1 revenue upside $80.2B (+$1.4B above consensus) — May 2026",
+    "TECHi — NVDA Q2 FY27 guide consensus $86.08B — May 2026",
+    "OptionSlam — NVDA historical post-earnings pattern — May 2026",
+    "TipRanks / Seeking Alpha / AskTraders — HD Q1 FY2026 preview $41.6B / $3.41 EPS — May 2026",
+    "Alphastreet / BusinessWire — KEYS Q2 FY2026 consensus $1.71B / $2.32 EPS — May 2026",
+    "StockTitan / ChartMill — BIDU Q1 2026 EPS $11.90 vs $11.80; AI-powered +49%; +4% PM — May 18 2026",
+    "Motley Fool / CNBC — CSCO +14% AH AI infra blowout — May 14 2026",
+    "StockTitan / 24-7WallSt — AMAT Q2 record $7.91B; industry growth >30% — May 14 2026",
+    "NPR / The National / PBS — Barakah nuclear plant drone attack May 17 2026",
+    "Energy News Beat / discoveryalert.com.au — UAE Barakah attack; Brent $111.50 intraday May 18",
+    "IAEA / UAE authorities — Barakah radiation normal; reactors operational — May 17-18 2026",
+    "Axios — US-Iran one-page MOU framework 14 points — May 2026",
+    "Iran International — Tehran hardliners blocking Iran MOU — May 2026",
+    "ABC News / Wikipedia — Trump 'better get moving FAST' / Iran war ceasefire — May 2026",
+    "LiteFinance — Gold $4,542.49 May 18 2026",
+    "countryeconomy.com / Trading Economics — Brent crude May 18 2026 data",
+    "Trading Economics — DXY ~99.35 May 18 2026"
+  ]
+}
